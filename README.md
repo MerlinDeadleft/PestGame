@@ -1,4 +1,4 @@
-# PestGame
+# Pest
 2.5D stealthgame in which you play a rat boy
 Made by a bunch of gamedev students
 
