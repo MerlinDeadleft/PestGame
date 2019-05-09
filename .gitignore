@@ -35,6 +35,9 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+#OSX Filesystem Files
+*.DS_Store
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta

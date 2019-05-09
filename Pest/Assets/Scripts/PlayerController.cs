@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 	CharacterController charController = null;
 	Rewired.Player player = null;
 
+	/********************movement variables********************/
 	[Header("Movement")]
 	[Header("On Ground")]
 	[SerializeField] float walkSpeed = 5.0f;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
 	bool canJump = true;
 	bool hasJumped = false;
 
+	/********************climbing variables********************/
 	[Header("Climbing")]
 	[SerializeField] float climbingSpeed = 3.0f;
 	bool isClimbing = false;
@@ -28,9 +30,14 @@ public class PlayerController : MonoBehaviour
 
 	Vector3 moveDirection = Vector3.zero;
 
+	/********************physics variables********************/
 	[Header("Physics")]
 	[SerializeField] float gravityMultiplier = 4.0f;
 
+	/********************hiding variables********************/
+	[Header("Hiding")]
+	bool isHiding = false;
+	GameObject hidingObject = null;
 
 	// Use this for initialization
 	void Start ()
@@ -46,7 +53,7 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleClimbing();
 		}
-		else
+		else if(!isHiding)
 		{
 			HandleMovement();
 		}
@@ -294,6 +301,14 @@ public class PlayerController : MonoBehaviour
 				isClimbing = false;
 				moveTowardsClimbable = false;
 			}
+		}
+	}
+
+	private void OnTriggerStay(Collider other)
+	{
+		if(other.tag == "Hiding Place")
+		{
+			//HIDING CODE
 		}
 	}
 }

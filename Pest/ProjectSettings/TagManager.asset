@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Climbable
   - ClimbDownPosition
+  - Hiding Place
   layers:
   - Default
   - TransparentFX
