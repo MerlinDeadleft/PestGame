@@ -35,9 +35,6 @@ ExportedObj/
 *.opendb
 *.VC.db
 
-#OSX Filesystem Files
-*.DS_Store
-
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
@@ -52,3 +49,6 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+#OSX Filesystem Files
+*.DS_Store
