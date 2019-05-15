@@ -481,6 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4733aac1be45f8a43b322f830eb79896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHitPoints: 3
   walkSpeed: 5
   sneakSpeed: 2
   runSpeed: 9
@@ -488,6 +489,7 @@ MonoBehaviour:
   jumpStrenght: 11
   climbingSpeed: 1
   gravityMultiplier: 4
+  hidingObject: {fileID: 0}
 --- !u!143 &109412750
 CharacterController:
   m_ObjectHideFlags: 0
@@ -528,7 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 160594640}
   m_Layer: 0
-  m_Name: '-------------------- (1)'
+  m_Name: '----------Player----------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1465,7 +1467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 471359062}
   m_Layer: 0
-  m_Name: '--------------------'
+  m_Name: '----------Environment----------'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3259,7 +3261,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1453035243}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
