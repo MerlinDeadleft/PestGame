@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 	/********************hiding variables**********************/
 	[Header("Hiding")]
 	bool isHiding = false;
-	GameObject hidingObject = null;
+	HidingObjectController hidingObject = null;
 
 
 
@@ -77,9 +77,15 @@ public class PlayerController : MonoBehaviour
 	void Update ()
 	{
 		HandleMovement();
+
+		if(player.GetButtonDown(Action.CharacterControl.Interact))
+		{
+			HandleInteraction();
+		}
 	}
 
 	#region movement methods
+
 	/*********************HandleMovement***********************/
 	void HandleMovement()
 	{
@@ -113,6 +119,7 @@ public class PlayerController : MonoBehaviour
 		{
 			//get forward and right vector, project onto horizontal plane to cancel out camera tilt
 			//normalize to use as vectors for x and z movement direction vectors
+			//Up input will move character away from camera, down towards, etc...
 			Vector3 forwardVector = Vector3.Normalize(Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up));
 			Vector3 rightVector = Vector3.Normalize(Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up));
 
@@ -277,7 +284,16 @@ public class PlayerController : MonoBehaviour
 	/********************HandleInteraction*********************/
 	void HandleInteraction()
 	{
-		//XXXXXXXXXX_________DO SOMETHING_________XXXXXXXXXX//
+		if(hidingObject != null)
+		{
+			HandleHiding();
+		}
+	}
+
+	/**********************HandleHiding************************/
+	void HandleHiding()
+	{
+
 	}
 
 	/*********************HandleBlocking***********************/
@@ -329,7 +345,7 @@ public class PlayerController : MonoBehaviour
 
 		if(other.tag == "Hiding Place")
 		{
-			hidingObject = other.gameObject;
+			hidingObject = other.gameObject.GetComponent<HidingObjectController>();
 		}
 	}
 
