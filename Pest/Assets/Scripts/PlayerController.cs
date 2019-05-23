@@ -6,8 +6,23 @@ using RewiredConsts;
 
 public class PlayerController : MonoBehaviour
 {
+	/*********************************************************/
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	/*						Variables						 */
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	/*********************************************************/
+
+	/********************General variables********************/
 	CharacterController charController = null;
 	Rewired.Player player = null;
+
+	/******************health system variables*****************/
+	[Header("Health System")]
+	[SerializeField] int maxHitPoints = 3;
+	/// <summary>
+	/// current hit points of the chracter
+	/// </summary>
+	public int HitPoints { get; set; }
 
 	/********************movement variables********************/
 	[Header("Movement")]
@@ -30,24 +45,49 @@ public class PlayerController : MonoBehaviour
 
 	Vector3 moveDirection = Vector3.zero;
 
-	/********************physics variables********************/
+	/********************physics variables*********************/
 	[Header("Physics")]
 	[SerializeField] float gravityMultiplier = 4.0f;
 
-	/********************hiding variables********************/
+	/********************hiding variables**********************/
 	[Header("Hiding")]
 	bool isHiding = false;
-	GameObject hidingObject = null;
+	HidingObjectController hidingObject = null;
 
+
+
+	/*********************************************************/
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	/*						Methods							 */
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	/*********************************************************/
+
+	/**************************Start***************************/
 	// Use this for initialization
 	void Start ()
 	{
 		charController = GetComponent<CharacterController>();
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
+
+		HitPoints = maxHitPoints;
 	}
-	
+
+	/*************************Update***************************/
 	// Update is called once per frame
 	void Update ()
+	{
+		HandleMovement();
+
+		if(player.GetButtonDown(Action.CharacterControl.Interact))
+		{
+			HandleInteraction();
+		}
+	}
+
+	#region movement methods
+
+	/*********************HandleMovement***********************/
+	void HandleMovement()
 	{
 		if(isClimbing)
 		{
@@ -55,7 +95,7 @@ public class PlayerController : MonoBehaviour
 		}
 		else if(!isHiding)
 		{
-			HandleMovement();
+			HandleMoving();
 		}
 
 		if(player.GetButtonDown(Action.CharacterControl.Interact))
@@ -72,12 +112,14 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	void HandleMovement()
+	/**********************HandleMoving************************/
+	void HandleMoving()
 	{
 		if(charController.isGrounded) //Character is grounded calculate movement from input
 		{
 			//get forward and right vector, project onto horizontal plane to cancel out camera tilt
 			//normalize to use as vectors for x and z movement direction vectors
+			//Up input will move character away from camera, down towards, etc...
 			Vector3 forwardVector = Vector3.Normalize(Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up));
 			Vector3 rightVector = Vector3.Normalize(Vector3.ProjectOnPlane(Camera.main.transform.right, Vector3.up));
 
@@ -144,6 +186,7 @@ public class PlayerController : MonoBehaviour
 		charController.Move(moveDirection * Time.deltaTime);
 	}
 
+	/**********************HandleClimbing**********************/
 	void HandleClimbing()
 	{
 		if(isClimbing)
@@ -211,7 +254,7 @@ public class PlayerController : MonoBehaviour
 			Vector3 distanceCalculationPosition = Vector3.zero;
 
 			RaycastHit hit;
-			if(Physics.Raycast(positionWithClimbableHeight, directionToMove, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore))
+			if(Physics.Raycast(positionWithClimbableHeight, directionToMove, out hit, float.MaxValue, ~0, QueryTriggerInteraction.Ignore)) //~0 -> raycast shall hit every layer
 			{
 				distanceCalculationPosition = hit.point;
 			}
@@ -236,24 +279,40 @@ public class PlayerController : MonoBehaviour
 			hasJumped = false;
 		}
 	}
+	#endregion
 
+	/********************HandleInteraction*********************/
 	void HandleInteraction()
 	{
-		//XXXXXXXXXX_________DO SOMETHING_________XXXXXXXXXX//
+		if(hidingObject != null)
+		{
+			HandleHiding();
+		}
 	}
 
+	/**********************HandleHiding************************/
+	void HandleHiding()
+	{
+
+	}
+
+	/*********************HandleBlocking***********************/
 	void HandleBlocking()
 	{
 		//XXXXXXXXXX_________DO SOMETHING_________XXXXXXXXXX//
 	}
 
+	/*********************HandleAttacking**********************/
 	void HandleAttacking()
 	{
 		//XXXXXXXXXX_________DO SOMETHING_________XXXXXXXXXX//
 	}
 
+	#region Unity callbacks
+	/**********************OnTriggerEnter**********************/
 	private void OnTriggerEnter(Collider other)
 	{
+		#region climbing
 		if(other.tag == "Climbable" && isClimbing)
 		{
 			climbableObject = other.GetComponent<ClimbableObjectController>();
@@ -282,10 +341,18 @@ public class PlayerController : MonoBehaviour
 				moveTowardsClimbable = true;
 			}
 		}
+		#endregion
+
+		if(other.tag == "Hiding Place")
+		{
+			hidingObject = other.gameObject.GetComponent<HidingObjectController>();
+		}
 	}
 
+	/**********************OnTriggerExit***********************/
 	private void OnTriggerExit(Collider other)
 	{
+		#region climbing
 		if(other.tag == "Climbable" && isClimbing)
 		{
 			if(!charController.isGrounded)
@@ -302,13 +369,12 @@ public class PlayerController : MonoBehaviour
 				moveTowardsClimbable = false;
 			}
 		}
-	}
+		#endregion
 
-	private void OnTriggerStay(Collider other)
-	{
 		if(other.tag == "Hiding Place")
 		{
-			//HIDING CODE
+			hidingObject = null;
 		}
 	}
+	#endregion
 }
