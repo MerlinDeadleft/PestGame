@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 1eb620f837f39ca46a8026e2bc84a063
+guid: 84347cb5ee205d845a26dc351225b271
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: 01 - Default
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Fass_Offen_LP001
+    4300000: Wand_1x4_rechts
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
