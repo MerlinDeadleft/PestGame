@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float jumpStrenght = 11.0f;
 	bool canJump = true;
 	bool hasJumped = false;
+	bool isSneaking = false;
 
 	/********************climbing variables********************/
 	[Header("Climbing")]
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour
 	bool isHiding = false;
 	HidingObjectController hidingObject = null;
 
+	/*******************animation variables********************/
+	AnimationController animationController = null;
 
 
 	/*********************************************************/
@@ -70,6 +73,8 @@ public class PlayerController : MonoBehaviour
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
 
 		HitPoints = maxHitPoints;
+
+		animationController = GetComponent<AnimationController>();
 	}
 
 	/*************************Update***************************/
@@ -82,6 +87,20 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleInteraction();
 		}
+		else if(player.GetButtonDown(Action.CharacterControl.Block))
+		{
+			HandleBlocking();
+		}
+		else if(player.GetButtonDown(Action.CharacterControl.Attack))
+		{
+			HandleAttacking();
+		}
+
+
+		animationController.Velocity = charController.velocity.magnitude;
+		animationController.IsSneaking = isSneaking;
+		animationController.IsGrounded = charController.isGrounded;
+		animationController.IsClimbing = isClimbing;
 	}
 
 	#region movement methods
@@ -96,19 +115,6 @@ public class PlayerController : MonoBehaviour
 		else if(!isHiding)
 		{
 			HandleMoving();
-		}
-
-		if(player.GetButtonDown(Action.CharacterControl.Interact))
-		{
-			HandleInteraction();
-		}
-		else if(player.GetButtonDown(Action.CharacterControl.Block))
-		{
-			HandleBlocking();
-		}
-		else if(player.GetButtonDown(Action.CharacterControl.Attack))
-		{
-			HandleAttacking();
 		}
 	}
 
@@ -128,7 +134,7 @@ public class PlayerController : MonoBehaviour
 			forwardVector *= player.GetAxis(Action.CharacterControl.MoveVertical);
 
 			//add forward and right vector to get movement direction
-			moveDirection = forwardVector + rightVector;
+			moveDirection = Vector3.Normalize(forwardVector + rightVector);
 
 			float moveSpeed = 0.0f;
 
@@ -136,14 +142,17 @@ public class PlayerController : MonoBehaviour
 			{
 				moveSpeed = sneakSpeed;
 				canJump = false;
+				isSneaking = true;
 			}
 			else if(player.GetButton(Action.CharacterControl.Run))
 			{
 				moveSpeed = runSpeed;
+				isSneaking = false;
 			}
 			else
 			{
 				moveSpeed = walkSpeed;
+				isSneaking = false;
 			}
 
 			moveDirection *= moveSpeed;
@@ -158,6 +167,8 @@ public class PlayerController : MonoBehaviour
 				canJump = false;
 				moveDirection.y = jumpStrenght;
 				hasJumped = true;
+
+				animationController.Jump = true;
 			}
 
 			if(climbableObject != null)
@@ -209,6 +220,8 @@ public class PlayerController : MonoBehaviour
 				moveDirection = Vector3.zero;
 				moveDirection += player.GetAxis(Action.CharacterControl.MoveVertical) * transform.up;
 				moveDirection *= climbingSpeed * 0.1f; //climbing speed has to be scaled down to allow working with whole numbers in the editor
+
+				animationController.ClimbingSpeed = player.GetAxis(Action.CharacterControl.MoveVertical); //multiply animation speed by value of input (-1..0..1)
 
 				charController.Move(moveDirection);
 			}
@@ -268,7 +281,7 @@ public class PlayerController : MonoBehaviour
 			charController.Move(directionToMove * Time.deltaTime);
 		}
 
-		//if the player jumps on a climbable canJump needs to be set true otherwise next jump button press is not going to make the cahracter jump
+		//if the player jumps on a climbable canJump needs to be set true otherwise next jump button press is not going to make the character jump
 		if(!canJump)
 		{
 			canJump = true;
@@ -330,15 +343,18 @@ public class PlayerController : MonoBehaviour
 			rotateTowardsClimbable = true;
 		}
 
-		if(other.tag == "ClimbDownPosition" && !isClimbing && !hasJumped)
+		if(other.tag == "ClimbDownPosition" && !isClimbing && !hasJumped && player.GetButton(Action.CharacterControl.Sneak))
 		{
 			climbableObject = other.GetComponentInParent<ClimbableObjectController>();
 			if(climbableObject != null)
 			{
-				transform.position = climbableObject.ClimbDownPositionTransform.position;
-				isClimbing = true;
-				rotateTowardsClimbable = true;
-				moveTowardsClimbable = true;
+				if(climbableObject.ClimbDownPositionTransform)
+				{
+					transform.position = climbableObject.ClimbDownPositionTransform.position;
+					isClimbing = true;
+					rotateTowardsClimbable = true;
+					moveTowardsClimbable = true;
+				}
 			}
 		}
 		#endregion

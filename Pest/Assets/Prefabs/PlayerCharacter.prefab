@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4815593551292874}
   - component: {fileID: 143157692879380068}
   - component: {fileID: 114961850904351382}
+  - component: {fileID: 241758536}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -68,9 +69,23 @@ MonoBehaviour:
   sneakSpeed: 2
   runSpeed: 9
   turnSpeed: 5
-  jumpStrenght: 11
-  climbingSpeed: 1
+  jumpStrenght: 13
+  climbingSpeed: 0.5
   gravityMultiplier: 4
+--- !u!114 &241758536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794378824392014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf5c99652a66b14dbf2a060a4793510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 9211627517747551741}
+  longIdleTime: 5
 --- !u!1001 &9211627517740230813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78,6 +93,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4815593551292874}
     m_Modifications:
+    - target: {fileID: 100282, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
+      propertyPath: m_Name
+      value: Rat_Model
+      objectReference: {fileID: 0}
     - target: {fileID: 400282, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -122,15 +141,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100282, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
-      propertyPath: m_Name
-      value: Rat_Model
+    - target: {fileID: 9500000, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c2eb82de12e42214d8a3f2d9c490fd3e, type: 2}
+    - target: {fileID: 9500000, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
 --- !u!4 &9211627517739840263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400282, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b,
+    type: 3}
+  m_PrefabInstance: {fileID: 9211627517740230813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &9211627517747551741 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b,
     type: 3}
   m_PrefabInstance: {fileID: 9211627517740230813}
   m_PrefabAsset: {fileID: 0}
