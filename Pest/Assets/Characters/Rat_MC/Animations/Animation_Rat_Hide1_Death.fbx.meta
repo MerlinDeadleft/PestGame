@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ddcf794f942eb9445a698604ef84dbeb
+guid: 6c95b686afaa6ad4085f0121ea8a6304
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -441,7 +441,7 @@ ModelImporter:
     4300128: Rat_Anim4:Scarf_LP
     4300130: Rat_Anim4:Knife_2
     4300132: Rat_Anim4:Knife_1
-    7400000: Rat_Runcycle
+    7400000: Rat_Hide1_Death
     9500000: //RootNode
     13700000: Rat_Anim4:Arm_L_LP
     13700002: Rat_Anim4:Arm_R_LP
@@ -494,35 +494,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Rat_Runcycle
-      takeName: Rat_Runcycle
-      firstFrame: 105
-      lastFrame: 126
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

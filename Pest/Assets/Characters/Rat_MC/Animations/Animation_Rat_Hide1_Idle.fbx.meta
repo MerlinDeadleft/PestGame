@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ddcf794f942eb9445a698604ef84dbeb
+guid: d4b9ae77ec51a7240ab230fcc1da3a35
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -441,7 +441,7 @@ ModelImporter:
     4300128: Rat_Anim4:Scarf_LP
     4300130: Rat_Anim4:Knife_2
     4300132: Rat_Anim4:Knife_1
-    7400000: Rat_Runcycle
+    7400000: Rat_Hide1_Idle
     9500000: //RootNode
     13700000: Rat_Anim4:Arm_L_LP
     13700002: Rat_Anim4:Arm_R_LP
@@ -496,10 +496,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rat_Runcycle
-      takeName: Rat_Runcycle
-      firstFrame: 105
-      lastFrame: 126
+      name: Rat_Hide1_Idle
+      takeName: Rat_Hide1_Idle
+      firstFrame: 433
+      lastFrame: 480
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
