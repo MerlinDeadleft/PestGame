@@ -2497,6 +2497,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &1102969258437656418
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rat_Takedown1
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: f7f930c293be4854a837001d64d40210, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &1102970298590324120
 AnimatorState:
   serializedVersion: 5
@@ -2608,6 +2634,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 1102076102149492582}
     m_Position: {x: 1080, y: 372, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102969258437656418}
+    m_Position: {x: 672, y: 156, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 1107980866743610080}
@@ -2620,12 +2649,6 @@ AnimatorStateMachine:
   - {fileID: 1101015095015755036}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 1107980866743610080}
-    second:
-    - {fileID: 1109976404828242102}
-    - {fileID: 1109971655574438634}
-    - {fileID: 1109646809863844030}
-    - {fileID: 1109187191317329574}
   - first: {fileID: 1107908132496920906}
     second:
     - {fileID: 1109965911271349882}
@@ -2633,6 +2656,12 @@ AnimatorStateMachine:
     - {fileID: 1109647884793352296}
     - {fileID: 1109327245308762472}
     - {fileID: 1109643355899829222}
+  - first: {fileID: 1107980866743610080}
+    second:
+    - {fileID: 1109976404828242102}
+    - {fileID: 1109971655574438634}
+    - {fileID: 1109646809863844030}
+    - {fileID: 1109187191317329574}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 300, y: 156, z: 0}
   m_EntryPosition: {x: -492, y: -60, z: 0}
