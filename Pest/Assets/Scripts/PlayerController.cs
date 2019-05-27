@@ -53,10 +53,13 @@ public class PlayerController : MonoBehaviour
 	/********************hiding variables**********************/
 	[Header("Hiding")]
 	bool isHiding = false;
-	HidingObjectController hidingObject = null;
+	bool lastIsHiding = false;
+	bool startedHide = false;
+	public HidingObjectController HidingObject { get; set; } = null;
 
 	/*******************animation variables********************/
-	AnimationController animationController = null;
+	[Header("Animation")]
+	[SerializeField] PlayerAnimationController animationController = null;
 
 
 	/*********************************************************/
@@ -73,15 +76,20 @@ public class PlayerController : MonoBehaviour
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
 
 		HitPoints = maxHitPoints;
-
-		animationController = GetComponent<AnimationController>();
 	}
 
 	/*************************Update***************************/
 	// Update is called once per frame
 	void Update ()
 	{
-		HandleMovement();
+		if(isHiding)
+		{
+			HandleHiding();
+		}
+		else
+		{
+			HandleMovement();
+		}
 
 		if(player.GetButtonDown(Action.CharacterControl.Interact))
 		{
@@ -96,6 +104,8 @@ public class PlayerController : MonoBehaviour
 			HandleAttacking();
 		}
 
+
+		lastIsHiding = isHiding;
 
 		animationController.Velocity = charController.velocity.magnitude;
 		animationController.IsSneaking = isSneaking;
@@ -147,11 +157,13 @@ public class PlayerController : MonoBehaviour
 			else if(player.GetButton(Action.CharacterControl.Run))
 			{
 				moveSpeed = runSpeed;
+				canJump = true;
 				isSneaking = false;
 			}
 			else
 			{
 				moveSpeed = walkSpeed;
+				canJump = true;
 				isSneaking = false;
 			}
 
@@ -168,7 +180,7 @@ public class PlayerController : MonoBehaviour
 				moveDirection.y = jumpStrenght;
 				hasJumped = true;
 
-				animationController.Jump = true;
+				animationController.Jump();
 			}
 
 			if(climbableObject != null)
@@ -297,16 +309,53 @@ public class PlayerController : MonoBehaviour
 	/********************HandleInteraction*********************/
 	void HandleInteraction()
 	{
-		if(hidingObject != null)
+		if(HidingObject != null && lastIsHiding == isHiding)
 		{
-			HandleHiding();
+			isHiding = true;
 		}
 	}
 
 	/**********************HandleHiding************************/
 	void HandleHiding()
 	{
+		Vector3 directionToMove = HidingObject.HideAnimationStartPosition.position - transform.position;
 
+		if(directionToMove.magnitude > 0.1f)
+		{
+			charController.Move(directionToMove * walkSpeed * Time.deltaTime);
+		}
+		else
+		{
+			if(!startedHide)
+			{
+				//rotate towards hiding place based on HideAnimationStartPosition (Make sure green arrow points upwards !!!!)
+				if(Quaternion.Angle(transform.rotation, HidingObject.HideAnimationStartPosition.rotation) > 1.0f)
+				{
+					float angle = Quaternion.Angle(transform.rotation, HidingObject.HideAnimationStartPosition.rotation);
+					Quaternion newRotation = Quaternion.identity;
+					newRotation.SetLookRotation(HidingObject.HideAnimationStartPosition.forward);
+					newRotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * turnSpeed);
+					transform.rotation = newRotation;
+				}
+				else
+				{
+					animationController.HideBegin();
+					startedHide = true;
+					//charController.detectCollisions = false;
+				}
+			}
+
+			if(player.GetButtonDown(Action.CharacterControl.Interact) && isHiding)
+			{
+				if(startedHide)
+				{
+					animationController.HideEnd();
+				}
+				isHiding = false;
+				startedHide = false;
+				//charController.detectCollisions = true;
+			}
+		}
 	}
 
 	/*********************HandleBlocking***********************/
@@ -322,9 +371,9 @@ public class PlayerController : MonoBehaviour
 	}
 
 	#region Unity callbacks
-	/**********************OnTriggerEnter**********************/
-	private void OnTriggerEnter(Collider other)
-	{
+	/**********************OnTriggerEnter**********************/  //////////////////D A S  W I R D  N I E  I M  L E B E N  F U N K T I O N I E R E N//////////////////
+	private void OnTriggerEnter(Collider other)                   //////////////////        S P I E L E R  H A T   K E I N E N  T R I G G E R       //////////////////
+	{                                                             //////////////////         ! ! ! !    Ü B E R A R B E I T E N    ! ! ! !          //////////////////
 		#region climbing
 		if(other.tag == "Climbable" && isClimbing)
 		{
@@ -358,11 +407,6 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 		#endregion
-
-		if(other.tag == "Hiding Place")
-		{
-			hidingObject = other.gameObject.GetComponent<HidingObjectController>();
-		}
 	}
 
 	/**********************OnTriggerExit***********************/
@@ -386,11 +430,6 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 		#endregion
-
-		if(other.tag == "Hiding Place")
-		{
-			hidingObject = null;
-		}
 	}
 	#endregion
 }

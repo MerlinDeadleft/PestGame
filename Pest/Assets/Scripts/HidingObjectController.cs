@@ -22,6 +22,10 @@ public class HidingObjectController : MonoBehaviour
 					"\nRun \"Revalidate HidingAnimationStartPosition\" from the component's context menu.");
 			}
 		}
+		else
+		{
+			hideAnimStartPos = transform.Find("HideAnimationStartPosition");
+		}
 	}
 
 	[ContextMenu("Revalidate HidingAnimationStartPosition")]
@@ -30,11 +34,27 @@ public class HidingObjectController : MonoBehaviour
 		hideAnimStartPos = transform.Find("HideAnimationStartPosition");
 		if(hideAnimStartPos == null)
 		{
-			GameObject newChild = new GameObject("ClimbDownPosition");
+			GameObject newChild = new GameObject("HideAnimationStartPosition");
 			newChild.transform.SetPositionAndRotation(transform.position, transform.rotation);
 			newChild.transform.parent = transform;
 			newChild.transform.Translate(0.0f, 0.0f, 1.0f);
 			hideAnimStartPos = newChild.transform;
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Player")
+		{
+			other.GetComponent<PlayerController>().HidingObject = this;
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if(other.tag == "Player")
+		{
+			other.GetComponent<PlayerController>().HidingObject = null;
 		}
 	}
 }
