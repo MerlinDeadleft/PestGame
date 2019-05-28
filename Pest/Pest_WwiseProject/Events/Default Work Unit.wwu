@@ -30,6 +30,13 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{D5F993EE-074A-439A-95A8-D439AB35A5FE}" ShortID="117252557">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PEST__Ambience_WindSound_Kanalisation" ID="{5C0B801D-D17A-4FD7-A609-FC4A4128B073}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Water" ID="{B1184186-D089-43BC-8724-B7D2EDDD0232}">

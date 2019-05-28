@@ -26,11 +26,11 @@
 				</File>
 				<File Id="117394468" Language="SFX">
 					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
-					<Path>SFX/Wasser-fließend_Kanalisation_F40E9EC5.wem</Path>
+					<Path>SFX/Wasser-fließend_Kanalisation_7E3C7451.wem</Path>
 				</File>
 				<File Id="125293421" Language="SFX">
 					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
-					<Path>SFX/Wasser-fließend_Kanalisation_353B564E.wem</Path>
+					<Path>SFX/Wasser-fließend_Kanalisation_35E8D990.wem</Path>
 				</File>
 				<File Id="350291116" Language="SFX">
 					<ShortName>FireSound_Kanalisation.wav</ShortName>
@@ -46,11 +46,11 @@
 				</File>
 				<File Id="770737812" Language="SFX">
 					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
-					<Path>SFX/Wasser-fließend_Kanalisation_8BC5C3D1.wem</Path>
+					<Path>SFX/Wasser-fließend_Kanalisation_4C9844D4.wem</Path>
 				</File>
 				<File Id="849640187" Language="SFX">
 					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
-					<Path>SFX/Wasser-fließend_Kanalisation_D7F33EC9.wem</Path>
+					<Path>SFX/Wasser-fließend_Kanalisation_727FB355.wem</Path>
 				</File>
 				<File Id="1069081306" Language="SFX">
 					<ShortName>FireSound_Kanalisation.wav</ShortName>
@@ -71,6 +71,10 @@
 				<Event Id="169578072" Name="Ambience_Music_Kanalisation" ObjectPath="\Events\Default Work Unit\Ambience_Music_Kanalisation" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="535797121" Language="SFX">
+					<ShortName>PEST__Ambience_WindSound_Kanalisation.wav</ShortName>
+					<Path>SFX/PEST__Ambience_WindSound_Kanalisation_D79FB2B7.wem</Path>
+				</File>
 				<File Id="792267405" Language="SFX">
 					<ShortName>PEST__AmbienceMusic_Kanalisation.wav</ShortName>
 					<Path>SFX/PEST__AmbienceMusic_Kanalisation_D79FB2B7.wem</Path>
