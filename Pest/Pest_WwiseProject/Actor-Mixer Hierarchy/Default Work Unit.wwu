@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}" SchemaVersion="94">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}" PersistMode="Standalone">
+			<ChildrenList>
+				<RandomSequenceContainer Name="Torches_Kanalisation" ID="{956C10F2-8B5D-45C3-AC7B-C57035E8209A}" ShortID="901603208">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{A66FAE32-2209-43F0-A702-15DDB76AC4B0}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="42"/>
+											<Property Name="Min" Type="Real64" Value="-52"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Torches" ID="{CF38287E-3845-4563-9E98-F41613FD2610}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="FireSound_Kanalisation" ID="{D1727BFF-B512-4C9E-94D6-5DD9205FCE4C}" ShortID="225394791">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Torches" ID="{CF38287E-3845-4563-9E98-F41613FD2610}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="FireSound_Kanalisation" ID="{0F617A12-AFB5-4D32-9685-97B29D7BC824}" ShortID="1069081306">
+									<Language>SFX</Language>
+									<AudioFile>FireSound_Kanalisation.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="FireSound_Kanalisation" ID="{0F617A12-AFB5-4D32-9685-97B29D7BC824}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="FireSound_Kanalisation_01" ID="{F9B9737F-57CC-4E0C-AB43-86C1A6EC4E4E}" ShortID="106711721">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="FireSound_Kanalisation" ID="{369B927C-33F3-4852-8647-54D7ABF5EF6F}" ShortID="350291116">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0555555555555556"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.40277777777778"/>
+										<Property Name="TrimEnd" Type="Real64" Value="7.33333333333333"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>FireSound_Kanalisation.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="FireSound_Kanalisation" ID="{369B927C-33F3-4852-8647-54D7ABF5EF6F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="FireSound_Kanalisation_02" ID="{0498E246-C525-48C0-A84C-A693E69261FC}" ShortID="529515401">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="FireSound_Kanalisation" ID="{D56F1CDB-F9A7-46B7-A98C-5354D056810B}" ShortID="373474394">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0416666666666666"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="1.52777777777778"/>
+										<Property Name="TrimEnd" Type="Real64" Value="5.45833333333333"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>FireSound_Kanalisation.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="FireSound_Kanalisation" ID="{D56F1CDB-F9A7-46B7-A98C-5354D056810B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="FireSound_Kanalisation_03" ID="{CEB0F91F-CF57-41BC-AA88-0431C1E274E6}" ShortID="327117756">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="FireSound_Kanalisation" ID="{EB4D29E1-E283-490B-84A6-368A052C2A9D}" ShortID="374260346">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0416666666666667"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.98611111111111"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>FireSound_Kanalisation.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="FireSound_Kanalisation" ID="{EB4D29E1-E283-490B-84A6-368A052C2A9D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

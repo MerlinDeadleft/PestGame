@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5E2A3345-AB69-4874-8A5E-91ECA3A87E55}" SchemaVersion="94">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{5E2A3345-AB69-4874-8A5E-91ECA3A87E55}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Ambient_Kanalisation" ID="{DDB9972E-DA61-4FC2-A51D-9BFF10F3FCB3}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Torches" ID="{B9A22BEE-77AE-435E-8F3C-C7D972C86CF3}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

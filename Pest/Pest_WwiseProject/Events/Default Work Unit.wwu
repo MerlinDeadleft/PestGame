@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1BD63D6A-0149-4A81-B713-347404D9B333}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{1BD63D6A-0149-4A81-B713-347404D9B333}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Torches" ID="{B9A22BEE-77AE-435E-8F3C-C7D972C86CF3}">
+					<ChildrenList>
+						<Action Name="" ID="{29DEC575-FFCD-45D2-906C-9D565CF624AC}" ShortID="770441601">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Torches_Kanalisation" ID="{956C10F2-8B5D-45C3-AC7B-C57035E8209A}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
