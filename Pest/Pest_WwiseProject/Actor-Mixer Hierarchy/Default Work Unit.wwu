@@ -20,6 +20,11 @@
 							</ModifierList>
 						</Property>
 						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -177,7 +182,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-21</Value>
+								<Value>-36</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -209,7 +214,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-15</Value>
+								<Value>-35</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -246,6 +251,11 @@
 									</Modifier>
 								</ModifierInfo>
 							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -440,7 +450,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>3</Value>
+								<Value>-12</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
