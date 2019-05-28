@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 624427250026752711}
   - component: {fileID: 624427250027751431}
   - component: {fileID: 624427250016158983}
+  - component: {fileID: 4451206010300567573}
   m_Layer: 0
   m_Name: Bodenpiece_Abfluss_Kanalisation_Environment_
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624427250025559751}
-  m_LocalRotation: {x: -0.5000001, y: -0.49999988, z: -0.49999988, w: 0.5000001}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -41.505474, y: 1.0300006, z: 26.817324}
-  m_LocalScale: {x: 1.000001, y: 1.000001, z: 1.000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.00001}
 --- !u!33 &624427250026752711
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e6d639db1618434da8a0f71b3eaf01f, type: 3}
+  - {fileID: 2100000, guid: 208288653dbe1c347b11fcf613247691, type: 2}
   - {fileID: 2100002, guid: 1e6d639db1618434da8a0f71b3eaf01f, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -98,3 +99,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &4451206010300567573
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624427250025559751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 1e6d639db1618434da8a0f71b3eaf01f, type: 3}
