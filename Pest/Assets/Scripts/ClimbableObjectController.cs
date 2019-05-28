@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class ClimbableObjectController : MonoBehaviour
  {
 	Transform climbDownPosition = null;

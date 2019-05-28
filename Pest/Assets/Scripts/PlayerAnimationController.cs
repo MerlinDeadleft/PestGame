@@ -24,6 +24,7 @@ public class PlayerAnimationController : MonoBehaviour
 	int climbingSpeedHash = Animator.StringToHash("ClimbingSpeed");
 	int hideBeginHash = Animator.StringToHash("HideBegin");
 	int hideEndHash = Animator.StringToHash("HideEnd");
+	int takeDownHash = Animator.StringToHash("Takedown");
 
 	// Start is called before the first frame update
 	void Start()
@@ -70,5 +71,10 @@ public class PlayerAnimationController : MonoBehaviour
 	public void HideEnd()
 	{
 		animator.SetTrigger(hideEndHash);
+	}
+
+	public void TakeDown()
+	{
+		animator.SetTrigger(takeDownHash);
 	}
 }

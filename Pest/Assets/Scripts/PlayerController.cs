@@ -61,6 +61,10 @@ public class PlayerController : MonoBehaviour
 	[Header("Animation")]
 	[SerializeField] PlayerAnimationController animationController = null;
 
+	/*****************enemy takedown variables*****************/
+	[Header("Enemy Takedowns")]
+	public TakeDownPositionController TakeDownObject /*{ get; set; }*/ = null;
+	bool isTakingEnemyDown = false;
 
 	/*********************************************************/
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -82,14 +86,24 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if(Input.GetKeyDown(KeyCode.Alpha0))
+		{
+			UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+		}
+
 		if(isHiding)
 		{
 			HandleHiding();
+		}
+		else if(isTakingEnemyDown)
+		{
+			HandleTakeDown();
 		}
 		else
 		{
 			HandleMovement();
 		}
+
 
 		if(player.GetButtonDown(Action.CharacterControl.Interact))
 		{
@@ -367,7 +381,38 @@ public class PlayerController : MonoBehaviour
 	/*********************HandleAttacking**********************/
 	void HandleAttacking()
 	{
-		//XXXXXXXXXX_________DO SOMETHING_________XXXXXXXXXX//
+		if(TakeDownObject != null && !isTakingEnemyDown)
+		{
+			isTakingEnemyDown = true;			
+		}
+	}
+
+	void HandleTakeDown()
+	{
+		Vector3 directionToMove = TakeDownObject.TakeDownAnimationStartPosition.position - transform.position;
+
+		if(directionToMove.magnitude > 0.15f)
+		{
+			charController.Move(directionToMove * walkSpeed * Time.deltaTime);
+		}
+		else
+		{
+			//rotate towards enemy based on TakeDownAnimationStartPosition (Make sure green arrow points upwards !!!!)
+			if(Quaternion.Angle(transform.rotation, TakeDownObject.TakeDownAnimationStartPosition.rotation) > 1.0f)
+			{
+				float angle = Quaternion.Angle(transform.rotation, TakeDownObject.TakeDownAnimationStartPosition.rotation);
+				Quaternion newRotation = Quaternion.identity;
+				newRotation.SetLookRotation(TakeDownObject.TakeDownAnimationStartPosition.forward);
+				newRotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * turnSpeed);
+				transform.rotation = newRotation;
+			}
+			else
+			{
+				animationController.TakeDown();
+				TakeDownObject.Die();
+				isTakingEnemyDown = false;
+			}
+		}
 	}
 
 	#region Unity callbacks

@@ -224,7 +224,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Dead
       takeName: Schlaechter_Takedown1
-      firstFrame: 815
+      firstFrame: 813
       lastFrame: 815
       wrapMode: 0
       orientationOffsetY: 0
