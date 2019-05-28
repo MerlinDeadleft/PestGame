@@ -56,7 +56,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 6a3dd61b4901814ab713347404d9b333
     GuidInternal: 
-    m_lastTime: -8586425819304775808
+    m_lastTime: -8586425799274775808
     List:
     - name: Ambience_Music_Kanalisation
       guid: 315df5e8a305f542a67713ed161567f6
@@ -126,7 +126,5 @@ MonoBehaviour:
   - /Pest_WwiseProject
   - /Pest_WwiseProject/Events
   - /Pest_WwiseProject/Events/Default Work Unit
-  - /Pest_WwiseProject/SoundBanks
-  - /Pest_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
