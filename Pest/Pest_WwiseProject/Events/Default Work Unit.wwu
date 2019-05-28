@@ -14,6 +14,35 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Ambience_Music_Kanalisation" ID="{E8F55D31-05A3-42F5-A677-13ED161567F6}">
+					<ChildrenList>
+						<Action Name="" ID="{E92C0BD9-6E30-46C0-BE86-BFCEBBF65ACE}" ShortID="656073744">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PEST__AmbienceMusic_Kanalisation" ID="{F98B8E78-2545-4D08-8AA5-AA4EF275B0CC}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FDDE4E5B-B41F-483B-888C-FE0E7292BAA9}" ShortID="539382281">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PEST_Ambience_MetalSound_Kanalisation" ID="{E390E4B1-2839-4883-A8D6-EB8FBB743054}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Water" ID="{B1184186-D089-43BC-8724-B7D2EDDD0232}">
+					<ChildrenList>
+						<Action Name="" ID="{FE3BFEB9-3145-4C5E-ACFC-C8DA2F9C9CBF}" ShortID="616417653">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water_Kanalisation" ID="{18F3C200-EF7C-4D02-ABE6-E9553665B731}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

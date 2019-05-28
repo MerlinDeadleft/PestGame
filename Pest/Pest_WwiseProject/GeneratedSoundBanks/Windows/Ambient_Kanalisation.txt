@@ -1,9 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
 	2615352377	Torches			\Default Work Unit\Torches	
+	2654748154	Water			\Default Work Unit\Water	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	350291116	FireSound_Kanalisation_01	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\FireSound_Kanalisation_BD0040EA.wem		\Actor-Mixer Hierarchy\Default Work Unit\Torches_Kanalisation\FireSound_Kanalisation_01		946732
-	373474394	FireSound_Kanalisation_02	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\FireSound_Kanalisation_B4D7DC75.wem		\Actor-Mixer Hierarchy\Default Work Unit\Torches_Kanalisation\FireSound_Kanalisation_02		754732
-	374260346	FireSound_Kanalisation_03	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\FireSound_Kanalisation_362F069F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Torches_Kanalisation\FireSound_Kanalisation_03		765476
+	2817974	Wasser-flieﬂend_Kanalisation	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\Wasser-flieﬂend_Kanalisation_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Water_Kanalisation\Wasser-flieﬂend_Kanalisation		11400188
+	117394468	Wasser-flieﬂend_Kanalisation_04	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\Wasser-flieﬂend_Kanalisation_F40E9EC5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Water_Kanalisation\Wasser-flieﬂend_Kanalisation_04		2968824
+	125293421	Wasser-flieﬂend_Kanalisation_02	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\Wasser-flieﬂend_Kanalisation_353B564E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Water_Kanalisation\Wasser-flieﬂend_Kanalisation_02		7421968
+	350291116	FireSound_Kanalisation_01	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\FireSound_Kanalisation_6E515684.wem		\Actor-Mixer Hierarchy\Default Work Unit\Torches_Kanalisation\FireSound_Kanalisation_01		946732
+	373474394	FireSound_Kanalisation_02	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\FireSound_Kanalisation_6CCA608E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Torches_Kanalisation\FireSound_Kanalisation_02		754732
+	374260346	FireSound_Kanalisation_03	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\FireSound_Kanalisation_CAC6B295.wem		\Actor-Mixer Hierarchy\Default Work Unit\Torches_Kanalisation\FireSound_Kanalisation_03		765476
+	770737812	Wasser-flieﬂend_Kanalisation_03	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\Wasser-flieﬂend_Kanalisation_8BC5C3D1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Water_Kanalisation\Wasser-flieﬂend_Kanalisation_03		5304252
+	849640187	Wasser-flieﬂend_Kanalisation_01	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\Wasser-flieﬂend_Kanalisation_D7F33EC9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Water_Kanalisation\Wasser-flieﬂend_Kanalisation_01		8787600
 	1069081306	FireSound_Kanalisation	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Windows\SFX\FireSound_Kanalisation_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Torches_Kanalisation\FireSound_Kanalisation		1536144
 

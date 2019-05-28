@@ -17,19 +17,40 @@
 			<Path>Ambient_Kanalisation.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2615352377" Name="Torches" ObjectPath="\Events\Default Work Unit\Torches" MaxAttenuation="50.000000" DurationType="Infinite"/>
+				<Event Id="2654748154" Name="Water" ObjectPath="\Events\Default Work Unit\Water" MaxAttenuation="50.000000" DurationType="Infinite"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="2817974" Language="SFX">
+					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
+					<Path>SFX/Wasser-fließend_Kanalisation_D79FB2B7.wem</Path>
+				</File>
+				<File Id="117394468" Language="SFX">
+					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
+					<Path>SFX/Wasser-fließend_Kanalisation_F40E9EC5.wem</Path>
+				</File>
+				<File Id="125293421" Language="SFX">
+					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
+					<Path>SFX/Wasser-fließend_Kanalisation_353B564E.wem</Path>
+				</File>
 				<File Id="350291116" Language="SFX">
 					<ShortName>FireSound_Kanalisation.wav</ShortName>
-					<Path>SFX/FireSound_Kanalisation_BD0040EA.wem</Path>
+					<Path>SFX/FireSound_Kanalisation_6E515684.wem</Path>
 				</File>
 				<File Id="373474394" Language="SFX">
 					<ShortName>FireSound_Kanalisation.wav</ShortName>
-					<Path>SFX/FireSound_Kanalisation_B4D7DC75.wem</Path>
+					<Path>SFX/FireSound_Kanalisation_6CCA608E.wem</Path>
 				</File>
 				<File Id="374260346" Language="SFX">
 					<ShortName>FireSound_Kanalisation.wav</ShortName>
-					<Path>SFX/FireSound_Kanalisation_362F069F.wem</Path>
+					<Path>SFX/FireSound_Kanalisation_CAC6B295.wem</Path>
+				</File>
+				<File Id="770737812" Language="SFX">
+					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
+					<Path>SFX/Wasser-fließend_Kanalisation_8BC5C3D1.wem</Path>
+				</File>
+				<File Id="849640187" Language="SFX">
+					<ShortName>Wasser-fließend_Kanalisation.wav</ShortName>
+					<Path>SFX/Wasser-fließend_Kanalisation_D7F33EC9.wem</Path>
 				</File>
 				<File Id="1069081306" Language="SFX">
 					<ShortName>FireSound_Kanalisation.wav</ShortName>
@@ -41,6 +62,24 @@
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1921015285" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\AmbienceMusic_Kanalisation</ObjectPath>
+			<ShortName>AmbienceMusic_Kanalisation</ShortName>
+			<Path>AmbienceMusic_Kanalisation.bnk</Path>
+			<IncludedEvents>
+				<Event Id="169578072" Name="Ambience_Music_Kanalisation" ObjectPath="\Events\Default Work Unit\Ambience_Music_Kanalisation" DurationType="Infinite"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="792267405" Language="SFX">
+					<ShortName>PEST__AmbienceMusic_Kanalisation.wav</ShortName>
+					<Path>SFX/PEST__AmbienceMusic_Kanalisation_D79FB2B7.wem</Path>
+				</File>
+				<File Id="1007681661" Language="SFX">
+					<ShortName>PEST_Ambience_MetalSound_Kanalisation.wav</ShortName>
+					<Path>SFX/PEST_Ambience_MetalSound_Kanalisation_D79FB2B7.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
