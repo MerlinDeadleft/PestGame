@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5ba3f721a53c5346b1614845a310bac
+guid: eab75dc26c81216439eea7bd79227bce
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -160,7 +160,7 @@ ModelImporter:
     2100000: lambert1
     4300000: "Animation_Meele_Stealthkill_death:Der_schlanke_Schl\xE4chter_Body_016:Group1"
     4300002: "Animation_Meele_Stealthkill_death:Der_schlanke_Schl\xE4chter_Schwert_016:Object001"
-    7400000: Schlaechter_Takedown1
+    7400000: Schlaechter_Dead1
     9500000: //RootNode
     13700000: "Animation_Meele_Stealthkill_death:Der_schlanke_Schl\xE4chter_Body_016:Group1"
     13700002: "Animation_Meele_Stealthkill_death:Der_schlanke_Schl\xE4chter_Schwert_016:Object001"
