@@ -3,78 +3,13 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}" PersistMode="Standalone">
 			<ChildrenList>
-				<RandomSequenceContainer Name="Torches_Kanalisation" ID="{956C10F2-8B5D-45C3-AC7B-C57035E8209A}" ShortID="901603208">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{A66FAE32-2209-43F0-A702-15DDB76AC4B0}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="42"/>
-											<Property Name="Min" Type="Real64" Value="-52"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-12</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Torches" ID="{CF38287E-3845-4563-9E98-F41613FD2610}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-						</Reference>
-					</ReferenceList>
+				<Folder Name="Character_MC_Rat" ID="{15D54978-27FF-4CF8-AB29-959079BBC2E3}" ShortID="207146442">
 					<ChildrenList>
-						<Sound Name="FireSound_Kanalisation" ID="{D1727BFF-B512-4C9E-94D6-5DD9205FCE4C}" ShortID="225394791">
+						<SwitchContainer Name="Footsteps" ID="{7F317F8F-E465-4FE9-9E04-381A06634627}" ShortID="828839906">
 							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-13</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="Torches" ID="{CF38287E-3845-4563-9E98-F41613FD2610}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="FireSound_Kanalisation" ID="{0F617A12-AFB5-4D32-9685-97B29D7BC824}" ShortID="1069081306">
-									<Language>SFX</Language>
-									<AudioFile>FireSound_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="FireSound_Kanalisation" ID="{0F617A12-AFB5-4D32-9685-97B29D7BC824}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="FireSound_Kanalisation_01" ID="{F9B9737F-57CC-4E0C-AB43-86C1A6EC4E4E}" ShortID="106711721">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-12</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -82,399 +17,906 @@
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
 								</Reference>
+								<Reference Name="DefaultSwitchOrState">
+									<ObjectRef Name="Stone" ID="{481DBD55-60DB-418B-9364-02EAE96B97A0}" WorkUnitID="{413A86EF-901E-4E05-988C-1CEF1B0A2089}"/>
+								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
 								</Reference>
+								<Reference Name="SwitchGroupOrStateGroup">
+									<ObjectRef Name="Footsteps" ID="{E77782B1-5B69-4FBD-AE67-397464D11995}" WorkUnitID="{413A86EF-901E-4E05-988C-1CEF1B0A2089}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="FireSound_Kanalisation" ID="{369B927C-33F3-4852-8647-54D7ABF5EF6F}" ShortID="350291116">
+								<RandomSequenceContainer Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}" ShortID="48921649">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.0555555555555556"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="2.40277777777778"/>
-										<Property Name="TrimEnd" Type="Real64" Value="7.33333333333333"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{0A06166D-CA25-4639-BFC1-DB63F341A0C9}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>FireSound_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="FireSound_Kanalisation" ID="{369B927C-33F3-4852-8647-54D7ABF5EF6F}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="FireSound_Kanalisation_02" ID="{0498E246-C525-48C0-A84C-A693E69261FC}" ShortID="529515401">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-13</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="FireSound_Kanalisation" ID="{D56F1CDB-F9A7-46B7-A98C-5354D056810B}" ShortID="373474394">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}" ShortID="1068819944">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.0416666666666666"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="1.52777777777778"/>
-										<Property Name="TrimEnd" Type="Real64" Value="5.45833333333333"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{8D480BB5-427A-42C0-9BB6-52479B1C3BE3}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="200"/>
+															<Property Name="Min" Type="Real64" Value="-200"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-28</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>FireSound_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="FireSound_Kanalisation" ID="{D56F1CDB-F9A7-46B7-A98C-5354D056810B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="FireSound_Kanalisation_03" ID="{CEB0F91F-CF57-41BC-AA88-0431C1E274E6}" ShortID="327117756">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-12</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="FireSound_Kanalisation" ID="{EB4D29E1-E283-490B-84A6-368A052C2A9D}" ShortID="374260346">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{2B5A1C53-4207-4268-A7D1-31F5E078E519}" ShortID="628607075">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{C4BF2677-2CEE-4EF2-ADF5-4D5D41D0DC24}" ShortID="1009376919">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_1.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{C4BF2677-2CEE-4EF2-ADF5-4D5D41D0DC24}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{C03203F5-B159-4755-A04B-9EFB9ACA6081}" ShortID="770384395">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{FAA2E5A7-ADBB-4B74-82F3-E5C91E82B659}" ShortID="870448471">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_2.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{FAA2E5A7-ADBB-4B74-82F3-E5C91E82B659}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{31D75385-78B1-4CD4-BC77-10DD8B3D2A28}" ShortID="538221099">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{83AB8645-2BDA-4B44-94CB-1A6EE117F20A}" ShortID="181238028">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_3.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{83AB8645-2BDA-4B44-94CB-1A6EE117F20A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{25259EE6-66C7-4F65-B177-FA7B8D8E65F3}" ShortID="233440198">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{2892F063-191A-45BC-AA69-F36967C03D0C}" ShortID="128898507">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_4.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{2892F063-191A-45BC-AA69-F36967C03D0C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{6AFE3EBA-F221-48D6-B8E8-0925DF62B4CD}" ShortID="375223909">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{544DF370-C296-4DA3-8DE3-A980D4CB6EAC}" ShortID="1002743008">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_5.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{544DF370-C296-4DA3-8DE3-A980D4CB6EAC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}" ShortID="471406146">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.0416666666666667"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="3.98611111111111"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{5BA6565B-9874-4FF6-9D21-ACE1EB8A2622}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="150"/>
+															<Property Name="Min" Type="Real64" Value="-150"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-25</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>FireSound_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SPLASH_Small_01_mono" ID="{51737E3C-23D8-4464-9F6C-88F873C8B2E8}" ShortID="438138903">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SPLASH_Small_01_mono" ID="{54091007-F67B-4466-831B-326F3FF73D35}" ShortID="617559999">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_01_mono.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SPLASH_Small_01_mono" ID="{54091007-F67B-4466-831B-326F3FF73D35}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SPLASH_Small_02_mono" ID="{584F617F-BD36-4403-B09E-3986FD0B0C7C}" ShortID="44460049">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SPLASH_Small_02_mono" ID="{811E6978-1BD1-48F1-9505-3248449A2BE0}" ShortID="501850147">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_02_mono.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SPLASH_Small_02_mono" ID="{811E6978-1BD1-48F1-9505-3248449A2BE0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SPLASH_Small_03_mono" ID="{FA8AE6F8-F9B6-4DDD-8780-7893697F4560}" ShortID="385283215">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SPLASH_Small_03_mono" ID="{8689A9F3-C7D1-4687-988B-8A3799717008}" ShortID="752396951">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_03_mono.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SPLASH_Small_03_mono" ID="{8689A9F3-C7D1-4687-988B-8A3799717008}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SPLASH_Small_04_mono" ID="{91872E42-0DAD-44D6-8FBE-55B43818526E}" ShortID="254267011">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SPLASH_Small_04_mono" ID="{F558A889-1952-4A63-81D8-D6CD0A0553FC}" ShortID="861822625">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_04_mono.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SPLASH_Small_04_mono" ID="{F558A889-1952-4A63-81D8-D6CD0A0553FC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SPLASH_Small_05_mono" ID="{D06800B0-0F71-4510-9281-FEB49B4F6AE7}" ShortID="1052060925">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SPLASH_Small_05_mono" ID="{AC468B59-ADA0-4FD9-9A0C-6BE0899C9ACA}" ShortID="945687098">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_05_mono.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SPLASH_Small_05_mono" ID="{AC468B59-ADA0-4FD9-9A0C-6BE0899C9ACA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SPLASH_Subtle_mono" ID="{4EA4EC19-C4AB-4553-9676-8187342CB776}" ShortID="663051335">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SPLASH_Subtle_mono" ID="{CDCEF2A3-0900-40DF-A40F-71C82773F512}" ShortID="400334130">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Water_Splash\SPLASH_Subtle_mono.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SPLASH_Subtle_mono" ID="{CDCEF2A3-0900-40DF-A40F-71C82773F512}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}" ShortID="169504301">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{F4A3CC0A-4EF8-40C7-9132-EB728C20C5A0}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="150"/>
+															<Property Name="Min" Type="Real64" Value="-150"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-23</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{0000E516-3DA7-4356-B09D-D3CDA7909576}" ShortID="642254285">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{B59FFEF4-EF69-4EDC-A3B8-C39EEAAB774A}" ShortID="954653016">
+													<Language>SFX</Language>
+													<AudioFile>Footsteps\Water_Step\PEST_FOOTSTEP_MC_Rat_WaterStep.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{B59FFEF4-EF69-4EDC-A3B8-C39EEAAB774A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}" ShortID="443942522">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
 							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="FireSound_Kanalisation" ID="{EB4D29E1-E283-490B-84A6-368A052C2A9D}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Stone" ID="{481DBD55-60DB-418B-9364-02EAE96B97A0}"/>
+										<ItemList>
+											<ItemRef Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Metal" ID="{D7F380C8-F188-431A-8ADE-2EE80DD0E01A}"/>
+										<ItemList>
+											<ItemRef Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Water" ID="{38E777DB-6FDF-4570-B5B5-AFC414360E4E}"/>
+										<ItemList>
+											<ItemRef Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}"/>
+											<ItemRef Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Wood" ID="{5CCFB0E9-DCD2-4D2B-9FA2-CE21F04F0054}"/>
+										<ItemList>
+											<ItemRef Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
+						</SwitchContainer>
 					</ChildrenList>
-				</RandomSequenceContainer>
-				<Sound Name="PEST_Ambience_MetalSound_Kanalisation" ID="{E390E4B1-2839-4883-A8D6-EB8FBB743054}" ShortID="422148297">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>10</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-36</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-						</Reference>
-					</ReferenceList>
+				</Folder>
+				<Folder Name="Ambience_Kanalisation" ID="{890501A8-FD90-4611-8534-A6DAF4BFAA50}" ShortID="792411735">
 					<ChildrenList>
-						<AudioFileSource Name="PEST_Ambience_MetalSound_Kanalisation" ID="{CD1DA655-7F81-4A16-9ADE-0A162EF89D23}" ShortID="1007681661">
-							<Language>SFX</Language>
-							<AudioFile>PEST_Ambience_MetalSound_Kanalisation.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="PEST_Ambience_MetalSound_Kanalisation" ID="{CD1DA655-7F81-4A16-9ADE-0A162EF89D23}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="PEST__AmbienceMusic_Kanalisation" ID="{F98B8E78-2545-4D08-8AA5-AA4EF275B0CC}" ShortID="651624815">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>10</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-35</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="PEST__AmbienceMusic_Kanalisation" ID="{348159BF-1266-44C4-B81D-B44B64936252}" ShortID="792267405">
-							<Language>SFX</Language>
-							<AudioFile>PEST__AmbienceMusic_Kanalisation.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="PEST__AmbienceMusic_Kanalisation" ID="{348159BF-1266-44C4-B81D-B44B64936252}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<RandomSequenceContainer Name="Water_Kanalisation" ID="{18F3C200-EF7C-4D02-ABE6-E9553665B731}" ShortID="439886600">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{31708250-0064-42C6-94AB-D57E4FBD6A53}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="76"/>
-											<Property Name="Min" Type="Real64" Value="-66"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-14</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Water" ID="{7B125857-41CD-406B-8D09-17FDAC7C4D5C}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="Wasser-fließend_Kanalisation" ID="{790C61B9-A627-4A73-A118-E465F3FA41D9}" ShortID="649701631">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="20"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-10</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="Water" ID="{7B125857-41CD-406B-8D09-17FDAC7C4D5C}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-							</ReferenceList>
+						<Folder Name="Ambience Music" ID="{84F5F732-047C-4152-A1AC-C8DD5B62244C}" ShortID="807988334">
 							<ChildrenList>
-								<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{4893CEAC-E3C9-48ED-B890-5D5EDB35ADAD}" ShortID="2817974">
-									<Language>SFX</Language>
-									<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{4893CEAC-E3C9-48ED-B890-5D5EDB35ADAD}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Wasser-fließend_Kanalisation_01" ID="{B195D2D3-7A58-4C6E-8B08-0C270071C107}" ShortID="234527751">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-12</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{0D00F294-5D25-4E96-9D30-F32BF444BAC4}" ShortID="849640187">
+								<Sound Name="PEST__Ambience_WindSound_Kanalisation" ID="{5C0B801D-D17A-4FD7-A609-FC4A4128B073}" ShortID="533753136">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.515409975405092"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.309245985243052"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="7.62806763599537"/>
-										<Property Name="TrimEnd" Type="Real64" Value="53.3964734519676"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-12</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{0D00F294-5D25-4E96-9D30-F32BF444BAC4}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Wasser-fließend_Kanalisation_02" ID="{8D934D11-1F9A-4DA9-85D6-5B972F53D86F}" ShortID="274560728">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-11</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{ED369173-CF04-4D49-BD4C-9731851C847B}" ShortID="125293421">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+											<ObjectRef Name="Hall_Small" ID="{D65B5F04-B83B-412C-9434-34A13A477E24}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PEST__Ambience_WindSound_Kanalisation" ID="{FAFDE1E9-7BA7-4398-8C22-39415066E6DF}" ShortID="535797121">
+											<Language>SFX</Language>
+											<AudioFile>PEST__Ambience_WindSound_Kanalisation.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PEST__Ambience_WindSound_Kanalisation" ID="{FAFDE1E9-7BA7-4398-8C22-39415066E6DF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PEST__AmbienceMusic_Kanalisation" ID="{F98B8E78-2545-4D08-8AA5-AA4EF275B0CC}" ShortID="651624815">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.309245985243056"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.412327980324072"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="5.15409975405093"/>
-										<Property Name="TrimEnd" Type="Real64" Value="43.8098479094329"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-35</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{ED369173-CF04-4D49-BD4C-9731851C847B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Wasser-fließend_Kanalisation_03" ID="{397A88D7-0506-4F1C-86CB-80D1605B035D}" ShortID="936844484">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-12</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{56823A0F-45AB-490D-9FFF-FB423C3E7E4E}" ShortID="770737812">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PEST__AmbienceMusic_Kanalisation" ID="{348159BF-1266-44C4-B81D-B44B64936252}" ShortID="792267405">
+											<Language>SFX</Language>
+											<AudioFile>PEST__AmbienceMusic_Kanalisation.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PEST__AmbienceMusic_Kanalisation" ID="{348159BF-1266-44C4-B81D-B44B64936252}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PEST_Ambience_MetalSound_Kanalisation" ID="{E390E4B1-2839-4883-A8D6-EB8FBB743054}" ShortID="422148297">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.824655960648148"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.309245985243056"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="4.12327980324074"/>
-										<Property Name="TrimEnd" Type="Real64" Value="31.7492544849537"/>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-36</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PEST_Ambience_MetalSound_Kanalisation" ID="{CD1DA655-7F81-4A16-9ADE-0A162EF89D23}" ShortID="1007681661">
+											<Language>SFX</Language>
+											<AudioFile>PEST_Ambience_MetalSound_Kanalisation.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PEST_Ambience_MetalSound_Kanalisation" ID="{CD1DA655-7F81-4A16-9ADE-0A162EF89D23}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{56823A0F-45AB-490D-9FFF-FB423C3E7E4E}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Wasser-fließend_Kanalisation_04" ID="{52B34A92-9245-4D5C-9B42-A31F3CB1E92B}" ShortID="513719047">
-							<PropertyList>
-								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-11</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-							</ReferenceList>
+						</Folder>
+						<Folder Name="Ambience Sounds" ID="{91FBA06C-8333-4FF3-8CAD-812C510AE73B}" ShortID="284387694">
 							<ChildrenList>
-								<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{E226B351-0915-4EED-83DD-881195C8EA20}" ShortID="117394468">
+								<RandomSequenceContainer Name="Torches_Kanalisation" ID="{956C10F2-8B5D-45C3-AC7B-C57035E8209A}" ShortID="901603208">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.412327980324076"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.103081995081016"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="22.5749569227431"/>
-										<Property Name="TrimEnd" Type="Real64" Value="38.0372561848958"/>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{A66FAE32-2209-43F0-A702-15DDB76AC4B0}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="42"/>
+															<Property Name="Min" Type="Real64" Value="-52"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="50"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-12</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
-								</AudioFileSource>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Torches" ID="{CF38287E-3845-4563-9E98-F41613FD2610}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="FireSound_Kanalisation" ID="{D1727BFF-B512-4C9E-94D6-5DD9205FCE4C}" ShortID="225394791">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-13</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Torches" ID="{CF38287E-3845-4563-9E98-F41613FD2610}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FireSound_Kanalisation" ID="{0F617A12-AFB5-4D32-9685-97B29D7BC824}" ShortID="1069081306">
+													<Language>SFX</Language>
+													<AudioFile>FireSound_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FireSound_Kanalisation" ID="{0F617A12-AFB5-4D32-9685-97B29D7BC824}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="FireSound_Kanalisation_01" ID="{F9B9737F-57CC-4E0C-AB43-86C1A6EC4E4E}" ShortID="106711721">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FireSound_Kanalisation" ID="{369B927C-33F3-4852-8647-54D7ABF5EF6F}" ShortID="350291116">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0555555555555556"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.40277777777778"/>
+														<Property Name="TrimEnd" Type="Real64" Value="7.33333333333333"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>FireSound_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FireSound_Kanalisation" ID="{369B927C-33F3-4852-8647-54D7ABF5EF6F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="FireSound_Kanalisation_02" ID="{0498E246-C525-48C0-A84C-A693E69261FC}" ShortID="529515401">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-13</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FireSound_Kanalisation" ID="{D56F1CDB-F9A7-46B7-A98C-5354D056810B}" ShortID="373474394">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0416666666666666"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.52777777777778"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.45833333333333"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>FireSound_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FireSound_Kanalisation" ID="{D56F1CDB-F9A7-46B7-A98C-5354D056810B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="FireSound_Kanalisation_03" ID="{CEB0F91F-CF57-41BC-AA88-0431C1E274E6}" ShortID="327117756">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FireSound_Kanalisation" ID="{EB4D29E1-E283-490B-84A6-368A052C2A9D}" ShortID="374260346">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0416666666666667"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0277777777777777"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.98611111111111"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>FireSound_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FireSound_Kanalisation" ID="{EB4D29E1-E283-490B-84A6-368A052C2A9D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Water_Kanalisation" ID="{18F3C200-EF7C-4D02-ABE6-E9553665B731}" ShortID="439886600">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{31708250-0064-42C6-94AB-D57E4FBD6A53}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="76"/>
+															<Property Name="Min" Type="Real64" Value="-66"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-14</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Attenuation">
+											<ObjectRef Name="Water" ID="{7B125857-41CD-406B-8D09-17FDAC7C4D5C}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
+										</Reference>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Wasser-fließend_Kanalisation" ID="{790C61B9-A627-4A73-A118-E465F3FA41D9}" ShortID="649701631">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="1"/>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="20"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Water" ID="{7B125857-41CD-406B-8D09-17FDAC7C4D5C}" WorkUnitID="{A2B62BD9-5E02-452A-9AF6-EFD32617140E}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{4893CEAC-E3C9-48ED-B890-5D5EDB35ADAD}" ShortID="2817974">
+													<Language>SFX</Language>
+													<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{4893CEAC-E3C9-48ED-B890-5D5EDB35ADAD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Wasser-fließend_Kanalisation_01" ID="{B195D2D3-7A58-4C6E-8B08-0C270071C107}" ShortID="234527751">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{0D00F294-5D25-4E96-9D30-F32BF444BAC4}" ShortID="849640187">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.515409975405092"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.309245985243052"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="7.62806763599537"/>
+														<Property Name="TrimEnd" Type="Real64" Value="53.3964734519676"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{0D00F294-5D25-4E96-9D30-F32BF444BAC4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Wasser-fließend_Kanalisation_02" ID="{8D934D11-1F9A-4DA9-85D6-5B972F53D86F}" ShortID="274560728">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-11</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{ED369173-CF04-4D49-BD4C-9731851C847B}" ShortID="125293421">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.309245985243056"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.412327980324072"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.15409975405093"/>
+														<Property Name="TrimEnd" Type="Real64" Value="43.8098479094329"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{ED369173-CF04-4D49-BD4C-9731851C847B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Wasser-fließend_Kanalisation_03" ID="{397A88D7-0506-4F1C-86CB-80D1605B035D}" ShortID="936844484">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{56823A0F-45AB-490D-9FFF-FB423C3E7E4E}" ShortID="770737812">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.824655960648148"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.309245985243056"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.12327980324074"/>
+														<Property Name="TrimEnd" Type="Real64" Value="31.7492544849537"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{56823A0F-45AB-490D-9FFF-FB423C3E7E4E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Wasser-fließend_Kanalisation_04" ID="{52B34A92-9245-4D5C-9B42-A31F3CB1E92B}" ShortID="513719047">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-11</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Wasser-fließend_Kanalisation" ID="{E226B351-0915-4EED-83DD-881195C8EA20}" ShortID="117394468">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.412327980324076"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.103081995081016"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="22.5749569227431"/>
+														<Property Name="TrimEnd" Type="Real64" Value="38.0372561848958"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Wasser-fließend_Kanalisation.wav</AudioFile>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{E226B351-0915-4EED-83DD-881195C8EA20}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Wasser-fließend_Kanalisation" ID="{E226B351-0915-4EED-83DD-881195C8EA20}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
+						</Folder>
 					</ChildrenList>
-				</RandomSequenceContainer>
-				<Sound Name="PEST__Ambience_WindSound_Kanalisation" ID="{5C0B801D-D17A-4FD7-A609-FC4A4128B073}" ShortID="533753136">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Lowpass" Type="int16">
-							<ValueList>
-								<Value>10</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-12</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-						</Reference>
-						<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
-							<ObjectRef Name="Hall_Small" ID="{D65B5F04-B83B-412C-9434-34A13A477E24}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="PEST__Ambience_WindSound_Kanalisation" ID="{FAFDE1E9-7BA7-4398-8C22-39415066E6DF}" ShortID="535797121">
-							<Language>SFX</Language>
-							<AudioFile>PEST__Ambience_WindSound_Kanalisation.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="PEST__Ambience_WindSound_Kanalisation" ID="{FAFDE1E9-7BA7-4398-8C22-39415066E6DF}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

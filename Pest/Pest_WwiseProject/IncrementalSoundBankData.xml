@@ -3,28 +3,30 @@
 	<Platform GUID="{15E958D0-8DDE-42D3-B96D-A2DBB9786164}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="AmbienceMusic_Kanalisation" Hash="3776226589" Timestamp="1559054088"/>
-				<File Name="Ambient_Kanalisation" Hash="3193547314" Timestamp="1559054087"/>
-				<File Name="Init" Hash="399428863" Timestamp="1559026990"/>
+				<File Name="AmbienceMusic_Kanalisation" Hash="1666949653" Timestamp="1559087520"/>
+				<File Name="Ambient_Kanalisation" Hash="586671951" Timestamp="1559087520"/>
+				<File Name="Character_MC_Rat" Hash="2218624626" Timestamp="1559087520"/>
+				<File Name="Init" Hash="399428863" Timestamp="1559087520"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="229609337" Timestamp="1559054088"/>
+				<File Name="" Hash="263751706" Timestamp="1559087520"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
 	<Platform GUID="{0F30949B-0136-4960-9764-5833A2B74FCB}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="AmbienceMusic_Kanalisation" Hash="3776226589" Timestamp="1559054088"/>
-				<File Name="Ambient_Kanalisation" Hash="3193547314" Timestamp="1559054088"/>
-				<File Name="Init" Hash="2647710745" Timestamp="1559026991"/>
+				<File Name="AmbienceMusic_Kanalisation" Hash="1666949653" Timestamp="1559087522"/>
+				<File Name="Ambient_Kanalisation" Hash="586671951" Timestamp="1559087522"/>
+				<File Name="Character_MC_Rat" Hash="2218624626" Timestamp="1559087522"/>
+				<File Name="Init" Hash="2647710745" Timestamp="1559087522"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="2587311535" Timestamp="1559054088"/>
+				<File Name="" Hash="3103140152" Timestamp="1559087522"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

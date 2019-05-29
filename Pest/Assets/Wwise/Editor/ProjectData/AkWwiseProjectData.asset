@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 39efc11e430757408bf88ef6dd32fa6f
     GuidInternal: 
-    m_lastTime: -8586425937764775808
+    m_lastTime: -8586425248294775808
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7db3570ec9665743abcad4d57d2d8cb7
     GuidInternal: 
-    m_lastTime: -8586425937764775808
+    m_lastTime: -8586425248324775808
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 45332a5e69ab74488a5e91eca3a87e55
     GuidInternal: 
-    m_lastTime: -8586425827304775808
+    m_lastTime: -8586425193684775808
     List:
     - name: AmbienceMusic_Kanalisation
       guid: 0876bb2f5d1b3e4890b8fb5b81e207aa
@@ -51,12 +51,21 @@ MonoBehaviour:
       - ElementName: Ambient_Kanalisation
         ObjectType: 7
       Path: Default Work Unit/Ambient_Kanalisation
+    - name: Character_MC_Rat
+      guid: eda1a3764a37a245b5b63065d216c56a
+      id: 3283972205
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 7
+      Path: Default Work Unit/Character_MC_Rat
   EventWwu:
   - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 6a3dd61b4901814ab713347404d9b333
     GuidInternal: 
-    m_lastTime: -8586425799274775808
+    m_lastTime: -8586425193684775808
     List:
     - name: Ambience_Music_Kanalisation
       guid: 315df5e8a305f542a67713ed161567f6
@@ -70,6 +79,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Footstep_MC_Rat
+      guid: 832eccfa24e1fe49afc5095d16428a06
+      id: 2871201794
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Footstep_MC_Rat
+        ObjectType: 3
+      Path: Default Work Unit/Footstep_MC_Rat
+      maxAttenuation: 0
+      maxDuration: 2.934356
+      minDuration: 0
     - name: Torches
       guid: ee2ba2b9ae775e438f3cc7d972c86cf3
       id: 2615352377
@@ -99,32 +120,71 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a6b6eea43e92b645922b03a27a80f28c
     GuidInternal: 
-    m_lastTime: -8586425937764775808
+    m_lastTime: -8586425248344775808
     List: []
   StateWwu:
   - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 9a82f860d8063540b2fa85ee3332f16e
     GuidInternal: 
-    m_lastTime: -8586425937764775808
+    m_lastTime: -8586425248294775808
     List: []
   SwitchWwu:
   - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ef863a411e90054e988c1cef1b0a2089
     GuidInternal: 
-    m_lastTime: -8586425937764775808
-    List: []
+    m_lastTime: -8586425193684775808
+    List:
+    - name: Footsteps
+      guid: b18277e7695bbd4fae67397464d11995
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 11
+      Path: Default Work Unit/Character_MC_Rat/Footsteps
+      values:
+      - name: Metal
+        guid: c880f3d788f11a438ade2ee80dd0e01a
+        id: 2473969246
+        PathAndIcons:
+        - ElementName: Metal
+          ObjectType: 10
+      - name: Stone
+        guid: 55bd1d48db608b41936402eae96b97a0
+        id: 1216965916
+        PathAndIcons:
+        - ElementName: Stone
+          ObjectType: 10
+      - name: Water
+        guid: db77e738df6f7045b5b5afc414360e4e
+        id: 2654748154
+        PathAndIcons:
+        - ElementName: Water
+          ObjectType: 10
+      - name: Wood
+        guid: e9b0cf5cd2dc2b4d9fa2ce21f04f0054
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: Wood
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: fa4ab9f12278a94eb2ebc0cedbc638c7
     GuidInternal: 
-    m_lastTime: -8586425937764775808
+    m_lastTime: -8586425248294775808
     List: []
   ExpandedItems:
   - /Pest_WwiseProject
-  - /Pest_WwiseProject/Events
-  - /Pest_WwiseProject/Events/Default Work Unit
+  - /Pest_WwiseProject/SoundBanks
+  - /Pest_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
