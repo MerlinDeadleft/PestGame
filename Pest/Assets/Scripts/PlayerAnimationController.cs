@@ -14,6 +14,9 @@ public class PlayerAnimationController : MonoBehaviour
 	[SerializeField] float longIdleTime = 0.0f;
 	float idleTimer = 0.0f;
 
+	[Header("Sound Stuff")]
+	[SerializeField] PlayerSoundController soundController = null;
+
 	/********************animation hashes**********************/
 	int velocityHash = Animator.StringToHash("Velocity");
 	int longIdleHash = Animator.StringToHash("IsIdlingLong");
@@ -61,6 +64,8 @@ public class PlayerAnimationController : MonoBehaviour
 	{
 		animator.SetTrigger(jumpHash);
 		idleTimer = 0.0f;
+
+		soundController.Jump();
 	}
 
 	public void HideBegin()
