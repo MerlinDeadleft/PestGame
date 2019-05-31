@@ -18,6 +18,13 @@
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
+				<SoundBank Name="Character_MC_Rat" ID="{76A3A1ED-374A-45A2-B5B6-3065D216C56A}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Footstep_MC_Rat" ID="{FACC2E83-E124-49FE-AFC5-095D16428A06}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundBanks>

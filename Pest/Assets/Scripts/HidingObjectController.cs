@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class HidingObjectController : MonoBehaviour
  {
 	Transform hideAnimStartPos = null;

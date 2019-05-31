@@ -1,0 +1,26 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2871201794	Footstep_MC_Rat			\Default Work Unit\Footstep_MC_Rat	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Character_MC_Rat\Footsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	1216965916	Stone	Footsteps			
+	2058049674	Wood	Footsteps			
+	2473969246	Metal	Footsteps			
+	2654748154	Water	Footsteps			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	128898507	PEST_FOOTSTEP_MC_Rat_StoneStep_4	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_4		112672
+	181238028	PEST_FOOTSTEP_MC_Rat_StoneStep_3	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_3		115328
+	400334130	SPLASH_Subtle_mono	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Water_Splash\SPLASH_Subtle_mono_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Water_Splash\SPLASH_Subtle_mono		95682
+	501850147	SPLASH_Small_02_mono	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Water_Splash\SPLASH_Small_02_mono_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Water_Splash\SPLASH_Small_02_mono		237394
+	617559999	SPLASH_Small_01_mono	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Water_Splash\SPLASH_Small_01_mono_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Water_Splash\SPLASH_Small_01_mono		128858
+	752396951	SPLASH_Small_03_mono	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Water_Splash\SPLASH_Small_03_mono_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Water_Splash\SPLASH_Small_03_mono		127092
+	861822625	SPLASH_Small_04_mono	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Water_Splash\SPLASH_Small_04_mono_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Water_Splash\SPLASH_Small_04_mono		129694
+	870448471	PEST_FOOTSTEP_MC_Rat_StoneStep_2	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_2		115328
+	945687098	SPLASH_Small_05_mono	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Water_Splash\SPLASH_Small_05_mono_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Water_Splash\SPLASH_Small_05_mono		171550
+	954653016	PEST_FOOTSTEP_MC_Rat_WaterStep	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Water_Step\PEST_FOOTSTEP_MC_Rat_WaterStep_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Water_Step\PEST_FOOTSTEP_MC_Rat_WaterStep		72152
+	1002743008	PEST_FOOTSTEP_MC_Rat_StoneStep_5	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_5		112672
+	1009376919	PEST_FOOTSTEP_MC_Rat_StoneStep_1	Y:\Documents\GitHub\PestGame\Pest\Pest_WwiseProject\.cache\Mac\SFX\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Character_MC_Rat\Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_1		72152
+

@@ -14,6 +14,9 @@ public class PlayerAnimationController : MonoBehaviour
 	[SerializeField] float longIdleTime = 0.0f;
 	float idleTimer = 0.0f;
 
+	[Header("Sound Stuff")]
+	[SerializeField] PlayerSoundController soundController = null;
+
 	/********************animation hashes**********************/
 	int velocityHash = Animator.StringToHash("Velocity");
 	int longIdleHash = Animator.StringToHash("IsIdlingLong");
@@ -24,6 +27,7 @@ public class PlayerAnimationController : MonoBehaviour
 	int climbingSpeedHash = Animator.StringToHash("ClimbingSpeed");
 	int hideBeginHash = Animator.StringToHash("HideBegin");
 	int hideEndHash = Animator.StringToHash("HideEnd");
+	int takeDownHash = Animator.StringToHash("Takedown");
 
 	// Start is called before the first frame update
 	void Start()
@@ -60,6 +64,8 @@ public class PlayerAnimationController : MonoBehaviour
 	{
 		animator.SetTrigger(jumpHash);
 		idleTimer = 0.0f;
+
+		soundController.Jump();
 	}
 
 	public void HideBegin()
@@ -70,5 +76,10 @@ public class PlayerAnimationController : MonoBehaviour
 	public void HideEnd()
 	{
 		animator.SetTrigger(hideEndHash);
+	}
+
+	public void TakeDown()
+	{
+		animator.SetTrigger(takeDownHash);
 	}
 }

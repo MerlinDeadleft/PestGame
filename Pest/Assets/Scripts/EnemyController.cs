@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+	[SerializeField] GameObject TakeDownTriggerGroup = null;
+	[SerializeField] EnemyAnimationController animationController = null;
+
     // Start is called before the first frame update
     void Start()
     {

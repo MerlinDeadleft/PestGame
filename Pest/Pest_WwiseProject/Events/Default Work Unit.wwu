@@ -50,6 +50,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Footstep_MC_Rat" ID="{FACC2E83-E124-49FE-AFC5-095D16428A06}">
+					<ChildrenList>
+						<Action Name="" ID="{E40F7622-7BC0-4426-B05D-46FF9C5460B5}" ShortID="365909062">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{7F317F8F-E465-4FE9-9E04-381A06634627}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
