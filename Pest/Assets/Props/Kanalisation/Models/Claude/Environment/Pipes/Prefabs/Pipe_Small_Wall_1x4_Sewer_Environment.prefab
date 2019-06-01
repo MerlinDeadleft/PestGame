@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 95219167986241458}
   - component: {fileID: 826999585}
   - component: {fileID: 826999584}
+  - component: {fileID: 120503843}
+  - component: {fileID: 120503844}
   m_Layer: 0
   m_Name: Rohr_Klein_Wand_1x4_Kanalisation_Animations
   m_TagString: Untagged
@@ -91,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01961c67e95815e42ad18b091cffc52c, type: 3}
+  - {fileID: 2100000, guid: c6ad48f5b64b9b24d8c5ee40e1295f19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -155,3 +157,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d73033b8cf7464591275c33d0a9192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!64 &120503843
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181769736795430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 01961c67e95815e42ad18b091cffc52c, type: 3}
+--- !u!64 &120503844
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181769736795430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 01961c67e95815e42ad18b091cffc52c, type: 3}
