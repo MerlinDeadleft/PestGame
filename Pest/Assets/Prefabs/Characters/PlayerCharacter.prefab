@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 114961850904351382}
   - component: {fileID: 144081150409926877}
   - component: {fileID: 6661848046563868968}
-  - component: {fileID: 2487804787164731503}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -124,22 +123,6 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
---- !u!114 &2487804787164731503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794378824392014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c1074c3ce94258418432c2e66a5651f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationController: {fileID: 346218546}
-  walkDelay: 0.5
-  sneakDelay: 0
-  runDelay: 0
 --- !u!1 &6687980137299563192
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +201,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   longIdleTime: 5
-  soundController: {fileID: 2487804787164731503}
+  soundController: {fileID: 2487804787164731503, guid: f42a58d7e50e5a5418d7d93f1bc73775,
+    type: 3}
+--- !u!114 &1539911592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9211627517740265255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1074c3ce94258418432c2e66a5651f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerGameObject: {fileID: 1794378824392014}
+  walkDelay: 0.5
+  sneakDelay: 0
+  runDelay: 0
 --- !u!1001 &9211627517740230813
 PrefabInstance:
   m_ObjectHideFlags: 0

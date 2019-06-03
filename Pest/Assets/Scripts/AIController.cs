@@ -41,7 +41,7 @@ public class AIController : MonoBehaviour
 	bool walkToPathLeftPoint = false;
 	bool isPatrolling = true;
 
-	bool attackingPlayer = false;
+	public bool AttackingPlayer { get; private set; } = false;
 	bool attackStarted = false;
 	float waitForAttackTime = 1.0f;
 	float waitAfterAttackTime = 1.0f;
@@ -82,7 +82,7 @@ public class AIController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(attackingPlayer)
+		if(AttackingPlayer)
 		{
 			HandleAttacking();
 		}
@@ -120,7 +120,7 @@ public class AIController : MonoBehaviour
 
 			if(attackTimer >= waitAfterAttackTime)
 			{
-				attackingPlayer = false;
+				AttackingPlayer = false;
 				attackStarted = false;
 				attackTimer = 0.0f;
 			}
@@ -186,7 +186,7 @@ public class AIController : MonoBehaviour
 				}
 				else
 				{
-					attackingPlayer = true;
+					AttackingPlayer = true;
 				}
 
 				returnToPatrolTimer = 0.0f;

@@ -33,6 +33,7 @@ public class PlayerAnimationController : MonoBehaviour
 	void Start()
     {
 		animator = GetComponent<Animator>();
+		soundController = GetComponent<PlayerSoundController>();
     }
 
     // Update is called once per frame
@@ -64,8 +65,6 @@ public class PlayerAnimationController : MonoBehaviour
 	{
 		animator.SetTrigger(jumpHash);
 		idleTimer = 0.0f;
-
-		soundController.Jump();
 	}
 
 	public void HideBegin()
