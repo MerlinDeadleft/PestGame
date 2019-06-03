@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>/Users/revs/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/PestGame/Pest/Pest_WwiseProject/</ProjectRoot>
-		<SourceFilesRoot>/Users/revs/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/PestGame/Pest/Pest_WwiseProject/.cache/Windows/</SourceFilesRoot>
-		<SoundBanksRoot>/Users/revs/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/PestGame/Pest/Pest_WwiseProject/GeneratedSoundBanks/Windows/</SoundBanksRoot>
+		<ProjectRoot>/Users/student/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/z:/Users/local/BAPX0318/Lorenz_Hertkorn/PestGame/Pest/Pest_WwiseProject/</ProjectRoot>
+		<SourceFilesRoot>/Users/student/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/z:/Users/local/BAPX0318/Lorenz_Hertkorn/PestGame/Pest/Pest_WwiseProject/.cache/Windows/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/student/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/z:/Users/local/BAPX0318/Lorenz_Hertkorn/PestGame/Pest/Pest_WwiseProject/GeneratedSoundBanks/Windows/</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>/Users/revs/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/PestGame/Pest/Pest_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>/Users/student/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/z:/Users/local/BAPX0318/Lorenz_Hertkorn/PestGame/Pest/Pest_WwiseProject/GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -90,8 +90,18 @@
 			<ShortName>Character_MC_Rat</ShortName>
 			<Path>Character_MC_Rat.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2871201794" Name="Footstep_MC_Rat" ObjectPath="\Events\Default Work Unit\Footstep_MC_Rat" DurationType="OneShot" DurationMin="0.000000" DurationMax="2.934356"/>
-				<Event Id="154336016" Name="Jump_MC_Rat" ObjectPath="\Events\Default Work Unit\Jump_MC_Rat" DurationType="OneShot" DurationMin="0.199765" DurationMax="0.237563"/>
+				<Event Id="651427087" Name="Climbing_MC_Rat_Foot_L" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Climbing\Climbing_MC_Rat_Foot_L" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="651427089" Name="Climbing_MC_Rat_Foot_R" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Climbing\Climbing_MC_Rat_Foot_R" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1737296840" Name="Climbing_MC_Rat_Hand_L" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Climbing\Climbing_MC_Rat_Hand_L" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1737296854" Name="Climbing_MC_Rat_Hand_R" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Climbing\Climbing_MC_Rat_Hand_R" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2785478423" Name="Footstep_MC_Rat_L" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Footsteps\Footstep_MC_Rat_L" DurationType="OneShot" DurationMin="0.000000" DurationMax="2.934356"/>
+				<Event Id="2785478409" Name="Footstep_MC_Rat_R" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Footsteps\Footstep_MC_Rat_R" DurationType="OneShot" DurationMin="0.000000" DurationMax="2.934356"/>
+				<Event Id="3501659381" Name="Footstep_MC_Rat_Run_L" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Footsteps\Footstep_MC_Rat_Run_L" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3501659371" Name="Footstep_MC_Rat_Run_R" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Footsteps\Footstep_MC_Rat_Run_R" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2017615138" Name="Footstep_MC_Rat_Sneak_L" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Footsteps\Footstep_MC_Rat_Sneak_L" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2017615164" Name="Footstep_MC_Rat_Sneak_R" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Footsteps\Footstep_MC_Rat_Sneak_R" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="254485058" Name="Hiding_MC_Rat_Hide1_Jump" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Hiding\Hide\Hide1\Hiding_MC_Rat_Hide1_Jump" DurationType="OneShot" DurationMin="0.762777" DurationMax="0.907100"/>
+				<Event Id="1240356301" Name="Jump_Voice_MC_Rat" ObjectPath="\Events\Default Work Unit\Character_MC_Rat\Movement\Jumping\Jump_Voice_MC_Rat" DurationType="OneShot" DurationMin="0.199765" DurationMax="0.237563"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="128898507" Language="SFX">
@@ -105,6 +115,10 @@
 				<File Id="400334130" Language="SFX">
 					<ShortName>Footsteps\Water_Splash\SPLASH_Subtle_mono.wav</ShortName>
 					<Path>SFX/Footsteps/Water_Splash/SPLASH_Subtle_mono_10C4C929.wem</Path>
+				</File>
+				<File Id="412241973" Language="SFX">
+					<ShortName>PEST_HidingSound_Hide1.wav</ShortName>
+					<Path>SFX/PEST_HidingSound_Hide1_10C4C929.wem</Path>
 				</File>
 				<File Id="501850147" Language="SFX">
 					<ShortName>Footsteps\Water_Splash\SPLASH_Small_02_mono.wav</ShortName>

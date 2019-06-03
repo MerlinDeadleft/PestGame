@@ -50,28 +50,285 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Footstep_MC_Rat" ID="{FACC2E83-E124-49FE-AFC5-095D16428A06}">
+				<Folder Name="Character_MC_Rat" ID="{F6F08E5E-71C1-4F8F-B669-E99AD8CB1E7B}" ShortID="235498788">
 					<ChildrenList>
-						<Action Name="" ID="{E40F7622-7BC0-4426-B05D-46FF9C5460B5}" ShortID="365909062">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Footsteps" ID="{7F317F8F-E465-4FE9-9E04-381A06634627}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Folder Name="Movement" ID="{B4F85E4B-B583-4FDE-A7A0-31D28A9EBEE0}" ShortID="127317838">
+							<ChildrenList>
+								<Folder Name="Footsteps" ID="{BCA61B3B-1E63-456F-A58C-DB142F4EFF5E}" ShortID="550909505">
+									<ChildrenList>
+										<Event Name="Footstep_MC_Rat_L" ID="{8507FA93-5105-4AE8-B0F4-3BDF34179122}">
+											<ChildrenList>
+												<Action Name="" ID="{A0FCF49C-6AFE-4455-B996-95D895E0726C}" ShortID="240155173">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Footsteps" ID="{7F317F8F-E465-4FE9-9E04-381A06634627}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Footstep_MC_Rat_R" ID="{FACC2E83-E124-49FE-AFC5-095D16428A06}">
+											<ChildrenList>
+												<Action Name="" ID="{E40F7622-7BC0-4426-B05D-46FF9C5460B5}" ShortID="365909062">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Footsteps" ID="{7F317F8F-E465-4FE9-9E04-381A06634627}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Footstep_MC_Rat_Sneak_R" ID="{C83EF781-9777-46BA-B947-E97DFB281CDA}">
+											<ChildrenList>
+												<Action Name="" ID="{1ED651CF-09F7-4A0A-A324-8C52A1458C1E}" ShortID="722819111">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Footsteps_Sneak" ID="{4A1255F2-3494-4113-9557-690F64ABB5B5}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Footstep_MC_Rat_Sneak_L" ID="{1029172F-71F2-4803-8EBE-1760EDB63DE4}">
+											<ChildrenList>
+												<Action Name="" ID="{DE6BB31A-A120-415A-93C7-3B8D5C96A13F}" ShortID="910808288">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Footsteps_Sneak" ID="{4A1255F2-3494-4113-9557-690F64ABB5B5}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Footstep_MC_Rat_Run_L" ID="{5663FC85-1129-4E3D-8978-E7936A7EBC47}">
+											<ChildrenList>
+												<Action Name="" ID="{35D51A3B-536F-42D1-879A-69C5833C43FC}" ShortID="104275231">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Footsteps_Run" ID="{2D28D33F-C531-49FF-B0A6-93A0A9E50D2D}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Footstep_MC_Rat_Run_R" ID="{A0271E1B-E6B7-45BF-8E5A-8548BE11745C}">
+											<ChildrenList>
+												<Action Name="" ID="{F89C3ABF-F538-485E-AC68-F7DD247D6ACD}" ShortID="358683185">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Footsteps_Run" ID="{2D28D33F-C531-49FF-B0A6-93A0A9E50D2D}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Climbing" ID="{1B53F545-A6A2-41E8-B98B-12A93DC78132}" ShortID="267426806">
+									<ChildrenList>
+										<Event Name="Climbing_MC_Rat_Hand_L" ID="{0FEFC2F1-B227-485A-81A8-4674F73D0FEF}">
+											<ChildrenList>
+												<Action Name="" ID="{C0A06E27-3041-4924-B990-C1C7D079B6F0}" ShortID="288204384">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Climbing_Hand" ID="{74C90965-3914-4C28-8D9C-48324A405DDF}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Climbing_MC_Rat_Hand_R" ID="{367A5E77-A35D-486E-A5C7-F86875A57C1B}">
+											<ChildrenList>
+												<Action Name="" ID="{4FC4D71F-E254-47D4-9D8E-FF96E2D57823}" ShortID="1015385411">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Climbing_Hand" ID="{74C90965-3914-4C28-8D9C-48324A405DDF}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Climbing_MC_Rat_Foot_L" ID="{63C65EA8-2171-4E56-8E61-641A73B62DEF}">
+											<ChildrenList>
+												<Action Name="" ID="{01953534-2A5C-443E-AAA9-2B8B0605A2E9}" ShortID="378872632">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Climbing_Foot" ID="{799E399E-2DE4-4D87-A43B-67E0CFBDA77B}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Climbing_MC_Rat_Foot_R" ID="{2F662BD7-58AE-4B23-A9A6-B714FD09874A}">
+											<ChildrenList>
+												<Action Name="" ID="{0F82B315-417A-4852-9691-889E6FB59748}" ShortID="684499993">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Climbing_Foot" ID="{799E399E-2DE4-4D87-A43B-67E0CFBDA77B}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Jumping" ID="{E11879B6-66B4-454C-964A-D6D6508E5DF0}" ShortID="27362018">
+									<ChildrenList>
+										<Event Name="Jump_Voice_MC_Rat" ID="{13F1024D-DABB-4D52-A33D-D54212922528}">
+											<ChildrenList>
+												<Action Name="" ID="{BA4DA393-C974-4329-9D86-8F0C2F17E376}" ShortID="22751112">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Voice_Jump" ID="{552AC3A5-F840-4760-9EB7-664C2DFF13B3}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Jumping_MC_Rat_JumpStart_Start" ID="{CBCEAC95-7459-4647-A7FB-EC3D808C488E}"/>
+										<Event Name="Jumping_MC_Rat_JumpFall_Clothes" ID="{6968F325-C4A0-4790-93DA-EFA8D1E1D3FC}"/>
+										<Event Name="Jumping_MC_Rat_JumpFall_Dagger" ID="{DA6A4F3F-3DDB-4FF8-8D1E-CC6DDC3F4AA1}"/>
+										<Event Name="Jumping_MC_Rat_JumpLand_Landing" ID="{6710A3C3-811F-4B2F-B995-D5185CD83067}"/>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Idles" ID="{5D0BA7E6-A05C-4F9B-A259-93CD356E1444}" ShortID="53406614">
+							<ChildrenList>
+								<Folder Name="Combat Idle" ID="{F291622E-D9C6-463A-9DE0-3B7D2BA5EA6A}" ShortID="736689360">
+									<ChildrenList>
+										<Event Name="Idles_MC_Rat_CombatIdle_ClothesAndTail" ID="{66DD07F1-6D37-454E-83C3-986A29B73DCD}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Combat Block Idle" ID="{C3239D7E-EF4B-4B19-93F7-48E51E8A79DD}" ShortID="874252192">
+									<ChildrenList>
+										<Event Name="Idles_MC_Rat_CombatBlockIdle_ClothesAndTail" ID="{8E22E978-2655-47D2-80C8-C9AD3AAC47F1}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Hide 1 Idle" ID="{92DAE289-CE92-4ACB-A957-0AD6F56B2647}" ShortID="195464859">
+									<ChildrenList>
+										<Event Name="Idles_MC_Rat_Hide1Idle_Tail" ID="{031A5476-08B0-46A8-8739-516598EEA7F5}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Idle 1" ID="{6F61A651-244A-4C9D-A400-49C7D2111F50}" ShortID="192761075">
+									<ChildrenList>
+										<Event Name="Idles_MC_Rat_Idle1_Clothes" ID="{567EE13E-A032-4C5A-A82F-EEF0D70CADC0}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Idle 2" ID="{5275FAA6-8EDA-4F13-8F13-392FCCA78F9C}" ShortID="959149294">
+									<ChildrenList>
+										<Event Name="Idles_MC_Rat_Idle2_Tail" ID="{ED618395-260A-43FB-875C-F26B8AE4E589}"/>
+										<Event Name="Idles_MC_Rat_Idle2_Sniff1" ID="{2C5DC63F-1B66-4381-AC4F-E21DE912B997}"/>
+										<Event Name="Idles_MC_Rat_Idle2_Sniff2" ID="{6A3FFF23-84E5-484A-A67D-73324BDD6DB4}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Sneak Idle 1" ID="{31E4496B-E76D-49D2-BBFA-F821B7DFA404}" ShortID="195712339">
+									<ChildrenList>
+										<Event Name="Idles_MC_Rat_SneakIdle1_Tail" ID="{A0ACDD4C-BDE2-4848-B6FF-CDC00B0637E8}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Sneak Idle 2" ID="{2B72EB23-B2AA-4012-A222-2E4B049E8C32}" ShortID="386217933">
+									<ChildrenList>
+										<Event Name="Idling_MC_Rat_SneakIdle2_HeadMove" ID="{077D2F74-2629-4AAE-8E47-53F5BCE69FE2}"/>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Combat" ID="{DD46E6DB-0444-4E9A-AB27-4B21306C8187}" ShortID="130696843">
+							<ChildrenList>
+								<Folder Name="Slash" ID="{00904A60-2C31-489B-9CF7-93DE6C3826A6}" ShortID="160137157">
+									<ChildrenList>
+										<Event Name="Combat_MC_Rat_Slash_Step" ID="{69F6DE01-046B-44B2-AD17-B57332A65B95}"/>
+										<Event Name="Combat_MC_Rat_Slash_Swing" ID="{208AE2F2-E668-4CF7-8052-EFCF3FBAD331}"/>
+										<Event Name="Combat_MC_Rat_Slash_UpMove" ID="{E24FD803-55D7-4C86-8B05-B60F33EC75C3}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Stab" ID="{E6852F80-6F2F-4879-A2B8-86CB7934ED6B}" ShortID="81509976">
+									<ChildrenList>
+										<Event Name="Combat_MC_Rat_Stab_Step" ID="{15AD1E72-5A13-4DE3-A69D-F6E14ED757F6}"/>
+										<Event Name="Combat_MC_Rat_Stab_Dagger" ID="{0C772259-8B9A-42D9-9462-D937E62C6345}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Block" ID="{6704B482-A7CF-4F8A-B7B1-CCD5215D6307}" ShortID="750589093">
+									<ChildrenList>
+										<Folder Name="Block Up" ID="{ED9007FE-313B-431F-A077-F4D15A2A69A0}" ShortID="971481187">
+											<ChildrenList>
+												<Event Name="Combat_MC_Rat_BlockUp_Movement" ID="{8C2CE059-7B6E-4F3F-9443-B54C492AA46D}"/>
+												<Event Name="Combat_MC_Rat_BlockUp_Dagger" ID="{48FD2417-428D-46DA-9606-D2F4C0A31684}"/>
+												<Event Name="Combat_MC_Rat_BlockUp_Step" ID="{368CC487-341D-4600-9ECE-FF2A0D333E09}"/>
+											</ChildrenList>
+										</Folder>
+										<Folder Name="Block Down" ID="{C9C633EF-E4F7-4247-ADE9-AD1797B6A4C4}" ShortID="820195873">
+											<ChildrenList>
+												<Event Name="Combat_MC_Rat_BlockDown_Movement" ID="{2B45DD5A-3849-42C9-9B4D-78F2D22AB465}"/>
+												<Event Name="Combat_MC_Rat_BlockDown_Dagger" ID="{A395D7F6-2983-423E-8C8A-E9369DC67ABB}"/>
+												<Event Name="Combat_MC_Rat_BlockDown_Step" ID="{A00FBC14-3450-44CB-B03F-FE0A23248E52}"/>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Death" ID="{1728DF84-17F2-44FE-B4E9-9F60592B9B8E}" ShortID="42462401">
+									<ChildrenList>
+										<Event Name="Death_MC_Rat_Hide1_Tail" ID="{1C795254-6F9F-4028-8B52-36F537B39FCB}"/>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Takedowns" ID="{44BDCC63-5480-4BDE-BA66-D28640CDDB20}" ShortID="688151345">
+									<ChildrenList>
+										<Folder Name="Takedown1" ID="{295574C1-AE38-4AFA-A2CD-60BA8988DE3A}" ShortID="780521397">
+											<ChildrenList>
+												<Event Name="Combat_MC_Rat_Takedown1_DaggerMove" ID="{0237650E-AF61-43F1-A537-8F3C85F33C86}"/>
+												<Event Name="Combat_MC_Rat_Takedown1_JumpStart" ID="{81B9F975-81AF-47AA-8931-7F87782996DE}"/>
+												<Event Name="Combat_MC_Rat_Takedown1_DaggersInHead" ID="{96BC2E66-4D63-4029-8C41-086CCDC97412}"/>
+												<Event Name="Combat_MC_Rat_Takedown1_EnemyBack" ID="{DCECD264-07DA-4372-83F2-B7A79A118963}"/>
+												<Event Name="Combat_MC_Rat_Takedown1_DaggersOutHead" ID="{E435CCAB-1EB7-4A15-8B6B-DFF6F78A474C}"/>
+												<Event Name="Combat_MC_Rat_Takedown1_JumpBack" ID="{946B66C4-A8FC-495A-845C-7018787F4B4A}"/>
+												<Event Name="Combat_MC_Rat_Takedown1_Backflip" ID="{BF2CF1BB-120C-43B4-B864-57BA40D24943}"/>
+												<Event Name="Combat_MC_Rat_Takedown1_JumpLanding" ID="{AAC2F5C5-46C9-4232-A9D8-FFE8C363D060}"/>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Hiding" ID="{132B3F86-6DEB-41BA-AB5F-16632489446E}" ShortID="339965124">
+							<ChildrenList>
+								<Folder Name="Hide" ID="{57AF9D2A-77AA-4ABE-8EB1-D460783C1114}" ShortID="544805724">
+									<ChildrenList>
+										<Folder Name="Hide1" ID="{9C348F14-B84E-409D-9C47-AB6EB5D1865D}" ShortID="465521576">
+											<ChildrenList>
+												<Event Name="Hiding_MC_Rat_Hide1_Grab" ID="{99439271-901E-4CCA-9BAF-810EEE7EED2A}"/>
+												<Event Name="Hiding_MC_Rat_Hide1_Jump" ID="{57CA2FE7-ACFF-4B7D-982B-0EB766B90C48}">
+													<ChildrenList>
+														<Action Name="" ID="{2CB45E7E-D816-448B-858D-384652A52619}" ShortID="52683718">
+															<ReferenceList>
+																<Reference Name="Target">
+																	<ObjectRef Name="Metal" ID="{FF6413A3-F5AA-432C-9429-3097773DC25B}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+																</Reference>
+															</ReferenceList>
+														</Action>
+													</ChildrenList>
+												</Event>
+												<Event Name="Hiding_MC_Rat_Hide1_Landing" ID="{A5573792-9FA7-431A-9038-B3092AC1E02B}"/>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="Unhide" ID="{79C3A1EC-21FA-42AD-A3EF-43856048EEC4}" ShortID="545240696">
+									<ChildrenList>
+										<Folder Name="Unhide1" ID="{CE7EC02E-4196-4C8E-8C48-7A037EBA7C78}" ShortID="527778904">
+											<ChildrenList>
+												<Event Name="Hiding_MC_Rat_Unhide1_OutMove" ID="{581184B1-F6EF-4D79-BED1-88C9C4AAABF2}"/>
+												<Event Name="Hiding_MC_Rat_Unhide1_HandsMove" ID="{26389133-FB4B-4161-BF0C-E1495A2FB945}"/>
+												<Event Name="Hiding_MC_Rat_Unhide1_Landing" ID="{08B4BEF6-5522-4681-9F03-298E67536923}"/>
+												<Event Name="Hiding_MC_Rat_Unhide1_GrabDaggers" ID="{7D8C0DFA-DCC4-4E59-A9D2-7F30C464D235}"/>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
-				</Event>
-				<Event Name="Jump_MC_Rat" ID="{13F1024D-DABB-4D52-A33D-D54212922528}">
-					<ChildrenList>
-						<Action Name="" ID="{BA4DA393-C974-4329-9D86-8F0C2F17E376}" ShortID="22751112">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Jumps" ID="{140ABBB3-54A0-472A-9A7E-51BAA88A6F29}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

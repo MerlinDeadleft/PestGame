@@ -52,3 +52,6 @@ crashlytics-build.properties
 
 #OSX Filesystem Files
 *.DS_Store
+
+#Wwise temporary files
+Pest_WwiseIntegrationTemp/
