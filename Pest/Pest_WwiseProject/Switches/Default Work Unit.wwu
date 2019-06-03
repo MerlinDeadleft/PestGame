@@ -21,6 +21,20 @@
 								<Switch Name="Wood" ID="{C681CCB7-C282-4F42-91BA-671AA311F00C}"/>
 							</ChildrenList>
 						</SwitchGroup>
+						<SwitchGroup Name="Climbing" ID="{4FEDC3EC-E9FC-4BC4-A1B1-E1A702AD1C37}">
+							<ChildrenList>
+								<Switch Name="Stone" ID="{5EAC0569-6FEA-47DD-8010-673C95CAF6D1}"/>
+								<Switch Name="Metal" ID="{A802A0FE-9843-4D53-B1CE-32DBFB97B043}"/>
+								<Switch Name="Wood" ID="{6E46327F-5576-4C90-A620-32030AE8F330}"/>
+							</ChildrenList>
+						</SwitchGroup>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Enemys" ID="{94DE6926-6573-4EA0-8CE8-E6372F34A08A}" ShortID="62112328">
+					<ChildrenList>
+						<SwitchGroup Name="Melee" ID="{C1D9990F-0BD8-4FA9-B4FE-AE9E65CEDD55}"/>
+						<SwitchGroup Name="Heavy" ID="{5BA7282E-C0AD-41F3-842D-381F4357ECED}"/>
+						<SwitchGroup Name="Ranged" ID="{FD41B342-393B-4E08-B3EB-BFF1E90B16F7}"/>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -518,7 +518,35 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.2860128
+        functionName: PostSoundEvent
+        data: Climbing_MC_Rat_Hand_L
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9352814
+        functionName: PostSoundEvent
+        data: Climbing_MC_Rat_Hand_R
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.0020874008
+        functionName: PostSoundEvent
+        data: Climbing_MC_Rat_Foot_L
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4697285
+        functionName: PostSoundEvent
+        data: Climbing_MC_Rat_Foot_R
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

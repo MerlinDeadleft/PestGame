@@ -17,21 +17,21 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 39efc11e430757408bf88ef6dd32fa6f
     GuidInternal: 
-    m_lastTime: -8586423638124775808
+    m_lastTime: -8586420514314775808
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7db3570ec9665743abcad4d57d2d8cb7
     GuidInternal: 
-    m_lastTime: -8586421130634775808
+    m_lastTime: -8586420470284775808
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 45332a5e69ab74488a5e91eca3a87e55
     GuidInternal: 
-    m_lastTime: -8586423638124775808
+    m_lastTime: -8586420295034775808
     List:
     - name: AmbienceMusic_Kanalisation
       guid: 0876bb2f5d1b3e4890b8fb5b81e207aa
@@ -65,7 +65,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 6a3dd61b4901814ab713347404d9b333
     GuidInternal: 
-    m_lastTime: -8586423638164775808
+    m_lastTime: -8586420295034775808
     List:
     - name: Ambience_Music_Kanalisation
       guid: 315df5e8a305f542a67713ed161567f6
@@ -79,18 +79,966 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Footstep_MC_Rat
-      guid: 832eccfa24e1fe49afc5095d16428a06
-      id: 2871201794
+    - name: Climbing_MC_Rat_Foot_L
+      guid: a85ec6637121564e8e61641a73b62def
+      id: 651427087
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Footstep_MC_Rat
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Climbing
+        ObjectType: 4
+      - ElementName: Climbing_MC_Rat_Foot_L
         ObjectType: 3
-      Path: Default Work Unit/Footstep_MC_Rat
+      Path: Default Work Unit/Character_MC_Rat/Movement/Climbing/Climbing_MC_Rat_Foot_L
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Climbing_MC_Rat_Foot_R
+      guid: d72b662fae58234ba9a6b714fd09874a
+      id: 651427089
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Climbing
+        ObjectType: 4
+      - ElementName: Climbing_MC_Rat_Foot_R
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Climbing/Climbing_MC_Rat_Foot_R
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Climbing_MC_Rat_Hand_L
+      guid: f1c2ef0f27b25a4881a84674f73d0fef
+      id: 1737296840
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Climbing
+        ObjectType: 4
+      - ElementName: Climbing_MC_Rat_Hand_L
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Climbing/Climbing_MC_Rat_Hand_L
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Climbing_MC_Rat_Hand_R
+      guid: 775e7a365da36e48a5c7f86875a57c1b
+      id: 1737296854
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Climbing
+        ObjectType: 4
+      - ElementName: Climbing_MC_Rat_Hand_R
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Climbing/Climbing_MC_Rat_Hand_R
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Combat_MC_Rat_BlockDown_Dagger
+      guid: f6d795a383293e428c8ae9369dc67abb
+      id: 1146384375
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Block Down
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_BlockDown_Dagger
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Block/Block Down/Combat_MC_Rat_BlockDown_Dagger
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_BlockDown_Movement
+      guid: 5add452b4938c9429b4d78f2d22ab465
+      id: 2828338942
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Block Down
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_BlockDown_Movement
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Block/Block Down/Combat_MC_Rat_BlockDown_Movement
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_BlockDown_Step
+      guid: 14bc0fa05034cb44b03ffe0a23248e52
+      id: 2386978267
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Block Down
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_BlockDown_Step
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Block/Block Down/Combat_MC_Rat_BlockDown_Step
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_BlockUp_Dagger
+      guid: 1724fd488d42da469606d2f4c0a31684
+      id: 3681755862
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Block Up
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_BlockUp_Dagger
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Block/Block Up/Combat_MC_Rat_BlockUp_Dagger
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_BlockUp_Movement
+      guid: 59e02c8c6e7b3f4f9443b54c492aa46d
+      id: 30253755
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Block Up
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_BlockUp_Movement
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Block/Block Up/Combat_MC_Rat_BlockUp_Movement
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_BlockUp_Step
+      guid: 87c48c361d3400469eceff2a0d333e09
+      id: 2025345898
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Block
+        ObjectType: 4
+      - ElementName: Block Up
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_BlockUp_Step
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Block/Block Up/Combat_MC_Rat_BlockUp_Step
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Slash_Step
+      guid: 01def6696b04b244ad17b57332a65b95
+      id: 1393775987
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Slash
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Slash_Step
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Slash/Combat_MC_Rat_Slash_Step
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Slash_Swing
+      guid: f2e28a2068e6f74c8052efcf3fbad331
+      id: 2010552545
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Slash
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Slash_Swing
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Slash/Combat_MC_Rat_Slash_Swing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Slash_UpMove
+      guid: 03d84fe2d755864c8b05b60f33ec75c3
+      id: 252522473
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Slash
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Slash_UpMove
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Slash/Combat_MC_Rat_Slash_UpMove
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Stab_Dagger
+      guid: 5922770c9a8bd9429462d937e62c6345
+      id: 3843584376
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Stab
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Stab_Dagger
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Stab/Combat_MC_Rat_Stab_Dagger
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Stab_Step
+      guid: 721ead15135ae34da69df6e14ed757f6
+      id: 3093384836
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Stab
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Stab_Step
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Stab/Combat_MC_Rat_Stab_Step
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Takedown1_Backflip
+      guid: bbf12cbf0c12b443b86457ba40d24943
+      id: 1079703342
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Takedowns
+        ObjectType: 4
+      - ElementName: Takedown1
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Takedown1_Backflip
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Takedowns/Takedown1/Combat_MC_Rat_Takedown1_Backflip
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Takedown1_DaggerMove
+      guid: 0e65370261aff143a5378f3c85f33c86
+      id: 260719947
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Takedowns
+        ObjectType: 4
+      - ElementName: Takedown1
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Takedown1_DaggerMove
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Takedowns/Takedown1/Combat_MC_Rat_Takedown1_DaggerMove
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Takedown1_DaggersInHead
+      guid: 662ebc96634d29408c41086ccdc97412
+      id: 2817736920
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Takedowns
+        ObjectType: 4
+      - ElementName: Takedown1
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Takedown1_DaggersInHead
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Takedowns/Takedown1/Combat_MC_Rat_Takedown1_DaggersInHead
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Takedown1_DaggersOutHead
+      guid: abcc35e4b71e154a8b6bdff6f78a474c
+      id: 3368290199
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Takedowns
+        ObjectType: 4
+      - ElementName: Takedown1
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Takedown1_DaggersOutHead
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Takedowns/Takedown1/Combat_MC_Rat_Takedown1_DaggersOutHead
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Takedown1_EnemyBack
+      guid: 64d2ecdcda07724383f2b7a79a118963
+      id: 3207096055
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Takedowns
+        ObjectType: 4
+      - ElementName: Takedown1
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Takedown1_EnemyBack
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Takedowns/Takedown1/Combat_MC_Rat_Takedown1_EnemyBack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Takedown1_JumpBack
+      guid: c4666b94fca85a49845c7018787f4b4a
+      id: 3469063787
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Takedowns
+        ObjectType: 4
+      - ElementName: Takedown1
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Takedown1_JumpBack
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Takedowns/Takedown1/Combat_MC_Rat_Takedown1_JumpBack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Takedown1_JumpLanding
+      guid: c5f5c2aac9463242a9d8ffe8c363d060
+      id: 2142895375
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Takedowns
+        ObjectType: 4
+      - ElementName: Takedown1
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Takedown1_JumpLanding
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Takedowns/Takedown1/Combat_MC_Rat_Takedown1_JumpLanding
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat_MC_Rat_Takedown1_JumpStart
+      guid: 75f9b981af81aa4789317f87782996de
+      id: 4022896078
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Takedowns
+        ObjectType: 4
+      - ElementName: Takedown1
+        ObjectType: 4
+      - ElementName: Combat_MC_Rat_Takedown1_JumpStart
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Takedowns/Takedown1/Combat_MC_Rat_Takedown1_JumpStart
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Death_MC_Rat_Hide1_Tail
+      guid: 5452791c9f6f28408b5236f537b39fcb
+      id: 3043419797
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Combat
+        ObjectType: 4
+      - ElementName: Death
+        ObjectType: 4
+      - ElementName: Death_MC_Rat_Hide1_Tail
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Combat/Death/Death_MC_Rat_Hide1_Tail
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Footstep_MC_Rat_L
+      guid: 93fa07850551e84ab0f43bdf34179122
+      id: 2785478423
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Footstep_MC_Rat_L
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Footsteps/Footstep_MC_Rat_L
       maxAttenuation: 0
       maxDuration: 2.934356
       minDuration: 0
+    - name: Footstep_MC_Rat_R
+      guid: 832eccfa24e1fe49afc5095d16428a06
+      id: 2785478409
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Footstep_MC_Rat_R
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Footsteps/Footstep_MC_Rat_R
+      maxAttenuation: 0
+      maxDuration: 2.934356
+      minDuration: 0
+    - name: Footstep_MC_Rat_Run_L
+      guid: 85fc635629113d4e8978e7936a7ebc47
+      id: 3501659381
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Footstep_MC_Rat_Run_L
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Footsteps/Footstep_MC_Rat_Run_L
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Footstep_MC_Rat_Run_R
+      guid: 1b1e27a0b7e6bf458e5a8548be11745c
+      id: 3501659371
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Footstep_MC_Rat_Run_R
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Footsteps/Footstep_MC_Rat_Run_R
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Footstep_MC_Rat_Sneak_L
+      guid: 2f172910f27103488ebe1760edb63de4
+      id: 2017615138
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Footstep_MC_Rat_Sneak_L
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Footsteps/Footstep_MC_Rat_Sneak_L
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Footstep_MC_Rat_Sneak_R
+      guid: 81f73ec87797ba46b947e97dfb281cda
+      id: 2017615164
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Footsteps
+        ObjectType: 4
+      - ElementName: Footstep_MC_Rat_Sneak_R
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Footsteps/Footstep_MC_Rat_Sneak_R
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Hiding_MC_Rat_Hide1_Grab
+      guid: 719243991e90ca4c9baf810eee7eed2a
+      id: 877535804
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Hiding
+        ObjectType: 4
+      - ElementName: Hide
+        ObjectType: 4
+      - ElementName: Hide1
+        ObjectType: 4
+      - ElementName: Hiding_MC_Rat_Hide1_Grab
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Hiding/Hide/Hide1/Hiding_MC_Rat_Hide1_Grab
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Hiding_MC_Rat_Hide1_Jump
+      guid: e72fca57ffac7d4b982b0eb766b90c48
+      id: 254485058
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Hiding
+        ObjectType: 4
+      - ElementName: Hide
+        ObjectType: 4
+      - ElementName: Hide1
+        ObjectType: 4
+      - ElementName: Hiding_MC_Rat_Hide1_Jump
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Hiding/Hide/Hide1/Hiding_MC_Rat_Hide1_Jump
+      maxAttenuation: 0
+      maxDuration: 0.831814
+      minDuration: 0.831814
+    - name: Hiding_MC_Rat_Hide1_Landing
+      guid: 923757a5a79f1a439038b3092ac1e02b
+      id: 3488529955
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Hiding
+        ObjectType: 4
+      - ElementName: Hide
+        ObjectType: 4
+      - ElementName: Hide1
+        ObjectType: 4
+      - ElementName: Hiding_MC_Rat_Hide1_Landing
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Hiding/Hide/Hide1/Hiding_MC_Rat_Hide1_Landing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Hiding_MC_Rat_Unhide1_GrabDaggers
+      guid: fa0d8c7dc4dc594ea9d27f30c464d235
+      id: 2058367414
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Hiding
+        ObjectType: 4
+      - ElementName: Unhide
+        ObjectType: 4
+      - ElementName: Unhide1
+        ObjectType: 4
+      - ElementName: Hiding_MC_Rat_Unhide1_GrabDaggers
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Hiding/Unhide/Unhide1/Hiding_MC_Rat_Unhide1_GrabDaggers
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Hiding_MC_Rat_Unhide1_HandsMove
+      guid: 339138264bfb6141bf0ce1495a2fb945
+      id: 4132185236
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Hiding
+        ObjectType: 4
+      - ElementName: Unhide
+        ObjectType: 4
+      - ElementName: Unhide1
+        ObjectType: 4
+      - ElementName: Hiding_MC_Rat_Unhide1_HandsMove
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Hiding/Unhide/Unhide1/Hiding_MC_Rat_Unhide1_HandsMove
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Hiding_MC_Rat_Unhide1_Landing
+      guid: f6beb408225581469f03298e67536923
+      id: 335510344
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Hiding
+        ObjectType: 4
+      - ElementName: Unhide
+        ObjectType: 4
+      - ElementName: Unhide1
+        ObjectType: 4
+      - ElementName: Hiding_MC_Rat_Unhide1_Landing
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Hiding/Unhide/Unhide1/Hiding_MC_Rat_Unhide1_Landing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Hiding_MC_Rat_Unhide1_OutMove
+      guid: b1841158eff6794dbed188c9c4aaabf2
+      id: 2919517990
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Hiding
+        ObjectType: 4
+      - ElementName: Unhide
+        ObjectType: 4
+      - ElementName: Unhide1
+        ObjectType: 4
+      - ElementName: Hiding_MC_Rat_Unhide1_OutMove
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Hiding/Unhide/Unhide1/Hiding_MC_Rat_Unhide1_OutMove
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idles_MC_Rat_CombatBlockIdle_ClothesAndTail
+      guid: 78e9228e5526d24780c8c9ad3aac47f1
+      id: 3799587681
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Combat Block Idle
+        ObjectType: 4
+      - ElementName: Idles_MC_Rat_CombatBlockIdle_ClothesAndTail
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Combat Block Idle/Idles_MC_Rat_CombatBlockIdle_ClothesAndTail
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idles_MC_Rat_CombatIdle_ClothesAndTail
+      guid: f107dd66376d4e4583c3986a29b73dcd
+      id: 561739300
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Combat Idle
+        ObjectType: 4
+      - ElementName: Idles_MC_Rat_CombatIdle_ClothesAndTail
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Combat Idle/Idles_MC_Rat_CombatIdle_ClothesAndTail
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idles_MC_Rat_Hide1Idle_Tail
+      guid: 76541a03b008a8468739516598eea7f5
+      id: 1316313800
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Hide 1 Idle
+        ObjectType: 4
+      - ElementName: Idles_MC_Rat_Hide1Idle_Tail
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Hide 1 Idle/Idles_MC_Rat_Hide1Idle_Tail
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idles_MC_Rat_Idle1_Clothes
+      guid: 3ee17e5632a05a4ca82feef0d70cadc0
+      id: 837077122
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Idle 1
+        ObjectType: 4
+      - ElementName: Idles_MC_Rat_Idle1_Clothes
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Idle 1/Idles_MC_Rat_Idle1_Clothes
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idles_MC_Rat_Idle2_Sniff1
+      guid: 3fc65d2c661b8143ac4fe21de912b997
+      id: 557281754
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Idle 2
+        ObjectType: 4
+      - ElementName: Idles_MC_Rat_Idle2_Sniff1
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Idle 2/Idles_MC_Rat_Idle2_Sniff1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idles_MC_Rat_Idle2_Sniff2
+      guid: 23ff3f6ae5844a48a67d73324bdd6db4
+      id: 557281753
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Idle 2
+        ObjectType: 4
+      - ElementName: Idles_MC_Rat_Idle2_Sniff2
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Idle 2/Idles_MC_Rat_Idle2_Sniff2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idles_MC_Rat_Idle2_Tail
+      guid: 958361ed0a26fb43875cf26b8ae4e589
+      id: 603477
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Idle 2
+        ObjectType: 4
+      - ElementName: Idles_MC_Rat_Idle2_Tail
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Idle 2/Idles_MC_Rat_Idle2_Tail
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idles_MC_Rat_SneakIdle1_Tail
+      guid: 4cddaca0e2bd4848b6ffcdc00b0637e8
+      id: 1332520008
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Sneak Idle 1
+        ObjectType: 4
+      - ElementName: Idles_MC_Rat_SneakIdle1_Tail
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Sneak Idle 1/Idles_MC_Rat_SneakIdle1_Tail
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Idling_MC_Rat_SneakIdle2_HeadMove
+      guid: 742f7d072926ae4a8e4753f5bce69fe2
+      id: 1780837318
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Idles
+        ObjectType: 4
+      - ElementName: Sneak Idle 2
+        ObjectType: 4
+      - ElementName: Idling_MC_Rat_SneakIdle2_HeadMove
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Idles/Sneak Idle 2/Idling_MC_Rat_SneakIdle2_HeadMove
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Jump_Voice_MC_Rat
+      guid: 4d02f113bbda524da33dd54212922528
+      id: 1240356301
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Jumping
+        ObjectType: 4
+      - ElementName: Jump_Voice_MC_Rat
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Jumping/Jump_Voice_MC_Rat
+      maxAttenuation: 0
+      maxDuration: 0.237563
+      minDuration: 0.199765
+    - name: Jumping_MC_Rat_JumpFall_Clothes
+      guid: 25f36869a0c4904793daefa8d1e1d3fc
+      id: 453878819
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Jumping
+        ObjectType: 4
+      - ElementName: Jumping_MC_Rat_JumpFall_Clothes
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Jumping/Jumping_MC_Rat_JumpFall_Clothes
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Jumping_MC_Rat_JumpFall_Dagger
+      guid: 3f4f6adadb3df84f8d1ecc6ddc3f4aa1
+      id: 4253615447
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Jumping
+        ObjectType: 4
+      - ElementName: Jumping_MC_Rat_JumpFall_Dagger
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Jumping/Jumping_MC_Rat_JumpFall_Dagger
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Jumping_MC_Rat_JumpLand_Landing
+      guid: c3a310671f812f4bb995d5185cd83067
+      id: 4204108898
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Jumping
+        ObjectType: 4
+      - ElementName: Jumping_MC_Rat_JumpLand_Landing
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Jumping/Jumping_MC_Rat_JumpLand_Landing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Jumping_MC_Rat_JumpStart_Start
+      guid: 95accecb59744746a7fbec3d808c488e
+      id: 1111395978
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Movement
+        ObjectType: 4
+      - ElementName: Jumping
+        ObjectType: 4
+      - ElementName: Jumping_MC_Rat_JumpStart_Start
+        ObjectType: 3
+      Path: Default Work Unit/Character_MC_Rat/Movement/Jumping/Jumping_MC_Rat_JumpStart_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Torches
       guid: ee2ba2b9ae775e438f3cc7d972c86cf3
       id: 2615352377
@@ -120,22 +1068,55 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: a6b6eea43e92b645922b03a27a80f28c
     GuidInternal: 
-    m_lastTime: -8586423638164775808
+    m_lastTime: -8586420514374775808
     List: []
   StateWwu:
   - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 9a82f860d8063540b2fa85ee3332f16e
     GuidInternal: 
-    m_lastTime: -8586423638124775808
+    m_lastTime: -8586420514314775808
     List: []
   SwitchWwu:
   - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ef863a411e90054e988c1cef1b0a2089
     GuidInternal: 
-    m_lastTime: -8586423638124775808
+    m_lastTime: -8586420367204775808
     List:
+    - name: Climbing
+      guid: ecc3ed4ffce9c44ba1b1e1a702ad1c37
+      id: 3990868544
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Climbing
+        ObjectType: 11
+      Path: Default Work Unit/Character_MC_Rat/Climbing
+      values:
+      - name: Metal
+        guid: fea002a84398534db1ce32dbfb97b043
+        id: 2473969246
+        PathAndIcons:
+        - ElementName: Metal
+          ObjectType: 10
+      - name: Stone
+        guid: 6905ac5eea6fdd478010673c95caf6d1
+        id: 1216965916
+        PathAndIcons:
+        - ElementName: Stone
+          ObjectType: 10
+      - name: Wood
+        guid: 7f32466e7655904ca62032030ae8f330
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: Wood
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Footsteps
       guid: b18277e7695bbd4fae67397464d11995
       id: 2385628198
@@ -175,14 +1156,56 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Jumps
+      guid: fe89fe8488442c46b92a27ffd1ab58d9
+      id: 1071740888
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_MC_Rat
+        ObjectType: 4
+      - ElementName: Jumps
+        ObjectType: 11
+      Path: Default Work Unit/Character_MC_Rat/Jumps
+      values:
+      - name: Metal
+        guid: 7e2eb97e93e0e1468d7cb1aa4ef5f01c
+        id: 2473969246
+        PathAndIcons:
+        - ElementName: Metal
+          ObjectType: 10
+      - name: Stone
+        guid: 5bc475764d4dca4180db2b02676c24f2
+        id: 1216965916
+        PathAndIcons:
+        - ElementName: Stone
+          ObjectType: 10
+      - name: Water
+        guid: 2a6e51a04a81814db91a71df80eb73b5
+        id: 2654748154
+        PathAndIcons:
+        - ElementName: Water
+          ObjectType: 10
+      - name: Wood
+        guid: b7cc81c682c2424f91ba671aa311f00c
+        id: 2058049674
+        PathAndIcons:
+        - ElementName: Wood
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: fa4ab9f12278a94eb2ebc0cedbc638c7
     GuidInternal: 
-    m_lastTime: -8586423638124775808
+    m_lastTime: -8586420514314775808
     List: []
   ExpandedItems:
   - /Pest_WwiseProject
+  - /Pest_WwiseProject/Events
+  - /Pest_WwiseProject/Events/Default Work Unit
+  - /Pest_WwiseProject/Events/Default Work Unit/Character_MC_Rat
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -20,8 +20,18 @@
 				</SoundBank>
 				<SoundBank Name="Character_MC_Rat" ID="{76A3A1ED-374A-45A2-B5B6-3065D216C56A}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Footstep_MC_Rat" ID="{FACC2E83-E124-49FE-AFC5-095D16428A06}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
-						<ObjectRef Name="Jump_MC_Rat" ID="{13F1024D-DABB-4D52-A33D-D54212922528}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Footstep_MC_Rat_Run_R" ID="{A0271E1B-E6B7-45BF-8E5A-8548BE11745C}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Footstep_MC_Rat_Sneak_R" ID="{C83EF781-9777-46BA-B947-E97DFB281CDA}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Footstep_MC_Rat_Sneak_L" ID="{1029172F-71F2-4803-8EBE-1760EDB63DE4}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Climbing_MC_Rat_Hand_L" ID="{0FEFC2F1-B227-485A-81A8-4674F73D0FEF}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Climbing_MC_Rat_Hand_R" ID="{367A5E77-A35D-486E-A5C7-F86875A57C1B}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Footstep_MC_Rat_R" ID="{FACC2E83-E124-49FE-AFC5-095D16428A06}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Footstep_MC_Rat_L" ID="{8507FA93-5105-4AE8-B0F4-3BDF34179122}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Climbing_MC_Rat_Foot_R" ID="{2F662BD7-58AE-4B23-A9A6-B714FD09874A}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Hiding_MC_Rat_Hide1_Jump" ID="{57CA2FE7-ACFF-4B7D-982B-0EB766B90C48}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Jump_Voice_MC_Rat" ID="{13F1024D-DABB-4D52-A33D-D54212922528}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Footstep_MC_Rat_Run_L" ID="{5663FC85-1129-4E3D-8978-E7936A7EBC47}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Climbing_MC_Rat_Foot_L" ID="{63C65EA8-2171-4E56-8E61-641A73B62DEF}" WorkUnitID="{1BD63D6A-0149-4A81-B713-347404D9B333}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
