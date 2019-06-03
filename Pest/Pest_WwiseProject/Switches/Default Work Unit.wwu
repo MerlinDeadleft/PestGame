@@ -13,6 +13,14 @@
 								<Switch Name="Wood" ID="{5CCFB0E9-DCD2-4D2B-9FA2-CE21F04F0054}"/>
 							</ChildrenList>
 						</SwitchGroup>
+						<SwitchGroup Name="Jumps" ID="{84FE89FE-4488-462C-B92A-27FFD1AB58D9}">
+							<ChildrenList>
+								<Switch Name="Stone" ID="{7675C45B-4D4D-41CA-80DB-2B02676C24F2}"/>
+								<Switch Name="Metal" ID="{7EB92E7E-E093-46E1-8D7C-B1AA4EF5F01C}"/>
+								<Switch Name="Water" ID="{A0516E2A-814A-4D81-B91A-71DF80EB73B5}"/>
+								<Switch Name="Wood" ID="{C681CCB7-C282-4F42-91BA-671AA311F00C}"/>
+							</ChildrenList>
+						</SwitchGroup>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -91,6 +91,7 @@
 			<Path>Character_MC_Rat.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2871201794" Name="Footstep_MC_Rat" ObjectPath="\Events\Default Work Unit\Footstep_MC_Rat" DurationType="OneShot" DurationMin="0.000000" DurationMax="2.934356"/>
+				<Event Id="154336016" Name="Jump_MC_Rat" ObjectPath="\Events\Default Work Unit\Jump_MC_Rat" DurationType="OneShot" DurationMin="0.199765" DurationMax="0.237563"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="128898507" Language="SFX">
@@ -109,9 +110,25 @@
 					<ShortName>Footsteps\Water_Splash\SPLASH_Small_02_mono.wav</ShortName>
 					<Path>SFX/Footsteps/Water_Splash/SPLASH_Small_02_mono_10C4C929.wem</Path>
 				</File>
+				<File Id="536024184" Language="SFX">
+					<ShortName>PESt_JumpSound_MC_Rat_Jump01.wav</ShortName>
+					<Path>SFX/PESt_JumpSound_MC_Rat_Jump01_10C4C929.wem</Path>
+				</File>
+				<File Id="541604109" Language="SFX">
+					<ShortName>PEST_FOOTSTEP_MC_Rat_MetalStep01.wav</ShortName>
+					<Path>SFX/PEST_FOOTSTEP_MC_Rat_MetalStep01_10C4C929.wem</Path>
+				</File>
+				<File Id="579496492" Language="SFX">
+					<ShortName>PEST_FOOTSTEP_MC_Rat_MetalStep04.wav</ShortName>
+					<Path>SFX/PEST_FOOTSTEP_MC_Rat_MetalStep04_10C4C929.wem</Path>
+				</File>
 				<File Id="617559999" Language="SFX">
 					<ShortName>Footsteps\Water_Splash\SPLASH_Small_01_mono.wav</ShortName>
 					<Path>SFX/Footsteps/Water_Splash/SPLASH_Small_01_mono_10C4C929.wem</Path>
+				</File>
+				<File Id="679200274" Language="SFX">
+					<ShortName>PEST_FOOTSTEP_MC_Rat_MetalStep03.wav</ShortName>
+					<Path>SFX/PEST_FOOTSTEP_MC_Rat_MetalStep03_10C4C929.wem</Path>
 				</File>
 				<File Id="752396951" Language="SFX">
 					<ShortName>Footsteps\Water_Splash\SPLASH_Small_03_mono.wav</ShortName>
@@ -132,6 +149,10 @@
 				<File Id="954653016" Language="SFX">
 					<ShortName>Footsteps\Water_Step\PEST_FOOTSTEP_MC_Rat_WaterStep.wav</ShortName>
 					<Path>SFX/Footsteps/Water_Step/PEST_FOOTSTEP_MC_Rat_WaterStep_10C4C929.wem</Path>
+				</File>
+				<File Id="976679939" Language="SFX">
+					<ShortName>PEST_FOOTSTEP_MC_Rat_MetalStep02.wav</ShortName>
+					<Path>SFX/PEST_FOOTSTEP_MC_Rat_MetalStep02_10C4C929.wem</Path>
 				</File>
 				<File Id="1002743008" Language="SFX">
 					<ShortName>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_5.wav</ShortName>

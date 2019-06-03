@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID AMBIENCE_MUSIC_KANALISATION = 169578072U;
         static const AkUniqueID FOOTSTEP_MC_RAT = 2871201794U;
+        static const AkUniqueID JUMP_MC_RAT = 154336016U;
         static const AkUniqueID TORCHES = 2615352377U;
         static const AkUniqueID WATER = 2654748154U;
     } // namespace EVENTS
@@ -33,6 +34,19 @@ namespace AK
                 static const AkUniqueID WOOD = 2058049674U;
             } // namespace SWITCH
         } // namespace FOOTSTEPS
+
+        namespace JUMPS
+        {
+            static const AkUniqueID GROUP = 1071740888U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID METAL = 2473969246U;
+                static const AkUniqueID STONE = 1216965916U;
+                static const AkUniqueID WATER = 2654748154U;
+                static const AkUniqueID WOOD = 2058049674U;
+            } // namespace SWITCH
+        } // namespace JUMPS
 
     } // namespace SWITCHES
 

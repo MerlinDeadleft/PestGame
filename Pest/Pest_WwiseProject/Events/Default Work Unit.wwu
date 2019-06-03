@@ -61,6 +61,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Jump_MC_Rat" ID="{13F1024D-DABB-4D52-A33D-D54212922528}">
+					<ChildrenList>
+						<Action Name="" ID="{BA4DA393-C974-4329-9D86-8F0C2F17E376}" ShortID="22751112">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Jumps" ID="{140ABBB3-54A0-472A-9A7E-51BAA88A6F29}" WorkUnitID="{2FACEC65-D8ED-4F97-A3DE-BF57448B5F8E}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -13,25 +13,25 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
-  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+  - PhysicalPath: Virtual Acoustics/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 39efc11e430757408bf88ef6dd32fa6f
     GuidInternal: 
-    m_lastTime: -8586425699874459473
+    m_lastTime: -8586423638124775808
     List: []
   AuxBusWwu:
-  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+  - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 7db3570ec9665743abcad4d57d2d8cb7
     GuidInternal: 
-    m_lastTime: -8586425699894431233
+    m_lastTime: -8586421130634775808
     List: []
   BankWwu:
-  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+  - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 45332a5e69ab74488a5e91eca3a87e55
     GuidInternal: 
-    m_lastTime: -8586424879955928211
+    m_lastTime: -8586423638124775808
     List:
     - name: AmbienceMusic_Kanalisation
       guid: 0876bb2f5d1b3e4890b8fb5b81e207aa
@@ -41,7 +41,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: AmbienceMusic_Kanalisation
         ObjectType: 7
-      Path: Default Work Unit\AmbienceMusic_Kanalisation
+      Path: Default Work Unit/AmbienceMusic_Kanalisation
     - name: Ambient_Kanalisation
       guid: 2e97b9dd61dac24fa51d9bff10f3fcb3
       id: 310433906
@@ -50,7 +50,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Ambient_Kanalisation
         ObjectType: 7
-      Path: Default Work Unit\Ambient_Kanalisation
+      Path: Default Work Unit/Ambient_Kanalisation
     - name: Character_MC_Rat
       guid: eda1a3764a37a245b5b63065d216c56a
       id: 3283972205
@@ -59,13 +59,13 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Character_MC_Rat
         ObjectType: 7
-      Path: Default Work Unit\Character_MC_Rat
+      Path: Default Work Unit/Character_MC_Rat
   EventWwu:
-  - PhysicalPath: Events\Default Work Unit.wwu
+  - PhysicalPath: Events/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 6a3dd61b4901814ab713347404d9b333
     GuidInternal: 
-    m_lastTime: -8586424879968373310
+    m_lastTime: -8586423638164775808
     List:
     - name: Ambience_Music_Kanalisation
       guid: 315df5e8a305f542a67713ed161567f6
@@ -75,7 +75,7 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Ambience_Music_Kanalisation
         ObjectType: 3
-      Path: Default Work Unit\Ambience_Music_Kanalisation
+      Path: Default Work Unit/Ambience_Music_Kanalisation
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -87,10 +87,10 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Footstep_MC_Rat
         ObjectType: 3
-      Path: Default Work Unit\Footstep_MC_Rat
+      Path: Default Work Unit/Footstep_MC_Rat
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.934356
+      minDuration: 0
     - name: Torches
       guid: ee2ba2b9ae775e438f3cc7d972c86cf3
       id: 2615352377
@@ -99,8 +99,8 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Torches
         ObjectType: 3
-      Path: Default Work Unit\Torches
-      maxAttenuation: 0
+      Path: Default Work Unit/Torches
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
     - name: Water
@@ -111,30 +111,30 @@ MonoBehaviour:
         ObjectType: 12
       - ElementName: Water
         ObjectType: 3
-      Path: Default Work Unit\Water
-      maxAttenuation: 0
+      Path: Default Work Unit/Water
+      maxAttenuation: 50
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
-  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+  - PhysicalPath: Game Parameters/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: a6b6eea43e92b645922b03a27a80f28c
     GuidInternal: 
-    m_lastTime: -8586425699915764206
+    m_lastTime: -8586423638164775808
     List: []
   StateWwu:
-  - PhysicalPath: States\Default Work Unit.wwu
+  - PhysicalPath: States/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 9a82f860d8063540b2fa85ee3332f16e
     GuidInternal: 
-    m_lastTime: -8586425699874568857
+    m_lastTime: -8586423638124775808
     List: []
   SwitchWwu:
-  - PhysicalPath: Switches\Default Work Unit.wwu
+  - PhysicalPath: Switches/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: ef863a411e90054e988c1cef1b0a2089
     GuidInternal: 
-    m_lastTime: -8586424879955897922
+    m_lastTime: -8586423638124775808
     List:
     - name: Footsteps
       guid: b18277e7695bbd4fae67397464d11995
@@ -146,7 +146,7 @@ MonoBehaviour:
         ObjectType: 4
       - ElementName: Footsteps
         ObjectType: 11
-      Path: Default Work Unit\Character_MC_Rat\Footsteps
+      Path: Default Work Unit/Character_MC_Rat/Footsteps
       values:
       - name: Metal
         guid: c880f3d788f11a438ade2ee80dd0e01a
@@ -176,19 +176,13 @@ MonoBehaviour:
       ValueIcons: []
       valuesInternal: []
   TriggerWwu:
-  - PhysicalPath: Triggers\Default Work Unit.wwu
+  - PhysicalPath: Triggers/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: fa4ab9f12278a94eb2ebc0cedbc638c7
     GuidInternal: 
-    m_lastTime: -8586425699874499040
+    m_lastTime: -8586423638124775808
     List: []
   ExpandedItems:
   - /Pest_WwiseProject
-  - /Pest_WwiseProject/SoundBanks
-  - /Pest_WwiseProject/SoundBanks/Default Work Unit
-  - /Pest_WwiseProject/Switches
-  - /Pest_WwiseProject/Switches/Default Work Unit
-  - /Pest_WwiseProject/Switches/Default Work Unit/Character_MC_Rat
-  - /Pest_WwiseProject/Switches/Default Work Unit/Character_MC_Rat/Footsteps
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

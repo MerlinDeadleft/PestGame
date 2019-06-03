@@ -5,432 +5,642 @@
 			<ChildrenList>
 				<Folder Name="Character_MC_Rat" ID="{15D54978-27FF-4CF8-AB29-959079BBC2E3}" ShortID="207146442">
 					<ChildrenList>
-						<SwitchContainer Name="Footsteps" ID="{7F317F8F-E465-4FE9-9E04-381A06634627}" ShortID="828839906">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-								</Reference>
-								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="Stone" ID="{481DBD55-60DB-418B-9364-02EAE96B97A0}" WorkUnitID="{413A86EF-901E-4E05-988C-1CEF1B0A2089}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-								</Reference>
-								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="Footsteps" ID="{E77782B1-5B69-4FBD-AE67-397464D11995}" WorkUnitID="{413A86EF-901E-4E05-988C-1CEF1B0A2089}"/>
-								</Reference>
-							</ReferenceList>
+						<Folder Name="Movement" ID="{FD3A4C75-5198-4EEC-8E74-231FEF556D80}" ShortID="439197693">
 							<ChildrenList>
-								<RandomSequenceContainer Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}" ShortID="48921649">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{0A06166D-CA25-4639-BFC1-DB63F341A0C9}"/>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}" ShortID="1068819944">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{8D480BB5-427A-42C0-9BB6-52479B1C3BE3}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="200"/>
-															<Property Name="Min" Type="Real64" Value="-200"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-28</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-										</Reference>
-									</ReferenceList>
+								<Folder Name="Footsteps" ID="{EA215DFD-3602-4499-8AF2-659810277FF9}" ShortID="520646002">
 									<ChildrenList>
-										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{2B5A1C53-4207-4268-A7D1-31F5E078E519}" ShortID="628607075">
+										<SwitchContainer Name="Footsteps" ID="{7F317F8F-E465-4FE9-9E04-381A06634627}" ShortID="828839906">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-12</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
 												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{C4BF2677-2CEE-4EF2-ADF5-4D5D41D0DC24}" ShortID="1009376919">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_1.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{C4BF2677-2CEE-4EF2-ADF5-4D5D41D0DC24}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{C03203F5-B159-4755-A04B-9EFB9ACA6081}" ShortID="770384395">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Stone" ID="{481DBD55-60DB-418B-9364-02EAE96B97A0}" WorkUnitID="{413A86EF-901E-4E05-988C-1CEF1B0A2089}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
 												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{FAA2E5A7-ADBB-4B74-82F3-E5C91E82B659}" ShortID="870448471">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_2.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{FAA2E5A7-ADBB-4B74-82F3-E5C91E82B659}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{31D75385-78B1-4CD4-BC77-10DD8B3D2A28}" ShortID="538221099">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="Footsteps" ID="{E77782B1-5B69-4FBD-AE67-397464D11995}" WorkUnitID="{413A86EF-901E-4E05-988C-1CEF1B0A2089}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{83AB8645-2BDA-4B44-94CB-1A6EE117F20A}" ShortID="181238028">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_3.wav</AudioFile>
-												</AudioFileSource>
+												<RandomSequenceContainer Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}" ShortID="48921649">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{0A06166D-CA25-4639-BFC1-DB63F341A0C9}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="150"/>
+																			<Property Name="Min" Type="Real64" Value="-150"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-22</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_MetalStep01" ID="{BD547CBE-F23C-4834-969B-122750CE7C65}" ShortID="92527948">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_MetalStep01" ID="{DAAC589D-C52B-4247-8474-9929D3A66A85}" ShortID="541604109">
+																	<Language>SFX</Language>
+																	<AudioFile>PEST_FOOTSTEP_MC_Rat_MetalStep01.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_MetalStep01" ID="{DAAC589D-C52B-4247-8474-9929D3A66A85}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_MetalStep02" ID="{8E050F7C-1236-4A26-AE97-A10EFA22FA6F}" ShortID="532467846">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_MetalStep02" ID="{C63A4707-638B-450C-9D04-E9BD4548AA9C}" ShortID="976679939">
+																	<Language>SFX</Language>
+																	<AudioFile>PEST_FOOTSTEP_MC_Rat_MetalStep02.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_MetalStep02" ID="{C63A4707-638B-450C-9D04-E9BD4548AA9C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_MetalStep03" ID="{39B7A9D7-1FA2-425B-8AEA-F059D8B508D2}" ShortID="1058582244">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_MetalStep03" ID="{F014E0CD-FE4F-41E0-B037-AE6CE99E7F0E}" ShortID="679200274">
+																	<Language>SFX</Language>
+																	<AudioFile>PEST_FOOTSTEP_MC_Rat_MetalStep03.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_MetalStep03" ID="{F014E0CD-FE4F-41E0-B037-AE6CE99E7F0E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_MetalStep04" ID="{77E3AF3D-CAB9-479D-90B4-25EAF95498BE}" ShortID="465315143">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_MetalStep04" ID="{70D6B8E6-781A-4417-BCD2-11A804542454}" ShortID="579496492">
+																	<Language>SFX</Language>
+																	<AudioFile>PEST_FOOTSTEP_MC_Rat_MetalStep04.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_MetalStep04" ID="{70D6B8E6-781A-4417-BCD2-11A804542454}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}" ShortID="1068819944">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{8D480BB5-427A-42C0-9BB6-52479B1C3BE3}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="200"/>
+																			<Property Name="Min" Type="Real64" Value="-200"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-27</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{2B5A1C53-4207-4268-A7D1-31F5E078E519}" ShortID="628607075">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{C4BF2677-2CEE-4EF2-ADF5-4D5D41D0DC24}" ShortID="1009376919">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_1.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_1" ID="{C4BF2677-2CEE-4EF2-ADF5-4D5D41D0DC24}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{C03203F5-B159-4755-A04B-9EFB9ACA6081}" ShortID="770384395">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{FAA2E5A7-ADBB-4B74-82F3-E5C91E82B659}" ShortID="870448471">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_2.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_2" ID="{FAA2E5A7-ADBB-4B74-82F3-E5C91E82B659}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{31D75385-78B1-4CD4-BC77-10DD8B3D2A28}" ShortID="538221099">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{83AB8645-2BDA-4B44-94CB-1A6EE117F20A}" ShortID="181238028">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_3.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{83AB8645-2BDA-4B44-94CB-1A6EE117F20A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{25259EE6-66C7-4F65-B177-FA7B8D8E65F3}" ShortID="233440198">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{2892F063-191A-45BC-AA69-F36967C03D0C}" ShortID="128898507">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_4.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{2892F063-191A-45BC-AA69-F36967C03D0C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{6AFE3EBA-F221-48D6-B8E8-0925DF62B4CD}" ShortID="375223909">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{544DF370-C296-4DA3-8DE3-A980D4CB6EAC}" ShortID="1002743008">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_5.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{544DF370-C296-4DA3-8DE3-A980D4CB6EAC}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}" ShortID="471406146">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{5BA6565B-9874-4FF6-9D21-ACE1EB8A2622}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="150"/>
+																			<Property Name="Min" Type="Real64" Value="-150"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-22</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="SPLASH_Small_01_mono" ID="{51737E3C-23D8-4464-9F6C-88F873C8B2E8}" ShortID="438138903">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SPLASH_Small_01_mono" ID="{54091007-F67B-4466-831B-326F3FF73D35}" ShortID="617559999">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Water_Splash\SPLASH_Small_01_mono.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SPLASH_Small_01_mono" ID="{54091007-F67B-4466-831B-326F3FF73D35}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SPLASH_Small_02_mono" ID="{584F617F-BD36-4403-B09E-3986FD0B0C7C}" ShortID="44460049">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SPLASH_Small_02_mono" ID="{811E6978-1BD1-48F1-9505-3248449A2BE0}" ShortID="501850147">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Water_Splash\SPLASH_Small_02_mono.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SPLASH_Small_02_mono" ID="{811E6978-1BD1-48F1-9505-3248449A2BE0}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SPLASH_Small_03_mono" ID="{FA8AE6F8-F9B6-4DDD-8780-7893697F4560}" ShortID="385283215">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SPLASH_Small_03_mono" ID="{8689A9F3-C7D1-4687-988B-8A3799717008}" ShortID="752396951">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Water_Splash\SPLASH_Small_03_mono.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SPLASH_Small_03_mono" ID="{8689A9F3-C7D1-4687-988B-8A3799717008}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SPLASH_Small_04_mono" ID="{91872E42-0DAD-44D6-8FBE-55B43818526E}" ShortID="254267011">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SPLASH_Small_04_mono" ID="{F558A889-1952-4A63-81D8-D6CD0A0553FC}" ShortID="861822625">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Water_Splash\SPLASH_Small_04_mono.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SPLASH_Small_04_mono" ID="{F558A889-1952-4A63-81D8-D6CD0A0553FC}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SPLASH_Small_05_mono" ID="{D06800B0-0F71-4510-9281-FEB49B4F6AE7}" ShortID="1052060925">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SPLASH_Small_05_mono" ID="{AC468B59-ADA0-4FD9-9A0C-6BE0899C9ACA}" ShortID="945687098">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Water_Splash\SPLASH_Small_05_mono.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SPLASH_Small_05_mono" ID="{AC468B59-ADA0-4FD9-9A0C-6BE0899C9ACA}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SPLASH_Subtle_mono" ID="{4EA4EC19-C4AB-4553-9676-8187342CB776}" ShortID="663051335">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SPLASH_Subtle_mono" ID="{CDCEF2A3-0900-40DF-A40F-71C82773F512}" ShortID="400334130">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Water_Splash\SPLASH_Subtle_mono.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SPLASH_Subtle_mono" ID="{CDCEF2A3-0900-40DF-A40F-71C82773F512}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}" ShortID="169504301">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{F4A3CC0A-4EF8-40C7-9132-EB728C20C5A0}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="150"/>
+																			<Property Name="Min" Type="Real64" Value="-150"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-25</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{0000E516-3DA7-4356-B09D-D3CDA7909576}" ShortID="642254285">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{B59FFEF4-EF69-4EDC-A3B8-C39EEAAB774A}" ShortID="954653016">
+																	<Language>SFX</Language>
+																	<AudioFile>Footsteps\Water_Step\PEST_FOOTSTEP_MC_Rat_WaterStep.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{B59FFEF4-EF69-4EDC-A3B8-C39EEAAB774A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}" ShortID="443942522">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+														</Reference>
+													</ReferenceList>
+												</RandomSequenceContainer>
 											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_3" ID="{83AB8645-2BDA-4B44-94CB-1A6EE117F20A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{25259EE6-66C7-4F65-B177-FA7B8D8E65F3}" ShortID="233440198">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{2892F063-191A-45BC-AA69-F36967C03D0C}" ShortID="128898507">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_4.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_4" ID="{2892F063-191A-45BC-AA69-F36967C03D0C}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{6AFE3EBA-F221-48D6-B8E8-0925DF62B4CD}" ShortID="375223909">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{544DF370-C296-4DA3-8DE3-A980D4CB6EAC}" ShortID="1002743008">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Stone_Step\PEST_FOOTSTEP_MC_Rat_StoneStep_5.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_StoneStep_5" ID="{544DF370-C296-4DA3-8DE3-A980D4CB6EAC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+											<GroupingInfo>
+												<GroupingBehaviorList>
+													<GroupingBehavior>
+														<ItemRef Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}"/>
+													</GroupingBehavior>
+													<GroupingBehavior>
+														<ItemRef Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}"/>
+													</GroupingBehavior>
+												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Stone" ID="{481DBD55-60DB-418B-9364-02EAE96B97A0}"/>
+														<ItemList>
+															<ItemRef Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Metal" ID="{D7F380C8-F188-431A-8ADE-2EE80DD0E01A}"/>
+														<ItemList>
+															<ItemRef Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}"/>
+															<ItemRef Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Water" ID="{38E777DB-6FDF-4570-B5B5-AFC414360E4E}"/>
+														<ItemList>
+															<ItemRef Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}"/>
+															<ItemRef Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Wood" ID="{5CCFB0E9-DCD2-4D2B-9FA2-CE21F04F0054}"/>
+														<ItemList>
+															<ItemRef Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
+											</GroupingInfo>
+										</SwitchContainer>
 									</ChildrenList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}" ShortID="471406146">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{5BA6565B-9874-4FF6-9D21-ACE1EB8A2622}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="150"/>
-															<Property Name="Min" Type="Real64" Value="-150"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-										<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-25</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-										</Reference>
-									</ReferenceList>
+								</Folder>
+								<Folder Name="Jumps" ID="{B1B0E2A1-3960-4C8B-A84F-34701DD30187}" ShortID="870963661">
 									<ChildrenList>
-										<Sound Name="SPLASH_Small_01_mono" ID="{51737E3C-23D8-4464-9F6C-88F873C8B2E8}" ShortID="438138903">
+										<SwitchContainer Name="Jumps" ID="{140ABBB3-54A0-472A-9A7E-51BAA88A6F29}" ShortID="10241594">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{A2364A27-D86A-4504-B1A1-12FBB7D070C3}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="150"/>
+																	<Property Name="Min" Type="Real64" Value="-150"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
 												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="SPLASH_Small_01_mono" ID="{54091007-F67B-4466-831B-326F3FF73D35}" ShortID="617559999">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_01_mono.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="SPLASH_Small_01_mono" ID="{54091007-F67B-4466-831B-326F3FF73D35}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="SPLASH_Small_02_mono" ID="{584F617F-BD36-4403-B09E-3986FD0B0C7C}" ShortID="44460049">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Stone" ID="{7675C45B-4D4D-41CA-80DB-2B02676C24F2}" WorkUnitID="{413A86EF-901E-4E05-988C-1CEF1B0A2089}"/>
 												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
 												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="SPLASH_Small_02_mono" ID="{811E6978-1BD1-48F1-9505-3248449A2BE0}" ShortID="501850147">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_02_mono.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="SPLASH_Small_02_mono" ID="{811E6978-1BD1-48F1-9505-3248449A2BE0}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="SPLASH_Small_03_mono" ID="{FA8AE6F8-F9B6-4DDD-8780-7893697F4560}" ShortID="385283215">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="Jumps" ID="{84FE89FE-4488-462C-B92A-27FFD1AB58D9}" WorkUnitID="{413A86EF-901E-4E05-988C-1CEF1B0A2089}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="SPLASH_Small_03_mono" ID="{8689A9F3-C7D1-4687-988B-8A3799717008}" ShortID="752396951">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_03_mono.wav</AudioFile>
-												</AudioFileSource>
+												<RandomSequenceContainer Name="Voice_Jump" ID="{552AC3A5-F840-4760-9EB7-664C2DFF13B3}" ShortID="686188962">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-23</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="PESt_JumpSound_MC_Rat_Jump01" ID="{23C332CC-222A-497E-8FB0-638E60CACC56}" ShortID="433244906">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="PESt_JumpSound_MC_Rat_Jump01" ID="{42340421-983E-42D9-BC5A-00F8403B641E}" ShortID="536024184">
+																	<Language>SFX</Language>
+																	<AudioFile>PESt_JumpSound_MC_Rat_Jump01.wav</AudioFile>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="PESt_JumpSound_MC_Rat_Jump01" ID="{42340421-983E-42D9-BC5A-00F8403B641E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
 											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="SPLASH_Small_03_mono" ID="{8689A9F3-C7D1-4687-988B-8A3799717008}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="SPLASH_Small_04_mono" ID="{91872E42-0DAD-44D6-8FBE-55B43818526E}" ShortID="254267011">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="SPLASH_Small_04_mono" ID="{F558A889-1952-4A63-81D8-D6CD0A0553FC}" ShortID="861822625">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_04_mono.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="SPLASH_Small_04_mono" ID="{F558A889-1952-4A63-81D8-D6CD0A0553FC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="SPLASH_Small_05_mono" ID="{D06800B0-0F71-4510-9281-FEB49B4F6AE7}" ShortID="1052060925">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="SPLASH_Small_05_mono" ID="{AC468B59-ADA0-4FD9-9A0C-6BE0899C9ACA}" ShortID="945687098">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Water_Splash\SPLASH_Small_05_mono.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="SPLASH_Small_05_mono" ID="{AC468B59-ADA0-4FD9-9A0C-6BE0899C9ACA}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="SPLASH_Subtle_mono" ID="{4EA4EC19-C4AB-4553-9676-8187342CB776}" ShortID="663051335">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="SPLASH_Subtle_mono" ID="{CDCEF2A3-0900-40DF-A40F-71C82773F512}" ShortID="400334130">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Water_Splash\SPLASH_Subtle_mono.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="SPLASH_Subtle_mono" ID="{CDCEF2A3-0900-40DF-A40F-71C82773F512}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+											<GroupingInfo>
+												<GroupingBehaviorList>
+													<GroupingBehavior>
+														<ItemRef Name="Voice_Jump" ID="{552AC3A5-F840-4760-9EB7-664C2DFF13B3}"/>
+													</GroupingBehavior>
+												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Water" ID="{A0516E2A-814A-4D81-B91A-71DF80EB73B5}"/>
+														<ItemList>
+															<ItemRef Name="Voice_Jump" ID="{552AC3A5-F840-4760-9EB7-664C2DFF13B3}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Stone" ID="{7675C45B-4D4D-41CA-80DB-2B02676C24F2}"/>
+														<ItemList>
+															<ItemRef Name="Voice_Jump" ID="{552AC3A5-F840-4760-9EB7-664C2DFF13B3}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Metal" ID="{7EB92E7E-E093-46E1-8D7C-B1AA4EF5F01C}"/>
+														<ItemList>
+															<ItemRef Name="Voice_Jump" ID="{552AC3A5-F840-4760-9EB7-664C2DFF13B3}"/>
+														</ItemList>
+													</Grouping>
+													<Grouping>
+														<SwitchRef Name="Wood" ID="{C681CCB7-C282-4F42-91BA-671AA311F00C}"/>
+														<ItemList>
+															<ItemRef Name="Voice_Jump" ID="{552AC3A5-F840-4760-9EB7-664C2DFF13B3}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
+											</GroupingInfo>
+										</SwitchContainer>
 									</ChildrenList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}" ShortID="169504301">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{F4A3CC0A-4EF8-40C7-9132-EB728C20C5A0}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="150"/>
-															<Property Name="Min" Type="Real64" Value="-150"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-										<Property Name="Volume" Type="Real64">
-											<ValueList>
-												<Value>-23</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{0000E516-3DA7-4356-B09D-D3CDA7909576}" ShortID="642254285">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{B59FFEF4-EF69-4EDC-A3B8-C39EEAAB774A}" ShortID="954653016">
-													<Language>SFX</Language>
-													<AudioFile>Footsteps\Water_Step\PEST_FOOTSTEP_MC_Rat_WaterStep.wav</AudioFile>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="PEST_FOOTSTEP_MC_Rat_WaterStep" ID="{B59FFEF4-EF69-4EDC-A3B8-C39EEAAB774A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}" ShortID="443942522">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{EE3C0A5D-CA0D-466F-B374-236CE1456162}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0E57B37D-66C9-4357-ABCA-D4D57D2D8CB7}"/>
-										</Reference>
-									</ReferenceList>
-								</RandomSequenceContainer>
+								</Folder>
+								<Folder Name="Climbing" ID="{AC92AA0F-4272-4E28-9F91-A66D586CDCDF}" ShortID="57939057"/>
 							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="Stone" ID="{481DBD55-60DB-418B-9364-02EAE96B97A0}"/>
-										<ItemList>
-											<ItemRef Name="Stone_Step" ID="{C3F6331A-46AD-4E87-BA15-B25A7C135B70}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Metal" ID="{D7F380C8-F188-431A-8ADE-2EE80DD0E01A}"/>
-										<ItemList>
-											<ItemRef Name="Metal_Step" ID="{DD2B1AD9-1C98-492B-91F0-8571AD21F125}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Water" ID="{38E777DB-6FDF-4570-B5B5-AFC414360E4E}"/>
-										<ItemList>
-											<ItemRef Name="Water_Splash" ID="{AF311E4A-D2ED-49B5-9309-24A9129C0288}"/>
-											<ItemRef Name="Water_Step" ID="{7B49857C-DA28-477A-86CD-8946BCBE1A4C}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Wood" ID="{5CCFB0E9-DCD2-4D2B-9FA2-CE21F04F0054}"/>
-										<ItemList>
-											<ItemRef Name="Wood_Step" ID="{58301D3B-8C12-4BE7-AF76-A1B68C16D988}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
-							</GroupingInfo>
-						</SwitchContainer>
+						</Folder>
+						<Folder Name="Fighting" ID="{F0012690-9A2C-4849-BB13-0ACAD1297DE8}" ShortID="885671673"/>
+						<Folder Name="Animations" ID="{CA817334-27BF-4431-A025-A9C39515369F}" ShortID="766449543"/>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Ambience_Kanalisation" ID="{890501A8-FD90-4611-8534-A6DAF4BFAA50}" ShortID="792411735">
