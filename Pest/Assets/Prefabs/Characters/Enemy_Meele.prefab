@@ -260,8 +260,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animController: {fileID: 833673240}
   navMeshAgent: {fileID: 6320952866610947273}
-  walkSpeed: 3.5
-  runSpeed: 7
+  walkSpeed: 1.5
+  runSpeed: 4.5
   hasEyes: 1
   eyes: {fileID: 1059690587}
   horFOVAngle: 110

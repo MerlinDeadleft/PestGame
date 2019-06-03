@@ -11,7 +11,8 @@ public class VignetteController : MonoBehaviour
 	[SerializeField] PlayerController playerController = null;
 	[SerializeField] float maxDistanceToLight = 10.0f;
 
-	[SerializeField] List<Light> lights = new List<Light>();
+	List<Light> lights = new List<Light>();
+	[SerializeField] List<Light> contributingLight = new List<Light>();
 
 	// Start is called before the first frame update
 	void Start()
@@ -42,6 +43,7 @@ public class VignetteController : MonoBehaviour
 
 	float CalculateVignetteIntensity()
 	{
+		contributingLight.Clear();
 		float intensity = 0.0f;
 		int contributingLights = 0;
 
@@ -56,10 +58,11 @@ public class VignetteController : MonoBehaviour
 					RaycastHit hit;
 					Ray ray = new Ray(light.transform.position, (playerModel.transform.position + Vector3.up) - light.transform.position);
 
-					if(Physics.Raycast(ray, out hit, maxDistanceToLight))
+					if(Physics.Raycast(ray, out hit, maxDistanceToLight, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 					{
 						if(hit.transform.tag == "Player")
 						{
+							contributingLight.Add(light);
 							contributingLights++;
 
 							intensity += Mathf.Clamp01(1.0f / distanceToPlayer);

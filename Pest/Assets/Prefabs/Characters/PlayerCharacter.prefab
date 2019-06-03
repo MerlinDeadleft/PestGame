@@ -187,7 +187,7 @@ MonoBehaviour:
   playerModel: {fileID: 9211627517739840263}
   playerController: {fileID: 114961850904351382}
   maxDistanceToLight: 10
-  lights: []
+  contributingLight: []
 --- !u!114 &346218546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,8 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   longIdleTime: 5
-  soundController: {fileID: 2487804787164731503, guid: f42a58d7e50e5a5418d7d93f1bc73775,
-    type: 3}
+  soundController: {fileID: 0}
 --- !u!114 &1539911592
 MonoBehaviour:
   m_ObjectHideFlags: 0
