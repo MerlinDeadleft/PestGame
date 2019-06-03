@@ -32,9 +32,11 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] float runSpeed = 7.5f;
 	[SerializeField] float turnSpeed = 10.0f;
 	[SerializeField] float jumpStrenght = 11.0f;
+	bool canMove = true;
 	bool canJump = true;
 	bool hasJumped = false;
 	bool isSneaking = false;
+	float lightModificator = 0.0f;
 
 	/********************climbing variables********************/
 	[Header("Climbing")]
@@ -88,7 +90,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Alpha0))
 		{
-			UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+			ReloadScene();
 		}
 
 		if(isHiding)
@@ -99,7 +101,7 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleTakeDown();
 		}
-		else
+		else if(canMove)
 		{
 			HandleMovement();
 		}
@@ -181,7 +183,7 @@ public class PlayerController : MonoBehaviour
 				isSneaking = false;
 			}
 
-			moveDirection *= moveSpeed;
+			moveDirection *= moveSpeed * lightModificator;
 
 			if(hasJumped)
 			{
@@ -389,6 +391,7 @@ public class PlayerController : MonoBehaviour
 
 	void HandleTakeDown()
 	{
+		TakeDownObject.StartTakeDown();
 		Vector3 directionToMove = TakeDownObject.TakeDownAnimationStartPosition.position - transform.position;
 
 		if(directionToMove.magnitude > 0.15f)
@@ -413,6 +416,12 @@ public class PlayerController : MonoBehaviour
 				isTakingEnemyDown = false;
 			}
 		}
+	}
+
+	/********************UpdateLightEffect*********************/
+	public void UpdateLightEffect(float lightIntensity)
+	{
+		lightModificator = Mathf.Clamp(1.0f - lightIntensity, 0.35f, 1.0f);
 	}
 
 	#region Unity callbacks
@@ -477,4 +486,19 @@ public class PlayerController : MonoBehaviour
 		#endregion
 	}
 	#endregion
+
+	public void Die()
+	{
+		if(canMove)
+		{
+			canMove = false;
+			Invoke("ReloadScene", 1.0f);
+		}
+	}
+
+	void ReloadScene()
+	{
+		Destroy(gameObject);
+		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+	}
 }

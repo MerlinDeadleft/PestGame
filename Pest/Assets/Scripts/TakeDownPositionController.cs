@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [ExecuteAlways]
 public class TakeDownPositionController : MonoBehaviour
@@ -63,6 +64,12 @@ public class TakeDownPositionController : MonoBehaviour
 	public void Die()
 	{
 		animationController.Die();
+		Destroy(transform.parent.gameObject);
 		Destroy(animationController.gameObject, 5.0f);
+	}
+
+	public void StartTakeDown()
+	{
+		GetComponentInParent<NavMeshAgent>().isStopped = true;
 	}
 }

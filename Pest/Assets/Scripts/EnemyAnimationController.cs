@@ -5,8 +5,12 @@ using UnityEngine;
 public class EnemyAnimationController : MonoBehaviour
 {
 	Animator animator = null;
+
+	public bool Attacking { get; set; } = false;
+
 	/********************animation hashes**********************/
 	int dieHash = Animator.StringToHash("Die");
+	int attackHash = Animator.StringToHash("Attack");
 
 	private void Start()
 	{
@@ -16,5 +20,16 @@ public class EnemyAnimationController : MonoBehaviour
 	public void Die()
 	{
 		animator.SetTrigger(dieHash);
+	}
+
+	public void Attack()
+	{
+		animator.SetTrigger(attackHash);
+		Attacking = true;
+	}
+
+	void OnAttackEnd()
+	{
+		Attacking = false;
 	}
 }
