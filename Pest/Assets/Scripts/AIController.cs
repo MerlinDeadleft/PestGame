@@ -97,6 +97,7 @@ public class AIController : MonoBehaviour
 		else if(eyes.PlayerInSight)
 		{
 			navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
+			navMeshAgent.speed = runSpeed;
 		}
 	}
 
@@ -161,6 +162,7 @@ public class AIController : MonoBehaviour
 					patrolBehaviour.CurrentWaypoint.WasGuarded = false; //Next time Agent comes to this waypoint guard behaviour has to be repeated
 				}
 				navMeshAgent.SetDestination(patrolBehaviour.GetNextWayPoint().Position);
+				navMeshAgent.speed = walkSpeed;
 				//Debug.Log("126:" + navMeshAgent.destination);
 			}
 		}
@@ -181,6 +183,8 @@ public class AIController : MonoBehaviour
 				if(distanceToPlayerLastSeenPos > navMeshAgent.stoppingDistance)
 				{
 					navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
+					navMeshAgent.speed = runSpeed;
+
 					//Debug.Log("146:" + navMeshAgent.destination);
 					attackTimer = 0.0f;
 				}
@@ -204,6 +208,7 @@ public class AIController : MonoBehaviour
 						if(!walkToPathLeftPoint)
 						{
 							navMeshAgent.SetDestination(patrolBehaviour.PathLeftPoint);
+							navMeshAgent.speed = walkSpeed;
 							//Debug.Log("163:" + navMeshAgent.destination);
 							walkToPathLeftPoint = true;
 						}
@@ -211,6 +216,7 @@ public class AIController : MonoBehaviour
 					else if(patrolBehaviour.CurrentWaypoint != null)
 					{
 						navMeshAgent.SetDestination(patrolBehaviour.CurrentWaypoint.Position);
+						navMeshAgent.speed = walkSpeed;
 						//Debug.Log("170:" + navMeshAgent.destination);
 						walkToPathLeftPoint = false;
 						patrolBehaviour.PathLeft = false;
@@ -224,10 +230,16 @@ public class AIController : MonoBehaviour
 	void HandleGuarding()
 	{
 		float distanceToGuardPoint = Vector3.Magnitude(transform.position - pointToGuard.position);
+		float distanceToPlayerLastSeenPos = Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition);
 
-		if(eyes.PlayerInSight && distanceToGuardPoint < maxDistanceFromGuardPoint)
+		if(eyes.PlayerInSight && distanceToPlayerLastSeenPos < navMeshAgent.stoppingDistance)
+		{
+			AttackingPlayer = true;
+		}
+		else if(eyes.PlayerInSight && distanceToGuardPoint < maxDistanceFromGuardPoint)
 		{
 			navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
+			navMeshAgent.speed = runSpeed;
 			returnToGuardTimer = 0.0f;
 		}
 		else
@@ -239,6 +251,7 @@ public class AIController : MonoBehaviour
 				if(distanceToGuardPoint > 0.3f)
 				{
 					navMeshAgent.SetDestination(pointToGuard.position);
+					navMeshAgent.speed = walkSpeed;
 				}
 				else
 				{
@@ -257,10 +270,16 @@ public class AIController : MonoBehaviour
 	void HandleGuarding(Transform guardPoint, float maxDistanceFromPoint, float returnTime)
 	{
 		float distanceToGuardPoint = Vector3.Magnitude(transform.position - guardPoint.position);
+		float distanceToPlayerLastSeenPos = Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition);
 
-		if(eyes.PlayerInSight && distanceToGuardPoint < maxDistanceFromPoint)
+		if(eyes.PlayerInSight && distanceToPlayerLastSeenPos < navMeshAgent.stoppingDistance)
+		{
+			AttackingPlayer = true;
+		}
+		else if(eyes.PlayerInSight && distanceToGuardPoint < maxDistanceFromPoint)
 		{
 			navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
+			navMeshAgent.speed = runSpeed;
 			returnToGuardTimer = 0.0f;
 		}
 		else
@@ -272,6 +291,7 @@ public class AIController : MonoBehaviour
 				if(distanceToGuardPoint > navMeshAgent.stoppingDistance)
 				{
 					navMeshAgent.SetDestination(guardPoint.position);
+					navMeshAgent.speed = walkSpeed;
 				}
 				else
 				{
