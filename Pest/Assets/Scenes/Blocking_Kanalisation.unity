@@ -12157,6 +12157,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 346218546, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
+      propertyPath: soundController
+      value: 
+      objectReference: {fileID: 1041535193}
     - target: {fileID: 2487804787164731503, guid: f42a58d7e50e5a5418d7d93f1bc73775,
         type: 3}
       propertyPath: runDelay
@@ -47913,6 +47917,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 1eb620f837f39ca46a8026e2bc84a063, type: 3}
+--- !u!114 &1041535193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1539911592, guid: f42a58d7e50e5a5418d7d93f1bc73775,
+    type: 3}
+  m_PrefabInstance: {fileID: 271193114}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c1074c3ce94258418432c2e66a5651f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1042213621
 PrefabInstance:
   m_ObjectHideFlags: 0
