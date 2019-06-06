@@ -24,14 +24,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 7db3570ec9665743abcad4d57d2d8cb7
     GuidInternal: 
-    m_lastTime: -8586420470284775808
+    m_lastTime: -8586420211304775808
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks/Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 45332a5e69ab74488a5e91eca3a87e55
     GuidInternal: 
-    m_lastTime: -8586420295034775808
+    m_lastTime: -8586420211304775808
     List:
     - name: AmbienceMusic_Kanalisation
       guid: 0876bb2f5d1b3e4890b8fb5b81e207aa
@@ -65,7 +65,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 6a3dd61b4901814ab713347404d9b333
     GuidInternal: 
-    m_lastTime: -8586420295034775808
+    m_lastTime: -8586420211324775808
     List:
     - name: Ambience_Music_Kanalisation
       guid: 315df5e8a305f542a67713ed161567f6
@@ -685,8 +685,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit/Character_MC_Rat/Hiding/Hide/Hide1/Hiding_MC_Rat_Hide1_Jump
       maxAttenuation: 0
-      maxDuration: 0.831814
-      minDuration: 0.831814
+      maxDuration: 0.9071
+      minDuration: 0.762777
     - name: Hiding_MC_Rat_Hide1_Landing
       guid: 923757a5a79f1a439038b3092ac1e02b
       id: 3488529955
@@ -1082,7 +1082,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: ef863a411e90054e988c1cef1b0a2089
     GuidInternal: 
-    m_lastTime: -8586420367204775808
+    m_lastTime: -8586420211304775808
     List:
     - name: Climbing
       guid: ecc3ed4ffce9c44ba1b1e1a702ad1c37
