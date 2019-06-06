@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>/Users/student/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/z:/Users/local/BAPX0318/Lorenz_Hertkorn/PestGame/Pest/Pest_WwiseProject/</ProjectRoot>
-		<SourceFilesRoot>/Users/student/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/z:/Users/local/BAPX0318/Lorenz_Hertkorn/PestGame/Pest/Pest_WwiseProject/.cache/Mac/</SourceFilesRoot>
-		<SoundBanksRoot>/Users/student/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/z:/Users/local/BAPX0318/Lorenz_Hertkorn/PestGame/Pest/Pest_WwiseProject/GeneratedSoundBanks/Mac/</SoundBanksRoot>
+		<ProjectRoot>/Users/revs/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/PestGame/Pest/Pest_WwiseProject/</ProjectRoot>
+		<SourceFilesRoot>/Users/revs/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/PestGame/Pest/Pest_WwiseProject/.cache/Mac/</SourceFilesRoot>
+		<SoundBanksRoot>/Users/revs/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/PestGame/Pest/Pest_WwiseProject/GeneratedSoundBanks/Mac/</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>/Users/student/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/z:/Users/local/BAPX0318/Lorenz_Hertkorn/PestGame/Pest/Pest_WwiseProject/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>/Users/revs/Library/Application Support/Wwise2019/Bottles/wwise/dosdevices/y:/Documents/GitHub/PestGame/Pest/Pest_WwiseProject/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>

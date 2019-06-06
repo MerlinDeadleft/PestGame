@@ -54,4 +54,4 @@ crashlytics-build.properties
 *.DS_Store
 
 #Wwise temporary files
-Pest_WwiseIntegrationTemp/
+.Pest_WwiseIntegrationTemp/
