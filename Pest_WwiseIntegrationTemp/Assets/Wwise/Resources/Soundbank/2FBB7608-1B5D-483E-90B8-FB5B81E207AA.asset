@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fda2e9b052df46bebc839b198a408aa, type: 3}
+  m_Name: 2FBB7608-1B5D-483E-90B8-FB5B81E207AA
+  m_EditorClassIdentifier: 
+  objectName: AmbienceMusic_Kanalisation
+  id: 1921015285
+  guid: 2FBB7608-1B5D-483E-90B8-FB5B81E207AA
