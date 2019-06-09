@@ -18,8 +18,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Nav_Mesh_Surface
+  - Camera_Collider
   - 
   - 
   - 

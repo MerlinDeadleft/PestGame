@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 33334348698607272}
   - component: {fileID: 23872235880331410}
   - component: {fileID: 2822459059861356957}
+  - component: {fileID: 2669167511045371454}
   m_Layer: 0
-  m_Name: Kiste-Offen_Props_Kanalisation_Animations (4)
+  m_Name: Crate_Open_Props_Sewer_Animations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,3 +93,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 273e72db39b0c144e850bcc5d3878b92, type: 3}
+--- !u!208 &2669167511045371454
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022773189621352}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55, y: 0.55, z: 0.51500005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.55, y: -0.55, z: 0.51500005}
+  m_TimeToStationary: 0.5

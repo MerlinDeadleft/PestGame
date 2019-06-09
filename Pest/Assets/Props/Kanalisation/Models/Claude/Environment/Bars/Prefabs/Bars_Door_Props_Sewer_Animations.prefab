@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 8335239600766775384}
   - component: {fileID: 8335239600772160856}
   - component: {fileID: 7810317980760292752}
+  - component: {fileID: 3228230346612640879}
   m_Layer: 0
-  m_Name: "Gitter_Tunnel_T\xFCr_Kanalisation_Environment"
+  m_Name: Bars_Door_Props_Sewer_Animations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,3 +112,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0004638, y: 0.05000001, z: 1.9798776}
   m_Center: {x: -0.52058536, y: 0.00000001396984, z: 0.9899388}
+--- !u!208 &3228230346612640879
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8335239600764776088}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.025, z: 0.99000007}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.521, y: 0, z: 0.99000007}
+  m_TimeToStationary: 0.5

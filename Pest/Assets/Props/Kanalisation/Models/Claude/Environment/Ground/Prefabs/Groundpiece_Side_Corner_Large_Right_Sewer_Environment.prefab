@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6136390261036088847}
   - component: {fileID: 6136390261041468175}
   - component: {fileID: 1297734500660133706}
-  m_Layer: 0
-  m_Name: "Bodenpiece_Seite_Ecke_Gro\xDF_rechts_Kanalisation_Environment"
+  m_Layer: 9
+  m_Name: Groundpiece_Side_Corner_Large_Right_Sewer_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

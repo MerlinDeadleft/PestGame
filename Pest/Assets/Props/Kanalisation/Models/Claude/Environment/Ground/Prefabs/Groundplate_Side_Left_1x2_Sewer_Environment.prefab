@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2767799364466261048}
   - component: {fileID: 2767799364459155768}
   - component: {fileID: 7403782286072946478}
-  m_Layer: 0
-  m_Name: Bodenplatte_Seite_Links_1x2_Kanalisation_Environment
+  m_Layer: 9
+  m_Name: Groundplate_Side_Left_1x2_Sewer_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
