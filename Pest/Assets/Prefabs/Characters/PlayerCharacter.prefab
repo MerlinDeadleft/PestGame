@@ -71,7 +71,7 @@ MonoBehaviour:
   sneakSpeed: 2
   runSpeed: 9
   turnSpeed: 5
-  jumpStrenght: 13
+  jumpStrenght: 9.5
   climbingSpeed: 0.5
   gravityMultiplier: 4
   animationController: {fileID: 346218546}
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6687980137299563192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4815593551292874}
@@ -185,8 +185,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerModel: {fileID: 9211627517739840263}
+  VignetteCenter: {fileID: 7036635678934939735}
   playerController: {fileID: 114961850904351382}
-  maxDistanceToLight: 10
+  maxDistanceToLight: 2.5
+  maxVignetteIntensity: 0.65
+  cameraMinDistance: 4
+  zoomSpeed: 1
+  reverseZoomSpeed: 1
+  waitForZoomTime: 1
   contributingLight: []
 --- !u!114 &346218546
 MonoBehaviour:
@@ -225,6 +231,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4815593551292874}
     m_Modifications:
+    - target: {fileID: 100282, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
+      propertyPath: m_Name
+      value: Rat_Model
+      objectReference: {fileID: 0}
     - target: {fileID: 400282, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -268,10 +278,6 @@ PrefabInstance:
     - target: {fileID: 400282, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100282, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
-      propertyPath: m_Name
-      value: Rat_Model
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 6fa6c9332fa8ee24fa09c99aa7b3b32b, type: 3}
       propertyPath: m_Controller
