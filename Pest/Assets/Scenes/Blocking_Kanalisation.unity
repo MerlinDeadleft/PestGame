@@ -44513,6 +44513,8 @@ GameObject:
   - component: {fileID: 950611345}
   - component: {fileID: 950611341}
   - component: {fileID: 950611346}
+  - component: {fileID: 950611347}
+  - component: {fileID: 950611348}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -44572,7 +44574,7 @@ Camera:
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
+  m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
@@ -44584,7 +44586,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950611340}
   m_LocalRotation: {x: 0.00000016108896, y: 0.9914448, z: -0.13052674, w: 0.0000012235872}
-  m_LocalPosition: {x: -32.694626, y: 0.32324976, z: 28.437836}
+  m_LocalPosition: {x: -32.699913, y: 1.6284518, z: 30.698507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -44683,6 +44685,79 @@ MonoBehaviour:
   multiPositionTypeLabel: 0
   LargeModePositions: []
   multiPositionArray: []
+--- !u!114 &950611347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950611340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 950611343}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 1
+  antialiasingMode: 3
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 0
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!114 &950611348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950611340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c83a4fff48648340a397fa85848cda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookSensitivity: 1
 --- !u!1001 &950767161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54475,7 +54550,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1669218210}
-  m_Follow: {fileID: 1669218210}
+  m_Follow: {fileID: 1783857880}
   m_Lens:
     FieldOfView: 34
     OrthographicSize: 10
@@ -54501,7 +54576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155663192}
   m_LocalRotation: {x: 0.00000016108896, y: 0.9914448, z: -0.13052674, w: 0.0000012235872}
-  m_LocalPosition: {x: -32.69193, y: 0.23598371, z: 30.342314}
+  m_LocalPosition: {x: -32.70003, y: 1.541151, z: 32.984447}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1829060723}
@@ -86841,6 +86916,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1776304702}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1783857880 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7036635678934939735, guid: f42a58d7e50e5a5418d7d93f1bc73775,
+    type: 3}
+  m_PrefabInstance: {fileID: 271193114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1785408564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89739,18 +89820,18 @@ MonoBehaviour:
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 1
-  m_ScreenX: 0.5015625
-  m_ScreenY: 0.5009259
-  m_CameraDistance: 4.765381
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_CameraDistance: 7.5
   m_DeadZoneWidth: 0.2
   m_DeadZoneHeight: 0.26
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.743
   m_SoftZoneHeight: 0.839
-  m_BiasX: -0.003000101
+  m_BiasX: 0.00000010976915
   m_BiasY: 0
-  m_CenterOnActivate: 1
+  m_CenterOnActivate: 0
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2
   m_GroupFramingSize: 0.8

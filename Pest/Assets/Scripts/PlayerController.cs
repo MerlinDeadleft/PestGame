@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
 	/*********************************************************/
 
 	/********************General variables********************/
-	CharacterController charController = null;
 	Rewired.Player player = null;
+
+	CharacterController charController = null;
+	float colliderHeight = 0.0f;
+	Vector3 colliderCenter = Vector3.zero;
 
 	/******************health system variables*****************/
 	[Header("Health System")]
@@ -78,8 +81,10 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		charController = GetComponent<CharacterController>();
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
+		charController = GetComponent<CharacterController>();
+		colliderCenter = charController.center;
+		colliderHeight = charController.height;
 
 		HitPoints = maxHitPoints;
 	}
@@ -169,18 +174,24 @@ public class PlayerController : MonoBehaviour
 				moveSpeed = sneakSpeed;
 				canJump = false;
 				isSneaking = true;
+				charController.height = colliderHeight * 0.5f;
+				charController.center = colliderCenter * 0.5f;
 			}
 			else if(player.GetButton(Action.CharacterControl.Run))
 			{
 				moveSpeed = runSpeed;
 				canJump = true;
 				isSneaking = false;
+				charController.height = colliderHeight;
+				charController.center = colliderCenter;
 			}
 			else
 			{
 				moveSpeed = walkSpeed;
 				canJump = true;
 				isSneaking = false;
+				charController.height = colliderHeight;
+				charController.center = colliderCenter;
 			}
 
 			moveDirection *= moveSpeed * lightModificator;
