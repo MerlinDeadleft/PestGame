@@ -12668,22 +12668,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 346218546, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: soundController
       value: 
@@ -89830,7 +89814,7 @@ MonoBehaviour:
   m_SoftZoneWidth: 0.743
   m_SoftZoneHeight: 0.839
   m_BiasX: 0.00000010976915
-  m_BiasY: 0
+  m_BiasY: 0.00000041177648
   m_CenterOnActivate: 0
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2

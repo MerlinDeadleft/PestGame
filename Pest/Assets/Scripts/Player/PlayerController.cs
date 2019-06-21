@@ -67,9 +67,13 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] PlayerAnimationController animationController = null;
 
 	/*****************enemy takedown variables*****************/
-	[Header("Enemy Takedowns")]
-	public TakeDownPositionController TakeDownObject /*{ get; set; }*/ = null;
+	//[Header("Enemy Takedowns")]
+	public TakeDownPositionController TakeDownObject { get; set; } = null;
 	bool isTakingEnemyDown = false;
+
+	/******************magic actions variables*****************/
+	PestCameraController cameraController = null;
+	MagicController magicController = null;
 
 	/*********************************************************/
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -87,6 +91,8 @@ public class PlayerController : MonoBehaviour
 		colliderHeight = charController.height;
 
 		HitPoints = maxHitPoints;
+
+		cameraController = FindObjectOfType<PestCameraController>();
 	}
 
 	/*************************Update***************************/
@@ -339,6 +345,11 @@ public class PlayerController : MonoBehaviour
 		if(HidingObject != null && lastIsHiding == isHiding)
 		{
 			isHiding = true;
+		}
+
+		if(!isHiding && cameraController.SelectedLight != null)
+		{
+			cameraController.SelectedLight.enabled = false;
 		}
 	}
 
