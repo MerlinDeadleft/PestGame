@@ -13,7 +13,7 @@ public class PestCameraController : MonoBehaviour
 	[SerializeField] float lookSensitivity = 1.0f;
 	float mouseLookSensitivity = 0.005f;
 	float controllerLookSensitivity = 0.5f;
-	bool lastInputFromController = false;
+	bool lastInputFromMouse = false;
 
 	List<Light> lights = new List<Light>();
 	public Light SelectedLight { get; set; } = null;
@@ -52,24 +52,24 @@ public class PestCameraController : MonoBehaviour
 			return; //only execute update after initialize finished
 		}
 
-		if(player.IsCurrentInputSource(RewiredConsts.Action.CharacterControl.LookHorizontal, ControllerType.Joystick))
+		if(player.IsCurrentInputSource(RewiredConsts.Action.CharacterControl.LookHorizontal, ControllerType.Mouse))
 		{
-			lastInputFromController = true;
+			lastInputFromMouse = true;
 		}
 		else
 		{
-			lastInputFromController = false;
+			lastInputFromMouse = false;
 		}
 
-		if(lastInputFromController)
-		{
-			xOffset = -Mathf.Clamp(player.GetAxis(RewiredConsts.Action.CharacterControl.LookHorizontal) * controllerLookSensitivity * lookSensitivity, -0.5f, 0.5f);
-			yOffset = Mathf.Clamp(player.GetAxis(RewiredConsts.Action.CharacterControl.LookVertical) * controllerLookSensitivity * lookSensitivity, -0.35f, 0.35f);
-		}
-		else
+		if(lastInputFromMouse)
 		{
 			xOffset = Mathf.Clamp(xOffset - player.GetAxis(RewiredConsts.Action.CharacterControl.LookHorizontal) * mouseLookSensitivity * lookSensitivity, -0.5f, 0.5f);
 			yOffset = Mathf.Clamp(yOffset + player.GetAxis(RewiredConsts.Action.CharacterControl.LookVertical) * mouseLookSensitivity * lookSensitivity, -0.35f, 0.35f);
+		}
+		else
+		{
+			xOffset = -Mathf.Clamp(player.GetAxis(RewiredConsts.Action.CharacterControl.LookHorizontal) * controllerLookSensitivity * lookSensitivity, -0.5f, 0.5f);
+			yOffset = Mathf.Clamp(player.GetAxis(RewiredConsts.Action.CharacterControl.LookVertical) * controllerLookSensitivity * lookSensitivity, -0.35f, 0.35f);
 		}
 
 		if(player.GetButtonDown(RewiredConsts.Action.CharacterControl.ResetLook))
