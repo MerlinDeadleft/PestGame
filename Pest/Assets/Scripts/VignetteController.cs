@@ -87,7 +87,7 @@ public class VignetteController : MonoBehaviour
 
 		foreach(Light light in lights)
 		{
-			if(light != null)
+			if(light != null && light.enabled)
 			{
 				float distanceToPlayer = Vector3.Magnitude(light.transform.position - playerModel.position);
 

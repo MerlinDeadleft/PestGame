@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
 	/*********************************************************/
 
 	/********************General variables********************/
-	CharacterController charController = null;
 	Rewired.Player player = null;
+
+	CharacterController charController = null;
+	float colliderHeight = 0.0f;
+	Vector3 colliderCenter = Vector3.zero;
 
 	/******************health system variables*****************/
 	[Header("Health System")]
@@ -64,9 +67,13 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] PlayerAnimationController animationController = null;
 
 	/*****************enemy takedown variables*****************/
-	[Header("Enemy Takedowns")]
-	public TakeDownPositionController TakeDownObject /*{ get; set; }*/ = null;
+	//[Header("Enemy Takedowns")]
+	public TakeDownPositionController TakeDownObject { get; set; } = null;
 	bool isTakingEnemyDown = false;
+
+	/******************magic actions variables*****************/
+	PestCameraController cameraController = null;
+	MagicController magicController = null;
 
 	/*********************************************************/
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -78,10 +85,14 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		charController = GetComponent<CharacterController>();
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
+		charController = GetComponent<CharacterController>();
+		colliderCenter = charController.center;
+		colliderHeight = charController.height;
 
 		HitPoints = maxHitPoints;
+
+		cameraController = FindObjectOfType<PestCameraController>();
 	}
 
 	/*************************Update***************************/
@@ -169,18 +180,24 @@ public class PlayerController : MonoBehaviour
 				moveSpeed = sneakSpeed;
 				canJump = false;
 				isSneaking = true;
+				charController.height = colliderHeight * 0.5f;
+				charController.center = colliderCenter * 0.5f;
 			}
 			else if(player.GetButton(Action.CharacterControl.Run))
 			{
 				moveSpeed = runSpeed;
 				canJump = true;
 				isSneaking = false;
+				charController.height = colliderHeight;
+				charController.center = colliderCenter;
 			}
 			else
 			{
 				moveSpeed = walkSpeed;
 				canJump = true;
 				isSneaking = false;
+				charController.height = colliderHeight;
+				charController.center = colliderCenter;
 			}
 
 			moveDirection *= moveSpeed * lightModificator;
@@ -328,6 +345,11 @@ public class PlayerController : MonoBehaviour
 		if(HidingObject != null && lastIsHiding == isHiding)
 		{
 			isHiding = true;
+		}
+
+		if(!isHiding && cameraController.SelectedLight != null)
+		{
+			cameraController.SelectedLight.enabled = false;
 		}
 	}
 
