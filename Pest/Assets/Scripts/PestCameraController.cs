@@ -24,15 +24,7 @@ public class PestCameraController : MonoBehaviour
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
 		StartCoroutine(Initialize());
 
-		Light[] allLights = FindObjectsOfType<Light>();
-
-		foreach(Light light in allLights)
-		{
-			if(light.type != LightType.Directional)
-			{
-				lights.Add(light);
-			}
-		}
+		RefreshLightsList();
 	}
 
 	IEnumerator Initialize()
@@ -84,12 +76,34 @@ public class PestCameraController : MonoBehaviour
 		DetermineClosestLight();
 	}
 
+	void RefreshLightsList()
+	{
+		lights.Clear();
+
+		Light[] allLights = FindObjectsOfType<Light>();
+
+		foreach(Light light in allLights)
+		{
+			if(light.type != LightType.Directional)
+			{
+				lights.Add(light);
+			}
+		}
+	}
+
 	void DetermineClosestLight()
 	{
 		List<GameObject> closeLights = new List<GameObject>();
 
 		foreach(Light light in lights)
 		{
+			if(light == null)
+			{
+				RefreshLightsList();
+				SelectedLight = null;
+				return;
+			}
+
 			if(light.enabled)
 			{
 				GameObject lightGO = light.gameObject;

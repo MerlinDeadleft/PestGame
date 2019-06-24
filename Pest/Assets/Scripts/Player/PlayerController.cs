@@ -347,7 +347,7 @@ public class PlayerController : MonoBehaviour
 			isHiding = true;
 		}
 
-		if(!isHiding && cameraController.SelectedLight != null)
+		if(!isHiding && lastIsHiding == isHiding && cameraController.SelectedLight != null)
 		{
 			cameraController.SelectedLight.enabled = false;
 		}
@@ -413,6 +413,12 @@ public class PlayerController : MonoBehaviour
 
 	void HandleTakeDown()
 	{
+		if(TakeDownObject == null)
+		{
+			isTakingEnemyDown = false;
+			return;
+		}
+
 		TakeDownObject.StartTakeDown();
 		Vector3 directionToMove = TakeDownObject.TakeDownAnimationStartPosition.position - transform.position;
 
