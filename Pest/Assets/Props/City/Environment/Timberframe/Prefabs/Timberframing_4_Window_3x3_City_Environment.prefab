@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6920540522594579651}
   - component: {fileID: 6920540522591712483}
   - component: {fileID: 6920540522592810531}
+  - component: {fileID: 4899700435986268020}
   m_Layer: 0
   m_Name: Timberframing_4_Window_3x3_City_Environment
   m_TagString: Untagged
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4899700435986268020
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920540522594805987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 4be48453548187c44b82c4e7c006e85b, type: 3}
