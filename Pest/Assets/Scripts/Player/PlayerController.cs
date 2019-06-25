@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 	bool canJump = true;
 	bool hasJumped = false;
 	bool isSneaking = false;
-	float lightModificator = 0.0f;
+	public float lightModificator = 0.0f;
 
 	/********************climbing variables********************/
 	[Header("Climbing")]
@@ -70,6 +70,9 @@ public class PlayerController : MonoBehaviour
 	//[Header("Enemy Takedowns")]
 	public TakeDownPositionController TakeDownObject { get; set; } = null;
 	bool isTakingEnemyDown = false;
+
+	/******************miscellanious variables*****************/
+	public bool isBlinded = false;
 
 	/******************magic actions variables*****************/
 	PestCameraController cameraController = null;
@@ -138,6 +141,7 @@ public class PlayerController : MonoBehaviour
 		animationController.IsSneaking = isSneaking;
 		animationController.IsGrounded = charController.isGrounded;
 		animationController.IsClimbing = isClimbing;
+		animationController.isBlinded = isBlinded;
 	}
 
 	#region movement methods
@@ -407,8 +411,11 @@ public class PlayerController : MonoBehaviour
 	{
 		if(TakeDownObject != null && !isTakingEnemyDown)
 		{
-			isTakingEnemyDown = true;			
+			isTakingEnemyDown = true;
+			return;
 		}
+		canMove = false;
+		animationController.Attack();
 	}
 
 	void HandleTakeDown()
@@ -450,6 +457,15 @@ public class PlayerController : MonoBehaviour
 	public void UpdateLightEffect(float lightIntensity)
 	{
 		lightModificator = Mathf.Clamp(1.0f - lightIntensity, 0.35f, 1.0f);
+
+		if(lightModificator < 1.0f)
+		{
+			isBlinded = true;
+		}
+		else
+		{
+			isBlinded = false;
+		}
 	}
 
 	#region Unity callbacks
