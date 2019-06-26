@@ -1,4 +1,4 @@
-﻿
+﻿// <Talis' Code>
 using UnityEngine;
 
 public class TextureBlendingManager : MonoBehaviour
@@ -7,6 +7,7 @@ public class TextureBlendingManager : MonoBehaviour
     /// Singleton: use this to access class
     /// </summary>
     public static TextureBlendingManager Instance = null;
+
 
     [SerializeField] Texture firstTexture  = null;
     [SerializeField] Texture secondTexture = null;
@@ -27,8 +28,23 @@ public class TextureBlendingManager : MonoBehaviour
 
     Material mat         = null;
     Shader   blendShader = null;
+
     float changedTextureBlend = 0.0f;
     float changedTransparency = 1.0f;
+    
+    // **** Properties ****
+
+    public float TextureBlend {
+        get { return textureBlend;  }
+        set { textureBlend = value; }
+    }
+
+    public float Transparency {
+        get { return transparency;  }
+        set { transparency = value; }
+    }
+
+    // **** Methods ****
 
     void Awake()
     {
@@ -39,7 +55,6 @@ public class TextureBlendingManager : MonoBehaviour
         mat.SetTexture("_SecondTex", secondTexture);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (mat)
@@ -67,3 +82,4 @@ public class TextureBlendingManager : MonoBehaviour
         }
     }
 }
+// </Talis' Code>
