@@ -145,6 +145,78 @@ ModelImporter:
     100278: Rat_Anim4:Tooth_LP.005
     100280: Rat_Anim4:Torus.000
     100282: //RootNode
+    100284: Eye_right.001
+    100286: Eye_right.002
+    100288: Plane.006
+    100290: Rat_Anim4:Ankle_L
+    100292: Rat_Anim4:Ankle_R
+    100294: Rat_Anim4:Arm1_L 1
+    100296: Rat_Anim4:Arm1_R 1
+    100298: Rat_Anim4:Arm2_L 1
+    100300: Rat_Anim4:Arm2_R 1
+    100302: Rat_Anim4:Body_Mid
+    100304: Rat_Anim4:Foot_L
+    100306: Rat_Anim4:Foot_R
+    100308: Rat_Anim4:Hand_L 1
+    100310: Rat_Anim4:Hand_R 1
+    100312: Rat_Anim4:Head 1
+    100314: Rat_Anim4:Index1_L 1
+    100316: Rat_Anim4:Index1_R 1
+    100318: Rat_Anim4:Index2_L 1
+    100320: Rat_Anim4:Index2_R 1
+    100322: Rat_Anim4:Index3_L 1
+    100324: Rat_Anim4:Index3_R 1
+    100326: Rat_Anim4:Leg1_L 1
+    100328: Rat_Anim4:Leg1_R 1
+    100330: Rat_Anim4:Leg2_L 1
+    100332: Rat_Anim4:Leg2_R 1
+    100334: Rat_Anim4:Main_Controller
+    100336: Rat_Anim4:Middle1_L 1
+    100338: Rat_Anim4:Middle1_R 1
+    100340: Rat_Anim4:Middle2_L 1
+    100342: Rat_Anim4:Middle2_R 1
+    100344: Rat_Anim4:Middle3_L 1
+    100346: Rat_Anim4:Middle3_R 1
+    100348: Rat_Anim4:Neck 1
+    100350: Rat_Anim4:Pinky1_L 1
+    100352: Rat_Anim4:Pinky1_R 1
+    100354: Rat_Anim4:Pinky2_L 1
+    100356: Rat_Anim4:Pinky2_R 1
+    100358: Rat_Anim4:Pinky3_L 1
+    100360: Rat_Anim4:Pinky3_R 1
+    100362: Rat_Anim4:Ring1_L 1
+    100364: Rat_Anim4:Ring1_R 1
+    100366: Rat_Anim4:Ring2_L 1
+    100368: Rat_Anim4:Ring2_R 1
+    100370: Rat_Anim4:Ring3_L 1
+    100372: Rat_Anim4:Ring3_R 1
+    100374: Rat_Anim4:Shoulders
+    100376: Rat_Anim4:Tail1 1
+    100378: Rat_Anim4:Tail2 1
+    100380: Rat_Anim4:Tail3 1
+    100382: Rat_Anim4:Tail4 1
+    100384: Rat_Anim4:Tail5 1
+    100386: Rat_Anim4:Tail6 1
+    100388: Rat_Anim4:Tail7 1
+    100390: Rat_Anim4:Tail8 1
+    100392: Rat_Anim4:Thumb1_L 1
+    100394: Rat_Anim4:Thumb1_R 1
+    100396: Rat_Anim4:Thumb2_L 1
+    100398: Rat_Anim4:Thumb2_R 1
+    100400: Rat_Anim4:Toes_L 1
+    100402: Rat_Anim4:Toes_R 1
+    100404: Torus.000
+    100406: transform1
+    100408: transform2
+    100410: Rat_Anim4:Eye_left_001
+    100412: Body.004
+    100414: Plane.001
+    100416: Body.002
+    100418: Body.003
+    100420: Body.005
+    100422: Body.006
+    100424: Rat_Anim4:Tail_LP2
+    100426: Geo
     400000: Rat_Anim4:Arm1_L
     400002: Rat_Anim4:Arm1_R
     400004: Rat_Anim4:Arm2_L
@@ -287,7 +359,81 @@ ModelImporter:
     400278: Rat_Anim4:Tooth_LP.005
     400280: Rat_Anim4:Torus.000
     400282: //RootNode
+    400284: Eye_right.001
+    400286: Eye_right.002
+    400288: Plane.006
+    400290: Rat_Anim4:Ankle_L
+    400292: Rat_Anim4:Ankle_R
+    400294: Rat_Anim4:Arm1_L 1
+    400296: Rat_Anim4:Arm1_R 1
+    400298: Rat_Anim4:Arm2_L 1
+    400300: Rat_Anim4:Arm2_R 1
+    400302: Rat_Anim4:Body_Mid
+    400304: Rat_Anim4:Foot_L
+    400306: Rat_Anim4:Foot_R
+    400308: Rat_Anim4:Hand_L 1
+    400310: Rat_Anim4:Hand_R 1
+    400312: Rat_Anim4:Head 1
+    400314: Rat_Anim4:Index1_L 1
+    400316: Rat_Anim4:Index1_R 1
+    400318: Rat_Anim4:Index2_L 1
+    400320: Rat_Anim4:Index2_R 1
+    400322: Rat_Anim4:Index3_L 1
+    400324: Rat_Anim4:Index3_R 1
+    400326: Rat_Anim4:Leg1_L 1
+    400328: Rat_Anim4:Leg1_R 1
+    400330: Rat_Anim4:Leg2_L 1
+    400332: Rat_Anim4:Leg2_R 1
+    400334: Rat_Anim4:Main_Controller
+    400336: Rat_Anim4:Middle1_L 1
+    400338: Rat_Anim4:Middle1_R 1
+    400340: Rat_Anim4:Middle2_L 1
+    400342: Rat_Anim4:Middle2_R 1
+    400344: Rat_Anim4:Middle3_L 1
+    400346: Rat_Anim4:Middle3_R 1
+    400348: Rat_Anim4:Neck 1
+    400350: Rat_Anim4:Pinky1_L 1
+    400352: Rat_Anim4:Pinky1_R 1
+    400354: Rat_Anim4:Pinky2_L 1
+    400356: Rat_Anim4:Pinky2_R 1
+    400358: Rat_Anim4:Pinky3_L 1
+    400360: Rat_Anim4:Pinky3_R 1
+    400362: Rat_Anim4:Ring1_L 1
+    400364: Rat_Anim4:Ring1_R 1
+    400366: Rat_Anim4:Ring2_L 1
+    400368: Rat_Anim4:Ring2_R 1
+    400370: Rat_Anim4:Ring3_L 1
+    400372: Rat_Anim4:Ring3_R 1
+    400374: Rat_Anim4:Shoulders
+    400376: Rat_Anim4:Tail1 1
+    400378: Rat_Anim4:Tail2 1
+    400380: Rat_Anim4:Tail3 1
+    400382: Rat_Anim4:Tail4 1
+    400384: Rat_Anim4:Tail5 1
+    400386: Rat_Anim4:Tail6 1
+    400388: Rat_Anim4:Tail7 1
+    400390: Rat_Anim4:Tail8 1
+    400392: Rat_Anim4:Thumb1_L 1
+    400394: Rat_Anim4:Thumb1_R 1
+    400396: Rat_Anim4:Thumb2_L 1
+    400398: Rat_Anim4:Thumb2_R 1
+    400400: Rat_Anim4:Toes_L 1
+    400402: Rat_Anim4:Toes_R 1
+    400404: Torus.000
+    400406: transform1
+    400408: transform2
+    400410: Rat_Anim4:Eye_left_001
+    400412: Body.004
+    400414: Plane.001
+    400416: Body.002
+    400418: Body.003
+    400420: Body.005
+    400422: Body.006
+    400424: Rat_Anim4:Tail_LP2
+    400426: Geo
     2100000: lambert1
+    2100002: Default_Material
+    2100004: lambert4
     2300000: Rat_Anim4:Bag_Knot.001
     2300002: Rat_Anim4:Bag_Knot.002
     2300004: Rat_Anim4:Cap_LP
@@ -331,6 +477,12 @@ ModelImporter:
     2300080: Rat_Anim4:Ring3.001
     2300082: Rat_Anim4:Tooth_LP.005
     2300084: Rat_Anim4:Torus.000
+    2300086: Plane.006
+    2300088: Torus.000
+    2300090: Rat_Anim4:Eye_left_001
+    2300092: Eye_right.001
+    2300094: Eye_right.002
+    2300096: Plane.001
     3300000: Rat_Anim4:Bag_Knot.001
     3300002: Rat_Anim4:Bag_Knot.002
     3300004: Rat_Anim4:Cap_LP
@@ -374,6 +526,12 @@ ModelImporter:
     3300080: Rat_Anim4:Ring3.001
     3300082: Rat_Anim4:Tooth_LP.005
     3300084: Rat_Anim4:Torus.000
+    3300086: Plane.006
+    3300088: Torus.000
+    3300090: Rat_Anim4:Eye_left_001
+    3300092: Eye_right.001
+    3300094: Eye_right.002
+    3300096: Plane.001
     4300000: Rat_Anim4:Bag_Knot.001
     4300002: Rat_Anim4:Bag_Knot.002
     4300004: Rat_Anim4:Plane.005
@@ -441,6 +599,20 @@ ModelImporter:
     4300128: Rat_Anim4:Scarf_LP
     4300130: Rat_Anim4:Knife_2
     4300132: Rat_Anim4:Knife_1
+    4300134: Torus.000
+    4300136: Plane.006
+    4300138: Rat_Anim4:Eye_left_001
+    4300140: Plane.001
+    4300142: Eye_right.001
+    4300144: Eye_right.002
+    4300146: Body.004
+    4300148: Rat_Anim4:Tail_LP2
+    4300150: Body.002
+    4300152: Body.003
+    4300154: Body.005
+    4300156: Body.006
+    7400000: Rat_Death
+    7400002: Take 001
     9500000: //RootNode
     13700000: Rat_Anim4:Arm_L_LP
     13700002: Rat_Anim4:Arm_R_LP
@@ -466,6 +638,12 @@ ModelImporter:
     13700042: Rat_Anim4:Rat_Body_LP
     13700044: Rat_Anim4:Scarf_LP
     13700046: Rat_Anim4:Tail_LP
+    13700048: Body.004
+    13700050: Body.002
+    13700052: Body.003
+    13700054: Body.005
+    13700056: Body.006
+    13700058: Rat_Anim4:Tail_LP2
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -486,7 +664,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -543,7 +721,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2

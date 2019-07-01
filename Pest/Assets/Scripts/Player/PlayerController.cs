@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 	bool isTakingEnemyDown = false;
 
 	/******************miscellanious variables*****************/
-	public bool isBlinded = false;
+	bool isBlinded = false;
 
 	/******************magic actions variables*****************/
 	PestCameraController cameraController = null;
@@ -133,7 +133,6 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleAttacking();
 		}
-
 
 		lastIsHiding = isHiding;
 
@@ -461,13 +460,16 @@ public class PlayerController : MonoBehaviour
 		if(lightModificator < 1.0f)
 		{
 			isBlinded = true;
+			cameraController.IsBlinded = true;
 		}
 		else
 		{
 			isBlinded = false;
+			cameraController.IsBlinded = false;
 		}
 	}
 
+	//////////////////HIER IST NOCH EIN FEHLER DER ÜBERARBIETET WERDEN MUSS//////////////////
 	#region Unity callbacks
 	/**********************OnTriggerEnter**********************/  //////////////////D A S  W I R D  N I E  I M  L E B E N  F U N K T I O N I E R E N//////////////////
 	private void OnTriggerEnter(Collider other)                   //////////////////        S P I E L E R  H A T   K E I N E N  T R I G G E R       //////////////////

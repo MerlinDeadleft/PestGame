@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3459937761171438123}
   - component: {fileID: 3459937761172208139}
   - component: {fileID: 3459937761173207243}
+  - component: {fileID: 6198378454851707373}
   m_Layer: 0
   m_Name: Wall_2x3_Sewer_Environment
   m_TagString: Untagged
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6198378454851707373
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3459937761171269131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: ee9c26112c1617646bbd53c615d86726, type: 3}

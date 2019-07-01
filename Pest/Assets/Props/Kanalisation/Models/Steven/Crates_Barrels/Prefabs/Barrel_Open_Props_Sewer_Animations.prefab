@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23758463609303910}
   - component: {fileID: 95786213615373646}
   - component: {fileID: 8701939439973791786}
+  - component: {fileID: 6496880345938532459}
   m_Layer: 0
   m_Name: Barrel_Open_Props_Sewer_Animations
   m_TagString: Untagged
@@ -114,3 +115,17 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0.5}
   m_TimeToStationary: 0.5
+--- !u!64 &6496880345938532459
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818900599166414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 1eb620f837f39ca46a8026e2bc84a063, type: 3}

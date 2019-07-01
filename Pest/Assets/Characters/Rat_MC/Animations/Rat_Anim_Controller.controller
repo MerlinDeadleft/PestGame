@@ -993,6 +993,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: IsGrounded
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsClimbing
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -2291,6 +2294,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsClimbing
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsGrounded
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102939781464173718}
   m_Solo: 0
@@ -2391,6 +2397,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: IsGrounded
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsClimbing
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -2415,6 +2424,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: IsGrounded
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsClimbing
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -4024,11 +4036,11 @@ AnimatorState:
   m_Transitions:
   - {fileID: 1101654476960714384}
   - {fileID: 1101454812812702286}
-  - {fileID: 1101727159747870332}
   - {fileID: 1101841443811263620}
   - {fileID: 1101763913763132936}
   - {fileID: 1101127793271646452}
   - {fileID: 1101348986911901022}
+  - {fileID: 1101727159747870332}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -4206,21 +4218,21 @@ AnimatorStateMachine:
   - {fileID: 1101195075828189826}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 1107908132496920906}
-    second:
-    - {fileID: 1109965911271349882}
-    - {fileID: 1109298549691741650}
-    - {fileID: 1109647884793352296}
-    - {fileID: 1109327245308762472}
-    - {fileID: 1109643355899829222}
-    - {fileID: 1109686388557755510}
   - first: {fileID: 1107980866743610080}
     second:
+    - {fileID: 1109187191317329574}
     - {fileID: 1109819392377732090}
     - {fileID: 1109976404828242102}
     - {fileID: 1109971655574438634}
     - {fileID: 1109646809863844030}
-    - {fileID: 1109187191317329574}
+  - first: {fileID: 1107908132496920906}
+    second:
+    - {fileID: 1109647884793352296}
+    - {fileID: 1109298549691741650}
+    - {fileID: 1109327245308762472}
+    - {fileID: 1109643355899829222}
+    - {fileID: 1109686388557755510}
+    - {fileID: 1109965911271349882}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 300, y: 156, z: 0}
   m_EntryPosition: {x: -492, y: -60, z: 0}
@@ -4423,7 +4435,10 @@ AnimatorTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions: []
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsClimbing
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102939781464173718}
   m_Solo: 0
