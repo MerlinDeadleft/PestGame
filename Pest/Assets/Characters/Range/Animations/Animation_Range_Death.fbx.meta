@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 51d9a602c7e3de745beb36cfe9a0daf5
+guid: 21afc08cbf77c4948a117c10eb878b0e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -410,7 +410,7 @@ ModelImporter:
     4300000: Figur
     4300002: Stab
     4300004: Waffe
-    7400000: Idle
+    7400000: Death
     9500000: //RootNode
   externalObjects: {}
   materials:
