@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: e9be507971570594cb4131d222fd95e6
+guid: 4ed8aacc2238ffb4da952ff490055770
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 02 - Default
+    2100000: Roof
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Timberframing_Roof_5x3_City_Environment
+    4300000: Roof_5x3_City_Environment
   externalObjects: {}
   materials:
     importMaterials: 1
