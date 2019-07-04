@@ -18,6 +18,10 @@ public class PestCameraController : MonoBehaviour
 	List<Light> lights = new List<Light>();
 	public Light SelectedLight { get; set; } = null;
 
+	public bool IsBlinded { get; set; } = false;
+	float maxLookDistanceMidifier = 1.0f;
+	float lookSensitivityModifier = 1.0f;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -44,6 +48,17 @@ public class PestCameraController : MonoBehaviour
 			return; //only execute update after initialize finished
 		}
 
+		if(IsBlinded)
+		{
+			maxLookDistanceMidifier = 0.5f;
+			lookSensitivityModifier = 0.5f;
+		}
+		else
+		{
+			maxLookDistanceMidifier = 1.0f;
+			lookSensitivityModifier = 1.0f;
+		}
+
 		if(player.IsCurrentInputSource(RewiredConsts.Action.CharacterControl.LookHorizontal, ControllerType.Joystick) || player.IsCurrentInputSource(RewiredConsts.Action.CharacterControl.LookHorizontal, ControllerType.Keyboard))
 		{
 			lastInputFromController = true;
@@ -55,13 +70,13 @@ public class PestCameraController : MonoBehaviour
 
 		if(lastInputFromController)
 		{
-			xOffset = -Mathf.Clamp(player.GetAxis(RewiredConsts.Action.CharacterControl.LookHorizontal) * controllerLookSensitivity * lookSensitivity, -0.5f, 0.5f);
-			yOffset = Mathf.Clamp(player.GetAxis(RewiredConsts.Action.CharacterControl.LookVertical) * controllerLookSensitivity * lookSensitivity, -0.35f, 0.35f);
+			xOffset = -Mathf.Clamp(player.GetAxis(RewiredConsts.Action.CharacterControl.LookHorizontal) * controllerLookSensitivity * lookSensitivity * lookSensitivityModifier, -0.5f, 0.5f);
+			yOffset = Mathf.Clamp(player.GetAxis(RewiredConsts.Action.CharacterControl.LookVertical) * controllerLookSensitivity * lookSensitivity * lookSensitivityModifier, -0.35f, 0.35f);
 		}
 		else
 		{
-			xOffset = Mathf.Clamp(xOffset - player.GetAxis(RewiredConsts.Action.CharacterControl.LookHorizontal) * mouseLookSensitivity * lookSensitivity, -0.5f, 0.5f);
-			yOffset = Mathf.Clamp(yOffset + player.GetAxis(RewiredConsts.Action.CharacterControl.LookVertical) * mouseLookSensitivity * lookSensitivity, -0.35f, 0.35f);
+			xOffset = Mathf.Clamp(xOffset - player.GetAxis(RewiredConsts.Action.CharacterControl.LookHorizontal) * mouseLookSensitivity * lookSensitivity * lookSensitivityModifier, -0.5f, 0.5f);
+			yOffset = Mathf.Clamp(yOffset + player.GetAxis(RewiredConsts.Action.CharacterControl.LookVertical) * mouseLookSensitivity * lookSensitivity * lookSensitivityModifier, -0.35f, 0.35f);
 		}
 
 		if(player.GetButtonDown(RewiredConsts.Action.CharacterControl.ResetLook))
@@ -70,8 +85,8 @@ public class PestCameraController : MonoBehaviour
 			yOffset = 0.0f;
 		}
 
-		framingTransposer.m_ScreenX = 0.5f + xOffset;
-		framingTransposer.m_ScreenY = 0.5f + yOffset;
+		framingTransposer.m_ScreenX = 0.5f + (xOffset * maxLookDistanceMidifier);
+		framingTransposer.m_ScreenY = 0.5f + (yOffset * maxLookDistanceMidifier);
 
 		DetermineClosestLight();
 	}

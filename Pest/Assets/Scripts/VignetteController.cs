@@ -11,7 +11,6 @@ public class VignetteController : MonoBehaviour
 	[SerializeField] Transform playerModel = null;
 	[SerializeField] Transform VignetteCenter = null;
 	[SerializeField] PlayerController playerController = null;
-	[SerializeField] float maxDistanceToLight = 10.0f;
 	[SerializeField, Range(0.0f, 1.0f)] float maxVignetteIntensity = 10.0f;
 	[SerializeField] float cameraMinDistance = 4.0f;
 	float defaultCameraDistance = 0.0f;
@@ -91,12 +90,12 @@ public class VignetteController : MonoBehaviour
 			{
 				float distanceToPlayer = Vector3.Magnitude(light.transform.position - playerModel.position);
 
-				if(distanceToPlayer <= maxDistanceToLight)
+				if(distanceToPlayer <= light.range)
 				{
 					RaycastHit hit;
 					Ray ray = new Ray(light.transform.position, (playerModel.transform.position + Vector3.up) - light.transform.position);
 
-					if(Physics.Raycast(ray, out hit, maxDistanceToLight, Physics.AllLayers, QueryTriggerInteraction.Ignore))
+					if(Physics.Raycast(ray, out hit, light.range, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 					{
 						if(hit.transform.tag == "Player")
 						{
