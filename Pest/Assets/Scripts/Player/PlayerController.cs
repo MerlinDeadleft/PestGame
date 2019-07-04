@@ -44,8 +44,8 @@ public class PlayerController : MonoBehaviour
 	/********************climbing variables********************/
 	[Header("Climbing")]
 	[SerializeField] float climbingSpeed = 3.0f;
-	bool isClimbing = false;
-	ClimbableObjectController climbableObject = null;
+	public bool IsClimbing { get; set; } = false;
+	public ClimbableObjectController climbableObject { get; set; } = null;
 	bool rotateTowardsClimbable = false;
 	bool moveTowardsClimbable = false;
 
@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
 
 	/******************miscellanious variables*****************/
 	bool isBlinded = false;
+	public bool IsGrounded { get { return charController.isGrounded; } }
 
 	/******************magic actions variables*****************/
 	PestCameraController cameraController = null;
@@ -139,7 +140,7 @@ public class PlayerController : MonoBehaviour
 		animationController.Velocity = charController.velocity.magnitude;
 		animationController.IsSneaking = isSneaking;
 		animationController.IsGrounded = charController.isGrounded;
-		animationController.IsClimbing = isClimbing;
+		animationController.IsClimbing = IsClimbing;
 		animationController.isBlinded = isBlinded;
 	}
 
@@ -148,7 +149,7 @@ public class PlayerController : MonoBehaviour
 	/*********************HandleMovement***********************/
 	void HandleMovement()
 	{
-		if(isClimbing)
+		if(IsClimbing)
 		{
 			HandleClimbing();
 		}
@@ -248,7 +249,7 @@ public class PlayerController : MonoBehaviour
 	/**********************HandleClimbing**********************/
 	void HandleClimbing()
 	{
-		if(isClimbing)
+		if(IsClimbing)
 		{
 			if(charController.isGrounded)
 			{
@@ -260,7 +261,7 @@ public class PlayerController : MonoBehaviour
 				charController.Move(directionToMove * charController.skinWidth * Mathf.Sign(player.GetAxis(Action.CharacterControl.MoveVertical)));
 
 				climbableObject = null;
-				isClimbing = false;
+				IsClimbing = false;
 				moveTowardsClimbable = false;
 			}
 			else
@@ -308,7 +309,7 @@ public class PlayerController : MonoBehaviour
 				moveTowardsClimbable = false;
 			}
 
-			Vector3 directionToMove = climbableObject.transform.position - climbableObject.ClimbDownPositionTransform.position;
+			Vector3 directionToMove = climbableObject.transform.position - climbableObject.ClimbDownPosition.position;
 			directionToMove = Vector3.Normalize(Vector3.ProjectOnPlane(directionToMove, Vector3.up)) * walkSpeed;
 
 			Vector3 positionWithClimbableHeight = new Vector3(transform.position.x, climbableObject.transform.position.y, transform.position.z);
@@ -340,7 +341,54 @@ public class PlayerController : MonoBehaviour
 			hasJumped = false;
 		}
 	}
-	#endregion
+
+	public void StartClimbing(ClimbableObjectController objectToClimb)
+	{
+		if(charController.isGrounded)
+		{
+			//move character up so it is not touching the floor
+			charController.Move(new Vector3(0, charController.skinWidth, 0));
+		}
+		climbableObject = objectToClimb;
+		IsClimbing = true;
+		rotateTowardsClimbable = true;
+	}
+
+	public void StartClimbDown(ClimbableObjectController objectToClimb)
+	{
+		if(!IsClimbing && !hasJumped /*&& player.GetButton(Action.CharacterControl.Sneak)*/)
+		{
+			climbableObject = objectToClimb;
+			if(climbableObject != null)
+			{
+				if(climbableObject.ClimbDownPosition)
+				{
+					transform.position = climbableObject.ClimbDownPosition.position;
+					IsClimbing = true;
+					rotateTowardsClimbable = true;
+					moveTowardsClimbable = true;
+				}
+			}
+		}
+	}
+
+	public void EndClimb()
+	{
+		if(!charController.isGrounded)
+		{
+			//get direction to move away from climbable object
+			Vector3 directionToMove = climbableObject.transform.position - transform.position;
+			//project on horizontal plane
+			directionToMove = Vector3.Normalize(Vector3.ProjectOnPlane(directionToMove, Vector3.up));
+			//move character away from climbable object, depending on input
+			charController.Move(directionToMove * /*charController.skinWidth*/0.1f * Mathf.Sign(player.GetAxis(Action.CharacterControl.MoveVertical)));
+
+			climbableObject = null;
+			IsClimbing = false;
+			moveTowardsClimbable = false;
+		}
+	}
+	#endregion movement methods
 
 	/********************HandleInteraction*********************/
 	void HandleInteraction()
@@ -470,68 +518,68 @@ public class PlayerController : MonoBehaviour
 	}
 
 	//////////////////HIER IST NOCH EIN FEHLER DER ÜBERARBIETET WERDEN MUSS//////////////////
-	#region Unity callbacks
-	/**********************OnTriggerEnter**********************/  //////////////////D A S  W I R D  N I E  I M  L E B E N  F U N K T I O N I E R E N//////////////////
-	private void OnTriggerEnter(Collider other)                   //////////////////        S P I E L E R  H A T   K E I N E N  T R I G G E R       //////////////////
-	{                                                             //////////////////         ! ! ! !    Ü B E R A R B E I T E N    ! ! ! !          //////////////////
-		#region climbing
-		if(other.tag == "Climbable" && isClimbing)
-		{
-			climbableObject = other.GetComponent<ClimbableObjectController>();
-		}
+	//#region Unity callbacks
+	///**********************OnTriggerEnter**********************/  ////////////////// D A S  W I R D  N I E  I M  L E B E N  F U N K T I O N I E R E N //////////////////
+	//private void OnTriggerEnter(Collider other)                   //////////////////         S P I E L E R  H A T   K E I N E N  T R I G G E R        //////////////////
+	//{                                                             //////////////////          ! ! ! !    Ü B E R A R B E I T E N    ! ! ! !           //////////////////
+		//#region climbing
+		//if(other.tag == "Climbable" && IsClimbing)
+		//{
+			//climbableObject = other.GetComponent<ClimbableObjectController>();
+		//}
 
-		if(other.tag == "Climbable" && !isClimbing)
-		{
-			if(charController.isGrounded)
-			{
-				//move character up so it is not touching the floor
-				charController.Move(new Vector3(0, charController.skinWidth, 0));
-			}
-			climbableObject = other.gameObject.GetComponent<ClimbableObjectController>();
-			isClimbing = true;
-			rotateTowardsClimbable = true;
-		}
+		//if(other.tag == "Climbable" && !IsClimbing)
+		//{
+			//if(charController.isGrounded)
+			//{
+				////move character up so it is not touching the floor
+				//charController.Move(new Vector3(0, charController.skinWidth, 0));
+			//}
+			//climbableObject = other.gameObject.GetComponent<ClimbableObjectController>();
+			//IsClimbing = true;
+			//rotateTowardsClimbable = true;
+		//}
 
-		if(other.tag == "ClimbDownPosition" && !isClimbing && !hasJumped && player.GetButton(Action.CharacterControl.Sneak))
-		{
-			climbableObject = other.GetComponentInParent<ClimbableObjectController>();
-			if(climbableObject != null)
-			{
-				if(climbableObject.ClimbDownPositionTransform)
-				{
-					transform.position = climbableObject.ClimbDownPositionTransform.position;
-					isClimbing = true;
-					rotateTowardsClimbable = true;
-					moveTowardsClimbable = true;
-				}
-			}
-		}
-		#endregion
-	}
+		//if(other.tag == "ClimbDownPosition" && !IsClimbing && !hasJumped && player.GetButton(Action.CharacterControl.Sneak))
+		//{
+			//climbableObject = other.GetComponentInParent<ClimbableObjectController>();
+			//if(climbableObject != null)
+			//{
+				//if(climbableObject.ClimbDownPositionTransform)
+				//{
+					//transform.position = climbableObject.ClimbDownPositionTransform.position;
+					//IsClimbing = true;
+					//rotateTowardsClimbable = true;
+					//moveTowardsClimbable = true;
+				//}
+			//}
+		//}
+		//#endregion
+	//}
 
-	/**********************OnTriggerExit***********************/
-	private void OnTriggerExit(Collider other)
-	{
-		#region climbing
-		if(other.tag == "Climbable" && isClimbing)
-		{
-			if(!charController.isGrounded)
-			{
-				//get direction to move away from climbable object
-				Vector3 directionToMove = climbableObject.transform.position - transform.position;
-				//project on horizontal plane
-				directionToMove = Vector3.Normalize(Vector3.ProjectOnPlane(directionToMove, Vector3.up));
-				//move character away from climbable object, depending on input
-				charController.Move(directionToMove * charController.skinWidth * Mathf.Sign(player.GetAxis(Action.CharacterControl.MoveVertical)));
+	///**********************OnTriggerExit***********************/
+	//private void OnTriggerExit(Collider other)
+	//{
+		//#region climbing
+		//if(other.tag == "Climbable" && IsClimbing)
+		//{
+			//if(!charController.isGrounded)
+			//{
+				////get direction to move away from climbable object
+				//Vector3 directionToMove = climbableObject.transform.position - transform.position;
+				////project on horizontal plane
+				//directionToMove = Vector3.Normalize(Vector3.ProjectOnPlane(directionToMove, Vector3.up));
+				////move character away from climbable object, depending on input
+				//charController.Move(directionToMove * charController.skinWidth * Mathf.Sign(player.GetAxis(Action.CharacterControl.MoveVertical)));
 
-				climbableObject = null;
-				isClimbing = false;
-				moveTowardsClimbable = false;
-			}
-		}
-		#endregion
-	}
-	#endregion
+				//climbableObject = null;
+				//IsClimbing = false;
+				//moveTowardsClimbable = false;
+			//}
+		//}
+		//#endregion
+	//}
+	//#endregion
 
 	public void Die()
 	{

@@ -5,9 +5,8 @@ using UnityEngine;
 [ExecuteAlways]
 public class ClimbableObjectController : MonoBehaviour
  {
-	Transform climbDownPosition = null;
 	/// <summary>Position, that the character needs to move to, to climb down a climbable</summary>
-	public Transform ClimbDownPositionTransform { get { return climbDownPosition; } }
+	public Transform ClimbDownPosition { get; private set; } = null;
 
 	// Use this for initialization
 	void Start ()
@@ -16,7 +15,7 @@ public class ClimbableObjectController : MonoBehaviour
 		{
 			ValidateClimbDownPosition();
 
-			if(climbDownPosition == null)
+			if(ClimbDownPosition == null)
 			{
 				Debug.LogError("ClimbDownPosition could not be found! Climbing interaction can not function properly!" +
 					"\nRun \"Revalidate ClimbDownPosition\" from the component's context menu.");
@@ -33,21 +32,59 @@ public class ClimbableObjectController : MonoBehaviour
 			GameObject newChild = new GameObject("ClimbDownPosition");
 			newChild.transform.SetPositionAndRotation(transform.position, transform.rotation);
 			newChild.transform.parent = transform;
-			climbDownPosition = newChild.transform;
-			climbDownPosition.localScale = Vector3.one;
-			climbDownPosition.tag = "ClimbDownPosition";
+			ClimbDownPosition = newChild.transform;
+			ClimbDownPosition.localScale = Vector3.one;
+			ClimbDownPosition.tag = "ClimbDownPosition";
 
-			BoxCollider box = climbDownPosition.GetComponent<BoxCollider>();
+			BoxCollider box = ClimbDownPosition.GetComponent<BoxCollider>();
 			if(box == null)
 			{
-				box = climbDownPosition.gameObject.AddComponent<BoxCollider>();
+				box = ClimbDownPosition.gameObject.AddComponent<BoxCollider>();
 				box.isTrigger = true;
 				box.size = new Vector3(1.0f, 1.0f / transform.localScale.y, 1.0f);
 			}
+
+			ClimbDownPosition.gameObject.AddComponent<ClimbDownController>();
 		}
 		else
 		{
-			climbDownPosition = child.transform;
+			ClimbDownPosition = child.transform;
+			ClimbDownController climbDownController = ClimbDownPosition.GetComponent<ClimbDownController>();
+			if(climbDownController == null)
+			{
+				ClimbDownPosition.gameObject.AddComponent<ClimbDownController>();
+			}
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag == "Player")
+		{
+			PlayerController player = other.GetComponent<PlayerController>();
+
+			if(player.IsClimbing)
+			{
+				player.climbableObject = this;
+			}
+
+			if(!player.IsClimbing)
+			{
+				player.StartClimbing(this);
+			}
+		}
+	}
+
+	private void OnTriggerExit(Collider other)
+	{
+		if(other.tag == "Player")
+		{
+			PlayerController player = other.GetComponent<PlayerController>();
+
+			if(player.climbableObject == this)
+			{
+				player.EndClimb();
+			}
 		}
 	}
 }

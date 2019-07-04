@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.3
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -12478,7 +12478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.55
+      value: -64.652
       objectReference: {fileID: 0}
     - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12486,7 +12486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.33
+      value: 27.999
       objectReference: {fileID: 0}
     - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: m_LocalRotation.x
@@ -24034,6 +24034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 534385287}
   - component: {fileID: 534385288}
+  - component: {fileID: 534385289}
   m_Layer: 0
   m_Name: ClimbDownPosition
   m_TagString: ClimbDownPosition
@@ -24068,6 +24069,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.33333334, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &534385289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534385286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15788677efd68794b86bee57b7eb7b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &534808878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36121,6 +36134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 772112831}
   - component: {fileID: 772112832}
+  - component: {fileID: 772112833}
   m_Layer: 0
   m_Name: ClimbDownPosition
   m_TagString: ClimbDownPosition
@@ -36136,8 +36150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772112830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.43, y: 1.079, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.43, y: 1.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 765850987}
   m_RootOrder: 0
@@ -36155,6 +36169,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.33333334, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &772112833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772112830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15788677efd68794b86bee57b7eb7b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &774611874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43916,7 +43942,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950611340}
   m_LocalRotation: {x: 0.00000016108896, y: 0.9914448, z: -0.13052674, w: 0.0000012235872}
-  m_LocalPosition: {x: -15.550023, y: 2.5411513, z: 26.57445}
+  m_LocalPosition: {x: -64.65204, y: 2.5411522, z: 35.243454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53749,7 +53775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155663192}
   m_LocalRotation: {x: 0.00000016108896, y: 0.9914448, z: -0.13052674, w: 0.0000012235872}
-  m_LocalPosition: {x: -15.550023, y: 2.5411513, z: 26.57445}
+  m_LocalPosition: {x: -64.65204, y: 2.5411522, z: 35.243454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1829060723}
