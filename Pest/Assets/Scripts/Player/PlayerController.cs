@@ -302,7 +302,7 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 
-		if(moveTowardsClimbable && climbableObject != null)
+		if(moveTowardsClimbable && climbableObject != null && climbableObject.ClimbDownPosition != null)
 		{
 			if(charController.isGrounded)
 			{
@@ -323,7 +323,6 @@ public class PlayerController : MonoBehaviour
 
 			if(Vector3.Distance(distanceCalculationPosition, positionWithClimbableHeight) <= charController.radius + charController.skinWidth)
 			{
-				Debug.Log(Vector3.Distance(distanceCalculationPosition, positionWithClimbableHeight));
 				moveTowardsClimbable = false;
 			}
 
@@ -461,7 +460,7 @@ public class PlayerController : MonoBehaviour
 			isTakingEnemyDown = true;
 			return;
 		}
-		canMove = false;
+		//canMove = false;
 		animationController.Attack();
 	}
 
