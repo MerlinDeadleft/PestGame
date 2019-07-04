@@ -5,27 +5,47 @@ using UnityEngine;
 [ExecuteAlways]
 public class ClimbableObjectController : MonoBehaviour
  {
+	[SerializeField] bool hasClimbDownPosition = false;
 	/// <summary>Position, that the character needs to move to, to climb down a climbable</summary>
 	public Transform ClimbDownPosition { get; private set; } = null;
 
 	// Use this for initialization
 	void Start ()
 	{
-		if(!Application.isPlaying)
+		if(hasClimbDownPosition)
 		{
 			ValidateClimbDownPosition();
 
-			if(ClimbDownPosition == null)
+			if(!Application.isPlaying)
 			{
-				Debug.LogError("ClimbDownPosition could not be found! Climbing interaction can not function properly!" +
-					"\nRun \"Revalidate ClimbDownPosition\" from the component's context menu.");
+				if(ClimbDownPosition == null)
+				{
+					Debug.LogError("ClimbDownPosition could not be found! Climbing interaction can not function properly!" +
+						"\nRun \"Revalidate ClimbDownPosition\" from the component's context menu.");
+				}
+			}
+			else
+			{
+				if(ClimbDownPosition == null)
+				{
+					Debug.LogError("ClimbDownPosition could not be found! Climbing interaction can not function properly!");
+				}
+			}
+		}
+		else
+		{
+			Transform climbDownPos = transform.Find("ClimbDownPosition");
+
+			if(climbDownPos != null)
+			{
+				DestroyImmediate(climbDownPos.gameObject);
 			}
 		}
 	}
 
 	[ContextMenu("Revalidate ClimbDownPosition")]
 	void ValidateClimbDownPosition()
-	{
+	{ 
 		Transform child = transform.Find("ClimbDownPosition");
 		if(child == null)
 		{
@@ -57,6 +77,12 @@ public class ClimbableObjectController : MonoBehaviour
 		}
 	}
 
+	IEnumerator LateValidateClimbDownPosition()
+	{
+		yield return new WaitForEndOfFrame();
+		ValidateClimbDownPosition();
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "Player")
@@ -86,5 +112,31 @@ public class ClimbableObjectController : MonoBehaviour
 				player.EndClimb();
 			}
 		}
+	}
+
+	private void OnValidate()
+	{
+		if(hasClimbDownPosition)
+		{
+			if(gameObject.activeInHierarchy)
+			{
+				StartCoroutine(LateValidateClimbDownPosition());
+			}
+		}
+		else
+		{
+			Transform climbDownPos = transform.Find("ClimbDownPosition");
+
+			if(climbDownPos != null && climbDownPos.gameObject.activeInHierarchy)
+			{
+				StartCoroutine(DestroyGameObject(climbDownPos.gameObject));
+			}
+		}
+	}
+
+	IEnumerator DestroyGameObject(GameObject go)
+	{
+		yield return new WaitForEndOfFrame();
+		DestroyImmediate(go);
 	}
 }

@@ -21,7 +21,6 @@ public class ClimbDownController : MonoBehaviour
 		if(other.tag == "Player")
 		{
 			other.GetComponent<PlayerController>().StartClimbDown(GetComponentInParent<ClimbableObjectController>());
-			Debug.LogWarning("BEEP");
 		}
 	}
 }
