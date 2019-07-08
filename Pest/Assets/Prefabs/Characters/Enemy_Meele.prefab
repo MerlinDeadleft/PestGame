@@ -168,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059690586}
   - component: {fileID: 1059690587}
+  - component: {fileID: 2488781335545123966}
   m_Layer: 0
   m_Name: Eyes
   m_TagString: Untagged
@@ -201,6 +202,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820e2a5a4f65de14da4eb920f1ab0cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2488781335545123966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059690585}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b263123d32c1f548b4ddd07f317bc74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653334740
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +225,7 @@ GameObject:
   - component: {fileID: 1653334741}
   - component: {fileID: 1653334743}
   - component: {fileID: 1653334742}
+  - component: {fileID: 3758346898548118784}
   m_Layer: 0
   m_Name: AI Container
   m_TagString: Untagged
@@ -273,6 +287,18 @@ MonoBehaviour:
   timeToReturnToGuard: 5
   patrol: 0
   patrolBehaviour: {fileID: 0}
+--- !u!114 &3758346898548118784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653334740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c20a54cfc34ba49a80ef498a45357c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1987377400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1277,6 @@ GameObject:
   - component: {fileID: 6320952865831674162}
   - component: {fileID: 6320952865824476856}
   - component: {fileID: 833673238}
-  - component: {fileID: 833673239}
   - component: {fileID: 833673240}
   - component: {fileID: 6320952866610947273}
   m_Layer: 0
@@ -1313,20 +1338,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &833673239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6320952865831910610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1c07d0b961a6ce4a9362150dadd67f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TakeDownTriggerGroup: {fileID: 3428796}
-  animationController: {fileID: 833673240}
 --- !u!114 &833673240
 MonoBehaviour:
   m_ObjectHideFlags: 0

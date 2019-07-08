@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+[AddComponentMenu("AI/AI Brain"), RequireComponent(typeof(SphereCollider))]
+public class AIBrain : MonoBehaviour
 {
-	[SerializeField] GameObject TakeDownTriggerGroup = null;
-	[SerializeField] EnemyAnimationController animationController = null;
-
     // Start is called before the first frame update
     void Start()
     {
