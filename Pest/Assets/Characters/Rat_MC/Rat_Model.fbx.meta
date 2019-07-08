@@ -217,6 +217,17 @@ ModelImporter:
     100422: Body.006
     100424: Rat_Anim4:Tail_LP2
     100426: Geo
+    100428: Rat_Anim4:Head_end_end
+    100430: Rat_Anim4:Index3_L_end_end
+    100432: Rat_Anim4:Index3_R_end_end
+    100434: Rat_Anim4:Middle3_L_end_end
+    100436: Rat_Anim4:Middle3_R_end_end
+    100438: Rat_Anim4:Pinky3_L_end_end
+    100440: Rat_Anim4:Pinky3_R_end_end
+    100442: Rat_Anim4:Ring3_L_end_end
+    100444: Rat_Anim4:Ring3_R_end_end
+    100446: Rat_Anim4:Thumb2_L_end_end
+    100448: Rat_Anim4:Thumb2_R_end_end
     400000: Rat_Anim4:Arm1_L
     400002: Rat_Anim4:Arm1_R
     400004: Rat_Anim4:Arm2_L
@@ -431,9 +442,21 @@ ModelImporter:
     400422: Body.006
     400424: Rat_Anim4:Tail_LP2
     400426: Geo
+    400428: Rat_Anim4:Head_end_end
+    400430: Rat_Anim4:Index3_L_end_end
+    400432: Rat_Anim4:Index3_R_end_end
+    400434: Rat_Anim4:Middle3_L_end_end
+    400436: Rat_Anim4:Middle3_R_end_end
+    400438: Rat_Anim4:Pinky3_L_end_end
+    400440: Rat_Anim4:Pinky3_R_end_end
+    400442: Rat_Anim4:Ring3_L_end_end
+    400444: Rat_Anim4:Ring3_R_end_end
+    400446: Rat_Anim4:Thumb2_L_end_end
+    400448: Rat_Anim4:Thumb2_R_end_end
     2100000: lambert1
     2100002: Default_Material
     2100004: lambert4
+    2100006: Material
     2300000: Rat_Anim4:Bag_Knot.001
     2300002: Rat_Anim4:Bag_Knot.002
     2300004: Rat_Anim4:Cap_LP
@@ -644,7 +667,22 @@ ModelImporter:
     13700054: Body.005
     13700056: Body.006
     13700058: Rat_Anim4:Tail_LP2
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: f62b52b2d4b721742a0bc5c6b4db468d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 35f32edd76675f24a986bf37c117d1a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: 897e5c04d7d432e44847642a6666c8ba, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

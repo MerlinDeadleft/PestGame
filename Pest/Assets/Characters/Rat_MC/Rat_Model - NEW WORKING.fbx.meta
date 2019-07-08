@@ -145,6 +145,7 @@ ModelImporter:
     100278: Rat_Anim4:Torus.000
     100280: //RootNode
     100282: Torus.000
+    100284: Rat_Anim4:Main_Controller
     400000: Plane.006
     400002: Rat_Anim4:Arm1_L
     400004: Rat_Anim4:Arm1_R
@@ -287,6 +288,7 @@ ModelImporter:
     400278: Rat_Anim4:Torus.000
     400280: //RootNode
     400282: Torus.000
+    400284: Rat_Anim4:Main_Controller
     2100000: lambert1
     2100002: lambert4
     2300000: Plane.006
