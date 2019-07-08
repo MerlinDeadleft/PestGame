@@ -74,7 +74,7 @@ public class TextureBlendingManager : MonoBehaviour
 
         if(transparency <= 0)
         {
-            GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            //GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         }
         else
         {

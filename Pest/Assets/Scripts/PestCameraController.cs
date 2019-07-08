@@ -15,17 +15,24 @@ public class PestCameraController : MonoBehaviour
 	float controllerLookSensitivity = 0.5f;
 	bool lastInputFromController = false;
 
-	List<Light> lights = new List<Light>();
-	public Light SelectedLight { get; set; } = null;
+	[SerializeField] List<Light> lights        = new List<Light>();
+	[SerializeField] List<Light> lightsInView  = new List<Light>();
+                     Light       selectedLight = null;
+    [SerializeField] int         lightFocus    = -1;
+    [SerializeField] GameObject  crosshair     = null;
 
 	public bool IsBlinded { get; set; } = false;
 	float maxLookDistanceMidifier = 1.0f;
 	float lookSensitivityModifier = 1.0f;
 
+
 	// Start is called before the first frame update
 	void Start()
     {
-		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
+        player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
+
+        crosshair.SetActive(false);
+
 		StartCoroutine(Initialize());
 
 		RefreshLightsList();
@@ -43,7 +50,9 @@ public class PestCameraController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		if(framingTransposer == null)
+        crosshair.transform.rotation = Camera.main.transform.rotation;
+
+        if (framingTransposer == null)
 		{
 			return; //only execute update after initialize finished
 		}
@@ -102,72 +111,74 @@ public class PestCameraController : MonoBehaviour
 			if(light.type != LightType.Directional)
 			{
 				lights.Add(light);
+
 			}
 		}
 	}
 
-	void DetermineClosestLight()
-	{
-		List<GameObject> closeLights = new List<GameObject>();
+    // Talis' Code
 
-		foreach(Light light in lights)
-		{
-			if(light == null)
-			{
-				RefreshLightsList();
-				SelectedLight = null;
-				return;
-			}
+    void DetermineClosestLight()
+    {
+        List<GameObject> closeLights = new List<GameObject>();
+        RefreshLightsList();
 
-			if(light.enabled)
-			{
-				GameObject lightGO = light.gameObject;
-				Vector3 viewPortPosition = Camera.main.WorldToViewportPoint(lightGO.transform.position);
-				if(viewPortPosition.x > 0.35f && viewPortPosition.x < 0.65f)
-				{
-					if(viewPortPosition.y > 0.25f && viewPortPosition.y < 0.75f)
-					{
-						closeLights.Add(lightGO);
-					}
-				}
-			}
-		}
+        foreach (Light light in lights)
+        {
 
-		GameObject closestLight = null;
-		Vector3 closestViewPortPos = Vector3.zero;
+            Vector3 viewPos = Camera.main.WorldToViewportPoint(light.transform.position);
+            if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
+            {
+                if (!lightsInView.Contains(light) && light.enabled)
+                {
+                    lightsInView.Add(light);
+                }
+            }
+            else
+            {
+                if (lightsInView.Contains(light))
+                {
+                    lightsInView.Remove(light);
+                }
 
-		if(closeLights.Count > 0)
-		{
-			foreach(GameObject lightGO in closeLights)
-			{
-				if(closestLight == null)
-				{
-					closestLight = closeLights[0];
-					closestViewPortPos = Camera.main.WorldToViewportPoint(lightGO.transform.position);
-					continue;
-				}
+                if (light == null)
+                {
+                    RefreshLightsList();
+                    return;
+                }
+            }
+        }
+    }
 
-				Vector3 viewPortPosition = Camera.main.WorldToViewportPoint(lightGO.transform.position);
-				if(viewPortPosition.z < closestViewPortPos.z)
-				{
-					closestLight = lightGO;
-					closestViewPortPos = viewPortPosition;
-				}
-			}
+    public void FocusNextLight()
+    {
+        lightFocus++;
+        if (lightFocus > lightsInView.Count - 1)
+        {
+            lightFocus = -1;
+            crosshair.SetActive(false);
+            selectedLight = null;
+        }
 
-			if(!(closestViewPortPos.z > 0.0f && closestViewPortPos.z < 15.0f)) //if z is outside 0-15 range
-			{
-				closestLight = null;
-			}
-		}
+        if(lightFocus >= 0)
+        {
+            selectedLight = lightsInView[lightFocus];
 
-		if(closestLight != null)
-		{
-			SelectedLight = closestLight.GetComponent<Light>();
-		}
-		else
-		{
-			SelectedLight = null;
-		}
-	}
+            crosshair.SetActive(true);
+            crosshair.transform.position = lightsInView[lightFocus].transform.position;
+            crosshair.transform.parent = lightsInView[lightFocus].transform;
+        }
+    }
+
+    public void TurnOffSelectedLight()
+    {
+        lightsInView.RemoveAt(lightFocus);
+        lightFocus = -1;
+        selectedLight.enabled = false;
+        crosshair.transform.parent = null;
+        crosshair.SetActive(false);
+        DetermineClosestLight();
+    }
+
+    // Talis' Code ende
 }
