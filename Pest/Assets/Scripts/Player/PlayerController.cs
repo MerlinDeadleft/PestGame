@@ -121,12 +121,30 @@ public class PlayerController : MonoBehaviour
 			HandleMovement();
 		}
 
+        // Talis' code
+        if(player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
+        {
+            if (HidingObject != null && lastIsHiding == isHiding)
+            {
+                isHiding = true;
+                return;
+            }
 
-		if(player.GetButtonDown(Action.CharacterControl.Interact))
-		{
-			HandleInteraction();
-		}
-		else if(player.GetButtonDown(Action.CharacterControl.Block))
+            if (!isHiding && lastIsHiding == isHiding)
+            {
+                cameraController.FocusNextLight();
+            }
+        }
+        else if (player.GetButtonTimedPressDown(Action.CharacterControl.Interact, 0.7f))
+        {
+            if (!isHiding && lastIsHiding == isHiding)
+            {
+                cameraController.TurnOffSelectedLight();
+            }
+        }
+        // Talis' code ende
+
+        else if (player.GetButtonDown(Action.CharacterControl.Block))
 		{
 			HandleBlocking();
 		}
@@ -388,20 +406,6 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 	#endregion movement methods
-
-	/********************HandleInteraction*********************/
-	void HandleInteraction()
-	{
-		if(HidingObject != null && lastIsHiding == isHiding)
-		{
-			isHiding = true;
-		}
-
-		if(!isHiding && lastIsHiding == isHiding && cameraController.SelectedLight != null)
-		{
-			cameraController.SelectedLight.enabled = false;
-		}
-	}
 
 	/**********************HandleHiding************************/
 	void HandleHiding()
