@@ -7,14 +7,24 @@ public class EnemyAnimationController : MonoBehaviour
 	Animator animator = null;
 
 	public bool Attacking { get; set; } = false;
+	public float Velocity { get; set; } = 0.0f;
+	public bool CanMove { get; private set; } = true;
 
 	/********************animation hashes**********************/
 	int dieHash = Animator.StringToHash("Die");
 	int attackHash = Animator.StringToHash("Attack");
+	int velocityHash = Animator.StringToHash("Velocity");
+	int canMoveHash = Animator.StringToHash("CanMove");
 
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
+	}
+
+	private void Update()
+	{
+		animator.SetFloat(velocityHash, Velocity);
+		CanMove = animator.GetBool(canMoveHash);
 	}
 
 	public void Die()

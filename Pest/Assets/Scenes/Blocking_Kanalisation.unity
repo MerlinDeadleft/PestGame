@@ -88009,6 +88009,10 @@ PrefabInstance:
       propertyPath: rangeOfVision
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1653334742, guid: ed2a06cba61465c4d9d091357a0e953f, type: 3}
+      propertyPath: debug
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4628157913849134053, guid: ed2a06cba61465c4d9d091357a0e953f,
         type: 3}
       propertyPath: m_IsActive
