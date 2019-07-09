@@ -73,7 +73,8 @@ public class PlayerController : MonoBehaviour
 
 	/******************miscellanious variables*****************/
 	bool isBlinded = false;
-	public bool IsGrounded { get { return charController.isGrounded; } }
+	public bool IsGrounded { get; private set; } = true;
+	int isGroundedFrameCounter = 0;
 
 	/******************magic actions variables*****************/
 	PestCameraController cameraController = null;
@@ -103,6 +104,8 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		UpdateIsGrounded();
+
 		if(Input.GetKeyDown(KeyCode.Alpha0))
 		{
 			ReloadScene();
@@ -121,7 +124,6 @@ public class PlayerController : MonoBehaviour
 			HandleMovement();
 		}
 
-        // Talis' code
         if(player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
         {
             if (HidingObject != null && lastIsHiding == isHiding)
@@ -130,6 +132,7 @@ public class PlayerController : MonoBehaviour
                 return;
             }
 
+        // Talis' code
             if (!isHiding && lastIsHiding == isHiding)
             {
                 cameraController.FocusNextLight();
@@ -157,9 +160,26 @@ public class PlayerController : MonoBehaviour
 
 		animationController.Velocity = charController.velocity.magnitude;
 		animationController.IsSneaking = isSneaking;
-		animationController.IsGrounded = charController.isGrounded;
+		animationController.IsGrounded = IsGrounded;
 		animationController.IsClimbing = IsClimbing;
 		animationController.isBlinded = isBlinded;
+	}
+
+	void UpdateIsGrounded()
+	{
+		if(charController.isGrounded)
+		{
+			isGroundedFrameCounter = 0;
+			IsGrounded = true;
+		}
+		else
+		{
+			isGroundedFrameCounter++;
+			if(isGroundedFrameCounter > 15)
+			{
+				IsGrounded = false;
+			}
+		}
 	}
 
 	#region movement methods
@@ -520,70 +540,7 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	//////////////////HIER IST NOCH EIN FEHLER DER ÜBERARBIETET WERDEN MUSS//////////////////
-	//#region Unity callbacks
-	///**********************OnTriggerEnter**********************/  ////////////////// D A S  W I R D  N I E  I M  L E B E N  F U N K T I O N I E R E N //////////////////
-	//private void OnTriggerEnter(Collider other)                   //////////////////         S P I E L E R  H A T   K E I N E N  T R I G G E R        //////////////////
-	//{                                                             //////////////////          ! ! ! !    Ü B E R A R B E I T E N    ! ! ! !           //////////////////
-		//#region climbing
-		//if(other.tag == "Climbable" && IsClimbing)
-		//{
-			//climbableObject = other.GetComponent<ClimbableObjectController>();
-		//}
-
-		//if(other.tag == "Climbable" && !IsClimbing)
-		//{
-			//if(charController.isGrounded)
-			//{
-				////move character up so it is not touching the floor
-				//charController.Move(new Vector3(0, charController.skinWidth, 0));
-			//}
-			//climbableObject = other.gameObject.GetComponent<ClimbableObjectController>();
-			//IsClimbing = true;
-			//rotateTowardsClimbable = true;
-		//}
-
-		//if(other.tag == "ClimbDownPosition" && !IsClimbing && !hasJumped && player.GetButton(Action.CharacterControl.Sneak))
-		//{
-			//climbableObject = other.GetComponentInParent<ClimbableObjectController>();
-			//if(climbableObject != null)
-			//{
-				//if(climbableObject.ClimbDownPositionTransform)
-				//{
-					//transform.position = climbableObject.ClimbDownPositionTransform.position;
-					//IsClimbing = true;
-					//rotateTowardsClimbable = true;
-					//moveTowardsClimbable = true;
-				//}
-			//}
-		//}
-		//#endregion
-	//}
-
-	///**********************OnTriggerExit***********************/
-	//private void OnTriggerExit(Collider other)
-	//{
-		//#region climbing
-		//if(other.tag == "Climbable" && IsClimbing)
-		//{
-			//if(!charController.isGrounded)
-			//{
-				////get direction to move away from climbable object
-				//Vector3 directionToMove = climbableObject.transform.position - transform.position;
-				////project on horizontal plane
-				//directionToMove = Vector3.Normalize(Vector3.ProjectOnPlane(directionToMove, Vector3.up));
-				////move character away from climbable object, depending on input
-				//charController.Move(directionToMove * charController.skinWidth * Mathf.Sign(player.GetAxis(Action.CharacterControl.MoveVertical)));
-
-				//climbableObject = null;
-				//IsClimbing = false;
-				//moveTowardsClimbable = false;
-			//}
-		//}
-		//#endregion
-	//}
-	//#endregion
-
+	/***************************Die****************************/
 	public void Die()
 	{
 		if(canMove)
@@ -593,6 +550,7 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	/***********************ReloadScene************************/
 	void ReloadScene()
 	{
 		Destroy(gameObject);

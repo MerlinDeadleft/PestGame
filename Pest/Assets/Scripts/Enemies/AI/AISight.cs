@@ -12,7 +12,6 @@ public class AISight : MonoBehaviour
 	public bool PlayerInSight { get; private set; } = false;
 	public Vector3 PlayerLastSeenPosition { get; set; } = Vector3.zero;
 
-    // Start is called before the first frame update
     void OnDisable()
     {
 		PlayerInSight = false;
@@ -56,7 +55,6 @@ public class AISight : MonoBehaviour
 			else
 			{
 				PlayerInSight = false;
-				//Debug.Log("player lost from sight");
 			}
 		}
 	}
