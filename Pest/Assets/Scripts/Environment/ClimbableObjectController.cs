@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteAlways]
+[RequireComponent(typeof(BoxCollider)), RequireComponent(typeof(CapsuleCollider))]
 public class ClimbableObjectController : MonoBehaviour
  {
 	[SerializeField] bool hasClimbDownPosition = false;
