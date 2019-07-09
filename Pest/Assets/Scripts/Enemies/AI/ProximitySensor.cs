@@ -30,10 +30,8 @@ public class ProximitySensor : MonoBehaviour
 		{
 			if(hit.transform == Player)
 			{
-				Debug.Log("YOPEEE");
 				if(DetectImmediately)
 				{
-					Debug.Log("WAAAAAAAAAHHH");
 					PlayerCloseBy = true;
 					PlayerLastSensedPosition = hit.transform.position;
 				}
@@ -42,7 +40,6 @@ public class ProximitySensor : MonoBehaviour
 					detectionTimer += Time.deltaTime;
 					if(detectionTimer >= DetectionTime)
 					{
-						Debug.Log("WUUUUUUUUHHH");
 						DetectImmediately = true;
 						PlayerCloseBy = true;
 						PlayerLastSensedPosition = hit.transform.position;
@@ -62,7 +59,6 @@ public class ProximitySensor : MonoBehaviour
 
 			if(coolDownTimer >= coolDownTime)
 			{
-				Debug.Log("NOOOPEEE");
 				DetectImmediately = false;
 				coolDownTimer = 0.0f;
 			}
