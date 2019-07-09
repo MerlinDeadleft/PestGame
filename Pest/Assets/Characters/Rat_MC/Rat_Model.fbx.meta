@@ -506,6 +506,28 @@ ModelImporter:
     2300092: Eye_right.001
     2300094: Eye_right.002
     2300096: Plane.001
+    2300098: Rat_Anim4:Arm_L_LP
+    2300100: Rat_Anim4:Arm_R_LP
+    2300102: Rat_Anim4:Belt.001
+    2300104: Rat_Anim4:Belt_Knot.001
+    2300106: Rat_Anim4:Foot_L_LP
+    2300108: Rat_Anim4:Foot_R_LP
+    2300110: Rat_Anim4:Leg_L_LP
+    2300112: Rat_Anim4:Leg_R_LP
+    2300114: Rat_Anim4:Nail_LP.000
+    2300116: Rat_Anim4:Nail_LP.001
+    2300118: Rat_Anim4:Nail_LP.002
+    2300120: Rat_Anim4:Nail_LP.003
+    2300122: Rat_Anim4:Nail_LP.004
+    2300124: Rat_Anim4:Nail_LP.005
+    2300126: Rat_Anim4:Nail_LP.006
+    2300128: Rat_Anim4:Nail_LP.007
+    2300130: Rat_Anim4:Pants_LP.001
+    2300132: Rat_Anim4:Plane.003
+    2300134: Rat_Anim4:Plane.004
+    2300136: Rat_Anim4:Rat_Body_LP
+    2300138: Rat_Anim4:Scarf_LP
+    2300140: Rat_Anim4:Tail_LP
     3300000: Rat_Anim4:Bag_Knot.001
     3300002: Rat_Anim4:Bag_Knot.002
     3300004: Rat_Anim4:Cap_LP
@@ -555,6 +577,28 @@ ModelImporter:
     3300092: Eye_right.001
     3300094: Eye_right.002
     3300096: Plane.001
+    3300098: Rat_Anim4:Arm_L_LP
+    3300100: Rat_Anim4:Arm_R_LP
+    3300102: Rat_Anim4:Belt.001
+    3300104: Rat_Anim4:Belt_Knot.001
+    3300106: Rat_Anim4:Foot_L_LP
+    3300108: Rat_Anim4:Foot_R_LP
+    3300110: Rat_Anim4:Leg_L_LP
+    3300112: Rat_Anim4:Leg_R_LP
+    3300114: Rat_Anim4:Nail_LP.000
+    3300116: Rat_Anim4:Nail_LP.001
+    3300118: Rat_Anim4:Nail_LP.002
+    3300120: Rat_Anim4:Nail_LP.003
+    3300122: Rat_Anim4:Nail_LP.004
+    3300124: Rat_Anim4:Nail_LP.005
+    3300126: Rat_Anim4:Nail_LP.006
+    3300128: Rat_Anim4:Nail_LP.007
+    3300130: Rat_Anim4:Pants_LP.001
+    3300132: Rat_Anim4:Plane.003
+    3300134: Rat_Anim4:Plane.004
+    3300136: Rat_Anim4:Rat_Body_LP
+    3300138: Rat_Anim4:Scarf_LP
+    3300140: Rat_Anim4:Tail_LP
     4300000: Rat_Anim4:Bag_Knot.001
     4300002: Rat_Anim4:Bag_Knot.002
     4300004: Rat_Anim4:Plane.005
@@ -672,7 +716,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: f62b52b2d4b721742a0bc5c6b4db468d, type: 2}
+    second: {fileID: 2100000, guid: 01d784f660b1e1247812f6adee86ca8b, type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
