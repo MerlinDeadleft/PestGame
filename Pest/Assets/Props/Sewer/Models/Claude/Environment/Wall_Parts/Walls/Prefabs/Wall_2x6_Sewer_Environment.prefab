@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7912692967074924856}
   - component: {fileID: 7912692967073827832}
   m_Layer: 0
-  m_Name: Wand_2x6_Kanalisation_Environment
+  m_Name: Wall_2x6_Sewer_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d4919b454a44fb04891e18699d2b6f18, type: 3}
+  - {fileID: 2100000, guid: 9aae65e110ab43a4b9781866a3fd31a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
