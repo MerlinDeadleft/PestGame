@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 1653334741}
   - component: {fileID: 1653334743}
   - component: {fileID: 1653334742}
+  - component: {fileID: 7528330438007281070}
   m_Layer: 0
   m_Name: AI Container
   m_TagString: Untagged
@@ -267,12 +268,28 @@ MonoBehaviour:
   horFOVAngle: 110
   verFOVAngle: 180
   rangeOfVision: 15
+  hasProximitySensor: 1
+  proxSensor: {fileID: 7528330438007281070}
+  detectionRange: 2.5
+  detectionTime: 2
   guard: 0
   pointToGuard: {fileID: 0}
   maxDistanceFromGuardPoint: 10
   timeToReturnToGuard: 5
   patrol: 0
   patrolBehaviour: {fileID: 0}
+--- !u!114 &7528330438007281070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653334740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00203d42a745c54294f135d9b463f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1987377400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1370,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

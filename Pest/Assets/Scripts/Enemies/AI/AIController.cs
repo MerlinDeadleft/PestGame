@@ -20,11 +20,17 @@ public class AIController : MonoBehaviour
 	List<MonoBehaviour> aiComponents = new List<MonoBehaviour>();
 
 	[Header("Vision")]
-	[SerializeField, ConditionalField("use")] bool hasEyes = false;
+	[SerializeField] bool hasEyes = false;
 	[SerializeField, ConditionalField("hasEyes")] AISight eyes = null;
 	[SerializeField, ConditionalField("hasEyes")] float horFOVAngle = 110.0f;
 	[SerializeField, ConditionalField("hasEyes")] float verFOVAngle = 180.0f;
 	[SerializeField, ConditionalField("hasEyes")] float rangeOfVision = 15.0f;
+
+	[Header("Proximity")]
+	[SerializeField] bool hasProximitySensor = false;
+	[SerializeField, ConditionalField("hasProximitySensor")] ProximitySensor proxSensor = null;
+	[SerializeField, ConditionalField("hasProximitySensor")] float detectionRange = 2.0f;
+	[SerializeField, ConditionalField("hasProximitySensor")] float detectionTime = 2.0f;
 
 	[Header("Behaviour")]
 	[SerializeField] bool guard = false;
@@ -46,6 +52,7 @@ public class AIController : MonoBehaviour
 	float waitForAttackTime = 1.0f;
 	float waitAfterAttackTime = 1.0f;
 	float attackTimer = 0.0f;
+	bool isFacingPlayer = false;
 
 	// Start is called before the first frame update
 	void Start()
@@ -56,7 +63,7 @@ public class AIController : MonoBehaviour
 
 		player = GameObject.FindGameObjectWithTag("Player");
 
-		if(eyes != null)
+		if(hasEyes && eyes != null)
 		{
 			aiComponents.Add(eyes);
 
@@ -69,6 +76,14 @@ public class AIController : MonoBehaviour
 			{
 				aiComponentActivationRange.radius = rangeOfVision;
 			}
+		}
+
+		if(hasProximitySensor && proxSensor != null)
+		{
+			aiComponents.Add(proxSensor);
+			proxSensor.Player = player.transform;
+			proxSensor.DetectionRange = detectionRange;
+			proxSensor.DetectionTime = detectionTime;
 		}
 
 		returnToGuardTimer = timeToReturnToGuard;
@@ -108,32 +123,46 @@ public class AIController : MonoBehaviour
 			navMeshAgent.isStopped = false;
 		}
 
+		if(eyes != null && eyes.PlayerInSight && proxSensor != null)
+		{
+			proxSensor.DetectImmediately = true;
+		}
+
+		if(proxSensor != null && proxSensor.PlayerCloseBy)
+		{
+			FacePlayer();
+		}
+
 		animController.Velocity = navMeshAgent.velocity.magnitude;
 	}
 
 	void HandleAttacking()
 	{
-		if(!attackStarted)
+		navMeshAgent.isStopped = true;
+		if(isFacingPlayer)
 		{
-			attackTimer += Time.deltaTime;
-
-			if(attackTimer >= waitForAttackTime)
+			if(!attackStarted)
 			{
-				animController.Attack();
-				attackStarted = true;
-				attackTimer = 0.0f;
+				attackTimer += Time.deltaTime;
+
+				if(attackTimer >= waitForAttackTime)
+				{
+					animController.Attack();
+					attackStarted = true;
+					attackTimer = 0.0f;
+				}
 			}
-		}
 
-		if(!animController.Attacking)
-		{
-			attackTimer += Time.deltaTime;
-
-			if(attackTimer >= waitAfterAttackTime)
+			if(!animController.Attacking)
 			{
-				AttackingPlayer = false;
-				attackStarted = false;
-				attackTimer = 0.0f;
+				attackTimer += Time.deltaTime;
+
+				if(attackTimer >= waitAfterAttackTime)
+				{
+					AttackingPlayer = false;
+					attackStarted = false;
+					attackTimer = 0.0f;
+				}
 			}
 		}
 	}
@@ -328,6 +357,22 @@ public class AIController : MonoBehaviour
 					}
 				}
 			}
+		}
+	}
+
+	void FacePlayer()
+	{
+		Vector3 enemyToPlayer = player.transform.position - transform.position;
+		Quaternion lookRotation = Quaternion.LookRotation(enemyToPlayer, Vector3.up);
+
+		if(Quaternion.Angle(navMeshAgent.transform.rotation, lookRotation) > 10.0f)
+		{
+			isFacingPlayer = false;
+			navMeshAgent.transform.rotation = Quaternion.Slerp(navMeshAgent.transform.rotation, lookRotation, Time.deltaTime * 2.5f);
+		}
+		else
+		{
+			isFacingPlayer = true;
 		}
 	}
 

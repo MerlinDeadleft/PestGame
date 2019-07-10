@@ -47,6 +47,11 @@ public class ClimbableObjectController : MonoBehaviour
 	[ContextMenu("Revalidate ClimbDownPosition")]
 	void ValidateClimbDownPosition()
 	{ 
+		if(!hasClimbDownPosition)
+		{
+			return;
+		}
+
 		Transform child = transform.Find("ClimbDownPosition");
 		if(child == null)
 		{
