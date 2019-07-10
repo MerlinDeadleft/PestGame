@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1184118162915914507}
   - component: {fileID: 1184118162904522251}
   - component: {fileID: 6954678085416780998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Timberframing_Roof_8x3_1_1_City_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}

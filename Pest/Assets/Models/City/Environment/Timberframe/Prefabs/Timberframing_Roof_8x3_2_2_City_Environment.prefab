@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7059431877497376295}
   - component: {fileID: 7059431877498473703}
   - component: {fileID: 7059431877582248601}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Timberframing_Roof_8x3_2_2_City_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7059431877500670503}
-  m_LocalRotation: {x: -0.50000304, y: 0.49999696, z: 0.49999696, w: 0.50000304}
+  m_LocalRotation: {x: -0.5000044, y: 0.49999562, z: 0.49999562, w: 0.5000044}
   m_LocalPosition: {x: -273, y: 6, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

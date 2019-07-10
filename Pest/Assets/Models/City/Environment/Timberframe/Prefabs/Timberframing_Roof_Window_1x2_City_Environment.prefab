@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4364794425189142092}
   - component: {fileID: 4364794425190141068}
   - component: {fileID: 4154798019954966483}
+  - component: {fileID: 7989151965858220194}
   m_Layer: 0
   m_Name: Timberframing_Roof_Window_1x2_City_Environment
   m_TagString: Untagged
@@ -92,3 +93,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 0026926a08e39df4b945eb76bb84e6f5, type: 3}
+--- !u!208 &7989151965858220194
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4364794425192403532}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.633, y: 1.5250001, z: 1.0830001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.5, y: 1.475, z: 1.0830001}
+  m_TimeToStationary: 0.5
