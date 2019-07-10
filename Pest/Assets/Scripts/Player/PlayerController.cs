@@ -124,16 +124,30 @@ public class PlayerController : MonoBehaviour
 			HandleMovement();
 		}
 
+        // Talis' code
         if(player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
         {
-            if (HidingObject != null && lastIsHiding == isHiding)
+			// Kevin's fix
+			if(isHiding)
+			{
+				if(startedHide)
+				{
+					animationController.HideEnd();
+				}
+				isHiding = false;
+				startedHide = false;
+
+				return;
+			}
+			// Kevin's fix ende
+
+			if(HidingObject != null && lastIsHiding == isHiding)
             {
                 isHiding = true;
                 return;
             }
 
-        // Talis' code
-            if (!isHiding && lastIsHiding == isHiding)
+			if (!isHiding && lastIsHiding == isHiding)
             {
                 cameraController.FocusNextLight();
             }
@@ -162,7 +176,8 @@ public class PlayerController : MonoBehaviour
 		animationController.IsSneaking = isSneaking;
 		animationController.IsGrounded = IsGrounded;
 		animationController.IsClimbing = IsClimbing;
-		animationController.isBlinded = isBlinded;
+		animationController.IsBlinded = isBlinded;
+		canMove = animationController.CanMove;
 	}
 
 	void UpdateIsGrounded()
@@ -430,9 +445,10 @@ public class PlayerController : MonoBehaviour
 	/**********************HandleHiding************************/
 	void HandleHiding()
 	{
+		IsGrounded = true;
 		Vector3 directionToMove = HidingObject.HideAnimationStartPosition.position - transform.position;
 
-		if(directionToMove.magnitude > 0.1f)
+		if(directionToMove.magnitude > 0.15f)
 		{
 			charController.Move(directionToMove * walkSpeed * Time.deltaTime);
 		}
@@ -455,17 +471,6 @@ public class PlayerController : MonoBehaviour
 					startedHide = true;
 					//charController.detectCollisions = false;
 				}
-			}
-
-			if(player.GetButtonDown(Action.CharacterControl.Interact) && isHiding)
-			{
-				if(startedHide)
-				{
-					animationController.HideEnd();
-				}
-				isHiding = false;
-				startedHide = false;
-				//charController.detectCollisions = true;
 			}
 		}
 	}
@@ -496,6 +501,8 @@ public class PlayerController : MonoBehaviour
 			return;
 		}
 
+		IsGrounded = true;
+		animationController.CanMove = false;
 		TakeDownObject.StartTakeDown();
 		Vector3 directionToMove = TakeDownObject.TakeDownAnimationStartPosition.position - transform.position;
 
@@ -545,8 +552,9 @@ public class PlayerController : MonoBehaviour
 	{
 		if(canMove)
 		{
+			animationController.Die();
 			canMove = false;
-			Invoke("ReloadScene", 1.0f);
+			Invoke("ReloadScene", 5.0f);
 		}
 	}
 

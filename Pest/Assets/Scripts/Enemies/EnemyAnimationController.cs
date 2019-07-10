@@ -9,6 +9,7 @@ public class EnemyAnimationController : MonoBehaviour
 	public bool Attacking { get; set; } = false;
 	public float Velocity { get; set; } = 0.0f;
 	public bool CanMove { get; private set; } = true;
+	public bool SwordActive { get; private set; } = false;
 
 	/********************animation hashes**********************/
 	int dieHash = Animator.StringToHash("Die");
@@ -41,5 +42,17 @@ public class EnemyAnimationController : MonoBehaviour
 	void OnAttackEnd()
 	{
 		Attacking = false;
+	}
+
+	public void SetSwordActive(int isActive)
+	{
+		if(isActive != 0)
+		{
+			SwordActive = true;
+		}
+		else
+		{
+			SwordActive = false;
+		}
 	}
 }

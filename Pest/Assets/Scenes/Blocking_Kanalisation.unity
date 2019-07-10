@@ -12545,7 +12545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.652
+      value: -13.45
       objectReference: {fileID: 0}
     - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12553,7 +12553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.999
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 4815593551292874, guid: f42a58d7e50e5a5418d7d93f1bc73775, type: 3}
       propertyPath: m_LocalRotation.x
@@ -43773,7 +43773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950611340}
   m_LocalRotation: {x: 0.00000016108896, y: 0.9914448, z: -0.13052674, w: 0.0000012235872}
-  m_LocalPosition: {x: -64.65204, y: 2.5411522, z: 35.243454}
+  m_LocalPosition: {x: -13.450022, y: 2.5411506, z: 7.754443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47321,36 +47321,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1031289711}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1032018070
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1032018071}
-  m_Layer: 0
-  m_Name: HideAnimationStartPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1032018071
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032018070}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1676346604}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1033376232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53673,7 +53643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155663192}
   m_LocalRotation: {x: 0.00000016108896, y: 0.9914448, z: -0.13052674, w: 0.0000012235872}
-  m_LocalPosition: {x: -64.65204, y: 2.5411522, z: 35.243454}
+  m_LocalPosition: {x: -13.450022, y: 2.5411506, z: 7.754443}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1829060723}
@@ -80540,7 +80510,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1148008193892638, guid: 70080d7658394504ea7d9e6479faf942, type: 3}
       propertyPath: m_Name
-      value: Pipe_Small_Wall_1x4_Sewer_Animations
+      value: Pipe_Small_Wall_1x5_Sewer_Animations
       objectReference: {fileID: 0}
     - target: {fileID: 4287382737746918, guid: 70080d7658394504ea7d9e6479faf942, type: 3}
       propertyPath: m_LocalPosition.x
@@ -87994,6 +87964,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy_Meele (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320952865831910610, guid: ed2a06cba61465c4d9d091357a0e953f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6320952865831674162, guid: ed2a06cba61465c4d9d091357a0e953f,
         type: 3}
@@ -97548,20 +97523,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d73033b8cf7464591275c33d0a9192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &2054743510
-MeshCollider:
+--- !u!65 &2054743507
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054743505}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 86ec5e796922ba340993c25f93e72818, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 4, y: 2, z: 2}
+  m_Center: {x: 2, y: -0.5, z: -1}
 --- !u!64 &2054743511
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -97573,7 +97547,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 86ec5e796922ba340993c25f93e72818, type: 3}
 --- !u!1 &2055414180 stripped
