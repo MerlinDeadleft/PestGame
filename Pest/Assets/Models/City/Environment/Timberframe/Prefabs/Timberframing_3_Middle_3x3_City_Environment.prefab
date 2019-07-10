@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2523213083841974433}
   - component: {fileID: 2523213083844841601}
   - component: {fileID: 2523213083843875393}
-  - component: {fileID: 1479236381391818994}
+  - component: {fileID: 3845629187817092966}
+  - component: {fileID: 2712969922337948587}
   m_Layer: 0
   m_Name: Timberframing_3_Middle_3x3_City_Environment
   m_TagString: Untagged
@@ -78,8 +79,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1479236381391818994
-MeshCollider:
+--- !u!65 &3845629187817092966
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -88,7 +89,22 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05000488, y: 1.0266038, z: 3.000005}
+  m_Center: {x: -0.025, y: -0.5000015, z: 1.4999987}
+--- !u!208 &2712969922337948587
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2523213083841875073}
+  m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 185c7480d84799942b1605f9dfe08f1d, type: 3}
+  m_Shape: 1
+  m_Extents: {x: 0.025, y: 0.513, z: 1.5000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.025, y: -0.5, z: 1.5000001}
+  m_TimeToStationary: 0.5

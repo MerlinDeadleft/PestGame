@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2378848161211369523}
   - component: {fileID: 2378848161210370803}
   - component: {fileID: 4373035864912892796}
+  - component: {fileID: 3548989160476418113}
   m_Layer: 0
   m_Name: Carriage_City_Props
   m_TagString: Untagged
@@ -92,3 +93,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 3383d6c29d262304a98969055e098c72, type: 3}
+--- !u!208 &3548989160476418113
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378848161212634163}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.3950002, y: 1.215, z: 1.072}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.07}
+  m_TimeToStationary: 0.5

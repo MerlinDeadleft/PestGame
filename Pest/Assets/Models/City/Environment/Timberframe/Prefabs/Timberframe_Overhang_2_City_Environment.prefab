@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4306014672712158591}
   - component: {fileID: 4306014672711355743}
   - component: {fileID: 4306014672710389663}
+  - component: {fileID: 3207217468487614621}
   m_Layer: 0
   m_Name: Timberframe_Overhang_2_City_Environment
   m_TagString: Untagged
@@ -77,3 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &3207217468487614621
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4306014672712585567}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.554, y: 1, z: 0.52500004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.49600002, y: -1, z: -0.52500004}
+  m_TimeToStationary: 0.5

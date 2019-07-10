@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7577338154925708845}
   - component: {fileID: 7577338154926478861}
   - component: {fileID: 7577338154927609037}
+  - component: {fileID: 5903419655880234968}
   m_Layer: 0
   m_Name: LampPost 1
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7577338154925672973}
-  m_LocalRotation: {x: -1.2048139e-12, y: 1, z: 0.00000008146034, w: 0.000014752148}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.000017508202}
   m_LocalPosition: {x: -265.733, y: 0.829, z: -16.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -78,6 +79,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &5903419655880234968
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577338154925672973}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.17500001, y: 1.5780001, z: 0.671}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.76000005, z: 0.35300002}
+  m_TimeToStationary: 0.5
 --- !u!1 &7937526029363089850
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,11 +230,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530460284041800095, guid: 615b0b02c8596ef48907fdd7660e2f74,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 615b0b02c8596ef48907fdd7660e2f74, type: 3}

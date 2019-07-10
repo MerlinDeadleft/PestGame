@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3085612010301896121}
   - component: {fileID: 3085612010299028889}
   - component: {fileID: 3085612010299995993}
+  - component: {fileID: 3155363870122745948}
   m_Layer: 0
   m_Name: Timberframing_Roof_5x3_4_City_Environment
   m_TagString: Untagged
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &3155363870122745948
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3085612010302253465}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 63bf7d62cdeb11d4e94f594b33a74125, type: 3}

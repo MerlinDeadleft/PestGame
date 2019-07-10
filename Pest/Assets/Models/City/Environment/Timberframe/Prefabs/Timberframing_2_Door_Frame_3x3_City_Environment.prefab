@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3363828289262024417}
   - component: {fileID: 3363828289262794433}
   - component: {fileID: 3363828289263793153}
-  - component: {fileID: 4640451687736959577}
+  - component: {fileID: 3077385322993031610}
+  - component: {fileID: 2246931757413627073}
   m_Layer: 0
   m_Name: Timberframing_2_Door_Frame_3x3_City_Environment
   m_TagString: Untagged
@@ -79,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4640451687736959577
+--- !u!64 &3077385322993031610
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,6 +94,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: fc72a8c1cd1a4b14ab731e2535fac678, type: 3}
+--- !u!208 &2246931757413627073
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3363828289261595329}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.38200003, y: 1.5130001, z: 1.5000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.38200003, y: -1.5000001, z: 1.5000001}
+  m_TimeToStationary: 0.5
 --- !u!1001 &3370136113688533887
 PrefabInstance:
   m_ObjectHideFlags: 0

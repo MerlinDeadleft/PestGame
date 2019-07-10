@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8638588678240120120}
   - component: {fileID: 8638588678236728600}
   - component: {fileID: 8638588678237827032}
-  - component: {fileID: 718114009363270246}
+  - component: {fileID: 2465914772327031180}
+  - component: {fileID: 4491038953216662416}
   m_Layer: 0
   m_Name: Timberframing_4_Window_Right_3x3_City_Environment
   m_TagString: Untagged
@@ -78,8 +79,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &718114009363270246
-MeshCollider:
+--- !u!65 &2465914772327031180
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -88,7 +89,22 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05000015, y: 1.0000051, z: 3.0000026}
+  m_Center: {x: -0.024997635, y: -0.5000014, z: 1.5000027}
+--- !u!208 &4491038953216662416
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638588678239760664}
+  m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 2a47760ffcd2ffd4eae57cc141b7ac19, type: 3}
+  m_Shape: 1
+  m_Extents: {x: 0.025, y: 0.5, z: 1.5000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.025, y: -0.5, z: 1.5000001}
+  m_TimeToStationary: 0.5
