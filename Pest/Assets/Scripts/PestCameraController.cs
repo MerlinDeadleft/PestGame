@@ -21,6 +21,8 @@ public class PestCameraController : MonoBehaviour
     [SerializeField] int         lightFocus    = -1;
     [SerializeField] GameObject  crosshair     = null;
 
+    public GameObject Crosshair { get { return crosshair; } set { crosshair = value; } }
+
 	public bool IsBlinded { get; set; } = false;
 	float maxLookDistanceMidifier = 1.0f;
 	float lookSensitivityModifier = 1.0f;
@@ -50,7 +52,10 @@ public class PestCameraController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        crosshair.transform.rotation = Camera.main.transform.rotation;
+        if (crosshair)
+        {
+            crosshair.transform.rotation = Camera.main.transform.rotation;
+        }
 
         if (framingTransposer == null)
 		{
@@ -97,7 +102,7 @@ public class PestCameraController : MonoBehaviour
 		framingTransposer.m_ScreenX = 0.5f + (xOffset * maxLookDistanceMidifier);
 		framingTransposer.m_ScreenY = 0.5f + (yOffset * maxLookDistanceMidifier);
 
-		DetermineClosestLight();
+		GetLightsInView();
 	}
 
 	void RefreshLightsList()
@@ -118,9 +123,8 @@ public class PestCameraController : MonoBehaviour
 
     // Talis' Code
 
-    void DetermineClosestLight()
+    public void GetLightsInView()
     {
-        List<GameObject> closeLights = new List<GameObject>();
         RefreshLightsList();
 
         foreach (Light light in lights)
@@ -129,14 +133,14 @@ public class PestCameraController : MonoBehaviour
             Vector3 viewPos = Camera.main.WorldToViewportPoint(light.transform.position);
             if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
             {
-                if (!lightsInView.Contains(light) && light.enabled)
+                if (!lightsInView.Contains(light) && light.enabled && light)
                 {
                     lightsInView.Add(light);
                 }
             }
             else
             {
-                if (lightsInView.Contains(light))
+                if (lightsInView.Contains(light) || !light)
                 {
                     lightsInView.Remove(light);
                 }
@@ -152,32 +156,52 @@ public class PestCameraController : MonoBehaviour
 
     public void FocusNextLight()
     {
-        lightFocus++;
+        GetLightsInView();
+
+        if(lightsInView.Count > 0)
+        {
+            lightFocus++;
+        }
+
         if (lightFocus > lightsInView.Count - 1)
         {
             lightFocus = -1;
+            crosshair.transform.parent = null;
             crosshair.SetActive(false);
             selectedLight = null;
         }
 
         if(lightFocus >= 0)
         {
-            selectedLight = lightsInView[lightFocus];
+            if (!lightsInView[lightFocus])
+            {
+                lightsInView.Remove(lightsInView[lightFocus]);
+            }
+            else
+            {
+                selectedLight = lightsInView[lightFocus];
 
-            crosshair.SetActive(true);
-            crosshair.transform.position = lightsInView[lightFocus].transform.position;
-            crosshair.transform.parent = lightsInView[lightFocus].transform;
+                crosshair.SetActive(true);
+                crosshair.transform.position = lightsInView[lightFocus].transform.position;
+                crosshair.transform.parent = lightsInView[lightFocus].transform;
+            }
         }
     }
 
     public void TurnOffSelectedLight()
     {
-        lightsInView.RemoveAt(lightFocus);
-        lightFocus = -1;
-        selectedLight.enabled = false;
-        crosshair.transform.parent = null;
-        crosshair.SetActive(false);
-        DetermineClosestLight();
+        if(lightFocus >= 0)
+        {
+            lightsInView.RemoveAt(lightFocus);
+            lightFocus = -1;
+            if (selectedLight)
+            {
+                selectedLight.enabled = false;
+            }
+            crosshair.transform.parent = null;
+            crosshair.SetActive(false);
+            GetLightsInView();
+        }
     }
 
     // Talis' Code ende

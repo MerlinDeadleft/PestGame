@@ -8,7 +8,7 @@ public class SwordController : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Player" && ai.AttackingPlayer)
+		if(other.tag == "Player" && ai.SwordActive)
 		{
 			other.GetComponent<PlayerController>().Die();
 		}
