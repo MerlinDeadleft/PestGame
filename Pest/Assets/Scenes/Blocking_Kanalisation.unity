@@ -43872,6 +43872,7 @@ MonoBehaviour:
   multiPositionTypeLabel: 0
   LargeModePositions:
   - {fileID: 0}
+  - {fileID: 0}
   multiPositionArray: []
 --- !u!114 &950611347
 MonoBehaviour:
@@ -88050,16 +88051,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6320952866610947273, guid: ed2a06cba61465c4d9d091357a0e953f,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320952866610947273, guid: ed2a06cba61465c4d9d091357a0e953f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1653334742, guid: ed2a06cba61465c4d9d091357a0e953f, type: 3}
       propertyPath: patrol
       value: 1
@@ -88071,6 +88062,16 @@ PrefabInstance:
     - target: {fileID: 1653334742, guid: ed2a06cba61465c4d9d091357a0e953f, type: 3}
       propertyPath: rangeOfVision
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320952866610947273, guid: ed2a06cba61465c4d9d091357a0e953f,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320952866610947273, guid: ed2a06cba61465c4d9d091357a0e953f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 106894512, guid: ed2a06cba61465c4d9d091357a0e953f, type: 3}
       propertyPath: m_Cookie
@@ -93399,16 +93400,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6320952866610947273, guid: ed2a06cba61465c4d9d091357a0e953f,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320952866610947273, guid: ed2a06cba61465c4d9d091357a0e953f,
-        type: 3}
-      propertyPath: m_StoppingDistance
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 1653334742, guid: ed2a06cba61465c4d9d091357a0e953f, type: 3}
       propertyPath: patrol
       value: 1
@@ -93420,6 +93411,16 @@ PrefabInstance:
     - target: {fileID: 1653334742, guid: ed2a06cba61465c4d9d091357a0e953f, type: 3}
       propertyPath: rangeOfVision
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320952866610947273, guid: ed2a06cba61465c4d9d091357a0e953f,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6320952866610947273, guid: ed2a06cba61465c4d9d091357a0e953f,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed2a06cba61465c4d9d091357a0e953f, type: 3}

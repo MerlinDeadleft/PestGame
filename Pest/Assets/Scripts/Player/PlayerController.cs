@@ -516,8 +516,11 @@ public class PlayerController : MonoBehaviour
 			}
 			else
 			{
+                cameraController.Crosshair.transform.parent = null;
+                cameraController.Crosshair.SetActive(false);
 				animationController.TakeDown();
 				TakeDownObject.Die();
+                cameraController.GetLightsInView();
 				isTakingEnemyDown = false;
 			}
 		}
