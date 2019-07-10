@@ -48,6 +48,7 @@ public class AIController : MonoBehaviour
 	bool isPatrolling = true;
 
 	public bool AttackingPlayer { get; private set; } = false;
+	public bool SwordActive { get; private set; } = false;
 	bool attackStarted = false;
 	float waitForAttackTime = 1.0f;
 	float waitAfterAttackTime = 1.0f;
@@ -134,6 +135,7 @@ public class AIController : MonoBehaviour
 		}
 
 		animController.Velocity = navMeshAgent.velocity.magnitude;
+		SwordActive = animController.SwordActive;
 	}
 
 	void HandleAttacking()
@@ -362,6 +364,11 @@ public class AIController : MonoBehaviour
 
 	void FacePlayer()
 	{
+		if(navMeshAgent.destination != proxSensor.PlayerLastSensedPosition)
+		{
+			navMeshAgent.SetDestination(proxSensor.PlayerLastSensedPosition);
+		}
+
 		Vector3 enemyToPlayer = player.transform.position - transform.position;
 		Quaternion lookRotation = Quaternion.LookRotation(enemyToPlayer, Vector3.up);
 

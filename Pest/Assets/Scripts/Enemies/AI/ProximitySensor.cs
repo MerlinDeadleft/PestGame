@@ -24,12 +24,13 @@ public class ProximitySensor : MonoBehaviour
 	void Update()
 	{
 		RaycastHit hit;
-		Ray ray = new Ray(transform.position, (Player.position + new Vector3(0.0f, 1.0f, 0.0f)) - transform.position);
+		Ray ray = new Ray(transform.position + Vector3.up * 0.15f, (Player.position + new Vector3(0.0f, 1.0f, 0.0f)) - transform.position);
 		//offset player position, so AI agent is not looking at player's feet
 		if(Physics.Raycast(ray, out hit, DetectionRange, Physics.AllLayers, QueryTriggerInteraction.Ignore))
 		{
 			if(hit.transform == Player)
 			{
+				Debug.DrawRay(ray.origin, ray.direction.normalized * DetectionRange, Color.green);
 				if(DetectImmediately)
 				{
 					PlayerCloseBy = true;
