@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7386368473399080569}
   - component: {fileID: 7386368473400407641}
   - component: {fileID: 7386368473401504921}
+  - component: {fileID: 3539044567211471684}
+  - component: {fileID: 5938201791250231325}
   m_Layer: 0
   m_Name: Crate_Open_Props_Animations
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7386368473399503449}
-  m_LocalRotation: {x: -0.6963646, y: -0.1227861, z: -0.1227861, w: 0.6963646}
+  m_LocalRotation: {x: -0.6963643, y: -0.122787856, z: -0.122787856, w: 0.6963643}
   m_LocalPosition: {x: -258.261, y: 0.047, z: -17.718}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -77,3 +79,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &3539044567211471684
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386368473399503449}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.55, y: 0.55, z: 0.51500005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.55, y: -0.55, z: 0.51500005}
+  m_TimeToStationary: 0.5
+--- !u!65 &5938201791250231325
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386368473399503449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0993812, y: 1.0994532, z: 1.0302473}
+  m_Center: {x: -0.54969025, y: -0.5497265, z: 0.5151239}
