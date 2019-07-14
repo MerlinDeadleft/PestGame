@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5934408382666267786}
   - component: {fileID: 5934408382667365962}
   - component: {fileID: 106457663606368903}
+  - component: {fileID: 8345861325658815536}
   m_Layer: 0
   m_Name: Bars_Small_Broken_Sewer_Environment
   m_TagString: Untagged
@@ -91,3 +92,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 0.09163082, z: 1.2}
   m_Center: {x: 0.4995262, y: 0.020440076, z: 0.6}
+--- !u!208 &8345861325658815536
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934408382665425034}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.046000004, z: 0.79200006}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.5, y: 0.020000001, z: 0.39800003}
+  m_TimeToStationary: 0.5

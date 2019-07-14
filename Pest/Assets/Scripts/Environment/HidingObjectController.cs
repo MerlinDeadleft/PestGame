@@ -5,40 +5,51 @@ using UnityEngine;
 [ExecuteAlways]
 public class HidingObjectController : MonoBehaviour
  {
-	Transform hideAnimStartPos = null;
+	public enum HidingObjectType { None, Pipe, Crate_or_Barrel, Door, Manhole };
+
+	public HidingObjectType hidingObjectType = HidingObjectType.None;
+	public bool hasFixedHideAnimationStartPoint = false;
 	/// <summary>Position to which the character needs to be moved to, before playing hiding animation</summary>
-	public Transform HideAnimationStartPosition { get { return hideAnimStartPos; } }
+	public Transform HideAnimationStartPosition { get; private set; } = null;
+	[MyBox.ConditionalField("hasFixedHideAnimationStartPoint", false)] public float hideAnimationStartDistance = 0.0f;
+	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Manhole)] public GameObject manholeCover = null;
 
 	// Use this for initialization
 	void Start ()
 	{
 		if(!Application.isPlaying)
 		{
-			ValidateHidingAnimationStartPosition();
-
-			if(hideAnimStartPos == null)
+			if(hasFixedHideAnimationStartPoint)
 			{
-				Debug.LogError("hideAnimationStartPosition could not be found. Hiding interaction can not function properly." +
-					"\nRun \"Revalidate HidingAnimationStartPosition\" from the component's context menu.");
+				ValidateHidingAnimationStartPosition();
+
+				if(HideAnimationStartPosition == null)
+				{
+					Debug.LogError("hideAnimationStartPosition could not be found. Hiding interaction can not function properly." +
+						"\nRun \"Revalidate HidingAnimationStartPosition\" from the component's context menu.");
+				}
 			}
 		}
 		else
 		{
-			hideAnimStartPos = transform.Find("HideAnimationStartPosition");
+			if(hasFixedHideAnimationStartPoint)
+			{
+				HideAnimationStartPosition = transform.Find("HideAnimationStartPosition");
+			}
 		}
 	}
 
 	[ContextMenu("Revalidate HidingAnimationStartPosition")]
 	void ValidateHidingAnimationStartPosition()
 	{
-		hideAnimStartPos = transform.Find("HideAnimationStartPosition");
-		if(hideAnimStartPos == null)
+		HideAnimationStartPosition = transform.Find("HideAnimationStartPosition");
+		if(HideAnimationStartPosition == null)
 		{
 			GameObject newChild = new GameObject("HideAnimationStartPosition");
 			newChild.transform.SetPositionAndRotation(transform.position, transform.rotation);
 			newChild.transform.parent = transform;
 			newChild.transform.Translate(0.0f, 0.0f, 1.0f);
-			hideAnimStartPos = newChild.transform;
+			HideAnimationStartPosition = newChild.transform;
 		}
 	}
 
@@ -56,5 +67,15 @@ public class HidingObjectController : MonoBehaviour
 		{
 			other.GetComponent<PlayerController>().HidingObject = null;
 		}
+	}
+
+	public void MoveManholeCoverHideBegin()
+	{
+
+	}
+
+	public void MoveManholeCoverHideEnd()
+	{
+
 	}
 }

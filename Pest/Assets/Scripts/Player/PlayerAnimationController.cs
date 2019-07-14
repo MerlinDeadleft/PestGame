@@ -33,6 +33,7 @@ public class PlayerAnimationController : MonoBehaviour
 	int isBlindedHash = Animator.StringToHash("IsBlinded");
 	int dieHash = Animator.StringToHash("Die");
 	int canMoveHash = Animator.StringToHash("CanMove");
+	int hideAnimhash = Animator.StringToHash("HideAnimation");
 
 	// Start is called before the first frame update
 	void Start()
@@ -74,9 +75,10 @@ public class PlayerAnimationController : MonoBehaviour
 		idleTimer = 0.0f;
 	}
 
-	public void HideBegin()
+	public void HideBegin(int hideAnimation)
 	{
 		animator.SetTrigger(hideBeginHash);
+		animator.SetFloat(hideAnimhash, hideAnimation);
 	}
 
 	public void HideEnd()

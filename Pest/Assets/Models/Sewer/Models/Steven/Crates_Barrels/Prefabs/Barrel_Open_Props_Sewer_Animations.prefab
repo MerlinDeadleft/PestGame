@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4176974514771440}
   - component: {fileID: 33991176980819532}
   - component: {fileID: 23758463609303910}
-  - component: {fileID: 95786213615373646}
+  - component: {fileID: 6751515417461800591}
   - component: {fileID: 8701939439973791786}
-  - component: {fileID: 6496880345938532459}
+  - component: {fileID: 3879007826094089697}
+  - component: {fileID: 7097301854444597163}
   m_Layer: 0
   m_Name: Barrel_Open_Props_Sewer_Animations
   m_TagString: Untagged
@@ -80,25 +81,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &95786213615373646
-Animator:
-  serializedVersion: 3
+--- !u!65 &6751515417461800591
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818900599166414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1eb620f837f39ca46a8026e2bc84a063, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 2
+  m_Size: {x: 0.98311394, y: 0.9831142, z: 0.9999984}
+  m_Center: {x: 0, y: 0, z: 0.4999992}
 --- !u!208 &8701939439973791786
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -115,17 +110,32 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0.5}
   m_TimeToStationary: 0.5
---- !u!64 &6496880345938532459
-MeshCollider:
+--- !u!65 &3879007826094089697
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818900599166414}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 1eb620f837f39ca46a8026e2bc84a063, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5, z: 2}
+  m_Center: {x: 0, y: 0, z: 1}
+--- !u!114 &7097301854444597163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818900599166414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d73033b8cf7464591275c33d0a9192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hidingObjectType: 2
+  hasFixedHideAnimationStartPoint: 0
+  hideAnimationStartDistance: 1.5
+  manholeCover: {fileID: 0}
