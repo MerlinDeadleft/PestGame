@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5712840626291989898}
   - component: {fileID: 5712840626292957002}
   - component: {fileID: 3349386007683440702}
+  - component: {fileID: 8808488909379625198}
   m_Layer: 9
   m_Name: Manhole_Lid_City_Animation
   m_TagString: Untagged
@@ -92,3 +93,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 1706c272255e04c42836bc9f2f73fa06, type: 3}
+--- !u!95 &8808488909379625198
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5712840626295144842}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d89e9f23ce3011b49b7256fcd77f8685, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
