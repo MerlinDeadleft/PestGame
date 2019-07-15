@@ -137,5 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hidingObjectType: 2
   hasFixedHideAnimationStartPoint: 0
-  hideAnimationStartDistance: 1.5
-  manholeCover: {fileID: 0}
+  hideAnimationStartDistance: 1.3
+  manholeLid: {fileID: 0}
+  lidOpenDistance: 1
+  lidhalfOpenDistance: 0.25

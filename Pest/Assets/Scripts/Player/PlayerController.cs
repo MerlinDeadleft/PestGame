@@ -469,7 +469,7 @@ public class PlayerController : MonoBehaviour
 			directionToMove = pointToMoveTo - transform.position;
 		}
 
-		if(directionToMove.magnitude > 0.15f)
+		if(directionToMove.magnitude > 0.05f)
 		{
 			charController.Move(directionToMove * walkSpeed * Time.deltaTime);
 		}
@@ -499,7 +499,7 @@ public class PlayerController : MonoBehaviour
 					animationController.HideBegin((int)HidingObject.hidingObjectType);
 					if(HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Manhole)
 					{
-						HidingObject.MoveManholeCoverHideBegin();
+						HidingObject.MoveManholeCoverHideBegin(transform.position);
 					}
 					startedHide = true;
 					//charController.detectCollisions = false;

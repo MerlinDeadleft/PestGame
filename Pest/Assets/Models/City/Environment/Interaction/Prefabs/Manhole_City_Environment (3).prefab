@@ -153,8 +153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hidingObjectType: 4
   hasFixedHideAnimationStartPoint: 0
-  hideAnimationStartDistance: 0
-  manholeCover: {fileID: 4815051706328322885}
+  hideAnimationStartDistance: 0.5
+  manholeLid: {fileID: 4815051706328322885}
+  lidOpenDistance: 1
+  lidhalfOpenDistance: 0.25
 --- !u!1001 &980261122578354895
 PrefabInstance:
   m_ObjectHideFlags: 0
