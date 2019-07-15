@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		Cursor.visible = false;
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
 		charController = GetComponent<CharacterController>();
 		colliderCenter = charController.center;
@@ -109,6 +110,16 @@ public class PlayerController : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.Alpha0))
 		{
 			ReloadScene();
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			LoadScene("Blocking_Kanalisation");
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			LoadScene("Blocking_Stadt");
 		}
 
 		if(isHiding)
@@ -133,6 +144,7 @@ public class PlayerController : MonoBehaviour
 				if(startedHide)
 				{
 					animationController.HideEnd();
+					HidingObject.MoveManholeCoverHideEnd();
 				}
 				isHiding = false;
 				startedHide = false;
@@ -446,9 +458,18 @@ public class PlayerController : MonoBehaviour
 	void HandleHiding()
 	{
 		IsGrounded = true;
-		Vector3 directionToMove = HidingObject.HideAnimationStartPosition.position - transform.position;
+		Vector3 directionToMove = Vector3.zero;
+		if(HidingObject.hasFixedHideAnimationStartPoint)
+		{
+			directionToMove = HidingObject.HideAnimationStartPosition.position - transform.position;
+		}
+		else
+		{
+			Vector3 pointToMoveTo = HidingObject.transform.position + (Vector3.Normalize(transform.position - HidingObject.transform.position) * HidingObject.hideAnimationStartDistance);
+			directionToMove = pointToMoveTo - transform.position;
+		}
 
-		if(directionToMove.magnitude > 0.15f)
+		if(directionToMove.magnitude > 0.05f)
 		{
 			charController.Move(directionToMove * walkSpeed * Time.deltaTime);
 		}
@@ -457,7 +478,7 @@ public class PlayerController : MonoBehaviour
 			if(!startedHide)
 			{
 				//rotate towards hiding place based on HideAnimationStartPosition (Make sure green arrow points upwards !!!!)
-				if(Quaternion.Angle(transform.rotation, HidingObject.HideAnimationStartPosition.rotation) > 1.0f)
+				if(HidingObject.hasFixedHideAnimationStartPoint && Quaternion.Angle(transform.rotation, HidingObject.HideAnimationStartPosition.rotation) > 1.0f)
 				{
 					float angle = Quaternion.Angle(transform.rotation, HidingObject.HideAnimationStartPosition.rotation);
 					Quaternion newRotation = Quaternion.identity;
@@ -465,9 +486,21 @@ public class PlayerController : MonoBehaviour
 					newRotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * turnSpeed);
 					transform.rotation = newRotation;
 				}
+				else if(!HidingObject.hasFixedHideAnimationStartPoint && Quaternion.Angle(transform.rotation, Quaternion.LookRotation(HidingObject.transform.position - transform.position, Vector3.up)) > 1.0f)
+				{
+					float angle = Quaternion.Angle(transform.rotation, Quaternion.LookRotation(HidingObject.transform.position - transform.position, Vector3.up));
+					Quaternion newRotation = Quaternion.identity;
+					newRotation.SetLookRotation(HidingObject.transform.position - transform.position, Vector3.up);
+					newRotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * turnSpeed);
+					transform.rotation = newRotation;
+				}
 				else
 				{
-					animationController.HideBegin();
+					animationController.HideBegin((int)HidingObject.hidingObjectType);
+					if(HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Manhole)
+					{
+						HidingObject.MoveManholeCoverHideBegin(transform.position);
+					}
 					startedHide = true;
 					//charController.detectCollisions = false;
 				}
@@ -566,5 +599,10 @@ public class PlayerController : MonoBehaviour
 	{
 		Destroy(gameObject);
 		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+	}
+
+	void LoadScene(string sceneToLoad)
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
 	}
 }
