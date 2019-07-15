@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1421147713338552458}
   - component: {fileID: 1421147713337258154}
   - component: {fileID: 1421147713336128106}
+  - component: {fileID: 8310371407329831050}
+  - component: {fileID: 6091176121259964627}
   m_Layer: 0
   m_Name: Sewer_Entrance_City_Environment
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421147713338125482}
-  m_LocalRotation: {x: -0.0000105537465, y: 0.7071068, z: 0.7071068, w: 0.0000105537465}
+  m_LocalRotation: {x: -0.000012380169, y: 0.7071068, z: 0.7071068, w: 0.000012380169}
   m_LocalPosition: {x: 116, y: 7.5, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -77,3 +79,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8310371407329831050
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421147713338125482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 30e67a440c59e3f41b8b0a72d30f613a, type: 3}
+--- !u!208 &6091176121259964627
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421147713338125482}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.7580001, y: 0.20400001, z: 0.88900006}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -2.7380002, y: -0.18, z: 0.88000005}
+  m_TimeToStationary: 0.5
