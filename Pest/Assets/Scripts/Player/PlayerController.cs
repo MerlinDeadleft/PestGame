@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
 				if(startedHide)
 				{
 					animationController.HideEnd();
-					HidingObject.MoveManholeCoverHideEnd();
+					HidingObject.AnimatorHideEnd();
 				}
 				isHiding = false;
 				startedHide = false;
@@ -499,7 +499,9 @@ public class PlayerController : MonoBehaviour
 					animationController.HideBegin((int)HidingObject.hidingObjectType);
 					if(HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Manhole)
 					{
-						HidingObject.MoveManholeCoverHideBegin(transform.position);
+						HidingObject.AnimatorHideBegin();
+						HidingObject.SetAnimatorRotation(Vector3.Normalize(Vector3.ProjectOnPlane(-transform.right, Vector3.up)));
+						//HidingObject.SetAnimatorRotation(transform.rotation);
 					}
 					startedHide = true;
 					//charController.detectCollisions = false;

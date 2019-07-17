@@ -154,9 +154,7 @@ MonoBehaviour:
   hidingObjectType: 4
   hasFixedHideAnimationStartPoint: 0
   hideAnimationStartDistance: 0.5
-  manholeLid: {fileID: 4815051706328322885}
-  lidOpenDistance: 1
-  lidhalfOpenDistance: 0.25
+  manholeLid: {fileID: 8621191175658992161}
 --- !u!1001 &980261122578354895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,15 +224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1f53c59d3a203348b473a681e08a4fa, type: 3}
---- !u!1 &4815051706328322885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5712840626295144842, guid: e1f53c59d3a203348b473a681e08a4fa,
-    type: 3}
-  m_PrefabInstance: {fileID: 980261122578354895}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4815051706327961445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5712840626294857130, guid: e1f53c59d3a203348b473a681e08a4fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 980261122578354895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8621191175658992161 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8808488909379625198, guid: e1f53c59d3a203348b473a681e08a4fa,
     type: 3}
   m_PrefabInstance: {fileID: 980261122578354895}
   m_PrefabAsset: {fileID: 0}

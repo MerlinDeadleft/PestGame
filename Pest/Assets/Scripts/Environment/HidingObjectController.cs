@@ -12,9 +12,7 @@ public class HidingObjectController : MonoBehaviour
 	/// <summary>Position to which the character needs to be moved to, before playing hiding animation</summary>
 	public Transform HideAnimationStartPosition { get; private set; } = null;
 	[MyBox.ConditionalField("hasFixedHideAnimationStartPoint", false)] public float hideAnimationStartDistance = 0.0f;
-	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Manhole)] public GameObject manholeLid = null;
-	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Manhole)] float lidOpenDistance = 1.0f;
-	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Manhole)] float lidhalfOpenDistance = 0.25f;
+	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Manhole)] Animator manholeLid = null;
 
 	// Use this for initialization
 	void Start ()
@@ -71,55 +69,35 @@ public class HidingObjectController : MonoBehaviour
 		}
 	}
 
-	public void MoveManholeCoverHideBegin(Vector3 playerPos)
+	public void SetAnimatorRotation(Vector3 left)
 	{
-		StartCoroutine(MoveManholeLidToOpen(playerPos));
-	}
-
-	IEnumerator MoveManholeLidToOpen(Vector3 playerPos)
-	{
-		bool finished = false;
-
-		while(!finished)
+		if(hidingObjectType == HidingObjectType.Manhole)
 		{
-			Vector3 directionToMoveIn = Vector3.Normalize(manholeLid.transform.position - playerPos);
-			Vector3 pointToMoveTo = transform.position + directionToMoveIn * lidOpenDistance;
-			directionToMoveIn = pointToMoveTo - manholeLid.transform.position;
-			manholeLid.transform.Translate(directionToMoveIn * Time.deltaTime, Space.Self);
-
-			if(Vector3.Magnitude(manholeLid.transform.position - pointToMoveTo) < 0.1f)
-			{
-				finished = true;
-			}
-
-			yield return new WaitForEndOfFrame();
-		}
-
-		StartCoroutine(MoveManholeLidToHalfOpen());
-	}
-
-	IEnumerator MoveManholeLidToHalfOpen()
-	{
-		bool finished = false;
-
-		while(!finished)
-		{
-			Vector3 directionToMoveIn = Vector3.Normalize(transform.position - manholeLid.transform.position);
-			Vector3 pointToMoveTo = transform.position + directionToMoveIn * lidOpenDistance;
-			directionToMoveIn = pointToMoveTo - manholeLid.transform.position;
-			manholeLid.transform.Translate(-directionToMoveIn * Time.deltaTime, Space.Self);
-
-			if(Vector3.Magnitude(manholeLid.transform.position - pointToMoveTo) < 0.1f)
-			{
-				finished = true;
-			}
-
-			yield return new WaitForEndOfFrame();
+			manholeLid.transform.rotation = Quaternion.LookRotation(Vector3.up, left);
 		}
 	}
 
-	public void MoveManholeCoverHideEnd()
+	public void AnimatorHideBegin()
 	{
+		if(hidingObjectType == HidingObjectType.Manhole)
+		{
+			manholeLid.SetTrigger("Hide");
+		}
+	}
 
+	public void AnimatorHideEnd()
+	{
+		if(hidingObjectType == HidingObjectType.Manhole)
+		{
+			manholeLid.SetTrigger("Unhide");
+		}
+	}
+
+	public void AnimatorDie()
+	{
+		if(hidingObjectType == HidingObjectType.Manhole)
+		{
+			manholeLid.SetTrigger("Die");
+		}
 	}
 }
