@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9156139580649816217}
   - component: {fileID: 9156139580644470169}
   m_Layer: 0
-  m_Name: Wasser_Oben_Kanalisation_Animation
+  m_Name: Water_Top_Sewer_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5579da2f7758f2b4fadf991ef74ce167, type: 2}
+  - {fileID: 2100000, guid: 345a200a71aba6b4e96c9c9bda4e6cff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

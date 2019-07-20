@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2673579733959635681}
   - component: {fileID: 8220541522991961952}
   m_Layer: 0
-  m_Name: Wasser_Unten_Kanalisation_Animation (1)
+  m_Name: Water_Bot_Sewer_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 16d2e5eba3a7ae043a5319845e525c0f, type: 2}
+  - {fileID: 2100000, guid: 345a200a71aba6b4e96c9c9bda4e6cff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -4,12 +4,22 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: "Gitter_Tunnel_Gro\xDF"
+    100004: "Gitter_T\xFCr"
     400000: //RootNode
+    400002: "Gitter_Tunnel_Gro\xDF"
+    400004: "Gitter_T\xFCr"
     2100000: 'Material #25'
     2100002: 01 - Default
+    2100004: 03 - Default
     2300000: //RootNode
+    2300002: "Gitter_Tunnel_Gro\xDF"
+    2300004: "Gitter_T\xFCr"
     3300000: //RootNode
+    3300002: "Gitter_Tunnel_Gro\xDF"
+    3300004: "Gitter_T\xFCr"
     4300000: "Gitter_Tunnel_Gro\xDF"
+    4300002: "Gitter_T\xFCr"
   externalObjects: {}
   materials:
     importMaterials: 1

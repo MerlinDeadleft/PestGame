@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3296020449570578731}
   - component: {fileID: 3296020449579764779}
   m_Layer: 0
-  m_Name: "Rohr_Gro\xDF_Wand_3x4_Kanalisation_Models"
+  m_Name: Pipe_Large_Wall_3x4_Sewer_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71dd5d69bbafa4547b552e7c2ed58d06, type: 3}
+  - {fileID: 2100000, guid: 258047bae7b95bd43a8f45ef3f5b70f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
