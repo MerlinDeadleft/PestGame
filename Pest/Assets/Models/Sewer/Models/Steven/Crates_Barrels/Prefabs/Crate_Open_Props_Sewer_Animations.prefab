@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4588969514370550}
   - component: {fileID: 33334348698607272}
   - component: {fileID: 23872235880331410}
-  - component: {fileID: 2822459059861356957}
   - component: {fileID: 2669167511045371454}
+  - component: {fileID: 4574956408943423832}
   m_Layer: 0
   m_Name: Crate_Open_Props_Sewer_Animations
   m_TagString: Untagged
@@ -27,13 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022773189621352}
-  m_LocalRotation: {x: -0.0922978, y: -0.7010572, z: -0.7010572, w: 0.0922978}
-  m_LocalPosition: {x: -46.53, y: 0, z: 30.54}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 5207240801260911746}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -165.00002}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &33334348698607272
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -79,20 +80,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2822459059861356957
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022773189621352}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 273e72db39b0c144e850bcc5d3878b92, type: 3}
 --- !u!208 &2669167511045371454
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -109,3 +96,77 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.55, y: -0.55, z: 0.51500005}
   m_TimeToStationary: 0.5
+--- !u!65 &4574956408943423832
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022773189621352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0993816, y: 1.0994534, z: 1.0302476}
+  m_Center: {x: -0.54969054, y: -0.5497267, z: 0.515124}
+--- !u!1 &1909102427327896831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5207240801260911746}
+  - component: {fileID: 8691482707918789180}
+  - component: {fileID: 8539734718843484832}
+  m_Layer: 0
+  m_Name: HidingObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5207240801260911746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909102427327896831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.55, y: -0.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4588969514370550}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8691482707918789180
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909102427327896831}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.5, z: 2}
+  m_Center: {x: 0, y: 0, z: 1}
+--- !u!114 &8539734718843484832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909102427327896831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d73033b8cf7464591275c33d0a9192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hidingObjectType: 2
+  hasFixedHideAnimationStartPoint: 0
+  hideAnimationStartDistance: 1.5
+  manholeCover: {fileID: 0}

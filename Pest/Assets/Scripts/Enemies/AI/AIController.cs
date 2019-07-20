@@ -177,7 +177,7 @@ public class AIController : MonoBehaviour
 			navMeshAgent.speed = runSpeed;
 		}
 
-		if(eyes.PlayerInSight && Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 0.5f)
+		if(eyes.PlayerInSight && Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
 		{
 			AttackingPlayer = true;
 		}
@@ -235,7 +235,7 @@ public class AIController : MonoBehaviour
 			{
 				float distanceToPlayerLastSeenPos = Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition);
 
-				if(distanceToPlayerLastSeenPos > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 0.5f)
+				if(distanceToPlayerLastSeenPos > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
 				{
 					navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
 					navMeshAgent.speed = runSpeed;
@@ -287,7 +287,7 @@ public class AIController : MonoBehaviour
 		float distanceToGuardPoint = Vector3.Magnitude(transform.position - pointToGuard.position);
 		float distanceToPlayerLastSeenPos = Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition);
 
-		if(eyes.PlayerInSight && distanceToPlayerLastSeenPos < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 0.5f)
+		if(eyes.PlayerInSight && distanceToPlayerLastSeenPos < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
 		{
 			AttackingPlayer = true;
 		}
@@ -327,7 +327,7 @@ public class AIController : MonoBehaviour
 		float distanceToGuardPoint = Vector3.Magnitude(transform.position - guardPoint.position);
 		float distanceToPlayerLastSeenPos = Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition);
 
-		if(eyes.PlayerInSight && distanceToPlayerLastSeenPos < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 0.5f)
+		if(eyes.PlayerInSight && distanceToPlayerLastSeenPos < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
 		{
 			AttackingPlayer = true;
 		}

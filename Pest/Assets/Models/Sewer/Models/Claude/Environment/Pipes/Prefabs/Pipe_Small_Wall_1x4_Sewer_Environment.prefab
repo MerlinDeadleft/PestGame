@@ -41,11 +41,9 @@ GameObject:
   - component: {fileID: 4188613828182688}
   - component: {fileID: 33688035974199052}
   - component: {fileID: 23172015297807494}
-  - component: {fileID: 95219167986241458}
+  - component: {fileID: 120503844}
   - component: {fileID: 826999585}
   - component: {fileID: 826999584}
-  - component: {fileID: 120503843}
-  - component: {fileID: 120503844}
   m_Layer: 0
   m_Name: Pipe_Small_Wall_1x4_Sewer_Environment
   m_TagString: Untagged
@@ -113,25 +111,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!95 &95219167986241458
-Animator:
-  serializedVersion: 3
+--- !u!64 &120503844
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181769736795430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 01961c67e95815e42ad18b091cffc52c, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 01961c67e95815e42ad18b091cffc52c, type: 3}
 --- !u!65 &826999585
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -157,31 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d73033b8cf7464591275c33d0a9192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &120503843
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181769736795430}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 01961c67e95815e42ad18b091cffc52c, type: 3}
---- !u!64 &120503844
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1181769736795430}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 01961c67e95815e42ad18b091cffc52c, type: 3}
+  hidingObjectType: 1
+  hasFixedHideAnimationStartPoint: 1
+  hideAnimationStartDistance: 0
+  manholeCover: {fileID: 0}
