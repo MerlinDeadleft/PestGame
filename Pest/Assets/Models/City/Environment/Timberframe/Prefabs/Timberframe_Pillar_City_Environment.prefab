@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4585067282753399425}
   - component: {fileID: 4585067282756823713}
   - component: {fileID: 4585067282755823713}
+  - component: {fileID: 7704520365640693087}
+  - component: {fileID: 7521622129352835474}
   m_Layer: 0
   m_Name: Timberframe_Pillar_City_Environment
   m_TagString: Untagged
@@ -77,3 +79,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &7704520365640693087
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585067282753894049}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.075, y: 0.075, z: 1.5000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.05, y: 0.045, z: 1.5000001}
+  m_TimeToStationary: 0.5
+--- !u!64 &7521622129352835474
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585067282753894049}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: ce3ff2106a2615349b175802870508ee, type: 3}
