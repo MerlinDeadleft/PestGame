@@ -457,6 +457,8 @@ ModelImporter:
     2100002: Default_Material
     2100004: lambert4
     2100006: Material
+    2100008: lambert6
+    2100010: lambert5
     2300000: Rat_Anim4:Bag_Knot.001
     2300002: Rat_Anim4:Bag_Knot.002
     2300004: Rat_Anim4:Cap_LP
