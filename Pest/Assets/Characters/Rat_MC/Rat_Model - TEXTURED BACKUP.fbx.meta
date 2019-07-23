@@ -453,6 +453,7 @@ ModelImporter:
     13700022: Rat_Anim4:Rat_Body_LP
     13700024: Rat_Anim4:Scarf_LP
     13700026: Rat_Anim4:Tail_LP
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -505,7 +506,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
