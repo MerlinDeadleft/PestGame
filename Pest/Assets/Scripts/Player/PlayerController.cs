@@ -19,16 +19,24 @@ public class PlayerController : MonoBehaviour
 	float colliderHeight = 0.0f;
 	Vector3 colliderCenter = Vector3.zero;
 
+
 	/******************health system variables*****************/
 	[Header("Health System")]
 	[SerializeField] int maxHitPoints = 3;
-	/// <summary>
-	/// current hit points of the chracter
-	/// </summary>
-	public int HitPoints { get; set; }
+    /// <summary>
+    /// current hit points of the chracter
+    /// </summary>
+    public int HitPoints { get; set; }
 
-	/********************movement variables********************/
-	[Header("Movement")]
+    /******************Mana system variables*******************/
+    [Header("Mana System")]
+    [SerializeField] int mana = 100;
+    [SerializeField] int manaActivationCost = 25;
+    public int Mana { get { return mana; } set { mana = value; } }
+
+
+    /********************movement variables********************/
+    [Header("Movement")]
 	[Header("On Ground")]
 	[SerializeField] float walkSpeed = 5.0f;
 	[SerializeField] float sneakSpeed = 2.5f;
@@ -168,7 +176,10 @@ public class PlayerController : MonoBehaviour
         {
             if (!isHiding && lastIsHiding == isHiding)
             {
-                cameraController.TurnOffSelectedLight();
+                if (ManaController.UseMana(manaActivationCost, this))
+                {
+                    cameraController.TurnOffSelectedLight();
+                }
             }
         }
         // Talis' code ende
