@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 3624004392312518604}
   - component: {fileID: 3624004392309127148}
   - component: {fileID: 3624004392310224172}
+  - component: {fileID: 777223671866451333}
   m_Layer: 0
   m_Name: Ladder_City_Animation
   m_TagString: Untagged
@@ -156,7 +157,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3624004392312220652}
-  m_LocalRotation: {x: -0.4895962, y: 0.5101917, z: 0.4895047, w: 0.51027954}
+  m_LocalRotation: {x: -0.48959732, y: 0.5101906, z: 0.48950827, w: 0.5102761}
   m_LocalPosition: {x: -273.25, y: 0.06776619, z: -14.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -209,3 +210,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!208 &777223671866451333
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3624004392312220652}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.3, y: 0.058000002, z: 3.0000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.058000002, z: 3.0000002}
+  m_TimeToStationary: 0.5

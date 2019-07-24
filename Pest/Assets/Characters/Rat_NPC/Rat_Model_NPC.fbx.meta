@@ -122,6 +122,7 @@ ModelImporter:
     100232: Rat_Anim4:Ring3_R_end
     100234: Rat_Anim4:Thumb2_L_end
     100236: Rat_Anim4:Thumb2_R_end
+    100238: Crate_Small_Sewer_Environment
     400000: Body.004
     400002: Cylinder.003
     400004: Cylinder.006
@@ -241,6 +242,7 @@ ModelImporter:
     400232: Rat_Anim4:Ring3_R_end
     400234: Rat_Anim4:Thumb2_L_end
     400236: Rat_Anim4:Thumb2_R_end
+    400238: Crate_Small_Sewer_Environment
     2100000: lambert5
     2100002: lambert6
     2100004: lambert1
@@ -266,6 +268,7 @@ ModelImporter:
     2300038: Rat_Anim4:Nail_LP.017
     2300040: Rat_Anim4:Tooth_LP.005
     2300042: Rat_Anim4:Eye_left.001
+    2300044: Crate_Small_Sewer_Environment
     3300000: Cylinder.003
     3300002: Cylinder.006
     3300004: Earring.001
@@ -288,6 +291,7 @@ ModelImporter:
     3300038: Rat_Anim4:Nail_LP.017
     3300040: Rat_Anim4:Tooth_LP.005
     3300042: Rat_Anim4:Eye_left.001
+    3300044: Crate_Small_Sewer_Environment
     4300000: Rat_Anim4:Tooth_LP.005
     4300002: Plane.001
     4300004: Eye_right.001
@@ -331,6 +335,7 @@ ModelImporter:
     4300080: Rat_Anim4:Nail_LP.007
     4300082: Rat_Anim4:Rat_Body_LP
     4300084: Pants_LP
+    4300086: Crate_Small_Sewer_Environment
     9500000: //RootNode
     13700000: Body.004
     13700002: Rat_Anim4:Arm_L_LP
