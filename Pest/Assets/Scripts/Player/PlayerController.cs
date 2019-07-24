@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
 	Vector3 colliderCenter = Vector3.zero;
 
 
+	/****************************UI****************************/
+	[Header("UI")]
+	[SerializeField] PlayerUIController playerUI = null;
+
+
 	/******************health system variables*****************/
 	[Header("Health System")]
 	[SerializeField] int maxHitPoints = 3;
@@ -30,13 +35,15 @@ public class PlayerController : MonoBehaviour
 
     /******************Mana system variables*******************/
     [Header("Mana System")]
-    [SerializeField] int mana = 100;
-    [SerializeField] int manaActivationCost = 25;
-    public int Mana { get { return mana; } set { mana = value; } }
+    [SerializeField] float mana = 100.0f;
+    [SerializeField] float manaActivationCost = 25.0f;
+    public float Mana { get { return mana; } set { mana = value; } }
+	[SerializeField] float maxMana = 100.0f;
+	public float MaxMana { get { return maxMana; } }
 
 
-    /********************movement variables********************/
-    [Header("Movement")]
+	/********************movement variables********************/
+	[Header("Movement")]
 	[Header("On Ground")]
 	[SerializeField] float walkSpeed = 5.0f;
 	[SerializeField] float sneakSpeed = 2.5f;
@@ -107,6 +114,9 @@ public class PlayerController : MonoBehaviour
 		HitPoints = maxHitPoints;
 
 		cameraController = FindObjectOfType<PestCameraController>();
+
+		playerUI.ManaSlider.maxValue = maxMana;
+		playerUI.ManaSlider.value = mana;
 	}
 
 	/*************************Update***************************/
@@ -201,6 +211,8 @@ public class PlayerController : MonoBehaviour
 		animationController.IsClimbing = IsClimbing;
 		animationController.IsBlinded = isBlinded;
 		canMove = animationController.CanMove;
+
+		playerUI.ManaSlider.value = Mana;
 	}
 
 	void UpdateIsGrounded()

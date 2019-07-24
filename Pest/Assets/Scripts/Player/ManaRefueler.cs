@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Talis' code
 public class ManaRefueler : MonoBehaviour
 {
 	[SerializeField, Tooltip("How much Mana/Sec is Regenerated")] float regenerationRate = 0.0f;
@@ -26,9 +27,9 @@ public class ManaRefueler : MonoBehaviour
 		{
 			return;
 		}
-		MagicController magicController = other.GetComponent<MagicController>();
+		PlayerController player = other.GetComponent<PlayerController>();
 
-		if(magicController.Mana < magicController.MaxMana)
+		if(player.Mana < player.MaxMana)
 		{
 			if(limitedSupply && manaAmount <= 0.0f)
 			{
@@ -39,13 +40,14 @@ public class ManaRefueler : MonoBehaviour
 				manaAmount -= regenerationRate * Time.deltaTime;
 			}
 
-			magicController.Mana += regenerationRate * Time.deltaTime;
+			player.Mana += regenerationRate * Time.deltaTime;
 		}
 
-		if(limitedSupply && magicController.Mana > magicController.MaxMana)
+		if(limitedSupply && player.Mana > player.MaxMana)
 		{
-			manaAmount += magicController.Mana - magicController.MaxMana;
-			magicController.Mana = magicController.MaxMana;
+			manaAmount += player.Mana - player.MaxMana;
+			player.Mana = player.MaxMana;
 		}
 	}
 }
+//Talis' code ende

@@ -74,7 +74,7 @@ public class ManaController : MonoBehaviour
     /// <param name="_amount"></param>
     /// Amount of mana to be spent
     /// <returns>Returns false if not enough mana</returns>
-    public static bool UseMana(int _cost, PlayerController _player)
+    public static bool UseMana(float _cost, PlayerController _player)
     {
         if ((_player.Mana - _cost) >= 0)
         {
