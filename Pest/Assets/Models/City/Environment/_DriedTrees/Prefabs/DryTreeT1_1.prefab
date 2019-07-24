@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5091557404688503482}
   - component: {fileID: 268523891526264050}
   - component: {fileID: 21286053426818876}
+  - component: {fileID: 8714253854180184771}
   m_Layer: 0
   m_Name: DryTreeT1_1
   m_TagString: Untagged
@@ -80,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8714253854180184771
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099161007084426008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: b8d2e894d2a258d4c879b6d227a2aa00, type: 3}
