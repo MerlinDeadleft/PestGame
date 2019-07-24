@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Timberframing_Door_Boards_City_Environment
+  m_Name: Timberframing_House_Attachment_1_City_Environment
   m_Shader: {fileID: 47, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: db695ba4dfd7176439be2c3aa2f710b5, type: 3}
+        m_Texture: {fileID: 2800000, guid: 74475f3c12417a641ad29db55fe2a465, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,15 +40,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d8d284e38a9a6e34a8b633e95ddbb312, type: 3}
+        m_Texture: {fileID: 2800000, guid: ce292726253d7214ea90d102b9f5d6ef, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: bd84782171043b94aadfa7e4745ebcaa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1d4a39ea56e6cb24db798046c445ed9e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 0d9b1981443a7a8429effa16aafb2194, type: 3}
+        m_Texture: {fileID: 2800000, guid: 540e2eb7f124ce54887b9a3dd04d3ac0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: 6127d8b1db8c27c45a0bb102bdde1589, type: 3}
+        m_Texture: {fileID: 2800000, guid: a745c21869bf8af4f8aee38420ea45c1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
