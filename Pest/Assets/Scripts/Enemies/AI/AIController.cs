@@ -19,6 +19,8 @@ public class AIController : MonoBehaviour
 
 	List<MonoBehaviour> aiComponents = new List<MonoBehaviour>();
 
+	[SerializeField] bool alwaysKnowsPlayerPosition = false;
+
 	[Header("Vision")]
 	[SerializeField] bool hasEyes = false;
 	[SerializeField, ConditionalField("hasEyes")] AISight eyes = null;
@@ -50,7 +52,7 @@ public class AIController : MonoBehaviour
 	public bool AttackingPlayer { get; private set; } = false;
 	public bool SwordActive { get; private set; } = false;
 	bool attackStarted = false;
-	float waitForAttackTime = 1.0f;
+	[SerializeField, Min(0.1f)] float waitForAttackTime = 1.0f;
 	float waitAfterAttackTime = 1.0f;
 	float attackTimer = 0.0f;
 	bool isFacingPlayer = false;
@@ -164,22 +166,55 @@ public class AIController : MonoBehaviour
 					AttackingPlayer = false;
 					attackStarted = false;
 					attackTimer = 0.0f;
+					navMeshAgent.isStopped = false;
 				}
 			}
+		}
+		else
+		{
+			FacePlayer();
 		}
 	}
 
 	void HandleDefaultBehaviour()
 	{
-		if(eyes.PlayerInSight)
+		if(alwaysKnowsPlayerPosition)
 		{
-			navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
-			navMeshAgent.speed = runSpeed;
+			if(Vector3.Magnitude(transform.position - player.transform.position) > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 0.25f)
+			{
+				navMeshAgent.SetDestination(player.transform.position);
+			}
+			else
+			{
+				navMeshAgent.SetDestination(transform.position);
+				AttackingPlayer = true;
+			}
 		}
-
-		if(eyes.PlayerInSight && Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
+		else if(hasEyes)
 		{
-			AttackingPlayer = true;
+			if(eyes.PlayerInSight)
+			{
+				navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
+				navMeshAgent.speed = runSpeed;
+			}
+
+			if(eyes.PlayerInSight && Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 3.5f)
+			{
+				AttackingPlayer = true;
+			}
+		}
+		else if(hasProximitySensor)
+		{
+			if(proxSensor.PlayerCloseBy)
+			{
+				navMeshAgent.SetDestination(proxSensor.PlayerLastSensedPosition);
+				navMeshAgent.speed = runSpeed;
+			}
+
+			if(proxSensor.PlayerCloseBy && Vector3.Magnitude(transform.position - proxSensor.PlayerLastSensedPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 3.5f)
+			{
+				AttackingPlayer = true;
+			}
 		}
 	}
 
@@ -235,7 +270,7 @@ public class AIController : MonoBehaviour
 			{
 				float distanceToPlayerLastSeenPos = Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition);
 
-				if(distanceToPlayerLastSeenPos > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
+				if(distanceToPlayerLastSeenPos > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 3.5f)
 				{
 					navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
 					navMeshAgent.speed = runSpeed;
@@ -364,9 +399,12 @@ public class AIController : MonoBehaviour
 
 	void FacePlayer()
 	{
-		if(navMeshAgent.destination != proxSensor.PlayerLastSensedPosition)
+		if(hasProximitySensor)
 		{
-			navMeshAgent.SetDestination(proxSensor.PlayerLastSensedPosition);
+			if(navMeshAgent.destination != proxSensor.PlayerLastSensedPosition)
+			{
+				navMeshAgent.SetDestination(proxSensor.PlayerLastSensedPosition);
+			}
 		}
 
 		Vector3 enemyToPlayer = player.transform.position - transform.position;
