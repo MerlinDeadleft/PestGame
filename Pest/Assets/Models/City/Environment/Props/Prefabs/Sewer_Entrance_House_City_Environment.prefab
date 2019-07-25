@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2245893161122661050}
   - component: {fileID: 2245893161121693818}
   - component: {fileID: 8290396100465167211}
+  - component: {fileID: 462070763996296114}
+  - component: {fileID: 5458158660297870558}
   m_Layer: 0
   m_Name: Sewer_Entrance_House_City_Environment
   m_TagString: Untagged
@@ -92,3 +94,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f1e9c5663105ef444aaeb7edc3d18635, type: 3}
+--- !u!65 &462070763996296114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245893161119506106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.515864, y: 3.12, z: 2.4587197}
+  m_Center: {x: -2.737931, y: 1.62, z: -1.03}
+--- !u!114 &5458158660297870558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2245893161119506106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341a56bfa38156c4fa1192d1a4a1bfd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
