@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 368363980914343371}
   - component: {fileID: 368363980911476203}
   - component: {fileID: 368363980912574251}
+  - component: {fileID: 7471965672937355884}
   m_Layer: 0
   m_Name: Timberframing_House_Attachment_4_City_Environment
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368363980914500075}
-  m_LocalRotation: {x: -0.5000027, y: -0.49999738, z: -0.49999738, w: 0.5000027}
+  m_LocalRotation: {x: -0.5000044, y: -0.49999562, z: -0.49999562, w: 0.5000044}
   m_LocalPosition: {x: -151, y: 3, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -57,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e6c5dff797f537d48a435088bd380ab0, type: 3}
+  - {fileID: 2100000, guid: 81e97cc1e6ecaf446ae2b109fb2593ae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7471965672937355884
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368363980914500075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: e6c5dff797f537d48a435088bd380ab0, type: 3}
