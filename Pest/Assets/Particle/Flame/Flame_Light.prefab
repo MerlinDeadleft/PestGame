@@ -43,16 +43,16 @@ Light:
   m_Type: 2
   m_Color: {r: 0.8490566, g: 0.3356065, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 3.06
+  m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_Strength: 0.17
+    m_Bias: 0.69
+    m_NormalBias: 0.48
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
