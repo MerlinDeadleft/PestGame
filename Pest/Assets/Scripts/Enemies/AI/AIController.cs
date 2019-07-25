@@ -182,6 +182,7 @@ public class AIController : MonoBehaviour
 		{
 			if(Vector3.Magnitude(transform.position - player.transform.position) > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 0.25f)
 			{
+				navMeshAgent.speed = runSpeed;
 				navMeshAgent.SetDestination(player.transform.position);
 			}
 			else

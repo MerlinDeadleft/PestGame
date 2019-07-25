@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 	CharacterController charController = null;
 	float colliderHeight = 0.0f;
 	Vector3 colliderCenter = Vector3.zero;
+	public PotionController Potion { get; set; } = null;
+	public bool HasPotion { get; private set; } = false;
 
 
 	/****************************UI****************************/
@@ -140,6 +142,21 @@ public class PlayerController : MonoBehaviour
 			LoadScene("Blocking_Stadt");
 		}
 
+		if(Input.GetKeyDown(KeyCode.Alpha8))
+		{
+			LoadScene("GameFinishedScene");
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha9))
+		{
+			transform.position = new Vector3(-95.0f, 0.6f, -15.0f);
+		}
+
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			HasPotion = true;
+		}
+
 		if(isHiding)
 		{
 			HandleHiding();
@@ -157,6 +174,14 @@ public class PlayerController : MonoBehaviour
         if(player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
         {
 			// Kevin's fix
+			if(Potion != null)
+			{
+				HasPotion = true;
+				Potion.PickUp();
+				Potion = null;
+				return;
+			}
+
 			if(isHiding)
 			{
 				if(startedHide)
