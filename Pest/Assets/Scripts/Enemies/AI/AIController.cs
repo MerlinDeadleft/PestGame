@@ -52,7 +52,7 @@ public class AIController : MonoBehaviour
 	public bool AttackingPlayer { get; private set; } = false;
 	public bool SwordActive { get; private set; } = false;
 	bool attackStarted = false;
-	[SerializeField] float waitForAttackTime = 1.0f;
+	[SerializeField, Min(0.1f)] float waitForAttackTime = 1.0f;
 	float waitAfterAttackTime = 1.0f;
 	float attackTimer = 0.0f;
 	bool isFacingPlayer = false;
@@ -180,7 +180,7 @@ public class AIController : MonoBehaviour
 	{
 		if(alwaysKnowsPlayerPosition)
 		{
-			if(Vector3.Magnitude(transform.position - player.transform.position) > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 0.5f)
+			if(Vector3.Magnitude(transform.position - player.transform.position) > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 0.25f)
 			{
 				navMeshAgent.SetDestination(player.transform.position);
 			}
@@ -198,7 +198,7 @@ public class AIController : MonoBehaviour
 				navMeshAgent.speed = runSpeed;
 			}
 
-			if(eyes.PlayerInSight && Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
+			if(eyes.PlayerInSight && Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 3.5f)
 			{
 				AttackingPlayer = true;
 			}
@@ -211,7 +211,7 @@ public class AIController : MonoBehaviour
 				navMeshAgent.speed = runSpeed;
 			}
 
-			if(proxSensor.PlayerCloseBy && Vector3.Magnitude(transform.position - proxSensor.PlayerLastSensedPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
+			if(proxSensor.PlayerCloseBy && Vector3.Magnitude(transform.position - proxSensor.PlayerLastSensedPosition) < navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 3.5f)
 			{
 				AttackingPlayer = true;
 			}
@@ -270,7 +270,7 @@ public class AIController : MonoBehaviour
 			{
 				float distanceToPlayerLastSeenPos = Vector3.Magnitude(transform.position - eyes.PlayerLastSeenPosition);
 
-				if(distanceToPlayerLastSeenPos > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 1.5f)
+				if(distanceToPlayerLastSeenPos > navMeshAgent.radius + player.GetComponent<CharacterController>().radius + 3.5f)
 				{
 					navMeshAgent.SetDestination(eyes.PlayerLastSeenPosition);
 					navMeshAgent.speed = runSpeed;
