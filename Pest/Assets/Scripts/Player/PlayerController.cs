@@ -108,6 +108,7 @@ public class PlayerController : MonoBehaviour
 	void Start ()
 	{
 		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Confined;
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
 		charController = GetComponent<CharacterController>();
 		colliderCenter = charController.center;
