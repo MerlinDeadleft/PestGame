@@ -18,6 +18,13 @@ public class PlayerController : MonoBehaviour
 	CharacterController charController = null;
 	float colliderHeight = 0.0f;
 	Vector3 colliderCenter = Vector3.zero;
+	public PotionController Potion { get; set; } = null;
+	public bool HasPotion { get; private set; } = false;
+
+
+	/****************************UI****************************/
+	[Header("UI")]
+	[SerializeField] PlayerUIController playerUI = null;
 
 
 	/******************health system variables*****************/
@@ -30,13 +37,15 @@ public class PlayerController : MonoBehaviour
 
     /******************Mana system variables*******************/
     [Header("Mana System")]
-    [SerializeField] int mana = 100;
-    [SerializeField] int manaActivationCost = 25;
-    public int Mana { get { return mana; } set { mana = value; } }
+    [SerializeField] float mana = 100.0f;
+    [SerializeField] float manaActivationCost = 25.0f;
+    public float Mana { get { return mana; } set { mana = value; } }
+	[SerializeField] float maxMana = 100.0f;
+	public float MaxMana { get { return maxMana; } }
 
 
-    /********************movement variables********************/
-    [Header("Movement")]
+	/********************movement variables********************/
+	[Header("Movement")]
 	[Header("On Ground")]
 	[SerializeField] float walkSpeed = 5.0f;
 	[SerializeField] float sneakSpeed = 2.5f;
@@ -99,6 +108,7 @@ public class PlayerController : MonoBehaviour
 	void Start ()
 	{
 		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Confined;
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
 		charController = GetComponent<CharacterController>();
 		colliderCenter = charController.center;
@@ -107,6 +117,9 @@ public class PlayerController : MonoBehaviour
 		HitPoints = maxHitPoints;
 
 		cameraController = FindObjectOfType<PestCameraController>();
+
+		playerUI.ManaSlider.maxValue = maxMana;
+		playerUI.ManaSlider.value = mana;
 	}
 
 	/*************************Update***************************/
@@ -130,6 +143,21 @@ public class PlayerController : MonoBehaviour
 			LoadScene("Blocking_Stadt");
 		}
 
+		if(Input.GetKeyDown(KeyCode.Alpha8))
+		{
+			LoadScene("GameFinishedScene");
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha9))
+		{
+			transform.position = new Vector3(-95.0f, 0.6f, -15.0f);
+		}
+
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			HasPotion = true;
+		}
+
 		if(isHiding)
 		{
 			HandleHiding();
@@ -147,6 +175,14 @@ public class PlayerController : MonoBehaviour
         if(player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
         {
 			// Kevin's fix
+			if(Potion != null)
+			{
+				HasPotion = true;
+				Potion.PickUp();
+				Potion = null;
+				return;
+			}
+
 			if(isHiding)
 			{
 				if(startedHide)
@@ -201,6 +237,8 @@ public class PlayerController : MonoBehaviour
 		animationController.IsClimbing = IsClimbing;
 		animationController.IsBlinded = isBlinded;
 		canMove = animationController.CanMove;
+
+		playerUI.ManaSlider.value = Mana;
 	}
 
 	void UpdateIsGrounded()

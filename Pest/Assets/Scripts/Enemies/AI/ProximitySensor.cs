@@ -23,6 +23,11 @@ public class ProximitySensor : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if(Player == null)
+		{
+			return;
+		}
+
 		RaycastHit hit;
 		Ray ray = new Ray(transform.position + Vector3.up * 0.15f, (Player.position + new Vector3(0.0f, 1.0f, 0.0f)) - transform.position);
 		//offset player position, so AI agent is not looking at player's feet
