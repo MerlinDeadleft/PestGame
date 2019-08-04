@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteAlways]
+[RequireComponent(typeof(BoxCollider)), RequireComponent(typeof(CapsuleCollider))]
 public class ClimbableObjectController : MonoBehaviour
  {
 	[SerializeField] bool hasClimbDownPosition = false;
@@ -46,6 +47,11 @@ public class ClimbableObjectController : MonoBehaviour
 	[ContextMenu("Revalidate ClimbDownPosition")]
 	void ValidateClimbDownPosition()
 	{ 
+		if(!hasClimbDownPosition)
+		{
+			return;
+		}
+
 		Transform child = transform.Find("ClimbDownPosition");
 		if(child == null)
 		{

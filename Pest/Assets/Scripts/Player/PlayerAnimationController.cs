@@ -10,7 +10,8 @@ public class PlayerAnimationController : MonoBehaviour
 	public bool IsGrounded { get; set; } = true;
 	public bool IsClimbing { get; set; } = false;
 	public float ClimbingSpeed { get; set; } = 0.0f;
-	public bool isBlinded { get; set; } = false;
+	public bool IsBlinded { get; set; } = false;
+	public bool CanMove { get { return animator.GetBool(canMoveHash); } set { animator.SetBool(canMoveHash, value); } }
 
 	[SerializeField] float longIdleTime = 0.0f;
 	float idleTimer = 0.0f;
@@ -30,6 +31,9 @@ public class PlayerAnimationController : MonoBehaviour
 	int hideEndHash = Animator.StringToHash("HideEnd");
 	int takeDownHash = Animator.StringToHash("Takedown");
 	int isBlindedHash = Animator.StringToHash("IsBlinded");
+	int dieHash = Animator.StringToHash("Die");
+	int canMoveHash = Animator.StringToHash("CanMove");
+	int hideAnimhash = Animator.StringToHash("HideAnimation");
 
 	// Start is called before the first frame update
 	void Start()
@@ -46,7 +50,8 @@ public class PlayerAnimationController : MonoBehaviour
 		animator.SetBool(isGroundedHash, IsGrounded);
 		animator.SetBool(isSneakingHash, IsSneaking);
 		animator.SetFloat(velocityHash, Velocity);
-		animator.SetBool(isBlindedHash, isBlinded);
+		animator.SetBool(isBlindedHash, IsBlinded);
+		//CanMove = animator.GetBool(canMoveHash);
 
 		if(Velocity < 0.1f)
 		{
@@ -70,9 +75,10 @@ public class PlayerAnimationController : MonoBehaviour
 		idleTimer = 0.0f;
 	}
 
-	public void HideBegin()
+	public void HideBegin(int hideAnimation)
 	{
 		animator.SetTrigger(hideBeginHash);
+		animator.SetFloat(hideAnimhash, hideAnimation);
 	}
 
 	public void HideEnd()
@@ -83,6 +89,12 @@ public class PlayerAnimationController : MonoBehaviour
 	public void TakeDown()
 	{
 		animator.SetTrigger(takeDownHash);
+	}
+
+	public void Die()
+	{
+		animator.SetTrigger(dieHash);
+		animator.SetBool(canMoveHash, false);
 	}
 
 	public void Attack()

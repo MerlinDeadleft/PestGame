@@ -23,8 +23,62 @@ Shader "Custom/BlendShader"
 		Cull back
 		LOD 100
 
+		Pass
+		{
+			Name "ShadowCaster"
+			Tags { "LightMode" = "ShadowCaster" }
+
+			Fog {Mode Off}
+			ZWrite On ZTest Less Cull Off
+			Offset 1, 1
+
+			CGPROGRAM
+
+			#pragma vertex vert
+			#pragma fragment frag
+			#pragma fragmentoption ARB_precision_hint_fastest
+			#pragma multi_compile_shadowcaster
+			//#include "ShadowCastCG.cginc"
+			#include "UnityCG.cginc"
+
+			uniform float4 _FirstTex_ST;
+
+			sampler2D _FirstTex;
+			sampler2D _SecondTex;
+
+			half _Blend;
+			half _Transparency;
+			half _Glossiness;
+			half _Metallic;
+			fixed4 _Color;
+			
+			
+			struct v2f
+			{
+				V2F_SHADOW_CASTER;
+				float2 uv : TEXCOORD1;
+			};
+
+			v2f vert(appdata_full v)
+			{
+				v2f o;
+				TRANSFER_SHADOW_CASTER(o)
+				o.uv = TRANSFORM_TEX(v.texcoord, _FirstTex);
+
+			  return o;
+			}
+
+			float4 frag(v2f i) : COLOR
+			{
+				fixed4 texcol = tex2D(_FirstTex, i.uv);
+				clip(texcol.a*_Color.a - _Transparency);
+				SHADOW_CASTER_FRAGMENT(i)
+			}
+			ENDCG
+		}
+
 		CGPROGRAM
-		#pragma surface surf Standard fullforwardshadows alpha:fade
+		#pragma surface surf Standard fullforwardshadows alpha:fade addshadow
 		
         // Use shader model 3.0 target, to get nicer looking lighting
 		#pragma target 3.0

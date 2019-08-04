@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Blocking_Kanalisation.unity
     guid: 380a695df14b1b645a12c454bd7c6a68
-  - enabled: 0
-    path: Assets/Scenes/Prototype_v2 Scene.unity
-    guid: a0fc1173619f8924ca35d387c7b6f070
+  - enabled: 1
+    path: Assets/Scenes/Blocking_Stadt.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/GameFinishedScene.unity
+    guid: 0d889e5c8ea72374f8fa703a5f0f80bb
   m_configObjects: {}

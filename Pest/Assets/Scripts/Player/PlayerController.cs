@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using RewiredConsts;
+using ModularAI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,14 +19,27 @@ public class PlayerController : MonoBehaviour
 	CharacterController charController = null;
 	float colliderHeight = 0.0f;
 	Vector3 colliderCenter = Vector3.zero;
+	AIPlayerInfo playerInfo = null;
+
+	public PotionController Potion { get; set; } = null;
+	public bool HasPotion { get; private set; } = false;
 
 	/******************health system variables*****************/
-	[Header("Health System")]
-	[SerializeField] int maxHitPoints = 3;
-	/// <summary>
-	/// current hit points of the chracter
-	/// </summary>
-	public int HitPoints { get; set; }
+	//[Header("Health System")]
+	public int maxHitPoints { get; } = 3;
+    /// <summary>
+    /// current hit points of the chracter
+    /// </summary>
+    public int HitPoints { get; set; }
+
+    /******************Mana system variables*******************/
+    [Header("Mana System")]
+    float mana = 100.0f;
+    [SerializeField] float manaActivationCost = 25.0f;
+    public float Mana { get { return mana; } set { mana = value; } }
+	[SerializeField] float maxMana = 100.0f;
+	public float MaxMana { get { return maxMana; } }
+
 
 	/********************movement variables********************/
 	[Header("Movement")]
@@ -73,11 +87,11 @@ public class PlayerController : MonoBehaviour
 
 	/******************miscellanious variables*****************/
 	bool isBlinded = false;
-	public bool IsGrounded { get { return charController.isGrounded; } }
+	public bool IsGrounded { get; private set; } = true;
+	int isGroundedFrameCounter = 0;
 
 	/******************magic actions variables*****************/
 	PestCameraController cameraController = null;
-	MagicController magicController = null;
 
 	/*********************************************************/
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -89,6 +103,8 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Confined;
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
 		charController = GetComponent<CharacterController>();
 		colliderCenter = charController.center;
@@ -97,15 +113,47 @@ public class PlayerController : MonoBehaviour
 		HitPoints = maxHitPoints;
 
 		cameraController = FindObjectOfType<PestCameraController>();
+
+		playerInfo = GetComponent<AIPlayerInfo>();
+		playerInfo.maxVelocity = runSpeed;
+
+		mana = maxMana;
 	}
 
 	/*************************Update***************************/
 	// Update is called once per frame
 	void Update ()
 	{
+		UpdateIsGrounded();
+
 		if(Input.GetKeyDown(KeyCode.Alpha0))
 		{
 			ReloadScene();
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			LoadScene("Blocking_Kanalisation");
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			LoadScene("Blocking_Stadt");
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha8))
+		{
+			LoadScene("GameFinishedScene");
+		}
+
+		if(Input.GetKeyDown(KeyCode.Alpha9))
+		{
+			transform.position = new Vector3(-95.0f, 0.6f, -15.0f);
+		}
+
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			HasPotion = true;
 		}
 
 		if(isHiding)
@@ -121,12 +169,56 @@ public class PlayerController : MonoBehaviour
 			HandleMovement();
 		}
 
+        // Talis' code
+        if(player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
+        {
+			// Kevin's fix
+			if(Potion != null)
+			{
+				HasPotion = true;
+				Potion.PickUp();
+				Potion = null;
+				return;
+			}
 
-		if(player.GetButtonDown(Action.CharacterControl.Interact))
-		{
-			HandleInteraction();
-		}
-		else if(player.GetButtonDown(Action.CharacterControl.Block))
+			if(isHiding)
+			{
+				if(startedHide)
+				{
+					animationController.HideEnd();
+					HidingObject.AnimatorHideEnd();
+				}
+				isHiding = false;
+				startedHide = false;
+
+				return;
+			}
+			// Kevin's fix ende
+
+			if(HidingObject != null && lastIsHiding == isHiding)
+            {
+                isHiding = true;
+                return;
+            }
+
+			if (!isHiding && lastIsHiding == isHiding)
+            {
+                cameraController.FocusNextLight();
+            }
+        }
+        else if (player.GetButtonTimedPressDown(Action.CharacterControl.Interact, 0.7f))
+        {
+            if (!isHiding && lastIsHiding == isHiding)
+            {
+                if (ManaController.UseMana(manaActivationCost, this))
+                {
+                    cameraController.TurnOffSelectedLight();
+                }
+            }
+        }
+        // Talis' code ende
+
+        else if (player.GetButtonDown(Action.CharacterControl.Block))
 		{
 			HandleBlocking();
 		}
@@ -139,9 +231,31 @@ public class PlayerController : MonoBehaviour
 
 		animationController.Velocity = charController.velocity.magnitude;
 		animationController.IsSneaking = isSneaking;
-		animationController.IsGrounded = charController.isGrounded;
+		animationController.IsGrounded = IsGrounded;
 		animationController.IsClimbing = IsClimbing;
-		animationController.isBlinded = isBlinded;
+		animationController.IsBlinded = isBlinded;
+		canMove = animationController.CanMove;
+
+		playerInfo.Velocity = charController.velocity;
+		playerInfo.IsHiding = isHiding;
+		playerInfo.IsInLight = isBlinded;
+	}
+
+	void UpdateIsGrounded()
+	{
+		if(charController.isGrounded)
+		{
+			isGroundedFrameCounter = 0;
+			IsGrounded = true;
+		}
+		else
+		{
+			isGroundedFrameCounter++;
+			if(isGroundedFrameCounter > 15)
+			{
+				IsGrounded = false;
+			}
+		}
 	}
 
 	#region movement methods
@@ -389,26 +503,22 @@ public class PlayerController : MonoBehaviour
 	}
 	#endregion movement methods
 
-	/********************HandleInteraction*********************/
-	void HandleInteraction()
-	{
-		if(HidingObject != null && lastIsHiding == isHiding)
-		{
-			isHiding = true;
-		}
-
-		if(!isHiding && lastIsHiding == isHiding && cameraController.SelectedLight != null)
-		{
-			cameraController.SelectedLight.enabled = false;
-		}
-	}
-
 	/**********************HandleHiding************************/
 	void HandleHiding()
 	{
-		Vector3 directionToMove = HidingObject.HideAnimationStartPosition.position - transform.position;
+		IsGrounded = true;
+		Vector3 directionToMove = Vector3.zero;
+		if(HidingObject.hasFixedHideAnimationStartPoint)
+		{
+			directionToMove = HidingObject.HideAnimationStartPosition.position - transform.position;
+		}
+		else
+		{
+			Vector3 pointToMoveTo = HidingObject.transform.position + (Vector3.Normalize(transform.position - HidingObject.transform.position) * HidingObject.hideAnimationStartDistance);
+			directionToMove = pointToMoveTo - transform.position;
+		}
 
-		if(directionToMove.magnitude > 0.1f)
+		if(directionToMove.magnitude > 0.05f)
 		{
 			charController.Move(directionToMove * walkSpeed * Time.deltaTime);
 		}
@@ -417,7 +527,7 @@ public class PlayerController : MonoBehaviour
 			if(!startedHide)
 			{
 				//rotate towards hiding place based on HideAnimationStartPosition (Make sure green arrow points upwards !!!!)
-				if(Quaternion.Angle(transform.rotation, HidingObject.HideAnimationStartPosition.rotation) > 1.0f)
+				if(HidingObject.hasFixedHideAnimationStartPoint && Quaternion.Angle(transform.rotation, HidingObject.HideAnimationStartPosition.rotation) > 1.0f)
 				{
 					float angle = Quaternion.Angle(transform.rotation, HidingObject.HideAnimationStartPosition.rotation);
 					Quaternion newRotation = Quaternion.identity;
@@ -425,23 +535,26 @@ public class PlayerController : MonoBehaviour
 					newRotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * turnSpeed);
 					transform.rotation = newRotation;
 				}
+				else if(!HidingObject.hasFixedHideAnimationStartPoint && Quaternion.Angle(transform.rotation, Quaternion.LookRotation(HidingObject.transform.position - transform.position, Vector3.up)) > 1.0f)
+				{
+					float angle = Quaternion.Angle(transform.rotation, Quaternion.LookRotation(HidingObject.transform.position - transform.position, Vector3.up));
+					Quaternion newRotation = Quaternion.identity;
+					newRotation.SetLookRotation(HidingObject.transform.position - transform.position, Vector3.up);
+					newRotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * turnSpeed);
+					transform.rotation = newRotation;
+				}
 				else
 				{
-					animationController.HideBegin();
+					animationController.HideBegin((int)HidingObject.hidingObjectType);
+					if(HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Manhole)
+					{
+						HidingObject.AnimatorHideBegin();
+						HidingObject.SetAnimatorRotation(Vector3.Normalize(Vector3.ProjectOnPlane(-transform.right, Vector3.up)));
+						//HidingObject.SetAnimatorRotation(transform.rotation);
+					}
 					startedHide = true;
 					//charController.detectCollisions = false;
 				}
-			}
-
-			if(player.GetButtonDown(Action.CharacterControl.Interact) && isHiding)
-			{
-				if(startedHide)
-				{
-					animationController.HideEnd();
-				}
-				isHiding = false;
-				startedHide = false;
-				//charController.detectCollisions = true;
 			}
 		}
 	}
@@ -472,6 +585,8 @@ public class PlayerController : MonoBehaviour
 			return;
 		}
 
+		IsGrounded = true;
+		animationController.CanMove = false;
 		TakeDownObject.StartTakeDown();
 		Vector3 directionToMove = TakeDownObject.TakeDownAnimationStartPosition.position - transform.position;
 
@@ -492,8 +607,11 @@ public class PlayerController : MonoBehaviour
 			}
 			else
 			{
+                cameraController.Crosshair.transform.parent = null;
+                cameraController.Crosshair.SetActive(false);
 				animationController.TakeDown();
 				TakeDownObject.Die();
+                cameraController.GetLightsInView();
 				isTakingEnemyDown = false;
 			}
 		}
@@ -516,82 +634,27 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	//////////////////HIER IST NOCH EIN FEHLER DER ÜBERARBIETET WERDEN MUSS//////////////////
-	//#region Unity callbacks
-	///**********************OnTriggerEnter**********************/  ////////////////// D A S  W I R D  N I E  I M  L E B E N  F U N K T I O N I E R E N //////////////////
-	//private void OnTriggerEnter(Collider other)                   //////////////////         S P I E L E R  H A T   K E I N E N  T R I G G E R        //////////////////
-	//{                                                             //////////////////          ! ! ! !    Ü B E R A R B E I T E N    ! ! ! !           //////////////////
-		//#region climbing
-		//if(other.tag == "Climbable" && IsClimbing)
-		//{
-			//climbableObject = other.GetComponent<ClimbableObjectController>();
-		//}
-
-		//if(other.tag == "Climbable" && !IsClimbing)
-		//{
-			//if(charController.isGrounded)
-			//{
-				////move character up so it is not touching the floor
-				//charController.Move(new Vector3(0, charController.skinWidth, 0));
-			//}
-			//climbableObject = other.gameObject.GetComponent<ClimbableObjectController>();
-			//IsClimbing = true;
-			//rotateTowardsClimbable = true;
-		//}
-
-		//if(other.tag == "ClimbDownPosition" && !IsClimbing && !hasJumped && player.GetButton(Action.CharacterControl.Sneak))
-		//{
-			//climbableObject = other.GetComponentInParent<ClimbableObjectController>();
-			//if(climbableObject != null)
-			//{
-				//if(climbableObject.ClimbDownPositionTransform)
-				//{
-					//transform.position = climbableObject.ClimbDownPositionTransform.position;
-					//IsClimbing = true;
-					//rotateTowardsClimbable = true;
-					//moveTowardsClimbable = true;
-				//}
-			//}
-		//}
-		//#endregion
-	//}
-
-	///**********************OnTriggerExit***********************/
-	//private void OnTriggerExit(Collider other)
-	//{
-		//#region climbing
-		//if(other.tag == "Climbable" && IsClimbing)
-		//{
-			//if(!charController.isGrounded)
-			//{
-				////get direction to move away from climbable object
-				//Vector3 directionToMove = climbableObject.transform.position - transform.position;
-				////project on horizontal plane
-				//directionToMove = Vector3.Normalize(Vector3.ProjectOnPlane(directionToMove, Vector3.up));
-				////move character away from climbable object, depending on input
-				//charController.Move(directionToMove * charController.skinWidth * Mathf.Sign(player.GetAxis(Action.CharacterControl.MoveVertical)));
-
-				//climbableObject = null;
-				//IsClimbing = false;
-				//moveTowardsClimbable = false;
-			//}
-		//}
-		//#endregion
-	//}
-	//#endregion
-
+	/***************************Die****************************/
 	public void Die()
 	{
+		HitPoints = 0;
 		if(canMove)
 		{
+			animationController.Die();
 			canMove = false;
-			Invoke("ReloadScene", 1.0f);
+			Invoke("ReloadScene", 5.0f);
 		}
 	}
 
+	/***********************ReloadScene************************/
 	void ReloadScene()
 	{
 		Destroy(gameObject);
 		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+	}
+
+	void LoadScene(string sceneToLoad)
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
 	}
 }
