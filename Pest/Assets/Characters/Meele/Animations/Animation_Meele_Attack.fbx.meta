@@ -267,6 +267,14 @@ ModelImporter:
       curves: []
       events:
       - time: 1
+        functionName: SetSwordActive
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2d9a66b07c65e884bab903f90c8f2bee,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1
         functionName: OnAttackEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 2d9a66b07c65e884bab903f90c8f2bee,
@@ -274,10 +282,18 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.18037143
+        functionName: SetSwordActive
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 2d9a66b07c65e884bab903f90c8f2bee,
+          type: 3}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 269
     isReadable: 1
   meshes:
     lODScreenPercentages: []
