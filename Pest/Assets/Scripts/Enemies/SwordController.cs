@@ -10,7 +10,7 @@ public class SwordController : MonoBehaviour
 	{
 		if(other.tag == "Player" && enemyAnimController.SwordActive)
 		{
-			other.GetComponent<PlayerController>().Die();
+			other.GetComponent<PlayerController>().DamagePlayer();
 		}
 	}
 }
