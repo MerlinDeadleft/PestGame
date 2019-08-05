@@ -248,7 +248,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   detectionRange: 7
-  detectionTime: 5
+  detectionTime: 3
   detectionCoolDownTime: 3
   hasHeightOffset: 0
   heightOffset: 0
