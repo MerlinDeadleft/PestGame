@@ -80,8 +80,7 @@ public class EnemyController : MonoBehaviour
 				//behaviour = new RangedBehaviour(navMeshAgent, aiBrain, walkSpeed, runSpeed, minAwareness, minDistance, player);
 				break;
 			case EnemyType.Immortal:
-				Debug.LogError("No immortal behaviour implemented!");
-				//behaviour = new ImmortalBehaviour(navMeshAgent, aiBrain, walkSpeed, runSpeed, minAwareness, minDistance, player);
+				behaviour = new ImmortalBehaviour(navMeshAgent, aiBrain, walkSpeed, runSpeed, minAwareness, minDistance, player);
 				break;
 		}
 	}
@@ -189,7 +188,7 @@ public class EnemyController : MonoBehaviour
 	}
 
 	[ContextMenu("Find Player Game Object")]
-	void FindPlayer()
+	public void FindPlayer()
 	{
 		GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
 

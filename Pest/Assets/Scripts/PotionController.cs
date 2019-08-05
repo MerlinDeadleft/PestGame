@@ -7,21 +7,11 @@ public class PotionController : MonoBehaviour
 	[SerializeField] GameObject bossPrefab = null;
 	[SerializeField] Transform bossSpawnPosition = null;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 	public void PickUp()
 	{
-		Instantiate(bossPrefab, bossSpawnPosition.position, Quaternion.identity);
+		GameObject boss = Instantiate(bossPrefab, bossSpawnPosition.position, Quaternion.identity);
+		boss.GetComponent<EnemyController>().FindPlayer();
+		boss.GetComponent<ModularAI.AIBrain>().FindPlayer();
 		Destroy(transform.parent.gameObject);
 	}
 
