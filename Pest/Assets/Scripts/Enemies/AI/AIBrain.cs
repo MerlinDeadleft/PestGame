@@ -55,7 +55,7 @@ namespace ModularAI
 		}
 
 		[ContextMenu("Find Player GameObject")]
-		void FindPlayer()
+		public void FindPlayer()
 		{
 			GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
 
