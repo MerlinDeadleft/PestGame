@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using RewiredConsts;
+using ModularAI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,18 +19,14 @@ public class PlayerController : MonoBehaviour
 	CharacterController charController = null;
 	float colliderHeight = 0.0f;
 	Vector3 colliderCenter = Vector3.zero;
+	AIPlayerInfo playerInfo = null;
+
 	public PotionController Potion { get; set; } = null;
 	public bool HasPotion { get; private set; } = false;
 
-
-	/****************************UI****************************/
-	[Header("UI")]
-	[SerializeField] PlayerUIController playerUI = null;
-
-
 	/******************health system variables*****************/
-	[Header("Health System")]
-	[SerializeField] int maxHitPoints = 3;
+	//[Header("Health System")]
+	public int maxHitPoints { get; } = 3;
     /// <summary>
     /// current hit points of the chracter
     /// </summary>
@@ -37,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     /******************Mana system variables*******************/
     [Header("Mana System")]
-    [SerializeField] float mana = 100.0f;
+    float mana = 100.0f;
     [SerializeField] float manaActivationCost = 25.0f;
     public float Mana { get { return mana; } set { mana = value; } }
 	[SerializeField] float maxMana = 100.0f;
@@ -95,7 +92,6 @@ public class PlayerController : MonoBehaviour
 
 	/******************magic actions variables*****************/
 	PestCameraController cameraController = null;
-	MagicController magicController = null;
 
 	/*********************************************************/
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -118,8 +114,10 @@ public class PlayerController : MonoBehaviour
 
 		cameraController = FindObjectOfType<PestCameraController>();
 
-		playerUI.ManaSlider.maxValue = maxMana;
-		playerUI.ManaSlider.value = mana;
+		playerInfo = GetComponent<AIPlayerInfo>();
+		playerInfo.maxVelocity = runSpeed;
+
+		mana = maxMana;
 	}
 
 	/*************************Update***************************/
@@ -238,7 +236,9 @@ public class PlayerController : MonoBehaviour
 		animationController.IsBlinded = isBlinded;
 		canMove = animationController.CanMove;
 
-		playerUI.ManaSlider.value = Mana;
+		playerInfo.Velocity = charController.velocity;
+		playerInfo.IsHiding = isHiding;
+		playerInfo.IsInLight = isBlinded;
 	}
 
 	void UpdateIsGrounded()
@@ -637,11 +637,27 @@ public class PlayerController : MonoBehaviour
 	/***************************Die****************************/
 	public void Die()
 	{
+		HitPoints = 0;
 		if(canMove)
 		{
 			animationController.Die();
 			canMove = false;
 			Invoke("ReloadScene", 5.0f);
+		}
+	}
+
+	/***************************Die****************************/
+	public void DamagePlayer()
+	{
+		if(HitPoints <= 0)
+		{
+			return;
+		}
+
+		HitPoints--;
+		if(HitPoints <= 0)
+		{
+			Die();
 		}
 	}
 

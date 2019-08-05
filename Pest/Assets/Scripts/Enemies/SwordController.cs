@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class SwordController : MonoBehaviour
 {
-	[SerializeField] AIController ai = null;
+	[SerializeField] EnemyAnimationController enemyAnimController = null;
+	[SerializeField] bool oneHitKills = false;
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Player" && ai.SwordActive)
+		if(other.tag == "Player" && enemyAnimController.SwordActive)
 		{
-			other.GetComponent<PlayerController>().Die();
+			if(oneHitKills)
+			{
+				other.GetComponent<PlayerController>().Die();
+			}
+			else
+			{
+				other.GetComponent<PlayerController>().DamagePlayer();
+			}
 		}
 	}
 }
