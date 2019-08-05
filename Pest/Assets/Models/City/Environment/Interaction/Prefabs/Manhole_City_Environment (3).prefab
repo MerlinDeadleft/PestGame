@@ -151,10 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d73033b8cf7464591275c33d0a9192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hidingObjectType: 4
+  hidingObjectType: 5
+  manholeLid: {fileID: 8621191175658992161}
   hasFixedHideAnimationStartPoint: 0
   hideAnimationStartDistance: 0.5
-  manholeLid: {fileID: 8621191175658992161}
+  hasFixedKillAnimationStartPoint: 0
+  killAnimationStartDistance: 1
 --- !u!1001 &980261122578354895
 PrefabInstance:
   m_ObjectHideFlags: 0
