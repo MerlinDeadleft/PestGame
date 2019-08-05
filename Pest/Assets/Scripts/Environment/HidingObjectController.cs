@@ -5,14 +5,20 @@ using UnityEngine;
 [ExecuteAlways]
 public class HidingObjectController : MonoBehaviour
  {
-	public enum HidingObjectType { None, Pipe, Crate_or_Barrel, Door, Manhole };
+	public enum HidingObjectType { None, Pipe, Crate, Barrel, Door, Manhole };
 
 	public HidingObjectType hidingObjectType = HidingObjectType.None;
+	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Manhole)] Animator manholeLid = null;
+
 	public bool hasFixedHideAnimationStartPoint = false;
 	/// <summary>Position to which the character needs to be moved to, before playing hiding animation</summary>
 	public Transform HideAnimationStartPosition { get; private set; } = null;
 	[MyBox.ConditionalField("hasFixedHideAnimationStartPoint", false)] public float hideAnimationStartDistance = 0.0f;
-	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Manhole)] Animator manholeLid = null;
+
+	public bool hasFixedKillAnimationStartPoint = false;
+	/// <summary>Position to which a rnemy NavMeshAgent needs to be moved to, before playing hiding kill animation</summary>
+	public Transform KillAnimationStartPosition { get; private set; }
+	[MyBox.ConditionalField("hasFixedKillAnimationStartPoint", false)] public float killAnimationStartDistance = 0.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -35,6 +41,11 @@ public class HidingObjectController : MonoBehaviour
 			if(hasFixedHideAnimationStartPoint)
 			{
 				HideAnimationStartPosition = transform.Find("HideAnimationStartPosition");
+			}
+
+			if(hasFixedKillAnimationStartPoint)
+			{
+				KillAnimationStartPosition = transform.Find("KillAnimationStartPosition");
 			}
 		}
 	}

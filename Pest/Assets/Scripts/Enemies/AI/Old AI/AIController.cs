@@ -453,4 +453,9 @@ public class AIController : MonoBehaviour
 			}
 		}
 	}
+
+	public PatrolBehaviour GetPatrolBehaviour()
+	{
+		return patrolBehaviour;
+	}
 }
