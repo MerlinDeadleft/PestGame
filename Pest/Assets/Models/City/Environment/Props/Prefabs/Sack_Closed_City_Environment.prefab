@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7820362729598649753}
   - component: {fileID: 7820362729597355449}
   - component: {fileID: 7820362729596356473}
+  - component: {fileID: 1000648467976306110}
   m_Layer: 0
   m_Name: Sack_Closed_City_Environment
   m_TagString: Untagged
@@ -77,3 +78,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1000648467976306110
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820362729598294457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: e0fd1676e0dbce9478484376a4be7435, type: 3}
