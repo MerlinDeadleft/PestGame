@@ -95,7 +95,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: HideAnimation
     m_Type: 1
-    m_DefaultFloat: 1
+    m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -5356,6 +5356,13 @@ AnimatorStateMachine:
   - {fileID: 1101540702784117084}
   m_EntryTransitions: []
   m_StateMachineTransitions:
+  - first: {fileID: 1107980866743610080}
+    second:
+    - {fileID: 1109187191317329574}
+    - {fileID: 1109819392377732090}
+    - {fileID: 1109976404828242102}
+    - {fileID: 1109971655574438634}
+    - {fileID: 1109646809863844030}
   - first: {fileID: 1107908132496920906}
     second:
     - {fileID: 1109647884793352296}
@@ -5364,13 +5371,6 @@ AnimatorStateMachine:
     - {fileID: 1109643355899829222}
     - {fileID: 1109686388557755510}
     - {fileID: 1109965911271349882}
-  - first: {fileID: 1107980866743610080}
-    second:
-    - {fileID: 1109187191317329574}
-    - {fileID: 1109819392377732090}
-    - {fileID: 1109976404828242102}
-    - {fileID: 1109971655574438634}
-    - {fileID: 1109646809863844030}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 300, y: 156, z: 0}
   m_EntryPosition: {x: -492, y: -60, z: 0}

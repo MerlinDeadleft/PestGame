@@ -646,6 +646,21 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
+	/***************************Die****************************/
+	public void DamagePlayer()
+	{
+		if(HitPoints <= 0)
+		{
+			return;
+		}
+
+		HitPoints--;
+		if(HitPoints <= 0)
+		{
+			Die();
+		}
+	}
+
 	/***********************ReloadScene************************/
 	void ReloadScene()
 	{

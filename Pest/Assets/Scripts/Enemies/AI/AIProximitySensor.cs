@@ -85,6 +85,14 @@ namespace ModularAI
 				detectingPlayer = false;
 			}
 
+			if(PlayerInfo.useIsHiding)
+			{
+				if(PlayerInfo.IsHiding)
+				{
+					detectingPlayer = false;
+				}
+			}
+
 			if(detectingPlayer)
 			{
 				if(detectionTimer < 0.0f)
