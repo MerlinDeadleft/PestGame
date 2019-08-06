@@ -1,3 +1,2 @@
 *.unitypackage filter=lfs diff=lfs merge=lfs -text
 Pest/Assets/Characters/Rat_MC/Rat_Model[[:space:]]-[[:space:]]TEXTURED[[:space:]]BACKUP.fbx filter=lfs diff=lfs merge=lfs -text
-

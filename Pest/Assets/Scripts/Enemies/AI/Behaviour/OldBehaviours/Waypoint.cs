@@ -10,6 +10,7 @@ public class Waypoint : MonoBehaviour
 
 	[ConditionalField("guardPoint")] public float guardTime = 3.0f;
 	public Vector3 Position { get { return transform.position; } }
+	public Quaternion Rotation { get { return transform.rotation; } }
 
 	public bool WasGuarded { get; set; } = false;
 }
