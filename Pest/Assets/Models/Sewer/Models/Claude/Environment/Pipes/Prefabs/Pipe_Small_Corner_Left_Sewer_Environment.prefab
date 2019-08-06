@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6032346884257957733}
   - component: {fileID: 6032346884265388645}
   m_Layer: 0
-  m_Name: Pipe_Corner_Left_Small_Sewer_Environment
+  m_Name: Pipe_Small_Corner_Left_Sewer_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6032346884256029093}
-  m_Mesh: {fileID: 4300000, guid: b7e2fdfe688bc1241b6c61b0938da039, type: 3}
+  m_Mesh: {fileID: 4300002, guid: b7e2fdfe688bc1241b6c61b0938da039, type: 3}
 --- !u!23 &6032346884257957733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7e2fdfe688bc1241b6c61b0938da039, type: 3}
+  - {fileID: 2100000, guid: 5675c0fe18c027049a31b57769ddfc7f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

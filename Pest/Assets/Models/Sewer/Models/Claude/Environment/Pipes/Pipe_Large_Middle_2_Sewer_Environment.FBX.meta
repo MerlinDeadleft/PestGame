@@ -5,10 +5,11 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 'Material #0'
+    2100000: 01 - Default
     2300000: //RootNode
     3300000: //RootNode
-    4300000: "Rohr_gro\xDF"
+    4300000: "Rohr_gro\xDF_Querschnitt"
+    4300002: "Rohr_gro\xDF"
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
