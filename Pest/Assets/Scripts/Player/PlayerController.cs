@@ -124,17 +124,10 @@ public class PlayerController : MonoBehaviour
 
 		cameraController = FindObjectOfType<PestCameraController>();
 
-<<<<<<< HEAD
-		playerUI.ManaSlider.maxValue = maxMana;
-		playerUI.ManaSlider.value = mana;
-=======
 		playerInfo = GetComponent<AIPlayerInfo>();
 		playerInfo.maxVelocity = runSpeed;
 
 		mana = maxMana;
-	}
->>>>>>> a3968b7ea27f97b6f43e224eae5851cb552c3cc9
-
 
         //transform.position = new Vector3(cpX, cpY, cpZ);
         if (checkpointReached)
@@ -718,7 +711,6 @@ public class PlayerController : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
 	}
 
-<<<<<<< HEAD
     /***********************Checkpoints************************/
     private void OnTriggerEnter(Collider other)
     {
@@ -730,8 +722,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
-=======
 	/*********************HandleTutorial***********************/
 	IEnumerator HandleTutorial()
 	{
@@ -756,5 +746,4 @@ public class PlayerController : MonoBehaviour
 
 		tutorialRunning = false;
 	}
->>>>>>> a3968b7ea27f97b6f43e224eae5851cb552c3cc9
 }
