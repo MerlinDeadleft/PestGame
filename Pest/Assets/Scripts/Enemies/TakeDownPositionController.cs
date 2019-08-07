@@ -71,6 +71,6 @@ public class TakeDownPositionController : MonoBehaviour
 	public void StartTakeDown()
 	{
 		GetComponentInParent<NavMeshAgent>().isStopped = true;
-		transform.parent.parent.GetComponentInChildren<AIController>().Die();
+		transform.parent.parent.GetComponentInChildren<EnemyController>().Die();
 	}
 }
