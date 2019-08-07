@@ -97,15 +97,23 @@ public class PlayerController : MonoBehaviour
 	PestCameraController cameraController = null;
 	MagicController magicController = null;
 
-	/*********************************************************/
-	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-	/*						Methods							 */
-	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-	/*********************************************************/
+    /***********************Checkpoints************************/
+    static bool checkpointReached = false;
+    public bool CheckpointReached {
+        get { return checkpointReached;  }
+        set { checkpointReached = value; } }
 
-	/**************************Start***************************/
-	// Use this for initialization
-	void Start ()
+    static Vector3 cpPos = new Vector3(-5.5f, 0.0f, -2.5f);
+
+    /*********************************************************/
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    /*						Methods							 */
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    /*********************************************************/
+
+    /**************************Start***************************/
+    // Use this for initialization
+    void Start ()
 	{
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Confined;
@@ -120,11 +128,19 @@ public class PlayerController : MonoBehaviour
 
 		playerUI.ManaSlider.maxValue = maxMana;
 		playerUI.ManaSlider.value = mana;
-	}
 
-	/*************************Update***************************/
-	// Update is called once per frame
-	void Update ()
+
+        //transform.position = new Vector3(cpX, cpY, cpZ);
+        if (checkpointReached)
+        {
+            transform.position = cpPos;
+        }
+
+    }
+
+    /*************************Update***************************/
+    // Update is called once per frame
+    void Update ()
 	{
 		UpdateIsGrounded();
 
@@ -172,7 +188,13 @@ public class PlayerController : MonoBehaviour
 		}
 
         // Talis' code
-        if(player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
+        Debug.Log("CheckpointReached: " + checkpointReached + " | " + "Vector: " + cpPos);
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Die();
+        }
+
+        if (player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
         {
 			// Kevin's fix
 			if(Potion != null)
@@ -210,7 +232,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (player.GetButtonTimedPressDown(Action.CharacterControl.Interact, 0.7f))
         {
-            if (!isHiding && lastIsHiding == isHiding)
+            if (!isHiding && lastIsHiding == isHiding && cameraController.SelectedLight != null)
             {
                 if (ManaController.UseMana(manaActivationCost, this))
                 {
@@ -641,7 +663,7 @@ public class PlayerController : MonoBehaviour
 		{
 			animationController.Die();
 			canMove = false;
-			Invoke("ReloadScene", 5.0f);
+            Invoke("ReloadScene", 5.0f);
 		}
 	}
 
@@ -654,6 +676,22 @@ public class PlayerController : MonoBehaviour
 
 	void LoadScene(string sceneToLoad)
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
+        int toLoadIdx = UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneToLoad).buildIndex;
+        int activeIdx = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        if (toLoadIdx != activeIdx) checkpointReached = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
 	}
+
+    /***********************Checkpoints************************/
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Checkpoint")
+        {
+            checkpointReached = true;
+            var pos = other.GetComponent<Transform>().position;
+            cpPos = pos;
+        }
+    }
+
+
 }

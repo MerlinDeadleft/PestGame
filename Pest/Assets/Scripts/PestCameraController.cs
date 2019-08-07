@@ -17,7 +17,8 @@ public class PestCameraController : MonoBehaviour
 
 	[SerializeField] List<Light> lights        = new List<Light>();
 	[SerializeField] List<Light> lightsInView  = new List<Light>();
-                     Light       selectedLight = null;
+    public           Light       SelectedLight
+                                 { get; set; } = null;
     [SerializeField] int         lightFocus    = -1;
     [SerializeField] GameObject  crosshair     = null;
 
@@ -102,7 +103,7 @@ public class PestCameraController : MonoBehaviour
 		framingTransposer.m_ScreenX = 0.5f + (xOffset * maxLookDistanceMidifier);
 		framingTransposer.m_ScreenY = 0.5f + (yOffset * maxLookDistanceMidifier);
 
-		GetLightsInView();
+		//GetLightsInView();
 	}
 
 	void RefreshLightsList()
@@ -168,7 +169,7 @@ public class PestCameraController : MonoBehaviour
             lightFocus = -1;
             crosshair.transform.parent = null;
             crosshair.SetActive(false);
-            selectedLight = null;
+            SelectedLight = null;
         }
 
         if(lightFocus >= 0)
@@ -179,11 +180,11 @@ public class PestCameraController : MonoBehaviour
             }
             else
             {
-                selectedLight = lightsInView[lightFocus];
+                SelectedLight = lightsInView[lightFocus];
 
                 crosshair.SetActive(true);
                 crosshair.transform.position = lightsInView[lightFocus].transform.position;
-                crosshair.transform.parent = lightsInView[lightFocus].transform;
+                crosshair.transform.parent   = lightsInView[lightFocus].transform;
             }
         }
     }
@@ -194,12 +195,16 @@ public class PestCameraController : MonoBehaviour
         {
             lightsInView.RemoveAt(lightFocus);
             lightFocus = -1;
-            if (selectedLight)
+            if (SelectedLight)
             {
-                selectedLight.enabled = false;
+                SelectedLight.enabled = false;
+                SelectedLight = null;
+
             }
+
             crosshair.transform.parent = null;
             crosshair.SetActive(false);
+
             GetLightsInView();
         }
     }
