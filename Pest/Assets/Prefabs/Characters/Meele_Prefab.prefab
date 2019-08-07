@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAnimController: {fileID: 833673240}
+  oneHitKills: 0
 --- !u!1 &1059690585
 GameObject:
   m_ObjectHideFlags: 0

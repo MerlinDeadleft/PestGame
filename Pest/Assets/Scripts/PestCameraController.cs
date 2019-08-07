@@ -197,6 +197,10 @@ public class PestCameraController : MonoBehaviour
             if (selectedLight)
             {
                 selectedLight.enabled = false;
+				if(selectedLight.transform.parent.GetComponentInChildren<ParticleSystem>() != null)
+				{
+					selectedLight.transform.parent.GetComponentInChildren<ParticleSystem>().Stop(true);
+				}
             }
             crosshair.transform.parent = null;
             crosshair.SetActive(false);

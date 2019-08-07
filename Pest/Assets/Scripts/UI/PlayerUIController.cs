@@ -10,6 +10,9 @@ public class PlayerUIController : MonoBehaviour
 
 	[SerializeField] PlayerController playerController = null;
 
+	[Space]
+	[SerializeField] Image PlayerUI = null;
+	[SerializeField] float hideShowTime = 1.0f;
 
 	// Start is called before the first frame update
 	void Start()
@@ -39,5 +42,64 @@ public class PlayerUIController : MonoBehaviour
 		}
 
 		manaBar.fillAmount = Mathf.Lerp(manaBar.fillAmount, playerController.Mana / playerController.MaxMana, Time.deltaTime * 5.0f);
-    }
+
+		if(Input.GetKeyDown(KeyCode.M))
+		{
+			HidePlayerUI();
+		}
+
+		if(Input.GetKeyDown(KeyCode.N))
+		{
+			ShowPlayerUI();
+		}
+	}
+
+	[ContextMenu("Hide UI")]
+	public void HidePlayerUI()
+	{
+		StopCoroutine(ShowUI());
+		StartCoroutine(HideUI());
+	}
+
+	[ContextMenu("Show UI")]
+	public void ShowPlayerUI()
+	{
+		StopCoroutine(HideUI());
+		StartCoroutine(ShowUI());
+	}
+
+	IEnumerator HideUI()
+	{
+		float timer = 0.0f;
+
+		while(timer < hideShowTime)
+		{
+			Vector2 vec2 = PlayerUI.rectTransform.anchoredPosition;
+			vec2.y = Mathf.Lerp(vec2.y, 245.0f, timer / hideShowTime);
+			PlayerUI.rectTransform.anchoredPosition = vec2;
+
+			timer += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
+			continue;
+		}
+
+		PlayerUI.rectTransform.anchoredPosition = new Vector2(PlayerUI.rectTransform.anchoredPosition.x, 245.0f);
+	}
+
+	IEnumerator ShowUI()
+	{
+		float timer = 0.0f;
+
+		while(timer < hideShowTime)
+		{
+			Vector2 vec2 = PlayerUI.rectTransform.anchoredPosition;
+			vec2.y = Mathf.Lerp(vec2.y, 0.0f, timer / hideShowTime);
+			PlayerUI.rectTransform.anchoredPosition = vec2;
+
+			timer += Time.deltaTime;
+			yield return new WaitForEndOfFrame();
+		}
+
+		PlayerUI.rectTransform.anchoredPosition = new Vector2(PlayerUI.rectTransform.anchoredPosition.x, 0.0f);
+	}
 }

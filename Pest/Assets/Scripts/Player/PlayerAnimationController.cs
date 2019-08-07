@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,6 +35,8 @@ public class PlayerAnimationController : MonoBehaviour
 	int dieHash = Animator.StringToHash("Die");
 	int canMoveHash = Animator.StringToHash("CanMove");
 	int hideAnimhash = Animator.StringToHash("HideAnimation");
+	int pickUpHash = Animator.StringToHash("PickUp");
+	int castMagicHash = Animator.StringToHash("CastMagic");
 
 	// Start is called before the first frame update
 	void Start()
@@ -100,5 +103,15 @@ public class PlayerAnimationController : MonoBehaviour
 	public void Attack()
 	{
 
+	}
+
+	public void PickUp()
+	{
+		animator.SetTrigger(pickUpHash);
+	}
+
+	public void CastMagic()
+	{
+		animator.SetTrigger(castMagicHash);
 	}
 }

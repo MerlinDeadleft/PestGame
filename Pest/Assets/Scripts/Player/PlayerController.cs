@@ -89,6 +89,8 @@ public class PlayerController : MonoBehaviour
 	bool isBlinded = false;
 	public bool IsGrounded { get; private set; } = true;
 	int isGroundedFrameCounter = 0;
+	public TutorialController TutorialController { get; set; } = null;
+	bool tutorialRunning = false;
 
 	/******************magic actions variables*****************/
 	PestCameraController cameraController = null;
@@ -173,8 +175,18 @@ public class PlayerController : MonoBehaviour
         if(player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
         {
 			// Kevin's fix
+			if(TutorialController != null)
+			{
+				if(!tutorialRunning)
+				{
+					StartCoroutine(HandleTutorial());
+				}
+				return;
+			}
+
 			if(Potion != null)
 			{
+				animationController.PickUp();
 				HasPotion = true;
 				Potion.PickUp();
 				Potion = null;
@@ -212,6 +224,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (ManaController.UseMana(manaActivationCost, this))
                 {
+					animationController.CastMagic();
                     cameraController.TurnOffSelectedLight();
                 }
             }
@@ -325,7 +338,7 @@ public class PlayerController : MonoBehaviour
 				hasJumped = false;
 			}
 
-			if(player.GetButton(Action.CharacterControl.Jump) && canJump)
+			if(player.GetButtonDown(Action.CharacterControl.Jump) && canJump)
 			{
 				canJump = false;
 				moveDirection.y = jumpStrenght;
@@ -668,8 +681,34 @@ public class PlayerController : MonoBehaviour
 		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
 	}
 
+	/************************LoadScene*************************/
 	void LoadScene(string sceneToLoad)
 	{
 		UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
+	}
+
+	/*********************HandleTutorial***********************/
+	IEnumerator HandleTutorial()
+	{
+		tutorialRunning = true;
+		player.controllers.maps.SetMapsEnabled(false, Category.CharacterControl);
+		player.controllers.maps.SetMapsEnabled(true, Category.TutorialControl);
+
+		bool tutorialShowing = TutorialController.ShowTutorial();
+
+		while(tutorialShowing)
+		{
+			if(player.GetButtonDown(Action.TutorialControl.Continue))
+			{
+				tutorialShowing = TutorialController.ShowTutorial();
+			}
+
+			yield return new WaitForEndOfFrame();
+		}
+
+		player.controllers.maps.SetMapsEnabled(false, Category.TutorialControl);
+		player.controllers.maps.SetMapsEnabled(true, Category.CharacterControl);
+
+		tutorialRunning = false;
 	}
 }
