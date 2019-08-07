@@ -362,14 +362,14 @@ MonoBehaviour:
   hasProximitySensor: 1
   proxSensor: {fileID: 7528330438007281070}
   detectionRange: 2.5
-  detectionTime: 2
+  detectionTime: 1
   guard: 0
   pointToGuard: {fileID: 0}
   maxDistanceFromGuardPoint: 10
   timeToReturnToGuard: 5
   patrol: 0
   patrolBehaviour: {fileID: 0}
-  waitForAttackTime: 1
+  waitForAttackTime: 0.5
 --- !u!114 &7528330438007281070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,8 +427,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  detectionRange: 2.5
-  detectionTime: 3
+  detectionRange: 3
+  detectionTime: 1.5
   detectionCoolDownTime: 2.5
   hasHeightOffset: 1
   heightOffset: 1

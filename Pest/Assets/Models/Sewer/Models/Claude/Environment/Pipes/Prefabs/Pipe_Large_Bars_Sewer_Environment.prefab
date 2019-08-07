@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 654183271150859388}
   - component: {fileID: 654183271147992156}
   - component: {fileID: 654183271148959388}
+  - component: {fileID: 7671120118225024579}
   m_Layer: 0
   m_Name: Pipe_Large_Bars_Sewer_Environment
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654183271150954588}
-  m_LocalRotation: {x: 0.00000005760124, y: -0.70710576, z: 0.00000005760108, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -89.93, y: -2.028, z: 33.746}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7671120118225024579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654183271150954588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.027508723, y: 0.84700435, z: 0.8470042}
+  m_Center: {x: 0.044223204, y: 0.5844029, z: 0.60035336}
