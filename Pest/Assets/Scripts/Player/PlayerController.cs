@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
 		}
 
         // Talis' code
-        Debug.Log("CheckpointReached: " + checkpointReached + " | " + "Vector: " + cpPos);
+        //Debug.Log("CheckpointReached: " + checkpointReached + " | " + "Vector: " + cpPos);
         if (Input.GetKeyDown(KeyCode.C))
         {
             Die();
