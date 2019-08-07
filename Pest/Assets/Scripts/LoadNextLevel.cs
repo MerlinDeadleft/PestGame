@@ -9,6 +9,17 @@ public class LoadNextLevel : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		SceneManager.LoadScene(nextSceneName);
+        int toLoadIdx = SceneManager.GetSceneByName(nextSceneName).buildIndex;
+        int activeIdx = SceneManager.GetActiveScene().buildIndex;
+        if (toLoadIdx != activeIdx)
+        {
+            var player = GameObject.FindWithTag("Player");
+            if (player)
+            {
+                player.GetComponent<PlayerController>().CheckpointReached = false;
+            }
+        }
+
+        SceneManager.LoadScene(nextSceneName);
 	}
 }
