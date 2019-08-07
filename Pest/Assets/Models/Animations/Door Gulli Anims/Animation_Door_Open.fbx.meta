@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 2b6738763f7fef548a22fff6f71d20bf
+guid: 8d0aaba46367b4a4397ed6c630c85204
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: 'Material #0'
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: "Rohr_gro\xDF"
-    7400000: Take 001
+    4300000: Timberframing_Door_1_3x3_City_Environment
+    7400000: Door_Open
     9500000: //RootNode
   externalObjects: {}
   materials:
