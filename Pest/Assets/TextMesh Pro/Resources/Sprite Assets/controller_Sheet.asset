@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: controller_Sheet
   m_EditorClassIdentifier: 
   hashCode: -663424180
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: c769db5f578b4124290060e27065a3b1, type: 2}
   materialHashCode: 0
   spriteSheet: {fileID: 2800000, guid: 3bb299f0754462542acff5b5675dd9b4, type: 3}
   spriteInfoList:
@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 1792
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 170.1
+    xAdvance: 28
+    scale: 2
     name: wasd
     hashCode: 4236865
     unicode: 0
@@ -36,10 +36,10 @@ MonoBehaviour:
     y: 1792
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 178.9
+    xAdvance: 28
+    scale: 2
     name: leertaste
     hashCode: 609621737
     unicode: 0
@@ -50,10 +50,10 @@ MonoBehaviour:
     y: 1792
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_2
     hashCode: -914428223
     unicode: 0
@@ -64,10 +64,10 @@ MonoBehaviour:
     y: 1792
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: -19.4
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_3
     hashCode: -914428224
     unicode: 0
@@ -78,10 +78,10 @@ MonoBehaviour:
     y: 1792
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_4
     hashCode: -914428217
     unicode: 0
@@ -92,10 +92,10 @@ MonoBehaviour:
     y: 1792
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_5
     hashCode: -914428218
     unicode: 0
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 1792
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_6
     hashCode: -914428219
     unicode: 0
@@ -120,10 +120,10 @@ MonoBehaviour:
     y: 1792
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_7
     hashCode: -914428220
     unicode: 0
@@ -134,10 +134,10 @@ MonoBehaviour:
     y: 1536
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_8
     hashCode: -914428213
     unicode: 0
@@ -148,10 +148,10 @@ MonoBehaviour:
     y: 1536
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 173.6
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_9
     hashCode: -914428214
     unicode: 0
@@ -162,10 +162,10 @@ MonoBehaviour:
     y: 1536
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 168.7
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_10
     hashCode: -111360206
     unicode: 0
@@ -176,10 +176,10 @@ MonoBehaviour:
     y: 1536
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_11
     hashCode: -111360205
     unicode: 0
@@ -190,10 +190,10 @@ MonoBehaviour:
     y: 1536
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_12
     hashCode: -111360208
     unicode: 0
@@ -204,10 +204,10 @@ MonoBehaviour:
     y: 1536
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_13
     hashCode: -111360207
     unicode: 0
@@ -218,10 +218,10 @@ MonoBehaviour:
     y: 1536
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 197.37
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_14
     hashCode: -111360202
     unicode: 0
@@ -232,10 +232,10 @@ MonoBehaviour:
     y: 1536
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_15
     hashCode: -111360201
     unicode: 0
@@ -246,10 +246,10 @@ MonoBehaviour:
     y: 1280
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_16
     hashCode: -111360204
     unicode: 0
@@ -260,10 +260,10 @@ MonoBehaviour:
     y: 1280
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 139.1
+    xAdvance: 28
+    scale: 2
     name: controller_Sheet_17
     hashCode: -111360203
     unicode: 0
@@ -274,10 +274,10 @@ MonoBehaviour:
     y: 1280
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_18
     hashCode: -111360198
     unicode: 0
@@ -288,10 +288,10 @@ MonoBehaviour:
     y: 1280
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 207.5
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_19
     hashCode: -111360197
     unicode: 0
@@ -302,10 +302,10 @@ MonoBehaviour:
     y: 1280
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 197
+    xAdvance: 28
+    scale: 2
     name: controller_Sheet_20
     hashCode: -111360303
     unicode: 0
@@ -316,10 +316,10 @@ MonoBehaviour:
     y: 1280
     width: 256
     height: 256
-    xOffset: -128
-    yOffset: 128
-    xAdvance: 256
-    scale: 1
+    xOffset: 0
+    yOffset: 185
+    xAdvance: 28
+    scale: 1.5
     name: controller_Sheet_21
     hashCode: -111360304
     unicode: 0
