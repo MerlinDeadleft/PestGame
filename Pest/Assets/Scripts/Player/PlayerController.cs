@@ -115,7 +115,11 @@ public class PlayerController : MonoBehaviour
 	{
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Confined;
+
 		player = ReInput.players.GetPlayer(RewiredConsts.Player.Player0);
+		player.controllers.maps.SetAllMapsEnabled(false);
+		player.controllers.maps.SetMapsEnabled(true, Category.CharacterControl);
+
 		charController = GetComponent<CharacterController>();
 		colliderCenter = charController.center;
 		colliderHeight = charController.height;

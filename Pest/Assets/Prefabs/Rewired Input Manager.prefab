@@ -191,6 +191,12 @@ MonoBehaviour:
       - _enabled: 1
         _categoryId: 2
         _layoutId: 0
+      - _enabled: 1
+        _categoryId: 3
+        _layoutId: 0
+      - _enabled: 1
+        _categoryId: 4
+        _layoutId: 0
       _defaultMouseMaps:
       - _enabled: 1
         _categoryId: 1
@@ -198,12 +204,24 @@ MonoBehaviour:
       - _enabled: 1
         _categoryId: 2
         _layoutId: 0
+      - _enabled: 1
+        _categoryId: 3
+        _layoutId: 0
+      - _enabled: 1
+        _categoryId: 4
+        _layoutId: 0
       _defaultKeyboardMaps:
       - _enabled: 1
         _categoryId: 1
         _layoutId: 0
       - _enabled: 1
         _categoryId: 2
+        _layoutId: 0
+      - _enabled: 1
+        _categoryId: 3
+        _layoutId: 0
+      - _enabled: 1
+        _categoryId: 4
         _layoutId: 0
       _defaultCustomControllerMaps: []
       _startingCustomControllers: []
@@ -326,6 +344,15 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 2
+    - _id: 12
+      _name: NextIllustration
+      _type: 1
+      _descriptiveName: Show next loading screen illustration
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 4
     actionCategories:
     - _name: Default
       _descriptiveName: Default category with no actions
@@ -342,6 +369,16 @@ MonoBehaviour:
       _tag: 
       _id: 2
       _userAssignable: 1
+    - _name: UIControl
+      _descriptiveName: Actions for controlling UI Elements
+      _tag: 
+      _id: 3
+      _userAssignable: 1
+    - _name: LoadingScreenControl
+      _descriptiveName: Actions for controlling loading screen slides
+      _tag: 
+      _id: 4
+      _userAssignable: 1
     actionCategoryMap:
       list:
       - categoryId: 0
@@ -350,6 +387,10 @@ MonoBehaviour:
         actionIds: 0000000001000000020000000300000004000000050000000600000007000000080000000a00000009000000
       - categoryId: 2
         actionIds: 0b000000
+      - categoryId: 3
+        actionIds: 
+      - categoryId: 4
+        actionIds: 0c000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -393,6 +434,20 @@ MonoBehaviour:
       _descriptiveName: Map for controlling tutorial flow
       _tag: 
       _id: 2
+      _userAssignable: 1
+      _checkConflictsWithAllCategories: 1
+      _checkConflictsCategoryIds: 
+    - _name: UIControl
+      _descriptiveName: Actions for controlling UI Elements
+      _tag: 
+      _id: 3
+      _userAssignable: 1
+      _checkConflictsWithAllCategories: 1
+      _checkConflictsCategoryIds: 
+    - _name: LoadingScreenControl
+      _descriptiveName: Actions for controlling loading screen slides
+      _tag: 
+      _id: 4
       _userAssignable: 1
       _checkConflictsWithAllCategories: 1
       _checkConflictsCategoryIds: 
@@ -539,6 +594,24 @@ MonoBehaviour:
       actionElementMaps:
       - _actionCategoryId: 0
         _actionId: 11
+        _elementType: 1
+        _elementIdentifierId: 4
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+    - id: 2
+      categoryId: 4
+      layoutId: 0
+      name: 
+      hardwareGuidString: 83b427e4-086f-47f3-bb06-be266abd1ca5
+      customControllerUid: 0
+      actionElementMaps:
+      - _actionCategoryId: 0
+        _actionId: 12
         _elementType: 1
         _elementIdentifierId: 4
         _axisRange: 0
@@ -717,6 +790,35 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+    - id: 3
+      categoryId: 4
+      layoutId: 0
+      name: 
+      hardwareGuidString: 
+      customControllerUid: 0
+      actionElementMaps:
+      - _actionCategoryId: 0
+        _actionId: 12
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 32
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 12
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 13
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     mouseMaps:
     - id: 0
       categoryId: 1
@@ -798,22 +900,40 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+    - id: 2
+      categoryId: 4
+      layoutId: 0
+      name: 
+      hardwareGuidString: 
+      customControllerUid: 0
+      actionElementMaps:
+      - _actionCategoryId: 0
+        _actionId: 12
+        _elementType: 1
+        _elementIdentifierId: 3
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     customControllerMaps: []
     customControllers: []
     controllerMapLayoutManagerRuleSets: []
     controllerMapEnablerRuleSets: []
     playerIdCounter: 2
-    actionIdCounter: 12
-    actionCategoryIdCounter: 3
+    actionIdCounter: 14
+    actionCategoryIdCounter: 5
     inputBehaviorIdCounter: 1
-    mapCategoryIdCounter: 3
+    mapCategoryIdCounter: 5
     joystickLayoutIdCounter: 1
     keyboardLayoutIdCounter: 1
     mouseLayoutIdCounter: 1
     customControllerLayoutIdCounter: 1
-    joystickMapIdCounter: 2
-    keyboardMapIdCounter: 2
-    mouseMapIdCounter: 2
+    joystickMapIdCounter: 3
+    keyboardMapIdCounter: 4
+    mouseMapIdCounter: 3
     customControllerMapIdCounter: 0
     customControllerIdCounter: 0
     controllerMapLayoutManagerSetIdCounter: 0
