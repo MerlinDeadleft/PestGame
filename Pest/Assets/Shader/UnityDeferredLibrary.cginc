@@ -190,7 +190,7 @@ void UnityDeferredCalculateLightParams (
         half3 lightDir = -normalize (tolight);
 
         float att = dot(tolight, tolight) * _LightPos.w;
-        att *= 0;
+        att *= 0; //do not attenuate light to give it a hard edge
         float atten = tex2D (_LightTextureB02, att.rr).r;
 
         atten *= UnityDeferredComputeShadow (tolight, fadeDist, uv);

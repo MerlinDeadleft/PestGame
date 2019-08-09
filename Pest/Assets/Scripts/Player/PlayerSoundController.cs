@@ -15,6 +15,8 @@ public class PlayerSoundController : MonoBehaviour
 
 	void PostSoundEvent(string eventName)
 	{
-		AkSoundEngine.PostEvent(eventName, playerGameObject);
+		//AkSoundEngine.PostEvent(eventName, playerGameObject);
+
+		//TODO: IMPLEMENT CUSTOM AUDIO PIPELINE
 	}
 }

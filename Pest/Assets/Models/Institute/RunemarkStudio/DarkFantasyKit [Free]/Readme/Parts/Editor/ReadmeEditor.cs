@@ -12,7 +12,7 @@ namespace Runemark.DarkFantasyKit
     [InitializeOnLoad]
     public class ReadmeEditor : Editor
     {
-        static string kShowedReadmeSessionStateName = "ReadmeEditor.showedReadme";
+        //static string kShowedReadmeSessionStateName = "ReadmeEditor.showedReadme";
 
         static float kSpace = 16f;
 
@@ -23,17 +23,17 @@ namespace Runemark.DarkFantasyKit
 
         static void SelectReadmeAutomatically()
         {
-            if (!SessionState.GetBool(kShowedReadmeSessionStateName, false))
-            {
-                var readme = SelectReadme();
-                SessionState.SetBool(kShowedReadmeSessionStateName, true);
+            //if (!SessionState.GetBool(kShowedReadmeSessionStateName, false))
+            //{
+            //    var readme = SelectReadme();
+            //    SessionState.SetBool(kShowedReadmeSessionStateName, true);
 
-                if (readme && !readme.loadedLayout)
-                {
-                   // LoadLayout();
-                    readme.loadedLayout = true;
-                }
-            }
+            //    if (readme && !readme.loadedLayout)
+            //    {
+            //       // LoadLayout();
+            //        readme.loadedLayout = true;
+            //    }
+            //}
         }
 
         static void LoadLayout()
