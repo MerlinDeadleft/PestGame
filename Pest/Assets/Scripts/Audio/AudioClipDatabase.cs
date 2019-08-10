@@ -12,7 +12,7 @@ public class AudioClipDatabase : ScriptableObject
 		public AudioClip AudioClip;
 	}
 
-	public string name = "";
+	public string Name = "";
 	public AudioClipData[] AudioClips;
 
 	public AudioClip GetAudioClip(string name)
