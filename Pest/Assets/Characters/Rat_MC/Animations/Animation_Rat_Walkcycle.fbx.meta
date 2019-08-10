@@ -520,15 +520,15 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: PostSoundEvent
-        data: Footstep_MC_Rat_R
+        functionName: PlaySoundEffect
+        data: Rat_MC FootStepRight
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.49895617
-        functionName: PostSoundEvent
-        data: Footstep_MC_Rat_L
+        functionName: PlaySoundEffect
+        data: Rat_MC FootStepLeft
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

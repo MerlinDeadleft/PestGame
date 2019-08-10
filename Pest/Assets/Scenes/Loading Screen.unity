@@ -588,7 +588,7 @@ MonoBehaviour:
   cutsceneImage: {fileID: 1807840185}
   cutsceneText: {fileID: 244632495}
   sceneToLoad: Blocking_Kanalisation
-  cutsceneToShow: 2
+  cutsceneToShow: 0
   cutscenes:
   - name: Cutscene 1
     cutsceneDatas:
@@ -649,3 +649,83 @@ MonoBehaviour:
       - Cutscene 3 Image 2 Text 1
       CurrentText: 0
     CurrentImage: 0
+--- !u!1001 &912269734952532135
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7834540068559784658, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3370566596840223521, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975488220592051508, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: audioClipDatabase.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1975488220592051508, guid: 228f8423ff7165846b44d89a33e1e6a5,
+        type: 3}
+      propertyPath: audioClipDatabase.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: ea5b709a00fc473428a96023ba7535e0,
+        type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228f8423ff7165846b44d89a33e1e6a5, type: 3}
