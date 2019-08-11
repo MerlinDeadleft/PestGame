@@ -154,6 +154,16 @@ public class PlayerController : MonoBehaviour
 
 		if(enableCheats)
 		{
+			if(Input.GetKeyDown(KeyCode.Z))
+			{
+				Time.timeScale = 0.0f;
+			}
+
+			if(Input.GetKeyDown(KeyCode.U))
+			{
+				Time.timeScale = 1.0f;
+			}
+
 			if(Input.GetKeyDown(KeyCode.Alpha0))
 			{
 				ReloadScene();
