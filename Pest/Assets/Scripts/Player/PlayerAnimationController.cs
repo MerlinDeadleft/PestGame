@@ -51,7 +51,7 @@ public class PlayerAnimationController : MonoBehaviour
 		animator = GetComponent<Animator>();
 		animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
 		animator.runtimeAnimatorController = animatorOverrideController;
-		animatorOverrideController["Rat_Idle2"] = longIdleClip2;
+		animatorOverrideController["Rat_Idle2"] = longIdleClip1;
 
 		soundController = GetComponent<PlayerSoundController>();
     }
