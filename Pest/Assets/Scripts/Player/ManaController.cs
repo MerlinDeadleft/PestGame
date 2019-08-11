@@ -11,8 +11,9 @@ public class ManaController : MonoBehaviour
 
     [SerializeField] bool  regeneratingMana = false;
     [SerializeField] float timer            = 0.0f;
+	[SerializeField] EmissivePingPong sealEffect = null;
 
-    readonly float manaRegInterval = 0.5f;
+    readonly float manaRegInterval = 0.1f;
     //readonly int   maxMana         = 100;
 
     public static ManaController instance = null;
@@ -39,6 +40,7 @@ public class ManaController : MonoBehaviour
                 else if(player.Mana >= player.MaxMana)
                 {
                     particles.Stop();
+					sealEffect.enabled = false;
                 }
 
                 timer = 0.0f;
@@ -55,7 +57,8 @@ public class ManaController : MonoBehaviour
             {
                 particles.Play();
                 regeneratingMana = true;
-            }
+				sealEffect.enabled = true;
+			}
         }
     }
 
@@ -66,9 +69,10 @@ public class ManaController : MonoBehaviour
 			player = null;
             particles.Stop();
             regeneratingMana = false;
-        }
+			sealEffect.enabled = false;
+		}
 
-    }
+	}
 
     /// <summary>
     /// 
