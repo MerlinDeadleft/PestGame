@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hidingObjectType: 2
+  manholeLid: {fileID: 0}
+  door: {fileID: 0}
   hasFixedHideAnimationStartPoint: 0
   hideAnimationStartDistance: 1.5
-  manholeCover: {fileID: 0}
+  hasFixedKillAnimationStartPoint: 0
+  killAnimationStartDistance: 1.5
