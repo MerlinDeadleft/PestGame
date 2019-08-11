@@ -20,7 +20,10 @@ public class PlayerAnimationController : MonoBehaviour
 	[SerializeField] float idleTimer = 0.0f;
 	[SerializeField] AnimationClip longIdleClip1 = null;
 	[SerializeField] AnimationClip longIdleClip2 = null;
-	
+
+	[Header("Particles")]
+	[SerializeField] List<ParticleSystem> particleSystems = new List<ParticleSystem>();
+
 	[Header("Sound Stuff")]
 	[SerializeField] PlayerSoundController soundController = null;
 
@@ -138,5 +141,13 @@ public class PlayerAnimationController : MonoBehaviour
 	public void CastMagic()
 	{
 		animator.SetTrigger(castMagicHash);
+	}
+
+	void PlayParticles()
+	{
+		foreach(ParticleSystem particleSys in particleSystems)
+		{
+			particleSys.Play();
+		}
 	}
 }
