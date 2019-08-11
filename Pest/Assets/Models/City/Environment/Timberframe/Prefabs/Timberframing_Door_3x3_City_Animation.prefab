@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 704125369715535223}
   - component: {fileID: 5107808176341243178}
   - component: {fileID: 5128106260728711409}
+  - component: {fileID: 7681605842396904650}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -91,6 +92,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.19011742, y: 0.9077056, z: 1.9150006}
   m_Center: {x: -0.03867683, y: 0.46117333, z: 0.95749944}
+--- !u!95 &7681605842396904650
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545687837902055971}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24ff0952891de5347b10bda0d6c4ce17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2884786718090954814
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hidingObjectType: 4
   manholeLid: {fileID: 0}
+  door: {fileID: 7681605842396904650}
   hasFixedHideAnimationStartPoint: 1
   hideAnimationStartDistance: 0
   hasFixedKillAnimationStartPoint: 1

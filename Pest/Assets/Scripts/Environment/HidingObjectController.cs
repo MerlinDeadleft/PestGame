@@ -9,6 +9,7 @@ public class HidingObjectController : MonoBehaviour
 
 	public HidingObjectType hidingObjectType = HidingObjectType.None;
 	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Manhole)] Animator manholeLid = null;
+	[SerializeField, MyBox.ConditionalField("hidingObjectType", HidingObjectType.Door)] Animator door = null;
 
 	public bool hasFixedHideAnimationStartPoint = false;
 	/// <summary>Position to which the character needs to be moved to, before playing hiding animation</summary>
@@ -94,6 +95,11 @@ public class HidingObjectController : MonoBehaviour
 		{
 			manholeLid.SetTrigger("Hide");
 		}
+
+		if(hidingObjectType == HidingObjectType.Door)
+		{
+			door.SetTrigger("Hide");
+		}
 	}
 
 	public void AnimatorHideEnd()
@@ -102,6 +108,11 @@ public class HidingObjectController : MonoBehaviour
 		{
 			manholeLid.SetTrigger("Unhide");
 		}
+
+		if(hidingObjectType == HidingObjectType.Door)
+		{
+			door.SetTrigger("Unhide");
+		}
 	}
 
 	public void AnimatorDie()
@@ -109,6 +120,11 @@ public class HidingObjectController : MonoBehaviour
 		if(hidingObjectType == HidingObjectType.Manhole)
 		{
 			manholeLid.SetTrigger("Die");
+		}
+
+		if(hidingObjectType == HidingObjectType.Door)
+		{
+			door.SetTrigger("Die");
 		}
 	}
 }

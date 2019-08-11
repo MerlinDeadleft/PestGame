@@ -593,14 +593,12 @@ public class PlayerController : MonoBehaviour
 				else
 				{
 					animationController.HideBegin((int)HidingObject.hidingObjectType);
-					if(HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Manhole)
+					if(HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Manhole || HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Door)
 					{
 						HidingObject.AnimatorHideBegin();
 						HidingObject.SetAnimatorRotation(Vector3.Normalize(Vector3.ProjectOnPlane(-transform.right, Vector3.up)));
-						//HidingObject.SetAnimatorRotation(transform.rotation);
 					}
 					startedHide = true;
-					//charController.detectCollisions = false;
 				}
 			}
 		}
