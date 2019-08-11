@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
 	Animator animator = null;
+	AnimatorOverrideController animatorOverrideController = null;
+
 	public float Velocity { get; set; } = 0.0f;
 	public bool IsSneaking { get; set; } = false;
 	public bool IsGrounded { get; set; } = true;
@@ -15,8 +17,10 @@ public class PlayerAnimationController : MonoBehaviour
 	public bool CanMove { get { return animator.GetBool(canMoveHash); } set { animator.SetBool(canMoveHash, value); } }
 
 	[SerializeField] float longIdleTime = 0.0f;
-	float idleTimer = 0.0f;
-
+	[SerializeField] float idleTimer = 0.0f;
+	[SerializeField] AnimationClip longIdleClip1 = null;
+	[SerializeField] AnimationClip longIdleClip2 = null;
+	
 	[Header("Sound Stuff")]
 	[SerializeField] PlayerSoundController soundController = null;
 
@@ -42,6 +46,10 @@ public class PlayerAnimationController : MonoBehaviour
 	void Start()
     {
 		animator = GetComponent<Animator>();
+		animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+		animator.runtimeAnimatorController = animatorOverrideController;
+		animatorOverrideController["Rat_Idle2"] = longIdleClip2;
+
 		soundController = GetComponent<PlayerSoundController>();
     }
 
@@ -62,12 +70,29 @@ public class PlayerAnimationController : MonoBehaviour
 
 			if(idleTimer >= longIdleTime)
 			{
-				animator.SetBool(longIdleHash, true);
+				if(!animator.GetBool(longIdleHash))
+				{
+					if(animatorOverrideController["Rat_Idle2"] == longIdleClip1)
+					{
+						animatorOverrideController["Rat_Idle2"] = longIdleClip2;
+					}
+					else
+					{
+						animatorOverrideController["Rat_Idle2"] = longIdleClip1;
+					}
+					animator.SetBool(longIdleHash, true);
+					idleTimer = 0.0f;
+				}
+				else
+				{
+					animator.SetBool(longIdleHash, false);
+					idleTimer = 0.0f;
+				}
 			}
 		}
 		else
 		{
-			animator.SetBool(longIdleHash, false);
+			animator.SetBool(longIdleHash, true);
 			idleTimer = 0.0f;
 		}
     }
