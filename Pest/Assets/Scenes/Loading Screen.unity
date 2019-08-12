@@ -595,31 +595,44 @@ MonoBehaviour:
     - name: Cutscene 1 Image 1
       image: {fileID: 21300000, guid: b779313d6e57aaf4f89e4e2131d4c60f, type: 3}
       texts:
-      - Cutscene 1 Image 1 Text 1
-      - Cutscene 1 Image 1 Text 2
-      - Cutscene 1 Image 1 Text 3
+      - Die Schattenratten... Eine Rasse magischer Ratten, Meister der Dunkelheit.
+      - "Sie leben fernab von jeder menschlicher Zivilisation, tief in den H\xF6hlen
+        und Ruinen alter V\xF6lker."
+      - "Ihre Kontrolle \xFCber das Okkulte ist unvergleichbar mit jedem anderen Wesen
+        dieser Welt."
       CurrentText: 0
     - name: Cutscene 1 Image 2
       image: {fileID: 21300000, guid: 67fd6ddb3175b1a459f73763dad1b235, type: 3}
       texts:
-      - Cutscene 1 Image 2 Text 1
-      - Cutscene 1 Image 2 Text 2
+      - Als die Menschen die Schattenratten erstmals entdeckten, war Konflikt unvermeidbar.
+      - "Die kleinen, hageren Wesen hatten im Krieg mit den Schl\xE4chtern der Menschen
+        keine Chance."
+      - "Zum Gl\xFCck der Ratten hatten ihre Schamanen allerdings noch ein Ass im
+        \xC4rmel..."
       CurrentText: 0
     - name: Cutscene 1 Image 3
       image: {fileID: 21300000, guid: 3a59494888a607e498cf4594e5ea8f4c, type: 3}
       texts:
-      - Cutscene 1 Image 3 Text 1
+      - "Die Pest, eine Seuche, die selbst den m\xE4chtigsten Krieger binnen Tagen
+        t\xF6tet."
+      - "Innerhalb von k\xFCrzester Zeit konnten ganze St\xE4dte ausgel\xF6scht werden."
+      - "Jedoch waren einige Menschen hartn\xE4ckiger als erwartet..."
       CurrentText: 0
     - name: Cutscene 1 Image 4
       image: {fileID: 21300000, guid: 96e0cb95acf30024c86500b691e42292, type: 3}
       texts:
-      - Cutscene 1 Image 4 Text 1
+      - "Die schlauesten K\xF6pfe des Volkes entwickeln ein Gegenmittel."
+      - "Die Fertigstellung dieses Mittels w\xFCrde das Ende der Pest und des Widerstandes
+        der Schattenratten bedeuten."
       CurrentText: 0
     - name: Cutscene 1 Image 5
       image: {fileID: 21300000, guid: 7b2c0e155ece8594c8d5d515aec49a5f, type: 3}
       texts:
-      - Cutscene 1 Image 5 Text 1
-      - Cutscene 1 Image 5 Text 2
+      - Hier kommst du ins Spiel.
+      - Dein Name ist Stik, Meisterassassine der Schattenratten.
+      - "Benutze deine Kr\xE4fte und schleiche dich in die Siedlung der Menschen."
+      - Stiehl das Gegenmittel und entkomme damit! Du bist die letzte Hoffnung der
+        Schattenratten...
       CurrentText: 0
     CurrentImage: 0
   - name: Cutscene 2
@@ -627,26 +640,31 @@ MonoBehaviour:
     - name: Cutscene 2 Image 1
       image: {fileID: 21300000, guid: e7b132e3d5f1d75408cab56269de8361, type: 3}
       texts:
-      - Cutscene 2 Image 1 Text 1
-      - Cutscene 2 Image 1 Text 2
+      - "Die Pestdoktoren t\xF6ten jeden, der die Symptome der Seuche zeigt."
+      - Ihre mutierten Krieger verbreiten Angst und Schrecken bei Menschen und Ratten.
       CurrentText: 0
     - name: Cutscene 2 Image 2
       image: {fileID: 21300000, guid: a8da9d49fafb88844a6a96f122330e7d, type: 3}
       texts:
-      - Cutscene 2 Image 2 Text 1
-      - Cutscene 2 Image 2 Text 2
+      - Du bist nun im Herzen der menschlichen Zivilisation.
+      - "Bewege dich durch die Schatten der Stadt. H\xFCte dich vor dem Henker."
       CurrentText: 0
     CurrentImage: 0
   - name: Cutscene 3
     cutsceneDatas:
     - name: Cutscene 3 Image 1
       image: {fileID: 21300000, guid: 73c1fd994d29a1d47bd70bfd890d66cf, type: 3}
-      texts: []
+      texts:
+      - Du kannst dem Henker um ein Haar entkommen. Seine zornigen Schreie hallen
+        durch die Nacht.
+      - Mit dem Gegenmittel in deiner Gewalt hast du das Ende der Menschheit besiegelt.
       CurrentText: 0
     - name: Cutscene 3 Image 2
       image: {fileID: 21300000, guid: 44a9530388cad834bb444cffb64dda2a, type: 3}
       texts:
-      - Cutscene 3 Image 2 Text 1
+      - "W\xE4hrend die letzten Menschen langsam der Seuche erliegen, steigen die
+        Schattenratten aus der Dunkelheit hervor."
+      - "Der Krieg ist gewonnen. Dank dir geh\xF6rt das Land nun den Schattenratten!"
       CurrentText: 0
     CurrentImage: 0
 --- !u!1001 &912269734952532135

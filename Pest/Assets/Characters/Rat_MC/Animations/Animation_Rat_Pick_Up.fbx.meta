@@ -150,6 +150,7 @@ ModelImporter:
     100288: Torus.000
     100290: transform1
     100292: transform2
+    100294: Rat_Anim4:pPlane1
     400000: //RootNode
     400002: Eye_right.001
     400004: Eye_right.002
@@ -297,6 +298,7 @@ ModelImporter:
     400288: Torus.000
     400290: transform1
     400292: transform2
+    400294: Rat_Anim4:pPlane1
     2100000: lambert1
     2300000: Plane.006
     2300002: Rat_Anim4:Bag_Knot.001
@@ -344,6 +346,7 @@ ModelImporter:
     2300086: Rat_Anim4:Tooth_LP.005
     2300088: Rat_Anim4:Torus.000
     2300090: Torus.000
+    2300092: Rat_Anim4:pPlane1
     3300000: Plane.006
     3300002: Rat_Anim4:Bag_Knot.001
     3300004: Rat_Anim4:Bag_Knot.002
@@ -390,6 +393,7 @@ ModelImporter:
     3300086: Rat_Anim4:Tooth_LP.005
     3300088: Rat_Anim4:Torus.000
     3300090: Torus.000
+    3300092: Rat_Anim4:pPlane1
     4300000: Rat_Anim4:Bag_Knot.001
     4300002: Rat_Anim4:Bag_Knot.002
     4300004: Rat_Anim4:Plane.005
@@ -458,6 +462,7 @@ ModelImporter:
     4300130: Rat_Anim4:Knife_1
     4300132: Rat_Anim4:Tail_LP
     4300134: Rat_Anim4:Eye_left_001
+    4300136: Rat_Anim4:pPlane1
     7400000: Rat_Pick_Up
     9500000: //RootNode
     13700000: Rat_Anim4:Arm_L_LP
