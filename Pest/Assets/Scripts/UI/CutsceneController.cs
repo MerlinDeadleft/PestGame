@@ -130,8 +130,8 @@ public class CutsceneController : MonoBehaviour
 	[SerializeField] Image cutsceneImage = null;
 	[SerializeField] Text cutsceneText = null;
 	[Space]
-	[SerializeField] string sceneToLoad = "";
-	[SerializeField] int cutsceneToShow = 0;
+	[SerializeField] public static string sceneToLoad = "";
+	[SerializeField] public static int cutsceneToShow = 0;
 	[Space]
 	[SerializeField] Cutscene[] cutscenes;
 
