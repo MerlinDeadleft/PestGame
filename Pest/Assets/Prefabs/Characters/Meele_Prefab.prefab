@@ -362,7 +362,7 @@ MonoBehaviour:
   hasProximitySensor: 1
   proxSensor: {fileID: 7528330438007281070}
   detectionRange: 2.5
-  detectionTime: 1
+  detectionTime: 3
   guard: 0
   pointToGuard: {fileID: 0}
   maxDistanceFromGuardPoint: 10
