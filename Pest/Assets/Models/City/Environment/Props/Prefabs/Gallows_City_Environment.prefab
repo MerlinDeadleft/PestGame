@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 9129447671273830613}
   - component: {fileID: 9129447671274830357}
   - component: {fileID: 9129447671267432213}
-  m_Layer: 0
+  - component: {fileID: 7675613444706500189}
+  m_Layer: 9
   m_Name: Gallows_City_Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.00001}
 --- !u!33 &9129447671273830613
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -58,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c0d59b7141c69814983295ac8d838819, type: 3}
+  - {fileID: 2100000, guid: a6871ca80f13727418095760edf13a0e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,3 +98,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &7675613444706500189
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129447671276823765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: c0d59b7141c69814983295ac8d838819, type: 3}
