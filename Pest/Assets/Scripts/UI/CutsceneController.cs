@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Rewired;
+using TMPro;
 
 public class CutsceneController : MonoBehaviour
 {
@@ -127,8 +128,10 @@ public class CutsceneController : MonoBehaviour
 	}
 	#endregion
 
+	[SerializeField] GameObject loadingIcon = null;
 	[SerializeField] Image cutsceneImage = null;
-	[SerializeField] Text cutsceneText = null;
+	//[SerializeField] Text cutsceneText = null;
+	[SerializeField] TextMeshProUGUI cutsceneText = null;
 	[Space]
 	[SerializeField] public static string sceneToLoad = "";
 	[SerializeField] public static int cutsceneToShow = 0;
@@ -137,13 +140,17 @@ public class CutsceneController : MonoBehaviour
 
 	Player player = null;
 	bool cutsceneCoroutineRunning = false;
+	public float loadingIconTimer = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
+		loadingIconTimer = Random.Range(3.0f, 6.0f);
+		Cursor.lockState = CursorLockMode.Locked;
 		player = ReInput.players.GetPlayer(0);
 		player.controllers.maps.SetAllMapsEnabled(false);
 		player.controllers.maps.SetMapsEnabled(true, RewiredConsts.Category.LoadingScreenControl);
+		player.controllers.maps.SetMapsEnabled(true, RewiredConsts.Category.UIControl);
 
 		for(int i = 0; i < cutscenes.Length; i++)
 		{
@@ -158,6 +165,19 @@ public class CutsceneController : MonoBehaviour
 		StartCoroutine(ShowCutscene(cutsceneToShow));
 		StartCoroutine(LoadScene(sceneToLoad));
     }
+
+	void Update()
+	{
+		if(loadingIconTimer >= 0.0f)
+		{
+			loadingIconTimer -= Time.deltaTime;
+
+			if(loadingIconTimer <= 0.0f || !cutsceneCoroutineRunning)
+			{
+				loadingIcon.SetActive(false);
+			}
+		}
+	}
 
 	IEnumerator LoadScene(string scene)
 	{
@@ -177,6 +197,8 @@ public class CutsceneController : MonoBehaviour
 					if(player.GetButtonDown(RewiredConsts.Action.LoadingScreenControl.NextIllustration))
 					{
 						operation.allowSceneActivation = true;
+						Cursor.lockState = CursorLockMode.None;
+						Cursor.visible = false;
 					}
 				}
 			}

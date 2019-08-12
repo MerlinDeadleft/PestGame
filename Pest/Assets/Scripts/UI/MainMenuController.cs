@@ -16,12 +16,15 @@ public class MainMenuController : MonoBehaviour
 	Menu lastMenu = null;
 
 	Player player;
-	InputDevices currentDevice = InputDevices.None;
-	InputDevices lastDevice = InputDevices.None;
+	[SerializeField] InputDevices currentDevice = InputDevices.None;
+	[SerializeField] InputDevices lastDevice = InputDevices.None;
 
     // Start is called before the first frame update
     void Start()
     {
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+
 		player = ReInput.players.GetPlayer(0);
 		player.controllers.maps.SetAllMapsEnabled(false);
 		player.controllers.maps.SetMapsEnabled(true, RewiredConsts.Category.UIControl);
@@ -39,7 +42,7 @@ public class MainMenuController : MonoBehaviour
 
 	void Update()
 	{
-		if(player.GetButton(RewiredConsts.Action.UIControl.Decline))
+		if(player.GetButtonDown(RewiredConsts.Action.UIControl.Decline))
 		{
 			CurrentMenu.OpenParentMenu();
 		}
@@ -47,14 +50,17 @@ public class MainMenuController : MonoBehaviour
 		if(player.IsCurrentInputSource(RewiredConsts.Action.UIControl.Any, ControllerType.Mouse))
 		{
 			currentDevice = InputDevices.Mouse;
+			Cursor.lockState = CursorLockMode.None;
 		}
 		else if(player.IsCurrentInputSource(RewiredConsts.Action.UIControl.Any, ControllerType.Keyboard))
 		{
 			currentDevice = InputDevices.Keyboard;
+			Cursor.lockState = CursorLockMode.Locked;
 		}
 		else if(player.IsCurrentInputSource(RewiredConsts.Action.UIControl.Any, ControllerType.Joystick))
 		{
 			currentDevice = InputDevices.Controller;
+			Cursor.lockState = CursorLockMode.Locked;
 		}
 
 		if(currentDevice != lastDevice)
