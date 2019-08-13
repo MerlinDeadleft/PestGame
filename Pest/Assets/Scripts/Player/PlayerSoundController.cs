@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class PlayerSoundController : MonoBehaviour
 {
-	[SerializeField] GameObject playerGameObject = null;
-	PlayerAnimationController animationController = null;
+	//[SerializeField] GameObject playerGameObject = null;
+	//PlayerAnimationController animationController = null;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-		animationController = GetComponent<PlayerAnimationController>();
-    }
+ //   // Start is called before the first frame update
+ //   void Start()
+ //   {
+	//	animationController = GetComponent<PlayerAnimationController>();
+ //   }
 
 	void PostSoundEvent(string eventName)
 	{
 		//AkSoundEngine.PostEvent(eventName, playerGameObject);
 
 		//TODO: IMPLEMENT CUSTOM AUDIO PIPELINE
+	}
+
+	void PlaySoundEffect(string somestring)
+	{
+
 	}
 }

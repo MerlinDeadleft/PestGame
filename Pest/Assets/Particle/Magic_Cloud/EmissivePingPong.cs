@@ -15,7 +15,7 @@ public class EmissivePingPong : MonoBehaviour
     {
         material = GetComponent<MeshRenderer>().material;
         color = material.GetColor("_EmissionColor");
-
+		enabled = false;
     }
 
     // Update is called once per frame
@@ -32,4 +32,21 @@ public class EmissivePingPong : MonoBehaviour
 
         material.SetColor("_EmissionColor", color * intensity);
     }
+
+	private void OnEnable()
+	{
+		if(material != null)
+		{
+			material.SetColor("_EmissionColor", color);
+		}
+		timer = 0.0f;
+	}
+
+	private void OnDisable()
+	{
+		if(material != null)
+		{
+			material.SetColor("_EmissionColor", color);
+		}
+	}
 }

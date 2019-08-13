@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour
 	/*******************animation variables********************/
 	[Header("Animation")]
 	[SerializeField] PlayerAnimationController animationController = null;
+	[SerializeField] ParticleSystem manaCastParticles = null;
 
 	/*****************enemy takedown variables*****************/
 	//[Header("Enemy Takedowns")]
@@ -103,15 +104,19 @@ public class PlayerController : MonoBehaviour
 
     static Vector3 cpPos = new Vector3(-5.5f, 0.0f, -2.5f);
 
-    /*********************************************************/
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    /*						Methods							 */
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    /*********************************************************/
+	/***********************Checkpoints************************/
+	[Header("Debug")]
+	[SerializeField] bool enableCheats = true;
 
-    /**************************Start***************************/
-    // Use this for initialization
-    void Start ()
+	/*********************************************************/
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	/*						Methods							 */
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+	/*********************************************************/
+
+	/**************************Start***************************/
+	// Use this for initialization
+	void Start ()
 	{
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Confined;
@@ -147,34 +152,54 @@ public class PlayerController : MonoBehaviour
 	{
 		UpdateIsGrounded();
 
-		if(Input.GetKeyDown(KeyCode.Alpha0))
+		if(enableCheats)
 		{
-			ReloadScene();
-		}
+			if(Input.GetKeyDown(KeyCode.Z))
+			{
+				Time.timeScale = 0.0f;
+			}
 
-		if(Input.GetKeyDown(KeyCode.Alpha1))
-		{
-			LoadScene("Blocking_Kanalisation");
-		}
+			if(Input.GetKeyDown(KeyCode.U))
+			{
+				Time.timeScale = 1.0f;
+			}
 
-		if(Input.GetKeyDown(KeyCode.Alpha2))
-		{
-			LoadScene("Blocking_Stadt");
-		}
+			if(Input.GetKeyDown(KeyCode.Alpha0))
+			{
+				ReloadScene();
+			}
 
-		if(Input.GetKeyDown(KeyCode.Alpha8))
-		{
-			LoadScene("GameFinishedScene");
-		}
+			if(Input.GetKeyDown(KeyCode.Alpha1))
+			{
+				LoadScene("Blocking_Kanalisation");
+			}
 
-		if(Input.GetKeyDown(KeyCode.Alpha9))
-		{
-			transform.position = new Vector3(-95.0f, 0.6f, -15.0f);
-		}
+			if(Input.GetKeyDown(KeyCode.Alpha2))
+			{
+				LoadScene("Blocking_Stadt");
+			}
 
-		if(Input.GetKeyDown(KeyCode.P))
-		{
-			HasPotion = true;
+			if(Input.GetKeyDown(KeyCode.Alpha8))
+			{
+				LoadScene("GameFinishedScene");
+			}
+
+			if(Input.GetKeyDown(KeyCode.Alpha9))
+			{
+				transform.position = new Vector3(-95.0f, 0.6f, -15.0f);
+			}
+
+			if(Input.GetKeyDown(KeyCode.P))
+			{
+				HasPotion = true;
+			}
+
+			// Talis' code
+			//Debug.Log("CheckpointReached: " + checkpointReached + " | " + "Vector: " + cpPos);
+			if(Input.GetKeyDown(KeyCode.C))
+			{
+				Die();
+			}
 		}
 
 		if(isHiding)
@@ -189,13 +214,6 @@ public class PlayerController : MonoBehaviour
 		{
 			HandleMovement();
 		}
-
-        // Talis' code
-        //Debug.Log("CheckpointReached: " + checkpointReached + " | " + "Vector: " + cpPos);
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Die();
-        }
 
         if (player.GetButtonTimedPressUp(Action.CharacterControl.Interact, 0f, 0.7f))
         {
@@ -250,6 +268,7 @@ public class PlayerController : MonoBehaviour
                 if (ManaController.UseMana(manaActivationCost, this))
                 {
 					animationController.CastMagic();
+					manaCastParticles.Play();
                     cameraController.TurnOffSelectedLight();
                 }
             }
@@ -584,14 +603,12 @@ public class PlayerController : MonoBehaviour
 				else
 				{
 					animationController.HideBegin((int)HidingObject.hidingObjectType);
-					if(HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Manhole)
+					if(HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Manhole || HidingObject.hidingObjectType == HidingObjectController.HidingObjectType.Door)
 					{
 						HidingObject.AnimatorHideBegin();
 						HidingObject.SetAnimatorRotation(Vector3.Normalize(Vector3.ProjectOnPlane(-transform.right, Vector3.up)));
-						//HidingObject.SetAnimatorRotation(transform.rotation);
 					}
 					startedHide = true;
-					//charController.detectCollisions = false;
 				}
 			}
 		}

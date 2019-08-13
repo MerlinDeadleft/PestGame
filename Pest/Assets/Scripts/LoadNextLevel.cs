@@ -20,6 +20,8 @@ public class LoadNextLevel : MonoBehaviour
             }
         }
 
-        SceneManager.LoadScene(nextSceneName);
+		CutsceneController.cutsceneToShow = 1;
+		CutsceneController.sceneToLoad = nextSceneName;
+        SceneManager.LoadScene("Loading Screen");
 	}
 }

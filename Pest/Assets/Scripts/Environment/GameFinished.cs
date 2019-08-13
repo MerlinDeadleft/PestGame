@@ -5,25 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameFinished : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "Player")
 		{
 			if(other.GetComponent<PlayerController>().HasPotion)
 			{
-				SceneManager.LoadScene("GameFinishedScene");
+				CutsceneController.cutsceneToShow = 2;
+				CutsceneController.sceneToLoad = "Mainmenue";
+				SceneManager.LoadScene("Loading Screen");
 			}
 		}
 	}
