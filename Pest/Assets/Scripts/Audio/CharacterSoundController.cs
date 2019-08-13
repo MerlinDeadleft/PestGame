@@ -20,7 +20,7 @@ public class CharacterSoundController : MonoBehaviour
 
 		if(audioSource.clip != null)
 		{
-			audioSource.PlayOneShot(audioSource.clip);
+			audioSource.Play();
 		}
 	}
 }

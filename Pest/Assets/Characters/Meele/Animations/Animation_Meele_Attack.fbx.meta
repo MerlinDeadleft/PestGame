@@ -290,6 +290,14 @@ ModelImporter:
         floatParameter: 0
         intParameter: 1
         messageOptions: 0
+      - time: 0.24949718
+        functionName: PlaySoundEffect
+        data: Melee SwordSwing
+        objectReferenceParameter: {fileID: 11500000, guid: 2d9a66b07c65e884bab903f90c8f2bee,
+          type: 3}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

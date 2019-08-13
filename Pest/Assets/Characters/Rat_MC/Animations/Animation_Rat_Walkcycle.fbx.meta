@@ -521,14 +521,14 @@ ModelImporter:
       events:
       - time: 0
         functionName: PlaySoundEffect
-        data: Rat_MC FootStepRight
+        data: MC FootStep1
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.49895617
         functionName: PlaySoundEffect
-        data: Rat_MC FootStepLeft
+        data: MC FootStep2
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

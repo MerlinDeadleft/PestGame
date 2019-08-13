@@ -10,16 +10,21 @@ public class AudioManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if(Instance != null && Instance != this)
-		{
-			Destroy(this.gameObject);
-		}
-		else
+		//if(Instance != null && Instance != this)
+		//{
+		//	Destroy(this.gameObject);
+		//}
+		//else
+		//{
+		//	Instance = this;
+		//}
+
+		//DontDestroyOnLoad(gameObject);
+
+		if(Instance != this)
 		{
 			Instance = this;
 		}
-
-		DontDestroyOnLoad(gameObject);
 	}
 
 	public AudioClip GetAudioClip(string name)
@@ -35,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
 		foreach(AudioClipDatabase database in audioClipDatabases)
 		{
-			if(database.name == splitName[0])
+			if(database.Name == splitName[0])
 			{
 				return database.GetAudioClip(splitName[1]);
 			}

@@ -520,57 +520,15 @@ ModelImporter:
       curves: []
       events:
       - time: 0
-        functionName: PostSoundEvent
-        data: Combat_MC_Rat_Takedown1_DaggerMove
+        functionName: PlaySoundEffect
+        data: MC FootStep2
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.08874824
-        functionName: PostSoundEvent
-        data: Combat_MC_Rat_Takedown1_JumpStart
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.30427915
-        functionName: PostSoundEvent
-        data: Combat_MC_Rat_Takedown1_EnemyBack
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.29635555
-        functionName: PostSoundEvent
-        data: Combat_MC_Rat_Takedown1_DaggersInHead
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.58637035
-        functionName: PostSoundEvent
-        data: Combat_MC_Rat_Takedown1_DaggersOutHead
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.6671943
-        functionName: PostSoundEvent
-        data: Combat_MC_Rat_Takedown1_JumpBack
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.78288406
-        functionName: PostSoundEvent
-        data: Combat_MC_Rat_Takedown1_Backflip
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.94770193
-        functionName: PostSoundEvent
-        data: Combat_MC_Rat_Takedown1_JumpLanding
+      - time: 0.36947381
+        functionName: PlaySoundEffect
+        data: MC Stab
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
@@ -578,6 +536,13 @@ ModelImporter:
       - time: 0.3819631
         functionName: PlayParticles
         data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.94770193
+        functionName: PlaySoundEffect
+        data: MC FootStep1
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
