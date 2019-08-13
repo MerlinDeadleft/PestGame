@@ -18,5 +18,5 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: a3ae763463bd84447be5126c832d7a16, type: 3}
   - Name: FootStep2
     AudioClip: {fileID: 8300000, guid: dbbf74bf766cf1a499f2cccbf44ff781, type: 3}
-  - Name: Stab
+  - Name: SwordSwing
     AudioClip: {fileID: 8300000, guid: 914d9e960e3682b468d841988a928975, type: 3}

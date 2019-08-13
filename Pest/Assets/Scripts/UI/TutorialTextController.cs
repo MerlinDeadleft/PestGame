@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TutorialTextController : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class TutorialTextController : MonoBehaviour
 	[SerializeField] float hideShowTime = 1.0f;
 	[SerializeField] Image blackBarTop = null;
 	[SerializeField] Image blackBarBottom = null;
-	[SerializeField] Text tutorialText = null;
-	public Text TutorialText { get { return tutorialText; } set { tutorialText = value; } }
+	[SerializeField] TextMeshProUGUI tutorialText = null;
+	public TextMeshProUGUI TutorialText { get { return tutorialText; } set { tutorialText = value; } }
 
 	private void Update()
 	{

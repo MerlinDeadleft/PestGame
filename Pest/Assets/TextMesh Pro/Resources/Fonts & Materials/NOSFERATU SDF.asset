@@ -19,12 +19,12 @@ MonoBehaviour:
   m_fontInfo:
     Name: Nosferatu
     PointSize: 42
-    Scale: 0
+    Scale: 1
     CharacterCount: 207
     LineHeight: 52.4375
     Baseline: 0
     Ascender: 37.625
-    CapHeight: 0
+    CapHeight: 26.5
     Descender: -14.9375
     CenterLine: 0
     SuperscriptOffset: 37.625
@@ -34,7 +34,7 @@ MonoBehaviour:
     UnderlineThickness: 2.2370174
     strikethrough: 8.25
     strikethroughThickness: 2.2370174
-    TabWidth: 0
+    TabWidth: 93.125
     Padding: 5
     AtlasWidth: 512
     AtlasHeight: 512
@@ -43,10 +43,10 @@ MonoBehaviour:
   - id: 32
     x: 6
     y: 517
-    width: 0
-    height: 0
+    width: 9.3125
+    height: 52.5625
     xOffset: 0
-    yOffset: 0
+    yOffset: 37.625
     xAdvance: 9.3125
     scale: 1
   - id: 33
