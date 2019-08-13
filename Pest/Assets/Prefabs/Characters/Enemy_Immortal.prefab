@@ -532,7 +532,7 @@ MonoBehaviour:
   walkSpeed: 3.5
   runSpeed: 4.9
   minAwareness: 1
-  minDistance: 1
+  minDistance: 1.25
   player: {fileID: 0}
   animController: {fileID: 5556771027148978755}
 --- !u!1 &5556771027148881041
