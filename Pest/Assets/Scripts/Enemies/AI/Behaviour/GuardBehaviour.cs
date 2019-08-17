@@ -64,7 +64,7 @@ public class GuardBehaviour : EnemyBehaviour
 			new Selector(
 				new List<Node>()
 				{
-					new Conditional(new ActionNode(MoveToPointToGuard), new ActionNode(IsFarFromWaypoint)),
+					new Conditional(new ActionNode(MoveToPointToGuard), new ActionNode(IsFarFromGuardpoint)),
 					new Conditional(new ActionNode(ChangeLookDirection), new ActionNode(ShouldChangeLookDirection)),
 					new Conditional(new ActionNode(RotateTowardsPointToGuardLookDirection), new ActionNode(IsLookingInPointToGuardLookDirection)),
 					new ActionNode( () => { return NodeStates.Running; } )
@@ -187,7 +187,7 @@ public class GuardBehaviour : EnemyBehaviour
 		}
 	}
 
-	NodeStates IsFarFromWaypoint()
+	NodeStates IsFarFromGuardpoint()
 	{
 		if(Vector3.Magnitude(transform.position - pointToGuard.position) > 1.0f)
 		{
