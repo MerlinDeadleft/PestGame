@@ -24,4 +24,18 @@ public class Menu : MonoBehaviour
 			gameObject.SetActive(false);
 		}
 	}
+
+	public bool OpenParentMenuWithReturn()
+	{
+		if(parentMenu != null)
+		{
+			mainMenu.CurrentMenu = parentMenu;
+			parentMenu.gameObject.SetActive(true);
+			gameObject.SetActive(false);
+
+			return true;
+		}
+
+		return false;
+	}
 }

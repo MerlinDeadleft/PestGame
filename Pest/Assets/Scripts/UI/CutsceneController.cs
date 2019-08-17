@@ -147,6 +147,7 @@ public class CutsceneController : MonoBehaviour
     {
 		loadingIconTimer = Random.Range(3.0f, 6.0f);
 		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 		player = ReInput.players.GetPlayer(0);
 		player.controllers.maps.SetAllMapsEnabled(false);
 		player.controllers.maps.SetMapsEnabled(true, RewiredConsts.Category.LoadingScreenControl);

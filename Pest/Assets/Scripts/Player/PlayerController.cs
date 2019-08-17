@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
 	int isGroundedFrameCounter = 0;
 	public TutorialController TutorialController { get; set; } = null;
 	bool tutorialRunning = false;
+	[SerializeField] MainMenuController pauseMenu = null;
 
 	/******************magic actions variables*****************/
 	PestCameraController cameraController = null;
@@ -104,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     static Vector3 cpPos = new Vector3(-5.5f, 0.0f, -2.5f);
 
-	/***********************Checkpoints************************/
+	/**********************Debug Cheats************************/
 	[Header("Debug")]
 	[SerializeField] bool enableCheats = true;
 
@@ -284,6 +285,16 @@ public class PlayerController : MonoBehaviour
 			HandleAttacking();
 		}
 
+		if(player.GetButtonDown(Action.CharacterControl.PauseGame))
+		{
+			Time.timeScale = 0.0f;
+
+			pauseMenu.gameObject.SetActive(true);
+
+			player.controllers.maps.SetAllMapsEnabled(false);
+			player.controllers.maps.SetMapsEnabled(true, Category.UIControl);
+		}
+
 		lastIsHiding = isHiding;
 
 		animationController.Velocity = charController.velocity.magnitude;
@@ -296,6 +307,11 @@ public class PlayerController : MonoBehaviour
 		playerInfo.Velocity = charController.velocity;
 		playerInfo.IsHiding = isHiding;
 		playerInfo.IsInLight = isBlinded;
+
+		if(Input.GetKeyDown(KeyCode.O))
+		{
+			enableCheats = !enableCheats;
+		}
 	}
 
 	void UpdateIsGrounded()

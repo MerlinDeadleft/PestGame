@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
 {
 	public enum InputDevices { None, Mouse, Keyboard, Controller }
 
+	[SerializeField] bool isPauseMenu = false;
 	[SerializeField] EventSystem eventSystem = null;
 	[SerializeField] Menu PS4Menu = null;
 	[SerializeField] Menu Menu = null;
@@ -19,11 +20,13 @@ public class MainMenuController : MonoBehaviour
 	[SerializeField] InputDevices currentDevice = InputDevices.None;
 	[SerializeField] InputDevices lastDevice = InputDevices.None;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-		Cursor.visible = true;
-		Cursor.lockState = CursorLockMode.None;
+	// Start is called before the first frame update
+	void Start()
+	{
+		if(eventSystem == null)
+		{
+			eventSystem = GameObject.Find("Rewired Event System").GetComponent<EventSystem>();
+		}
 
 		player = ReInput.players.GetPlayer(0);
 		player.controllers.maps.SetAllMapsEnabled(false);
@@ -40,8 +43,23 @@ public class MainMenuController : MonoBehaviour
 #endif
 	}
 
+	private void OnEnable()
+	{
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+	}
+
 	void Update()
 	{
+		if(isPauseMenu)
+		{
+			if(player.GetButtonDown(RewiredConsts.Action.UIControl.ResumeGame))
+			{
+				ResumeGame();
+				return;
+			}
+		}
+
 		if(player.GetButtonDown(RewiredConsts.Action.UIControl.Decline))
 		{
 			CurrentMenu.OpenParentMenu();
@@ -51,17 +69,21 @@ public class MainMenuController : MonoBehaviour
 		{
 			currentDevice = InputDevices.Mouse;
 			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
 		}
 		else if(player.IsCurrentInputSource(RewiredConsts.Action.UIControl.Any, ControllerType.Keyboard))
 		{
 			currentDevice = InputDevices.Keyboard;
 			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
 		}
 		else if(player.IsCurrentInputSource(RewiredConsts.Action.UIControl.Any, ControllerType.Joystick))
 		{
 			currentDevice = InputDevices.Controller;
 			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
 		}
+
 
 		if(currentDevice != lastDevice)
 		{
@@ -99,6 +121,11 @@ public class MainMenuController : MonoBehaviour
 		UnityEngine.SceneManagement.SceneManager.LoadScene("Loading Screen");
 	}
 
+	public void LoadMainMenu()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Mainmenue");
+	}
+
 	public void QuitGame()
 	{
 #if UNITY_EDITOR
@@ -106,5 +133,35 @@ public class MainMenuController : MonoBehaviour
 #else
 		Application.Quit();
 #endif
+	}
+
+	public void ResumeGame()
+	{
+		if(currentDevice == InputDevices.Controller)
+		{
+			bool isNotTopMenu = CurrentMenu.OpenParentMenuWithReturn();
+
+			while(isNotTopMenu)
+			{
+				isNotTopMenu = CurrentMenu.OpenParentMenuWithReturn();
+			}
+		}
+		else
+		{
+			if(CurrentMenu.OpenParentMenuWithReturn())
+			{
+				return;
+			}
+		}
+
+		Time.timeScale = 1.0f;
+
+		gameObject.SetActive(false);
+
+		player.controllers.maps.SetAllMapsEnabled(false);
+		player.controllers.maps.SetMapsEnabled(true, RewiredConsts.Category.CharacterControl);
+
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
 	}
 }
